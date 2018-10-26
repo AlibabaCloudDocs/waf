@@ -4,7 +4,7 @@ Web应用防火墙配置完成后，您可以登录[云盾Web应用防火墙控�
 
 正常接入的结果如下图：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15598/15404736307971_zh-CN.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15598/15405213857971_zh-CN.jpg)
 
 如果DNS解析状态提示异常，则WAF可能没有正确接入。如果您确认已将域名解析到WAF的CNAME地址，并且业务访问也都正常，可以忽略此处的提示。
 
@@ -23,21 +23,21 @@ WAF根据以下条件判断域名的DNS解析状态：
 
 -   当您使用精确域名（不包含“\*”的域名，如example.abc.com）接入WAF时，如果既没有CNAME接入，又没有流量，则会显示以下异常状态：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15598/15404736317972_zh-CN.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15598/15405213857972_zh-CN.jpg)
 
 -   当您使用泛域名（如\*.abc.com）接入WAF时，除了正常的解析状态，只会出现以下一种异常状态：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15598/15404736317973_zh-CN.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15598/15405213857973_zh-CN.jpg)
 
 -   WAF前部署了CDN等代理
 
     假如接入架构为CDN\>WAF，则域名解析在CDN上，这时不会检测到WAF有CNAME接入。通常CDN回源WAF的流量会很低，可能会由于流量太小而引起接入状态异常。所以，如果确认配置没有问题，接入状态显示异常并不一定代表WAF没有正确接入。
 
-    关于CDN结合Web应用防火墙的配置，请参考[CDN结和WAF](../../../../intl.zh-CN/用户指南/接入WAF/CDN结合WAF.md#)。
+    关于CDN结合Web应用防火墙的配置，请参考[CDN结合WAF](../../../../intl.zh-CN/用户指南/接入WAF/CDN结合WAF.md#)。
 
 
 ## 如何手动测试WAF在正常防护网站 {#section_cts_g1l_q2b .section}
 
 1.  访问WAF防护的网址（如www.abc.com），网页可以正常打开。
-2.  在网址的URL后面加/?alert\(xss\)（如www.abc.com/alert\(xss\)），继续访问。这是一个Web攻击的测试请求，如果弹出WAF阻拦该请求的405页面，则说明WAF防护在正常工作。
+2.  在网址的URL后面加/alert\(xss\)（如www.abc.com/alert\(xss\)），继续访问。这是一个Web攻击的测试请求，如果弹出WAF阻拦该请求的405页面，则说明WAF防护在正常工作。
 
