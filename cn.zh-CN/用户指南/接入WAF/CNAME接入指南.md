@@ -4,7 +4,7 @@
 
 接入WAF前后的的流量逻辑如下所示。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15553/15371769057676_zh-CN.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15553/15411313777676_zh-CN.jpg)
 
 ## 接入前准备 {#section_url_xs3_p2b .section}
 
@@ -26,7 +26,7 @@
 
 ## 接入流程 {#section_xrl_xs3_p2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15553/15371769057677_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15553/15411313777677_zh-CN.png)
 
 以下接入步骤适用于仅使用WAF对网站域名进行防护的场景，即该网站域名不接入CDN、高防IP等其它代理型服务。关于需要将WAF与其它代理型服务结合部署的场景，请查看以下内容：
 
@@ -37,7 +37,7 @@
 
 登录[云盾Web应用防火墙控制台](https://yundun.console.aliyun.com/?p=waf)，前往**管理** \> **网站配置**页面，单击**添加网站**，根据提示结合业务情况进行配置。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15553/15371769057681_zh-CN.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15553/15411313777681_zh-CN.jpg)
 
 配置说明如下：
 
@@ -70,21 +70,21 @@
 
         **说明：** 所下载的证书一般包括\*.pem（证书文件）和\*.key（私钥文件）两个文件。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15553/15371769057683_zh-CN.jpg)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15553/15411313777683_zh-CN.jpg)
 
     -   如果您的证书是通过其他渠道购买的，您可以联系相应的证书供应商，获得证书文件或寻求技术支持。
-2.  登录[云盾Web应用防火墙控制台](https://yundun.console.aliyun.com/?p=waf)，前往**管理** \> **网站配置**页面，选择网站域名，单击![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15553/15371769058676_zh-CN.png)（上传证书按钮）上传证书。选择**手动上传**，并分别上传证书文件和私钥文件中的指定内容，具体说明请参考[添加网站配置](../../../../cn.zh-CN/快速入门/步骤1：添加网站配置.md#)中的**上传HTTPS证书和私钥**部分。
+2.  登录[云盾Web应用防火墙控制台](https://yundun.console.aliyun.com/?p=waf)，前往**管理** \> **网站配置**页面，选择网站域名，单击![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15553/15411313778676_zh-CN.png)（上传证书按钮）上传证书。选择**手动上传**，并分别上传证书文件和私钥文件中的指定内容，具体说明请参考[添加网站配置](../../../../cn.zh-CN/快速入门/步骤1：添加网站配置.md#)中的**上传HTTPS证书和私钥**部分。
 
     **说明：** 如果您的证书是通过阿里云云盾证书服务购买的，您可以选择**选择已有证书**，直接选择您已购买的证书即可。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15553/15371769057684_zh-CN.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15553/15411313777684_zh-CN.jpg)
 
 
 **查看域名接入状态**
 
 配置网站后，您可以登录[云盾Web应用防火墙控制台](https://yundun.console.aliyun.com/?p=waf)，在**管理** \> **网站配置**页面查看已添加的网站域名的**DNS解析状态**，确认其是否正确接入WAF。如果DNS解析状态为异常，且收到**未检测到CNAME接入**、**无流量**的异常提示，则说明您所配置的网站域名未正确接入WAF。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15553/15371769057685_zh-CN.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15553/15411313777685_zh-CN.jpg)
 
 -   DNS解析状态自动检测该网站域名的解析是否指向CNAME，并检测最近数分钟内该域名的访问流量是否经过Web应用防火墙。
 -   DNS解析状态的CNAME接入检测每一小时执行一次，流量检测每数分钟执行一次。如果您确认已将网站域名解析正确接入WAF的CNAME，可在一小时后再次查看DNS解析状态。
@@ -116,7 +116,7 @@
 
 **说明：** 单击**复制CName**可将该CNAME地址复制到剪贴板。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15553/15371769067686_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15553/15411313777686_zh-CN.png)
 
 以下操作步骤以阿里云云解析DNS为例进行描述。如果网站使用的是其它域名提供商，参考以下操作步骤并结合实际域名管理控制台变更您的网站域名的DNS解析记录。
 
