@@ -6,14 +6,14 @@ WAF**企业版**和**旗舰版**支持CC自定义防护功能。您可以在控�
 
 对于按量付费的WAF实例，您必须登录[云盾Web应用防火墙控制台](https://yundun.console.aliyun.com/?p=waf)，前往**设置** \> **功能与规格**页面，启用**缓解CC攻击**的**高级防护**，才能使用自定义CC防护功能。具体操作，请参考[功能与规格配置](cn.zh-CN/用户指南/功能与规格配置（按量付费模式）.md#)。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15564/15371769977763_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15564/15432176517763_zh-CN.png)
 
-执行以下操作前，请确保已将网站接入WAF进行防护。具体操作请参考[CNAME接入指南](cn.zh-CN/用户指南/接入WAF/CNAME接入指南.md#)。
+执行以下操作前，请确保已将网站接入WAF进行防护。具体操作请参考[CNAME接入指南](cn.zh-CN/用户指南/接入WAF/WAF接入指南.md#)。
 
 1.  登录[云盾Web应用防火墙控制台](https://yundun.console.aliyun.com/?p=waf)。 
 2.  前往**管理** \> **网站配置**页面，并在页面上方选择WAF所在地区（中国大陆、海外地区）。 
 3.  选择要操作的域名，单击其操作列下的**防护配置**。 
-4.  在**CC安全防护**下，选择**正常**防护模式，并单击**前去配置**配置自定义规则。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15564/15371769977764_zh-CN.png)
+4.  在**CC安全防护**下，选择**正常**防护模式，并单击**前去配置**配置自定义规则。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15564/15432176517764_zh-CN.png)
 
  
 5.  单击**新增规则**，添加一条规则。参数描述如下： 
@@ -28,10 +28,10 @@ WAF**企业版**和**旗舰版**支持CC自定义防护功能。您可以在控�
     |**检测时长**|指定统计访问次数的周期。需要和单一IP访问次数配合。|
     |**单一IP访问次数**|指定在检测时长内，允许单个源IP访问被防护地址的次数。|
     |**阻断类型**|指定触发条件后的操作（封禁、人机识别），以及请求被阻断后阻断动作的时长。    -   **封禁**：触发条件后，直接断开连接。
-    -   **人机识别**：触发条件后，用重定向的方式去访问客户端（WAF返回302状态），通过验证后才放行。例如，单个IP在20s内访问超过5次则进行人机识别判断，在10分钟内该IP的访问请求都需要通过人机识别，如果被识别为非法将会被WAF拦截，只有被识别为合法才会放行。
+    -   **人机识别**：触发条件后，用重定向的方式去访问客户端（WAF返回200状态码），通过验证后才放行。例如，单个IP在20s内访问超过5次则进行人机识别判断，在10分钟内该IP的访问请求都需要通过人机识别，如果被识别为非法将会被WAF拦截，只有被识别为合法才会放行。
 |
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15564/15371769977765_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15564/15432176517765_zh-CN.png)
 
     以图中的配置为例，其含义为：单个IP访问目标地址（精确匹配）时，一旦在10秒内访问超过20次，就直接阻断该IP的访问，阻断操作持续600分钟。
 
@@ -40,5 +40,5 @@ WAF**企业版**和**旗舰版**支持CC自定义防护功能。您可以在控�
 
 规则添加成功后即时生效，您可以选择**编辑**或者**删除**规则。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15564/15371769977766_zh-CN.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15564/15432176517766_zh-CN.jpg)
 
