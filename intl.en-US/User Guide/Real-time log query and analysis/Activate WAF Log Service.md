@@ -29,8 +29,6 @@ The WAF real-time log query and analysis service has the following benefits:
 5.  Return to the WAF console and choose **App Market** \> **App Management**, and then click **Authorize** in Real-time Log Query and Analysis Service.
 6.  Click **Agree** to authorize WAF to write log entries to your exclusive logstore.
 
-    ![](images/21284_en-US.png)
-
     WAF Log Service is then enabled and authorized.
 
 7.  Return to the WAF console and choose **App Market** \> **App Management** and then, click **Configure** in Real-time Log Query and Analysis Service.
