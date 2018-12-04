@@ -12,7 +12,7 @@ The Log Reports page is integrated with the Dashboard page of Log Service. On th
 
     The page that appears is integrated with the Dashboard page of Log Service. A **filter** is automatically added to display all log entries that are recorded for the domain you selected. In this example, the filter is `matched_host: www.aliyun.com`.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41421/154389449221411_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41421/154389506621411_en-US.png)
 
 
 After you enable the WAF log collection feature, Log Service creates three dashboards by default: the Operation Center, Access Center, and Security Center.
@@ -25,7 +25,7 @@ After you enable the WAF log collection feature, Log Service creates three dashb
 |Access Center|Displays basic access details such as the number of page views \(PV\) and the number of unique visitors \(UV\), the access trend, the distribution of visitors, and other information.|
 |Security Center|Displays basic index information of attacks, attack types, attack trend, attacker distribution, and other information.|
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41421/154389449221419_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41421/154389506621419_en-US.png)
 
 **Note:** Dashboards displays various reports using the layout that is predefined in WAF Log Service. The following table describes the graph types supported for reports. For more information about the graph types supported by Log Service, see [Graph description](../../../../reseller.en-US/User Guide/Query and visualization/Analysis graph/Graph description.md#).
 
@@ -49,17 +49,17 @@ The data in all graphs on the dashboard page are generated based on different ti
 
 -   After you set a time range, the time range is applied to all reports.
 -   If you set a time range, a temporary view is generated on the current page. When you view reports next time, the default time range is used.
--   To change the time range for a single report in the dashboard, click ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41421/154389449221432_en-US.png) in the upper-right corner.
+-   To change the time range for a single report in the dashboard, click ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41421/154389506621432_en-US.png) in the upper-right corner.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41421/154389449221420_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41421/154389506621420_en-US.png)
 
 ## Data drilldown {#section_vlj_ttv_qfb .section}
 
 The drilldown operation is enabled for some graphs on the dashboard page, which provides you a quick access to the detailed data.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41421/154389449221475_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41421/154389506621475_en-US.png)
 
-The drilldown operation is available for graphs marked with a ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41421/154389449221474_en-US.png) icon in the upper-right corner. You can click a number with an underline to view the detailed underlying data. For example, to quickly find the domains that are attacked and the number of attacks, click the number in the **Attacked Hosts** graph of the **Security Center** report.
+The drilldown operation is available for graphs marked with a ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41421/154389506621474_en-US.png) icon in the upper-right corner. You can click a number with an underline to view the detailed underlying data. For example, to quickly find the domains that are attacked and the number of attacks, click the number in the **Attacked Hosts** graph of the **Security Center** report.
 
 **Note:** Alternatively, switch to the **Raw Log** tab to find the relevant log entries.
 
@@ -123,17 +123,17 @@ The drilldown operation is available for graphs marked with a ![](http://static-
     |Attacker UV|Single value|1 hour \(relative\)|Displays the number of unique clients that are attack sources.|40|
     |Attack type distribution|Flow chart|Today \(time frame\)|Displays the distribution of attacks by attack type.|-|
     |Intercepted Attack|Single value|1 hour \(relative\)|Displays the number of attacks that are intercepted by WAF.|100|
-    |CC Attack Interception|Single value|1 hour \(relative\)|Displays the number of CC attacks that are intercepted by WAF.|10|
+    |HTTP flood attack Interception|Single value|1 hour \(relative\)|Displays the number of HTTP flood attacks that are intercepted by WAF.|10|
     |Web Attack Interception|Single value|1 hour \(relative\)|Displays the number of Web application attacks that are intercepted by WAF.|80|
     |Access Control Event|Single value|1 hour \(relative\)|Displays the number of requests that are intercepted by the HTTP ACL policies of WAF.|10|
-    |CC Attack \(World\)|World map|1 hour \(relative\)|Displays the distribution of CC attackers by country.|-|
-    |CC Attack \(China\)|China map|1 hour \(relative\)|Displays the distribution of CC attackers by province in China.|-|
+    |HTTP flood attack \(World\)|World map|1 hour \(relative\)|Displays the distribution of HTTP flood attackers by country.|-|
+    |HTTP flood attack \(China\)|China map|1 hour \(relative\)|Displays the distribution of HTTP flood attackers by province in China.|-|
     |Web Attack \(World\)|World map|1 Hour \(Relative\)|Displays the distribution of Web application attacks by country.|-|
     |Web Attack \(China\)|Map of China|1 hour \(relative\)|Displays the distribution of Web application attacks by province in China.|-|
     |Access Control Attack \(World\)|World Map|1 hour \(relative\)|Displays the distribution by country of requests that are intercepted by the HTTP ACL policies of WAF.|-|
     |Access Control Attack \(China\)|Map of China|1 Hour \(Relative\)|Displays the distribution by province in China of requests that are intercepted by the HTTP ACL policy of WAF.|-|
     |Attacked Hosts|Tree map|1 hour \(relative\)|Displays the websites that are attacked most.|-|
-    |CC Attack Strategy Distribution|Pie chart|1 hour \(relative\)|Displays the distribution of security policies being activated for CC attacks.|-|
+    |HTTP flood attack Strategy Distribution|Pie chart|1 hour \(relative\)|Displays the distribution of security policies being activated for HTTP flood attacks.|-|
     |Web Attack Type Distribution|Pie chart|1 hour \(relative\)|Displays the distribution of Web attacks by attack type.|-|
     |Top Attackers|Table|1 hour \(relative\)|Displays IP addresses, provinces, and network providers of the first 100 clients that launch the recent attacks, and displays the number of attacks and the amount of traffic generated by these attacks.|-|
     |Attacker Referer|Table|1 Hour \(Relative\)|Displays the information in referers of attack requests, which includes referer URLs, referer hosts, and the number of attacks.|-|
