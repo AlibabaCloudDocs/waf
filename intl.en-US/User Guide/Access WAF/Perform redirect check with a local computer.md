@@ -13,15 +13,15 @@ Modify the local hosts file \([What is the hosts file?](https://en.wikipedia.org
 
     1.  Open the cmd command-line tool in Windows, and run the following command to obtain the WAF IP address: `ping xxxxxxxxxwmqvixt8vedyneaepztpuqu.alicloudwaf.com`. You can view the WAF IP address in the response.
 
-        ![](images/7577_en-US.jpg)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15548/15438899537577_en-US.jpg)
 
     2.  Add the following line to hosts. The IP address is the WAF IP address obtained in the previous step, and the domain name is the protected domain name.
 
-        ![](images/7578_en-US.jpg)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15548/15438899537578_en-US.jpg)
 
 3.  Save changes to hosts. Ping the protected domain name in cmd.
 
-    ![](images/7579_en-US.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15548/15438899537579_en-US.jpg)
 
     If WAF works properly, the IP address you see will be the WAF IP address configured in the previous step. If the origin IP address is displayed, try refreshing the local DNS cache. In Windows, you can run `ipconfig`/`flushdns` in cmd.
 
@@ -30,7 +30,5 @@ Modify the local hosts file \([What is the hosts file?](https://en.wikipedia.org
 
 Once the changes in the hosts file are effective, you can access the protected domain name from your local computer. If WAF is configured correctly, the website is expected to be normally accessed.
 
-In addition, you can verify the protection effect by constructing some simple attack commands. For example, you can add `/? alert(xss)` to the URL to construct a Web attack request for testing. As you try to access `www.aliyundemo.cn/? alert(xss)`, WAF is expected to return the following error page.
-
-![](images/7580_en-US.jpg)
+In addition, you can verify the protection effect by constructing some simple attack commands. For example, you can add `/? alert(xss)` to the URL to construct a Web attack request for testing. As you try to access `www.aliyundemo.cn/? alert(xss)`,
 
