@@ -25,7 +25,7 @@ WAF keeps detailed log entries for your domains, including access requests and a
 -   captcha: Verifying using a slider captcha
 
 |challenge|
-|block\_action|The type of the WAF protection that is activated, which includes:-   tmd: Protection against CC attacks
+|block\_action|The type of the WAF protection that is activated, which includes:-   tmd: Protection against HTTP flood attacks
 -   waf: Protection against Web application attacks
 -   acl: HTTP ACL policy
 -   geo: Blocking regions
@@ -34,7 +34,7 @@ WAF keeps detailed log entries for your domains, including access requests and a
 
 |tmd|
 |body\_bytes\_sent|The size of the body in the access request, which is measured in Bytes.|2|
-|cc\_action|Protection strategies against CC attacks, such as none, challenge, pass, close, captcha, wait, login, and n.|close|
+|cc\_action|Protection strategies against HTTP flood attacks, such as none, challenge, pass, close, captcha, wait, login, and n.|close|
 |cc\_blocks|Indicates whether the request is blocked by the CC protection.-   If the value is 1, the request is blocked.
 -   If the value is not 1, the request is passed.
 
