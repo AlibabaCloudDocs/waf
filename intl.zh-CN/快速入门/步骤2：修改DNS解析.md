@@ -17,7 +17,7 @@
     2.  在页面上方选择地域：**中国大陆**、**海外地区**。
     3.  在**管理** \> **网站配置**页面，选择已添加的网站配置，将鼠标放置在域名上，即可出现**复制CName**按钮。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15438226647565_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15440744277565_zh-CN.png)
 
     4.  单击**复制CName**，将该CNAME复制到剪贴板中。
 
@@ -30,7 +30,7 @@
 1.  登录[云解析DNS控制台](https://dns.console.aliyun.com/#/dns/domainList)。
 2.  选择要操作的域名，单击其操作列下的**解析设置**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15438226647588_zh-CN.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15440744277588_zh-CN.jpg)
 
 3.  选择要操作的**主机记录**，单击其操作列下的**修改**。
 
@@ -39,7 +39,7 @@
     -   **www**： 用于精确匹配www开头的域名，如`www.abc.com`。
     -   **@**： 用于匹配根域名`abc.com`。
     -   **\***： 用于匹配泛域名，包括根域名和所有子域名，如`blog.abc.com`、`www.abc.com`、`abc.com`等。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15438226647589_zh-CN.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15440744277589_zh-CN.jpg)
 
 4.  在修改记录对话框中，完成以下操作：
 
@@ -53,10 +53,8 @@
 
         **说明：** 删除其他解析记录并新增CNAME解析记录的过程应尽可能在短时间内完成。如果删除A记录后长时间没有添加CNAME解析记录，可能导致域名无法正常解析。
 
-        关于DNS解析记录互斥的详细说明，请参考[解析记录冲突的规则](https://www.alibabacloud.com/help/doc-detail/58456.htm)。
-
     -   如果必须保留MX记录（邮件服务器记录），您可以参考[WAF接入指南](../../../../intl.zh-CN/用户指南/接入WAF/WAF接入指南.md#)，使用A记录解析的方式将域名解析到WAF IP。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15438226647590_zh-CN.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15440744277590_zh-CN.jpg)
 
 5.  单击**确定**，完成DNS配置，等待DNS解析记录生效。
 6.  （可选）验证DNS配置。您可以Ping网站域名或使用[DNS Check](https://mxtoolbox.com/dnscheck.aspx)等工具验证DNS解析是否生效。
@@ -69,10 +67,10 @@
         -   **正常**：表示网站已成功接入WAF，网站访问流量由WAF监控。
         -   **异常**：如果DNS解析状态为异常，且收到**未检测到CNAME接入**、**无流量**、**检测失败**等提示，说明网站未正确接入WAF。
 
-            如果您确认已将网站域名解析到WAF CNAME地址，可在一小时后再次查看DNS解析状态或者参考[DNS解析状态异常](../../../../intl.zh-CN/常见问题/DNS解析状态异常说明.md#)排查异常原因。
+            如果您确认已将网站域名解析到WAF CNAME地址，可在一小时后再次查看DNS解析状态或者参考[DNS解析状态异常](../../../../intl.zh-CN/常见问题/DNS解析状态异常.md#)排查异常原因。
 
             **说明：** 该提示仅说明网站是否正确接入WAF，不代表您的网站访问异常。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15553/15411313787685_zh-CN.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15440744277591_zh-CN.jpg)
 
 
