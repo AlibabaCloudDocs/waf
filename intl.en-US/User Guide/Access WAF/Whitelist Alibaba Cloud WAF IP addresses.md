@@ -15,11 +15,11 @@ You can view the IP addresses of Alibaba Cloud WAF in the Alibaba Cloud WAF cons
 3.  Go to the **Management** \> **Website Configuration** page.
 4.  Click **Alibaba Cloud WAF IP range** to view and copy all WAF IP addresses.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15547/15438899167574_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15547/15440745527574_en-US.png)
 
     You can see the following result:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15547/15438899167575_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15547/15440745527575_en-US.png)
 
 5.  Open the security software in origin server, and add the copied WAF IP addresses to the IP whitelist.
 
@@ -29,11 +29,11 @@ You can view the IP addresses of Alibaba Cloud WAF in the Alibaba Cloud WAF cons
 
 Alibaba Cloud WAF acts as a reverse proxy between your client and origin server. In origin server’s eyes, all web requests originate from Alibaba Cloud WAF IP addresses and the real client IP addresses are written into the XFF \(X-Forwarded-For\) field of HTTP header.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15547/15438899167576_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15547/15440745527576_en-US.png)
 
 **Why must I whitelist Alibaba Cloud WAF IP addresses?**
 
 From origin server’s perspective, web requests from the Alibaba Cloud WAF IP addresses are more concentrated and in a very high frequency. The security software in origin server may determine that Alibaba Cloud WAF IP addresses are starting attacks, and trigger a blocking action against them. If Alibaba Cloud WAF IP addresses are blocked, the real client cannot get a response. Therefore, you must whitelist Alibaba Cloud WAF IP addresses once your website is deployed with WAF. Otherwise, normal web access may be affected, which leads to web pages cannot be opened or respond slowly.
 
-We recommend that after deploying Alibaba Cloud WAF, you only allow web requests originate from WAF and block other requests to guarantee normal web business access and avoid direct-to-origin attacks. If the origin server IP address is disclosed, an attacker can bypass WAF to directly attack your origin server. For more information, see **Protect your origin server**.
+We recommend that after deploying Alibaba Cloud WAF, you only allow web requests originate from WAF and block other requests to guarantee normal web business access and avoid direct-to-origin attacks. If the origin server IP address is disclosed, an attacker can bypass WAF to directly attack your origin server. For more information, see [Protect your origin server](../../../../intl.en-US/Best Practices/Protect your origin server.md#).
 

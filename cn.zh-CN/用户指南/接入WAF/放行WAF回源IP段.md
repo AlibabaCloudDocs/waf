@@ -15,11 +15,11 @@ WAF控制台提供了最新的回源IP段列表，您可以参照以下步骤进
 3.  前往**管理** \> **网站配置**页面。
 4.  单击页面上方的**Web应用防火墙回源IP网段列表**，直接查看和复制所有WAF回源IP段。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15547/15438229217574_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15547/15440745497574_zh-CN.png)
 
     您会看到如下结果：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15547/15438229217575_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15547/15440745497575_zh-CN.png)
 
 5.  打开源站服务器上的安全软件，将复制的IP段添加到白名单。
 
@@ -27,13 +27,13 @@ WAF控制台提供了最新的回源IP段列表，您可以参照以下步骤进
 
 **什么是回源IP?**
 
-回源IP是WAF用来代理客户端请求服务器时用的源IP，在服务器看来，接入WAF后所有源IP都会变成WAF的回源IP，而真实的客户端地址会被加在[HTTP头部的XFF字段](../../../../cn.zh-CN/最佳实践/获取访问者真实IP.md#)中。
+回源IP是WAF用来代理客户端请求服务器时用的源IP，在服务器看来，接入WAF后所有源IP都会变成WAF的回源IP，而真实的客户端地址会被加在HTTP头部的XFF字段中。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15547/15438229217576_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15547/15440745497576_zh-CN.png)
 
 **为何要放行回源IP段？**
 
 由于来源的IP变得更加集中，频率会变得更快，服务器上的防火墙或安全软件很容易认为这些IP在发起攻击，从而将其拉黑。一旦拉黑，WAF的请求将无法得到源站的正常响应。因此，在接入WAF后，您应确保源站已将WAF的全部回源IP放行（加入白名单），不然可能会出现网站打不开或打开极其缓慢等情况。
 
-建议在部署WAF后，您在源站上只允许来自WAF的访问请求，这样既可保证访问不受影响，又能防止源站IP暴露后被黑客直接攻击。更多信息，请参考[源站保护](../../../../cn.zh-CN/最佳实践/源站保护.md#)。
+建议在部署WAF后，您在源站上只允许来自WAF的访问请求，这样既可保证访问不受影响，又能防止源站IP暴露后被黑客直接攻击。更多信息，请参考[源站保护](../../../../intl.zh-CN/最佳实践/源站保护.md#)。
 
