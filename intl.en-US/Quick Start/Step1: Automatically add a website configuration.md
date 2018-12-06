@@ -2,13 +2,13 @@
 
 After activating Alibaba Cloud WAF, you must create a website configuration in the WAF console to associate your website with the WAF instance. In this step, you add a website configuration by using the DNS configurations in Alibaba Cloud DNS.
 
-When you create a website configuration, WAF accesses your A record configurations in [Alibaba Cloud DNS](https://dns.console.aliyun.com) and lists all website domains and their origin server IP addresses. You can simply select the domains for which you want to enable WAF protection and let WAF do the rest of configurations. In this way, WAF also helps update the DNS settings \(**Step 2**\) and complete traffic redirection.
+When you are creating a website configuration, WAF accesses your A record configurations in [Alibaba Cloud DNS](https://dns.console.aliyun.com) and lists all website domains and their origin server IP addresses. You can simply select the domains for which you want to enable WAF protection and let WAF do the rest of configurations. In this way, WAF also helps update the DNS settings \([Step 2](intl.en-US/Quick Start/Step 2: Update the DNS settings.md#)\) and complete traffic redirection.
 
 ## Prerequisites {#section_adb_swb_5fb .section}
 
 -   The domain to be protected is hosted at Alibaba Cloud DNS. Besides, its DNS settings must include at least one valid A record.
 
-    If you do not use Alibaba Cloud DNS, see **Website configuration** to manually add the website configuration.
+    If you do not use Alibaba Cloud DNS, see [Website configuration](../../../../intl.en-US/User Guide/Access WAF/Website configuration.md#) to manually add the website configuration.
 
 -   \(For Mainland China region\) The website is granted an ICP license by the Ministry of Industry and Information Technology \(MIIT\).
 -   \(For HTTPS-enabled websites\) You have access to a valid SSL certificate and private key of the website, or you have uploaded the certificate to Alibaba Cloud SSL Certificate Service.
@@ -19,9 +19,9 @@ When you create a website configuration, WAF accesses your A record configuratio
 2.  On the top of the page, select the region: **Mainland China**, **International**.
 3.  On the **Management** \> **Website Configuration** page, click **Add Domain**.
 
-    WAF automatically lists all domain names that have an A record configured in Alibaba Cloud DNS of the current Alibaba Cloud account. If no A record has been created in Alibaba Cloud DNS, the Please choose your domain page does not appear. In this case, we recommend that you manually create a website configuration. For more information, see **Website configuration**.
+    WAF automatically lists all domain names that have an A record configured in Alibaba Cloud DNS of the current Alibaba Cloud account. If no A record has been created in Alibaba Cloud DNS, the Please choose your domain page does not appear. In this case, we recommend that you manually create a website configuration. For more information, see [Website configuration](../../../../intl.en-US/User Guide/Access WAF/Website configuration.md#).
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15439748657562_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15440743787562_en-US.png)
 
 4.  On the Please choose your domain page, check the **Domain Name** for which you want to enable WAF protection and the **Protocol Type**.
 5.  \(Optional\) If the protocol type includes **HTTPS**, you must verify certificate first to add the configuration.
@@ -36,21 +36,21 @@ When you create a website configuration, WAF accesses your A record configuratio
 
             For more information, see [Update HTTPS certificate](../../../../intl.en-US/User Guide/Access WAF/Update HTTPS certificates.md#).
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15439748657567_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15440743787567_en-US.png)
 
     3.  Click **Verify** to upload.
 6.  Click **Add domain protection now**.
 
     After adding the website configuration, WAF automatically updates the DNS settings \(CNAME record\) of the domain name to redirect web requests to WAF for inspection. The whole process takes about 10 to 15 minutes.
 
-    **Note:** If you are prompted to manually change the DNS settings, you must perform **Step 2: Update DNS settings** to redirect web traffic to WAF.
+    **Note:** If you are prompted to manually change the DNS settings, you must perform [Step 2: Update DNS settings](intl.en-US/Quick Start/Step 2: Update the DNS settings.md#) to redirect web traffic to WAF.
 
 7.  On the **Management** \> **Website Configuration** page, view the newly added domain name and its **DNS Resolution Status**.
     -   Normal indicates that Alibaba Cloud WAF has been successfully deployed for the website. Go on to perform [Step 3: Configure WAF protection policies](intl.en-US/Quick Start/Step 3: Configure WAF protection polices.md#).
     -   **Exception** indicates that you must wait for a while or check the DNS settings at your DNS service provider.
 
-        If the DNS settings are incorrect, perform **Step 2: Update DNS settings**. For more information, see **DNS resolution status exception**.
+        If the DNS settings are incorrect, perform [Step 2: Update DNS settings](intl.en-US/Quick Start/Step 2: Update the DNS settings.md#). For more information, see [DNS resolution status exception](../../../../intl.en-US/FAQ/DNS resolution status exception.md#).
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15439748667570_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15440743787570_en-US.png)
 
 
