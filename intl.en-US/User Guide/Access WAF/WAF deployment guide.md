@@ -6,28 +6,28 @@ You can use a [CNAME record](#) or [A record](#) to redirect web traffic. We rec
 
 The following content applies to deploying Alibaba Cloud WAF exclusively for the website, that is, the website does not use CDN, DDoS protection, and other proxy services. For other scenarios, see the following documents:
 
--   **Deploy Alibaba Cloud WAF and CDN together**: explains how to deploy CDN and WAF together for your website.
--   **Deploy Alibaba Cloud WAF and DDoS protection together**: explains how to deploy DDoS protection and WAF together for your website.
+-   [Deploy Alibaba Cloud WAF and CDN together](intl.en-US/User Guide/Access WAF/Deploy WAF and CDN together.md#): explains how to deploy CDN and WAF together for your website.
+-   [Deploy Alibaba Cloud WAF and DDoS protection together](intl.en-US/User Guide/Access WAF/Deploy WAF and Anti-DDoS Pro together.md#): explains how to deploy DDoS protection and WAF together for your website.
 
 ## \(Recommended\) Edit CNAME record to deploy WAF {#cname .section}
 
 **Prerequisites**
 
--   Website configuration is successfully created. For more information, see **Website configuration**.
+-   Website configuration is successfully created. For more information, see [Website configuration](intl.en-US/User Guide/Access WAF/Website configuration.md#).
 -   Obtain the WAF CNAME address.
     1.  Log on to the [Alibaba Cloud WAF console](https://yundun.console.aliyun.com/?p=waf).
     2.  On the top of the page, select the region: **Mainland China**, **International**.
     3.  On the **Management** \> **Website Configuration** page, move the pointer onto the domain name you want to operate. You will see the **Copy CName** button.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15438899267565_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15440745357565_en-US.png)
 
     4.  Click **Copy CName** to copy the WAF CNAME address to the clipboard.
 
-        **Note:** If you want to update A record to redirect web traffic to WAF, you can ping this CNAME address to obtain the corresponding WAF IP address. For more information, see **WAF deployment guide**. In general, the WAF IP address seldom changes.
+        **Note:** If you want to update A record to redirect web traffic to WAF, you can ping this CNAME address to obtain the corresponding WAF IP address. For more information, see [WAF deployment guide](../intl.en-US/User Guide/Access WAF/WAF deployment guide.md#). In general, the WAF IP address seldom changes.
 
 -   You have permissions to update the domain’s DNS settings in its DNS host’s system.
--   \(Optional\) Whitelist Alibaba Cloud WAF IP addresses. If your origin web server has enabled non-Alibaba Cloud security software \(such as Fortinet FortiGate\), you must whitelist WAF IP addresses in the software to prevent legitimate traffic returned by WAF from being blocked. For more information, see **Whitelist Alibaba Cloud WAF IP addresses**.
--   \(Optional\) Perform redirect check with a local computer. Perform a redirect check to guarantee that all configuration is correct, before you change the DNS settings. This helps avoid business interruption due to incorrect configuration. For more information, see **Perform redirect check with a local computer**.
+-   \(Optional\) Whitelist Alibaba Cloud WAF IP addresses. If your origin web server has enabled non-Alibaba Cloud security software \(such as Fortinet FortiGate\), you must whitelist WAF IP addresses in the software to prevent legitimate traffic returned by WAF from being blocked. For more information, see [Whitelist Alibaba Cloud WAF IP addresses](intl.en-US/User Guide/Access WAF/Whitelist Alibaba Cloud WAF IP addresses.md#).
+-   \(Optional\) Perform redirect check with a local computer. Perform a redirect check to guarantee that all configuration is correct, before you change the DNS settings. This helps avoid business interruption due to incorrect configuration. For more information, see [Perform redirect check with a local computer](intl.en-US/User Guide/Access WAF/Perform redirect check with a local computer.md#).
 
 **Procedure**
 
@@ -36,7 +36,7 @@ The following steps explain how to update the **CNAME** record in **Alibaba Clou
 1.  Log on to the [Alibaba Cloud DNS console](https://dns.console.aliyun.com/#/dns/domainList).
 2.  Select the domain to be operated and click **Configure**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15438899267588_en-US.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15440745357588_en-US.jpg)
 
 3.  Select the **Host** \(hostname\) to be operated and click **Edit**.
 
@@ -45,7 +45,7 @@ The following steps explain how to update the **CNAME** record in **Alibaba Clou
     -   **www**: matches the subdomain starting with www, in this case `www.abc.com`.
     -   **@**: matches the root domain, in this case `abc.com`.
     -   **\***： matches a wildcard domain name that includes both the root domain and all subdomains, in this case `blog.abc.com`, `www.abc.com`, `abc.com`, and so on.
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15438899267589_en-US.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15440745357589_en-US.jpg)
 
 4.  In the Edit Record dialog box, do the following:
 
@@ -59,8 +59,8 @@ The following steps explain how to update the **CNAME** record in **Alibaba Clou
 
         **Note:** The whole process of deleting and adding must be performed in a short time. Otherwise, your domain becomes inaccessible.
 
-    -   If the MX record is being used, you can use an A record to redirect web traffic to WAF. For more information, see **WAF deployment guide**.
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15438899267590_en-US.jpg)
+    -   If the MX record is being used, you can use an A record to redirect web traffic to WAF. For more information, see [WAF deployment guide](../intl.en-US/User Guide/Access WAF/WAF deployment guide.md#).
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15440745357590_en-US.jpg)
 
 5.  Click **OK** to complete the DNS settings and wait for the DNS change to take effect.
 6.  \(Optional\) Verify the DNS settings. You can ping the domain or use [DNS Check](https://mxtoolbox.com/dnscheck.aspx) to validate whether the DNS change is effective.
@@ -73,16 +73,16 @@ The following steps explain how to update the **CNAME** record in **Alibaba Clou
         -   **Normal**: Alibaba Cloud WAF has been successfully deployed and the web traffic is being monitored by WAF.
         -   **Exception**: With the exception messages of **NO CNAME resolution detected**, **No traffic**, or **DNS check failed**, the DNS settings might be incorrect.
 
-            In this case, check the DNS settings. If you confirm that the DNS settings are correct, wait for an hour and refresh the DNS resolution status. For more information, see **DNS resolution status exception**.
+            In this case, check the DNS settings. If you confirm that the DNS settings are correct, wait for an hour and refresh the DNS resolution status. For more information, see [DNS resolution status exception](../intl.en-US/FAQ/DNS resolution status exception.md#).
 
             **Note:** The exception here indicates that WAF is not properly deployed. Your website access is not affected.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15553/15411313787685_zh-CN.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15440745357591_en-US.jpg)
 
 
 **Protect the origin**
 
-When the origin server IP address is exposed, attackers may exploit it to bypass Alibaba Cloud WAF and start direct-to-origin attacks. To prevent such attacks, we recommend that you configure the ECS security group or SLB whitelist to block all web requests that do not come from Alibaba Cloud WAF’s IP addresses. For more information, see **Protect the origin**.
+When the origin server IP address is exposed, attackers may exploit it to bypass Alibaba Cloud WAF and start direct-to-origin attacks. To prevent such attacks, we recommend that you configure the ECS security group or SLB whitelist to block all web requests that do not come from Alibaba Cloud WAF’s IP addresses. For more information, see [Protect your origin server](../intl.en-US/Best Practices/Protect your origin server.md#).
 
 ## Edit A record to deploy WAF {#a-record .section}
 
