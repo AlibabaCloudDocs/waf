@@ -13,22 +13,19 @@ In general, the following files are required:
 
 1.  Log on to the [Alibaba Cloud WAF console](https://yundun.console.aliyun.com/?p=waf). 
 2.  On the top of the page, select the region: **Mainland China**, **International**. 
-3.  On the **Management** \> **Website Configuration** page, locate the domain name to be operated, and click the Update Certificate button \(![](images/31794_en-US.png)\) next to the **HTTPS** **Protocol Status**.![](images/31793_en-US.png)
+3.  On the **Management** \> **Website Configuration** page, locate the domain name to be operated, and click the Update Certificate button \(![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/63378/154407458031794_en-US.png)\) next to the **HTTPS** **Protocol Status**.![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/63378/154407458031793_en-US.png)
 
  
 4.  In the Update Certificate dialog box, select an **Upload method**. 
     -   If the HTTPS certificate to be uploaded is hosted in [Alibaba Cloud SSL Certificate Service](https://yundunnext.console.aliyun.com/?p=casnext), you can check **Select existing certificate** and select it for upload.
 
-        ![](images/31795_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/63378/154407458031795_en-US.png)
 
     -   Manual upload. Click **Manual upload**, enter a **Certificate name**, and paste the text context of the certificate file and private key file respectively to the **Certificate file** and **Private key file** boxes.
 
         **Note:** 
 
         -   For certificates in general formats, such as PEM, CER, and CRT, you can open the certificate file directly by using a text editor tool to copy the text content. For certificates in other formats, such as PFX and P7B, convert the certificate file to the PEM format, and then copy the text content from the converted certificate file.
-
-            For more information about the conversion between different certificate formats, see [Convert HTTPS certificates to the PEM format](https://www.alibabacloud.com/help/faq-detail/40526.htm).
-
         -   If the HTTPS certificate has multiple certificate files, such as a certificate chain file, merge the text contents from the multiple certificate files and paste them into the **Certificate file** box.
         **Example of the text content of a certificate file**:
 
@@ -52,11 +49,11 @@ In general, the following files are required:
         -----END RSA PRIVATE KEY-----
         ```
 
-        ![](images/31796_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/63378/154407458031796_en-US.png)
 
 5.  Click **Save** to complete the procedure. 
 
-The HTTPS protocol status is displayed as **Normal**.
+The HTTPS protocol status displays as **Normal**.
 
-![](images/31803_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/63378/154407458031803_en-US.png)
 
