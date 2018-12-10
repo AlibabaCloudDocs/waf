@@ -33,10 +33,6 @@ Follow these steps to access WAF SDK:
 
     -   [iOS integration manual](intl.en-US/User Guide/SDK solution/iOS integration manual.md#)
     -   [Android integration manual](intl.en-US/User Guide/SDK solution/Android integration manual.md#)
-5.  联系WAF技术支持人员测试集成好的App。 您可以扫描文末的二维码，通过钉钉联系WAF技术支持人员。
+5.  Contact WAF support to help test your integrated App.
 6.  Release a new version of your App to enable the SDK protection.
-
-如果您对方案/接入有任何问题，请扫描下方的钉钉二维码联系我们（进群时请说明咨询SDK方案）。
-
-![](images/7821_en-US.png)
 
