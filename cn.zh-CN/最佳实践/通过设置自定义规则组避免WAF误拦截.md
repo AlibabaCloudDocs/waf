@@ -14,27 +14,29 @@
 4.  选择**Web应用攻击**类型，选择发生误拦截的网站域名，选择**攻击详情**展示类型。
 5.  通过设置查询时间范围或访问IP的方式，找到相关的拦截记录日志。在拦截日志中，记录了拦截该请求的WAF防护规则ID。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78570/154449836934042_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78570/154451536334042_zh-CN.png)
 
 
 ## 为网站设置自定义规则组 {#section_dd5_j4t_bgb .section}
 
+**说明：** 自定义规则组功能仅支持企业版以上的包年包月WAF实例。
+
 1.  在**管理** \> **网站配置**页面，找到该网站的域名配置记录，单击**防护设置**，查看当前该网站采用的防护规则策略。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78570/154449836934043_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78570/154451536334043_zh-CN.png)
 
 2.  定位到**设置** \> **自定义规则组**页面，找到该网站域名当前采用的规则组，单击**复制**。
 3.  填写规则组名称和规则描述，单击**确认**，创建自定义规则组。
 4.  选择已创建的自定义规则组，单击**编辑**。
-5.  在**编辑规则组**对话框的右侧的规则列表中，通过规则ID找到触发误拦截的规则ID，选中该规则并单击![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78570/154449836934044_zh-CN.png)将该规则从规则组中移除，单击**确认**。
+5.  在**编辑规则组**对话框的右侧的规则列表中，通过规则ID找到触发误拦截的规则ID，选中该规则并单击![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78570/154451536434044_zh-CN.png)将该规则从规则组中移除，单击**确认**。
 
     **说明：** 左侧规则列表列出的是WAF所有的Web应用防护规则，右侧则是该自定义规则组中包含的规则。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78570/154449836934045_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78570/154451536434045_zh-CN.png)
 
 6.  在**自定义规则组**页面中，选择该自定义规则组，单击**应用到网站**并选择出现误拦截的网站域名。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78570/154449836934046_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78570/154451536434046_zh-CN.png)
 
 
 自定义规则组应用完成后，当您再次向该网站域名发送同样的请求，将不再被WAF拦截。
