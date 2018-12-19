@@ -8,7 +8,7 @@ Download and unzip the WAF SDK package. In the sdk-Android folder, you can see t
 
 **Note:** The aar file version numbers may be different.
 
-![](images/7849_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15580/15452066657849_en-US.png)
 
 The description of these files is as follows \(xxx is the version number\):
 
@@ -24,7 +24,7 @@ The description of these files is as follows \(xxx is the version number\):
 
 Follow these steps to configure the project:
 
-![](images/7850_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15580/15452066667850_en-US.png)
 
 1.  Import the aar files of the SDK to Android Studio. Copy all aar files from the SDK to the project’s libs directory. If the libs directory does not exist, create one.
 2.  Open this Module’s build.gradle file, and add the following configuration to it \(as shown in ③ and ④\).
@@ -56,10 +56,9 @@ Follow these steps to configure the project:
 
     **Note:** If the drawable directory does not exist by default, create one.
 
-    ![](images/7851_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15580/15452066667851_en-US.png)
 
 4.  Filter out ABI to remove redundant SO architectures. Currently, WAF SDK only provides SO in the armeabi architecture. Therefore, you must filter the exported ABIs. Otherwise, it may cause an App crash. The procedure is as follows:
-
     1.  Go to the Android project’s lib directory, and delete all CPU architecture folders apart from the armeabi folder, which include armeabi-v7a, x86, x86\_64, arm64-v8a, mips, and mips64. Make sure you keep only the armeabi, armeabi-v7a, and arm64-v8a folders.
     2.  Add a filter rule in the project’s build.gradle configuration file. Architectures specified by abiFilters are included in the APK. The sample code is as follows:
 
@@ -81,10 +80,6 @@ Follow these steps to configure the project:
         ```
 
         **Note:** Keeping only the SO in the armeabi architecture can remarkably reduce the App size without affecting the App’s compatibility.
-
-    下图显示了手机淘宝App的ABI情况。 可以看出，手机淘宝App只有armeabi架构的目录。
-
-    ![](images/7852_en-US.png)
 
 5.  Add App permission.
     -   For an Android Studio project that uses the aar method integration, additional permission configuration is not necessary, because the relevant permissions are already specified in the aar files.
@@ -219,7 +214,7 @@ Common errors are listed as follows:
 
 In Android Studio, if you specify shrinkResources to be True, then resource files that are not referenced in the code are optimized away during project compilation.
 
-![](images/7855_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15580/15452066667855_en-US.png)
 
 As a result, the two jpg files provided in the SDK cannot work normally. In the following figure, the file size of yw\_1222\_0335.jpg is 0 KB, which means the image is optimized away.
 
@@ -235,8 +230,6 @@ Create a raw folder under the project’s res directory, and then create a keep.
 tools:keep="@drawable/yw_1222_0335.jpg,@drawable/yw_1222_0335_mwua.jpg" />
 ```
 
-![](images/7857_en-US.png)
-
 After that, re-compile the project apk.
 
 ## Test and validation {#section_ivx_lnq_p2b .section}
@@ -244,16 +237,7 @@ After that, re-compile the project apk.
 Follow these steps to check if your App is correctly integrated with WAF SDK:
 
 1.  Change the suffix of the compressed apk file to zip, and decompress this zip file.
-
-    ![](images/7858_en-US.png)
-
 2.  Locate the project’s lib directory, and make sure that it contains only the armeabi folder. If you find folders for other architectures, delete them. For more information, see [Procedure step 4](https://help.aliyun.com/document_detail/62889.html?spm=a2c4g.11186623.6.591.FDq2Jl#%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E9%85%8D%E7%BD%AE).
-
-    ![](images/7859_en-US.png)
-
 3.  Locate the project’s res/drawable directory, and make sure that the yw\_1222\_0335.jpg and yw\_1222\_0335\_mwua.jpg files are there, and the file sizes are not 0.
-
-    ![](images/7860_en-US.png)
-
 4.  Print the log, and make sure that the correct signature information is generated after the avmpSign interface is called. If the signature information cannot be generated, check the log for error codes.
 
