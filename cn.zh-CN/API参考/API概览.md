@@ -36,6 +36,15 @@
 |ModifyAclRule|修改指定精准访问控制规则。|
 |DescribeAclRules|获取精准访问控制规则列表。|
 
+## 网站防篡改设置 {#section_cxx_t4n_2gb .section}
+
+|API|描述|
+|:--|:-|
+|CreateProtectionModuleRule|添加网站防篡改规则。|
+|DescribeProtectionModuleRules|获取网站防篡改规则列表。|
+|ModifyProtectionRuleCacheStatus|更新网站防篡改规则所防护的页面缓存。|
+|ModifyProtectionRuleStatus|启用或禁用指定网站防篡改规则。|
+
 ## 异步任务信息 {#section_hvl_sxj_p2b .section}
 
 |API|描述|
