@@ -16,17 +16,17 @@ The detailed pricing for each log storage specification for WAF Log Service is s
 |Monthly subscription|Yearly subscription|Monthly subscription|Yearly subscription|
 |------------------|----------------|---------------------|----------------------------------|-----------------------------------|
 |--------------------|-------------------|--------------------|-------------------|
-|180 days|3 TB|Average daily QPS is up to 80.|4,50|5,400|225|2,700|
-|5 TB|Average daily QPS is up to 120.|750|9,000|375|4,500|
-|10 TB|Average daily QPS is up to 260.|1,500|18,000|750|9,000|
-|20 TB|Average daily QPS is up to 500.|3,000|36,000|1,500|18,000|
-|50 TB|Average daily QPS is up to 1,200.|7,500|90,000|3,000|36,000|
-|100 TB|Average daily QPS is up to 2,600.|15,000|180,000|7,500|90,000|
-|360 days|5 TB|Average daily QPS is up to 60.|750|9,000|375|4,500|
-|10 TB|Average daily QPS is up to 120.|1,500|18,000|750|9,000|
-|20 TB|Average daily QPS is up to 260.|3,000|36,000|1,500|18,000|
-|50 TB|Average daily QPS is up to 600.|7,500|90,000|3,000|36,000|
-|100 TB|Average daily QPS is up to 1,200.|15,000|180,000|7,500|90,000|
+|180 days|3 TB|Average daily QPS is up to 80.|USD 450|USD 5,400|USD 225|USD 2,700|
+|5 TB|Average daily QPS is up to 120.|USD 750|USD 9,000|USD 375|USD 4,500|
+|10 TB|Average daily QPS is up to 260.|USD 1,500|USD 18,000|USD 750|USD 9,000|
+|20 TB|Average daily QPS is up to 500.|USD 3,000|USD 36,000|USD 1,500|USD 18,000|
+|50 TB|Average daily QPS is up to 1,200.|USD 7,500|USD 90,000|USD 3,000|USD 36,000|
+|100 TB|Average daily QPS is up to 2,600.|USD 15,000|USD 180,000|USD 7,500|USD 90,000|
+|360 days|5 TB|Average daily QPS is up to 60.|USD 750|USD 9,000|USD 375|USD 4,500|
+|10 TB|Average daily QPS is up to 120.|USD 1,500|USD 18,000|USD 750|USD 9,000|
+|20 TB|Average daily QPS is up to 260.|USD 3,000|USD 36,000|USD 1,500|USD 18,000|
+|50 TB|Average daily QPS is up to 600.|USD 7,500|USD 90,000|USD 3,000|USD 36,000|
+|100 TB|Average daily QPS is up to 1,200.|USD 15,000|USD 180,000|USD 7,500|USD 90,000|
 
 **Upgrade storage capacity**
 
