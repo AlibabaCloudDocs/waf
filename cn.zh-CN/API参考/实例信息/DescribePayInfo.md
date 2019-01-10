@@ -1,110 +1,140 @@
-# DescribePayInfo {#reference_tmg_l5c_p2b .reference}
+# DescribePayInfo {#doc_api_908124 .reference}
 
-获取指定地域的WAF实例当前信息。
+调用DescribePayInfo接口获取指定地域的WAF实例当前信息。
 
-**说明：** 请求该API接口时，无需指定InstanceId公共请求参数。
+**说明：** 请求该API接口时，无需指定**InstanceId**公共请求参数。
 
-## 请求参数 {#section_ybx_zfv_42b .section}
+## 调试 {#apiExplorer .section}
 
-|名称|类型|是否必须|描述|
-|:-|:-|:---|:-|
-|Action|String|是| 要执行的操作。 取值：
+单击[这里](https://api.aliyun.com/#product=waf-openapi&api=DescribePayInfo)在OpenAPI Explorer中进行可视化调试，并生成SDK代码示例。
 
- DescribePayInfo
+## 请求参数 {#parameters .section}
+
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|InstanceSource|String|否|cn|实例来源。默认值：**waf-cloud**。
 
  |
-|Region|String|是|地域ID，取值：-   cn：表示中国大陆地区。
--   cn-hongkong：表示海外地区。
+|Region|String|否|cn|地域ID，取值：
 
-|
+ -   **cn**：表示中国大陆地区。
+-   **cn-hongkong**：表示海外地区。
 
-## 返回参数 {#section_ugs_f1g_cz .section}
+ |
 
-|名称|类型|描述|
-|:-|:-|:-|
-|RequestId|String|请求ID。|
-|Status|Integer|WAF实例当前状态：-   0：表示已到期。
--   1：表示正常。
+## 返回参数 {#resultMapping .section}
 
-**说明：** 该参数仅对包年包月WAF实例有意义。
+|名称|类型|示例值|描述|
+|--|--|---|--|
+|RequestId|String|276D7566-31C9-4192-9DD1-51B10DAC29D2|请求ID。
 
-|
-|Trial|Integer|是否试用版WAF实例：-   0：表示否。
--   1：表示是。
+ |
+|Result| | |返回结果。
 
-**说明：** 该参数仅对按量计费WAF实例有意义。
+ |
+|└EndDate|Long|1512921600|实例到期时间。
 
-|
-|InstanceId|String|实例ID。|
-|InDebt|Integer|当前实例是否欠费：-   0：表示已欠费。
--   1：表示正常。
+ **说明：** 对于按量付费实例，表示试用版到期时间。
 
-**说明：** 该参数按量计费WAF实例有意义。
+ |
+|└InDebt|Integer|1|当前实例是否欠费：
 
-|
-|Region|String|所属地域：-   cn：表示中国大陆地区。
--   cn-hongkong：表示海外地区。
+ -   **0**：表示已欠费。
+-   **1**：表示正常。
 
-|
-|RemainDay|Integer|试用版WAF实例剩余可用天数。**说明：** 该参数仅对按量计费WAF实例有意义。
+ **说明：** 该参数按量计费WAF实例有意义。
 
-|
-|PayType|Integer|WAF实例类型：-   0：表示未购买或未开通。
--   1：表示包年包月实例。
--   2：表示按量付费实例。
+ |
+|└InstanceId|String|waf\_elasticity-cn-0xldbqtm005|实例ID。
 
-|
-|EndDate|Long|实例到期时间。**说明：** 对于按量付费实例，表示试用版到期时间。
+ |
+|└PayType|Integer|2|WAF实例类型：
 
-|
+ -   **0**：表示未购买或未开通。
+-   **1**：表示包年包月实例。
+-   **2**：表示按量付费实例。
 
-## 示例 {#section_ix5_h1g_cz .section}
+ |
+|└Region|String|cn|所属地域：
 
-**请求示例**
+ -   **cn**：表示中国大陆地区。
+-   **cn-hongkong**：表示海外地区。
 
-``` {#createVPCpub}
+ |
+|└RemainDay|Integer|0|试用版WAF实例剩余可用天数。
+
+ **说明：** 该参数仅对按量计费WAF实例有意义。
+
+ |
+|└Status|Integer|0|WAF实例当前状态：
+
+ -   **0**：表示已到期。
+-   **1**：表示正常。
+
+ **说明：** 该参数仅对包年包月WAF实例有意义。
+
+ |
+|└Trial|Integer|0|是否试用版WAF实例：
+
+ -   **0**：表示否。
+-   **1**：表示是。
+
+ **说明：** 该参数仅对按量计费WAF实例有意义。
+
+ |
+
+## 示例 {#demo .section}
+
+请求示例
+
+``` {#request_demo}
+
 https://wafopenapi.cn-hangzhou.aliyuncs.com/?Action=DescribePayInfo
 &Region=cn
 &公共请求参数
+
 ```
 
-**返回示例**
+正常返回示例
 
--   XML格式
+`XML` 格式
 
-    ```
-    <?xml version="1.0" encoding="UTF-8"?>
-    <DescribePayInfoResponse>
-        <RequestId>56B40D30-4960-4F19-B7D5-2B1F0EE6CB70</RequestId>
-        <Result>
-            <Status>1</Status>
-            <Trial>0</Trial>
-            <InstanceId>waf_elasticity-cn-0xldbqtm005</InstanceId>
-            <InDebt>1</InDebt>
-            <Region>cn</Region>
-            <RemainDay>0</RemainDay>
-            <PayType>2</PayType>
-            <EndDate>1512921600</EndDate>
-        </Result>
-    </DescribePayInfoResponse>
-    ```
+``` {#xml_return_success_demo}
+<DescribePayInfoResponse>
+  <RequestId>56B40D30-4960-4F19-B7D5-2B1F0EE6CB70</RequestId>
+  <Result>
+    <Status>1</Status>
+    <Trial>0</Trial>
+    <InstanceId>waf_elasticity-cn-0xldbqtm005</InstanceId>
+    <InDebt>1</InDebt>
+    <Region>cn</Region>
+    <RemainDay>0</RemainDay>
+    <PayType>2</PayType>
+    <EndDate>1512921600</EndDate>
+  </Result>
+</DescribePayInfoResponse>
 
--   JSON格式
+```
 
-    ```
-    {
-        "RequestId":"276D7566-31C9-4192-9DD1-51B10DAC29D2",
-        "Result":{
-            "Status":1,
-            "Trial":0,
-            "InstanceId":"waf_elasticity-cn-0xldbqtm005",
-            "InDebt":1,
-            "Region":"cn",
-            "RemainDay":0,
-            "PayType":2,
-            "EndDate":1512921600
-        }
-    }
-    ```
+`JSON` 格式
 
+``` {#json_return_success_demo}
+{
+	"Result":{
+		"Status":1,
+		"EndDate":1512921600,
+		"Region":"cn",
+		"InDebt":1,
+		"Trial":0,
+		"InstanceId":"waf_elasticity-cn-0xldbqtm005",
+		"RemainDay":0,
+		"PayType":2
+	},
+	"RequestId":"276D7566-31C9-4192-9DD1-51B10DAC29D2"
+}
+```
+
+## 错误码 { .section}
+
+[查看本产品错误码](https://error-center.aliyun.com/status/product/waf-openapi)
 
