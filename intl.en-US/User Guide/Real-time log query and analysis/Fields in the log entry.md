@@ -55,13 +55,11 @@ WAF keeps detailed log entries for your domains, including access requests and a
 |real\_client\_ip|The real IP address of the client. If the system cannot get the real IP address, the value is `-`.|1.2.3.4|
 |region|The information of the region where the WAF instance is located.|cn|
 |remote\_addr|The IP address of the client that sends the access request.|1.2.3.4|
-|remote\_port|The port of the client that sends the access request.|23713|
 |request\_length|The size of the request, measured in Bytes.|123|
 |request\_method|The HTTP request method used in the access request.|GET|
 |request\_path|The relative path of the request. The query string is not included.|/news/search.php|
 |request\_time\_msec|The request time, which is measured in microseconds.|44|
 |request\_traceid|The unique ID of the access request that is recorded by WAF.|7837b11715410386943437009ea1f0|
-|server\_name|The name of the found host. If no host is found, the value is `default`.|api.abc.com|
 |server\_protocol|The response protocol and the version number of the origin server.|HTTP/1.1|
 |status|The status of the HTTP response to the client returned by WAF.|200|
 |time|The time when the access request occurs.|2018-05-02T16:03:59+08:00|
