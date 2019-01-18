@@ -18,11 +18,11 @@ Hosts文件中指定了域名和IP地址的对应关系。如果一个域名在h
 
     1.  登录[云盾Web应用防火墙控制台](https://yundun.console.aliyun.com/?p=waf)，在**管理** \> **网站配置**页面找到已分配的CNAME域名。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15597/15331810937967_zh-CN.jpg)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15597/15477825647967_zh-CN.jpg)
 
     2.  使用Ping命令得到该域名的IP地址。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15597/15331810937968_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15597/15477825647968_zh-CN.png)
 
 2.  定位到C:\\Windows\\System32\\drivers\\etc\\目录。
 3.  使用记事本打开hosts文件，进行编辑。把域名指向WAF IP地址。
