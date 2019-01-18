@@ -4,7 +4,7 @@
 
 当Web应用防火墙（WAF）遭受到大流量的DDoS攻击时，如果流量太大超过了阿里云免费提供的DDoS防护能力，就会进入黑洞。此时，您会在Web应用防火墙管理控制台的消息区域收到提示信息。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15606/15331811848652_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15606/15477937108652_zh-CN.png)
 
 当 WAF IP被黑洞后，所有到WAF的流量（不论是正常访问还是攻击）都会被丢弃。**这意味着您当前WAF防护下的所有域名在黑洞期间都无法访问**。
 
@@ -14,7 +14,7 @@
 
 ## WAF 被黑洞了怎么办 {#section_f1r_bcl_q2b .section}
 
-默认情况下，每个WAF实例分配给您一个独享的IP，一旦这个WAF IP被黑洞，所有WAF实例上配置的域名都无法访问。**为了避免这种“连坐”情况的发生，您可以为重要的域名单独购买额外的[独享IP](../../../../intl.zh-CN/产品定价/开通 WAF/独享IP包说明.md#)，以防该重要域名受其他被DDoS攻击的域名牵连。**
+默认情况下，每个WAF实例分配给您一个独享的IP，一旦这个WAF IP被黑洞，所有WAF实例上配置的域名都无法访问。**为了避免这种“连坐”情况的发生，您可以为重要的域名单独购买额外的[独享IP](../../../../../intl.zh-CN/产品定价/开通WAF/独享IP包.md#)，以防该重要域名受其他被DDoS攻击的域名牵连。**
 
 **说明：** 解决大流量 DDoS 攻击的根本办法是使用[高防IP服务](https://www.alibabacloud.com/product/ddos-pro)对您的域名进行防护。**如果您已采用高防IP结合WAF的部署架构，但WAF仍然被黑洞，请提交工单联系技术支持团队协助处理。**
 
