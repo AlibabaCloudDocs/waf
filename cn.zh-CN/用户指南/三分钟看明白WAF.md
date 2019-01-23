@@ -7,7 +7,7 @@ WAF是阿里云云盾提供的Web应用防火墙，帮助您监控网站上的HT
 -   您需要开通WAF并将网站接入WAF，使网站的访问流量全部流转到WAF。下图显示了开通和接入WAF的简要流程，具体操作参见下文说明。
 -   WAF将按照您配置的过滤规则和启用的Web防护功能，检测并过滤收到的访问请求，只有满足规则条件的合法请求才会经WAF返回到您的服务器（回源）。具体内容参见下文[如何选用WAF防护功能](#section_f5b_s5l_l2b)和[如何用好WAF](#section_o5b_s5l_l2b)。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15550/15371768807111_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15550/15482238977111_zh-CN.png)
 
 ## 如何开通WAF {#section_xtb_s5l_l2b .section}
 
@@ -16,17 +16,17 @@ WAF是阿里云云盾提供的Web应用防火墙，帮助您监控网站上的HT
 -   按量付费按当日被防护网站的访问QPS峰值和当日选用的WAF防护功能，生成后付费账单；每日结算前一日费用。
 -   包年包月按月/年计费，由您选购适用的WAF套餐，生成账单后直接付费；您可在选购的时长内享用套餐内的防护服务。
 
-    **说明：** 使用包年包月方式选购WAF套餐时，我们需要了解您的正常业务流量，以便区分DoS攻击等异常流量。每种WAF套餐支持不同的业务带宽，如果您的实际业务正常流量大于套餐内的带宽限制，您需要[购买额外带宽](../../../../cn.zh-CN/产品定价/开通 WAF/额外带宽扩展说明.md#)。
+    **说明：** 使用包年包月方式选购WAF套餐时，我们需要了解您的正常业务流量，以便区分DoS攻击等异常流量。每种WAF套餐支持不同的业务带宽，如果您的实际业务正常流量大于套餐内的带宽限制，您需要[购买额外带宽](../../../../../cn.zh-CN/产品定价/开通WAF/额外带宽扩展说明.md#)。
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15550/15371768817112_zh-CN.png) 关于WAF计费方式的详细描述，请参考[计费方式](../../../../cn.zh-CN/产品定价/计费方式.md#)。
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15550/15482238977112_zh-CN.png) 关于WAF计费方式的详细描述，请参考[计费方式](../../../../../cn.zh-CN/产品定价/计费方式.md#)。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15550/15371768817113_zh-CN.png) 关于开通WAF的具体操作，请参考[购买Web应用防火墙](../../../../cn.zh-CN/产品定价/开通 WAF/购买Web应用防火墙.md#)。
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15550/15482238977113_zh-CN.png) 关于开通WAF的具体操作，请参考[购买Web应用防火墙](../../../../../cn.zh-CN/产品定价/开通WAF/购买Web应用防火墙.md#)。
 
 开通WAF后，您将获得一个WAF实例（对应一个实例IP）；您可以使用这个WAF实例接入最多10个网站，为其开启防护，这10个网站只能使用1个一级域名。
 
--   如果您希望防护具有不同一级域名的网站，您需要[购买域名扩展包](../../../../cn.zh-CN/产品定价/开通 WAF/扩展域名包说明.md#)。
--   如果您有很重要的域名需要单独防护，而非使用同一个WAF IP防护所有域名，您可以[购买独享IP包](../../../../cn.zh-CN/产品定价/开通 WAF/独享IP包说明.md#)。
+-   如果您希望防护具有不同一级域名的网站，您需要[购买域名扩展包](../../../../../cn.zh-CN/产品定价/开通WAF/扩展域名包.md#)。
+-   如果您有很重要的域名需要单独防护，而非使用同一个WAF IP防护所有域名，您可以[购买独享IP包](../../../../../cn.zh-CN/产品定价/开通WAF/独享IP包.md#)。
 
 ## 如何接入WAF {#section_c5b_s5l_l2b .section}
 
@@ -47,7 +47,7 @@ WAF是阿里云云盾提供的Web应用防火墙，帮助您监控网站上的HT
 
 如果您的域名使用[阿里云云解析DNS](https://wanwang.aliyun.com/domain/dns/) 进行域名解析，我们支持一键式接入WAF；否则，您需要手动接入。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15550/15371768817113_zh-CN.png) 关于接入WAF的具体操作，请参考[添加网站配置](../../../../cn.zh-CN/快速入门/步骤1：添加网站配置.md#)。
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15550/15482238977113_zh-CN.png) 关于接入WAF的具体操作，请参考[添加网站配置](../../../../../cn.zh-CN/快速入门/步骤1：自动添加网站配置.md#)。
 
 ## 如何选用WAF防护功能 {#section_f5b_s5l_l2b .section}
 
@@ -82,13 +82,13 @@ WAF分析客户端使用HTTP/HTTPS协议发送的GET/POST请求，并应用访�
 
 启用WAF后，您的源站服务器收到的所有请求都来自WAF实例，服务器IP对客户端来说是隐藏的。
 
--   如果您希望获取一个访问请求的真实客户端IP，请参考[获取访问者真实IP](../../../../cn.zh-CN/最佳实践/获取访问者真实IP.md#)。
--   如果您的源站服务器IP已公开或不慎泄露，这样的话，攻击者可能越过域名解析，也即越过WAF，直接对您的源站发动攻击。要想有效防护这种情形，您需要[配置源站保护](../../../../cn.zh-CN/最佳实践/源站保护.md#)。
+-   如果您希望获取一个访问请求的真实客户端IP，请参考[获取访问者真实IP](../../../../../cn.zh-CN/最佳实践/获取访问者真实IP.md#)。
+-   如果您的源站服务器IP已公开或不慎泄露，这样的话，攻击者可能越过域名解析，也即越过WAF，直接对您的源站发动攻击。要想有效防护这种情形，您需要[配置源站保护](../../../../../cn.zh-CN/最佳实践/源站保护.md#)。
 -   如果您同时使用了阿里云[DDoS高防IP服务](https://www.aliyun.com/product/ddos)或者[CDN服务](https://www.aliyun.com/product/cdn)，您可能需要以下帮助：
 
     **说明：** 这种情况下，您在接入WAF时，应当勾选**WAF前是否有七层代理**下的**是**。
 
-    -   [高防IP结合WAF](cn.zh-CN/用户指南/接入WAF/高防IP结合WAF.md#)
-    -   [CDN结合WAF](cn.zh-CN/用户指南/接入WAF/CDN结合WAF.md#)
+    -   [高防IP结合WAF](cn.zh-CN/用户指南/接入WAF/同时部署WAF和DDoS高防.md#)
+    -   [CDN结合WAF](cn.zh-CN/用户指南/接入WAF/同时部署WAF和CDN.md#)
 -   如果您希望对您的原生App进行安全防护，解决CC攻击、机器滥刷等问题，您可以参考WAF的[SDK方案](cn.zh-CN/用户指南/SDK方案/SDK方案简介.md#)。
 
