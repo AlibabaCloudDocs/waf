@@ -18,7 +18,7 @@
 |源站服务器的操作系统（Linux、Windows）和所使用的Web服务中间件（Apache、Nginx、IIS等）|判断源站是否存在访问控制策略，避免源站误拦截WAF回源IP转发的流量。|
 |域名使用协议|判断所使用的通信协议WAF是否支持。|
 |业务端口|判断源站业务端口是否在[WAF支持的端口](../../../../../cn.zh-CN/用户指南/接入WAF/非标端口支持.md#)范围内。|
-|业务是否需要支持IPv6协议|WAF虚拟独享集群目前已支持IPv6协议。如果您的业务需要支持IPv6协议，请通过工单或WAF安全专家服务钉钉群联系阿里云技术支持人员。|
+|业务是否需要支持IPv6协议|WAF旗舰版实例已支持IPv6协议。如果您的业务需要支持IPv6协议，请通过工单或WAF安全专家服务钉钉群联系阿里云技术支持人员。|
 |（针对HTTPS业务）业务是否使用双向认证|WAF虚拟独享集群目前已支持双向认证。如果您的HTTPS业务采用双向认证，请通过工单或WAF安全专家服务钉钉群联系阿里云技术支持人员。|
 |（针对HTTPS业务）客户端是否支持SNI标准|对于支持HTTPS协议的域名，接入WAF后，客户端和服务端都需要支持SNI标准。|
 |（针对HTTPS业务）是否存在会话保持机制|如果业务部署了阿里云负载均衡（SLB）实例，建议开启Cookie会话保持功能。|
@@ -74,7 +74,7 @@
 
         一般情况下，建议选用**防护**模式，并选用**中等规则**防护策略。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/154882129137895_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/154898983437895_zh-CN.png)
 
         **说明：** 业务接入WAF防护一段时间后（一般为2-3天），如果出现网站业务的正常请求被WAF误拦截的情况，您可以通过[设置自定义规则组](cn.zh-CN/最佳实践/通过设置自定义规则组提升Web防护效果.md#)的方式提升Web防护效果。
 
@@ -84,7 +84,7 @@
 
         **说明：** 由于CC防护的攻击紧急模式可能产生一定量的误拦截，如果您的业务为App业务或Web API服务，不建议您开启攻击紧急模式。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/154882129137896_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/154898983537896_zh-CN.png)
 
         **说明：** 业务接入WAF防护一段时间后（一般为2-3天），可以通过分析业务日志数据（例如，访问URL、单个IP访问QPS情况等）评估单个IP的请求QPS峰值，提前通过自定义CC攻击防护配置限速策略，避免遭受攻击后的被动响应和临时策略配置。
 
@@ -207,7 +207,7 @@
 
 购买开通云盾Web应用防火墙后，您可以在管理控制台中通过钉钉扫描二维码直接联系阿里云安全服务专家。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/154882129138115_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/154898983538115_zh-CN.png)
 
 安全专家将针对您的业务场景提供WAF接入配置指导、安全攻击分析和防御相关安全服务，基于业务实际情况帮助您更好地使用WAF对业务进行安全防护，保障您业务的网络应用安全。
 
