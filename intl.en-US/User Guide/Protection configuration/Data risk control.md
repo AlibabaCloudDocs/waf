@@ -19,7 +19,7 @@ Data risk control is applicable to \(but not limited to\) the following scenario
 
 Follow these steps to enable and configure data risk control:
 
-**Note:** Make sure you have implemented Alibaba Cloud WAF for your website before doing this configuration. For more information, see [Implement Alibaba Cloud WAF](EN-US_TP_15553.md#).
+**Note:** Make sure you have implemented Alibaba Cloud WAF for your website before doing this configuration. For more information, see [Implement Alibaba Cloud WAF](reseller.en-US/User Guide/Access WAF/WAF deployment guide.md#).
 
 1.  Log on to the [Alibaba Cloud WAF console](https://partners-intl.console.aliyun.com/#/waf).
 2.  Go to the **Management** \> **Website Configuration** page and select the region of your WAF instance \(Mainland China or International\).
@@ -34,17 +34,17 @@ Follow these steps to enable and configure data risk control:
     -   **Protection**: For suspicious requests, ask the client to finish the slider verification to continue.
     **Note:** The warning mode is used by default. Data risk control does not block any request, but injects JavaScript code into webpages to analyze behaviors on the client.
 
-    ![](images/7077_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15568/15504702937077_en-US.png)
 
 6.  Click **Settings** to add protection requests or specify the webpages to insert JavaScript.
     -   Add a protection request
         1.  On the **Protection Request** tab page, click **Add Protection Request**.
 
-            ![](images/38854_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15568/155047029338854_en-US.png)
 
         2.  In the Add Protection Request dialog box, enter the exact **Protection Request URL** to be protected.
 
-            ![](images/7079_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15568/15504702937079_en-US.png)
 
             **What is the Protection Request URL**
 
@@ -80,7 +80,7 @@ Follow these steps to enable and configure data risk control:
 
         1.  On the Insert JavaScript into Webpage tab page, click **Insert JavaScript into Specific Webpage**.
 
-            ![](images/38852_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15568/155047029338852_en-US.png)
 
         2.  Click **Add Webpage**.
 
@@ -88,7 +88,7 @@ Follow these steps to enable and configure data risk control:
 
         3.  In the Add URL dialog box, enter a specific URI \(starting with “/?\) under the domain name to protect, and click **Confirm**.
 
-            ![](images/38853_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15568/155047029338853_en-US.png)
 
             Data risk control only inserts the JavaScript into the specified paths.
 
@@ -116,22 +116,22 @@ Data risk control is enabled for the entire domain name \(`www.abc.com`\) during
 
 ## Data risk control logs {#logs .section}
 
-You can use the [Logs](EN-US_TP_15575.md#) feature of Alibaba Cloud WAF to troubleshoot the monitoring and blocking situations of data risk control. For example,
+You can use the [Logs](reseller.en-US/User Guide/Protection reports/Log search.md#) feature of Alibaba Cloud WAF to troubleshoot the monitoring and blocking situations of data risk control. For example,
 
 -   The following figure shows the log that the user passed the validation test of data risk control.
 
-    ![](images/7083_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15568/15504702937083_en-US.png)
 
     When a common user who has passed the data risk control validation requests a URL, the URL has a parameter that begins with ua. This request will be sent to the origin and get a normal response.
 
 -   The following figure shows the blocking logs of data risk control.
 
-    ![](images/7084_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15568/15504702937084_en-US.png)
 
     If the user directly requests this interface, the URL typically does not have a parameter that begins with ua \(or a parameter with forged ua\). The request will be blocked by WAF, and the origin response cannot be seen in the corresponding logs.
 
 
 You can use the **Logs** feature to configure and enable the data risk control interface in **Advanced Search** \> **URL Key Words**. You can use this interface to troubleshoot the blocking logs.
 
-![](images/7085_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15568/15504702947085_en-US.png)
 
