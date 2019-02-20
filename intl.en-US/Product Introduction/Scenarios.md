@@ -1,6 +1,6 @@
 # Scenarios {#concept_bwf_1bn_42b .concept}
 
-Alibaba Cloud WAF is applicable to Web application security protection of various websites, such as finance, e-commerce, o2o Internet+, games, government, insurance, and so on.
+Alibaba Cloud WAF is applicable to Web application security protection of various websites, such as finance, e-commerce, o2o Internet+, games, government, and insurance.
 
 You can use Alibaba Cloud WAF to solve the following problems:
 
