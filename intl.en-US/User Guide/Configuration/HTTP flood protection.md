@@ -6,7 +6,7 @@ HTTP Flood protection helps you block HTTP flood attacks against your website.
 
 HTTP Flood protection helps you block HTTP flood attacks in different modes, including Normal and Emergency. After adding your website to the WAF protection list, you can enable HTTP Flood protection and select an appropriate protection mode for the website. Upon identifying an HTTP flood attack, WAF disconnects from the client to protect your origin.
 
-The Business and Enterprise editions support advanced HTTP flood protection. For more information, see [FAQ](reseller.en-US/User Guide/Configuration/HTTP flood protection.md#).
+The Business and Enterprise editions support advanced HTTP flood protection. For more information, see [FAQ](#).
 
 **Note:** The Emergency mode is applicable to web pages, but not to API/Native Apps, because it may result in a large number of false positives. For API/Native Apps, you can use [Custom HTTP Flood Protection](reseller.en-US/User Guide/Configuration/Custom HTTP flood protection.md#).
 
@@ -21,7 +21,7 @@ Follow these steps to configure HTTP flood protection mode:
 3.  Select the domain to be configured and click **Policies**.
 4.  Enable **HTTP Flood Protection** and select the protection mode:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15563/15508259917762_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15563/15508263647762_en-US.png)
 
     -   **Normal**: Used by default. In Normal mode, WAF only blocks extremely suspicious requests, and the amount of false positives is relatively small. We recommend that you use this mode when there is no apparent traffic exception to your website to avoid false positives.
     -   **Emergency**: When you find many HTTP flood attacks are not blocked in the Normal mode, you can switch to the Emergency mode. In Emergency mode, WAF imposes strict inspection rules against HTTP flood attacks, but it may cause false positives.
