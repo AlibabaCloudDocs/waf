@@ -36,7 +36,7 @@ This topic describes how to activate Alibaba Cloud WAF.
     -   **Three Years**
 |
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15539/155108690339280_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15539/155108833439280_en-US.png)
 
 4.  After you complete the configuration, click **Buy Now** and complete the payment. 
 
