@@ -119,7 +119,7 @@ Alibaba Cloud WAF provides convenient data visualization and statistics features
 
     View the business QPS data and security protection statistics.
 
--   [Security reports](reseller.en-US/User Guide/Attack protection report.md#)
+-   [Security reports](reseller.en-US/User Guide/Reporting/WAF security reports.md#)
 
     Search for attack details and risk warning information on your domain name within 30 days.
 
@@ -146,7 +146,7 @@ The Setting page helps you understand your WAF resources and manage alarm settin
 
 -   [Custom rule groups](reseller.en-US/User Guide/Setting/Custom rule groups.md#)
 
-    A rule group is a combination of the built-in protection rules of Alibaba Cloud WAF that makes up an optional policy for a specific protection function. You can create and apply a custom rule group for a specific protection function of WAF to achieve dedicated protection effect.
+    A rule group is a combination of the inbuilt protection rules of Alibaba Cloud WAF that makes up an optional policy for a specific protection function. You can create and apply a custom rule group for a specific protection function of WAF to achieve dedicated protection effect.
 
 
 ## WAF best practices {#practice .section}
@@ -169,7 +169,7 @@ Apply WAF best practices for better protection effectiveness.
 
 -   [Deploy WAF and CDN together](reseller.en-US/User Guide/Implementation/Deploy WAF and CDN together.md#)
 
-    If you have activated Alibaba CloudCDN and Web Application Firewall, you can refer to this practice for configuration.
+    If you have activated Alibaba Cloud CDN and Web Application Firewall, you can refer to this practice for configuration.
 
 
 ## Technical support {#expert .section}
@@ -180,5 +180,5 @@ Our technical experts are ready to serve you.
 
 **Note:** You can go to the [DingTalk official website](https://www.dingtalk.com/) to download and install DingTalk.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15550/15511450857113_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15550/15511464917113_en-US.png)
 

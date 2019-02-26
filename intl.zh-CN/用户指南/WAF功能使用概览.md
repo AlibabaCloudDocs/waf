@@ -119,7 +119,7 @@ WAF提供方便的数据可视化和统计功能，方便您查看网站业务�
 
     查看图表化的业务访问数据以及安全防护统计信息。
 
--   [安全报表](intl.zh-CN/用户指南/攻击防护报表.md#)
+-   [安全报表](intl.zh-CN/用户指南/防护统计/WAF安全报表.md#)
 
     查询被防护域名在30天内受到的攻击详情和风险预警信息。
 
@@ -180,5 +180,5 @@ WAF提供实例层面的设置功能，帮助您了解和管理WAF实例资源�
 
 **说明：** 请参考[钉钉官网](https://www.dingtalk.com/)，下载并安装钉钉聊天软件。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15550/15511450737113_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15550/15511464807113_zh-CN.png)
 
