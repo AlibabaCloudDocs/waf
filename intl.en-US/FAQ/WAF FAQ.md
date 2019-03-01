@@ -26,7 +26,9 @@
 -   [Does WAF support HTTPS two-way authentication?](#)
 -   [Does WAF support Websocket and HTTP 2.0 or SPDY protocol?](#)
 -   [Which SSL protocols are supported by WAF?](#)
--   [Does the Web application firewall support cross-account CDN + high defense + WAF architecture?](#)
+-   [Can I use different Alibaba Cloud accounts to deploy Alibaba Cloud WAF, CDN, and Anti-DDoS Pro for the same domain name?](#)
+-   [Can I use double slashes \(//\) in the URL matching condition of an HTTP ACL rule?](#)
+-   [Can I deploy Alibaba Cloud WAF for websites that enable NTML \(NT LAN Manager\) authentication?](#section_wgn_qt3_mgb)
 
 ## Can servers outside Alibaba Cloud use WAF? {#section_tfb_j5k_q2b .section}
 
@@ -42,9 +44,9 @@ Shared hosts use shared IP addresses, which means that the origin is used by mul
 
 ## How to prevent HTTP flood attacks? {#section_vfb_j5k_q2b .section}
 
-WAF provides HTTP flood protection in the Normal and Emergency modes. You can switch the protection mode based on the actual situation. For more information, see [Configure the HTTP flood protection mode](../../../../../reseller.en-US/User Guide/Protection configuration/HTTP flood protection.md#).
+WAF provides HTTP flood protection in the Normal and Emergency modes. You can switch the protection mode based on the actual situation. For more information, see [Configure the HTTP flood protection mode](../../../../../reseller.en-US/User Guide/Configuration/HTTP flood protection.md#).
 
-For better protection effects and lower false positives rate, you can use the WAF Business Edition or WAF Enterprise Edition, to customize or request the security professional to customize targeted protection policies for you. For more information, see [Customize HTTP flood protection](../../../../../reseller.en-US/User Guide/Protection configuration/Customize HTTP flood protection.md#).
+For better protection effects and lower false positives rate, you can use the WAF Business Edition or WAF Enterprise Edition, to customize or request the security professional to customize targeted protection policies for you. For more information, see [Customize HTTP flood protection](../../../../../reseller.en-US/User Guide/Configuration/Custom HTTP flood protection.md#).
 
 ## Does WAF support HTTPS? {#section_wfb_j5k_q2b .section}
 
@@ -56,7 +58,7 @@ WAF can handle HTTPS traffic if the SSL certificate and key are uploaded as need
 
 The Business and Enterprise editions of WAF support user-defined non-standard ports. The Business version supports up to 10 non-standard ports and the Enterprise version supports up to 50 non-standard ports.
 
-**Note:** For more information, see [Supported non-standard ports](../../../../../reseller.en-US/User Guide/Access WAF/Supported non-standard ports.md#).
+**Note:** For more information, see [Supported non-standard ports](../../../../../reseller.en-US/User Guide/Implementation/Supported non-standard ports.md#).
 
 ## Does the QPS limitation of WAF aim at the QPS summarized by the whole WAF instances or the QPS upper limit for one configured domain name? {#section_yfb_j5k_q2b .section}
 
@@ -76,11 +78,11 @@ The WAF is fully compatible with CDN and Anti-DDoS services. Fundamental archite
 
 For service combination with Anti-DDoS or CDN, WAF’s CNAME must be entered as the origin for Anti-DDoS or CDN. This action turns the traffic towards WAF after it goes through Anti-DDoS or CDN. WAF then returns the traffic to the origin.
 
-For more information, see [Use Anti-DDoS Pro with WAF](../../../../../reseller.en-US/User Guide/Access WAF/Deploy WAF and Anti-DDoS Pro together.md#) and [Use CDN with WAF](../../../../../reseller.en-US/User Guide/Access WAF/Deploy WAF and CDN together.md#).
+For more information, see [Use Anti-DDoS Pro with WAF](../../../../../reseller.en-US/User Guide/Implementation/Deploy WAF and Anti-DDoS Pro together.md#) and [Use CDN with WAF](../../../../../reseller.en-US/User Guide/Implementation/Deploy WAF and CDN together.md#).
 
 ## Can WAF protect IP addresses of multiple origins under one domain name? {#section_cgb_j5k_q2b .section}
 
-Yes. An individual domain protection can hold up to 20 origin IPs. These IPs are separated with commas. If multiple origins are added to one domain, WAF loads balance requests based on the round-robin method, and performs health checks for all the origins. When WAF fails to get a response from any origin, WAF stops forwarding requests to that origin until it returns to normal.
+Yes. Individual domain protection can hold up to 20 origin IPs. These IPs are separated with commas. If multiple origins are added to one domain, WAF loads balance requests based on the round-robin method, and performs health checks for all the origins. When WAF fails to get a response from any origin, WAF stops forwarding requests to that origin until it returns to normal.
 
 ## How does WAF share load when multiple origins are configured? {#section_dgb_j5k_q2b .section}
 
@@ -162,4 +164,20 @@ WAF is already supporting the WebSocket protocol. However, it currently does not
 ```
 "ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:DES-CBC3-SHA:HIGH:! aNULL:! eNULL:! EXPORT:! DES:! MD5:! PSK:! RC4"
 ```
+
+## Can I use different Alibaba Cloud accounts to deploy Alibaba Cloud WAF, CDN, and Anti-DDoS Pro for the same domain name? {#section_vgb_j5k_q2b .section}
+
+Yes. You can deploy Alibaba Cloud WAF, CDN, and Anti-DDoS Pro for the same domain name by using different Alibaba Cloud accounts. For example, you can use Alibaba Cloud account A to deploy Alibaba Cloud WAF for your domain name and use another Alibaba Cloud account B to deploy Anti-DDoS Pro for the same domain name to protect against Web attacks and DDoS attacks.
+
+## Can I use double slashes \(//\) in the URL matching condition of an HTTP ACL rule? {#section_wgb_j5k_q2b .section}
+
+No. The Alibaba Cloud WAF HTTP ACL rule processing engine compresses double or multiple forward slashes into a single slash for standard purposes. Therefore, URL matching conditions with double slashes cannot be correctly matched.
+
+We recommend that you replace the double slash in the URL matching condition with a single slash \(/\). For example, use `/api/sms/request` instead of `//api/sms/request` to let WAF inspect web requests that contain this URI.
+
+## Can I deploy Alibaba Cloud WAF for websites that enable NTML \(NT LAN Manager\) authentication? {#section_wgn_qt3_mgb .section}
+
+No. We recommend that you do not deploy Alibaba Cloud WAF for websites that support NTML authentication. Since the valid web request forwarded by WAF cannot pass the NTML authentication of the origin server, the client encounters repeated authentication requests.
+
+We recommend that you use other authentication methods for your website.
 
