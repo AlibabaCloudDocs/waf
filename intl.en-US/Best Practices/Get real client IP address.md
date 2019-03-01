@@ -87,9 +87,45 @@ You can get the visitor’s real IP address through the [F5XForwardedFor](https:
 
 ## Apache {#section_dtm_vnc_p2b .section}
 
-Follow these steps to obtain the visitor’s real IP address in Apache.
+**Windows system**
 
-1.  Run the following code to install the third-party module [mod\_rpaf](http://stderr.net/apache/rpaf/) for Apache.
+The Apache 2.4 or higher versions have the remoteip\_module file \(mod\_remoteip.so\) in the installation package. You can use this file to get the real client IP address.
+
+1.  Under Apache’s configuration file folder conf/extra/, create the httpd-remoteip.conf file.
+
+    **Note:** Using remoteip.conf instead of httpd.conf to load the related configuration helps avoid misoperation.
+
+2.  In the httpd-remoteip.conf file, add the following code.
+
+    ```
+    # load mod_remoteip.so
+    LoadModule remoteip_module modules/mod_remoteip.so
+    # congifure RemoteIPHeader
+    RemoteIPHeader X-Forwarded-For
+    # configure WAF back-to-source IP addresses
+    RemoteIPInternalProxy 112.124.159.0/24 118.178.15.0/24 120.27.173.0/24 203.107.20.0/24 203.107.21.0/24 203.107.22.0/24 203.107.23.0/24 47.97.128.0/24 47.97.129.0/24 47.97.130.0/24 47.97.131.0/24
+    ```
+
+3.  Edit the conf/httpd.conf file to insert httpd-remoteip.conf.
+
+    ```
+    Include conf/extra/httpd-remoteip.conf
+    ```
+
+4.  In httpd.conf, change log format.
+
+    ```
+    LogFormat "%a %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+    LogFormat "%a %l %u %t \"%r\" %>s %b" common
+    ```
+
+5.  Restart Apache to bring the configuration into effect.
+
+**Linux system**
+
+You can get the real client IP address by installing the third-party module [mod\_rpaf](http://stderr.net/apache/rpaf/).
+
+1.  Run the following command to install mod\_rpaf.
 
     ```
     wget http://stderr.net/apache/rpaf/download/mod_rpaf-0.6.tar.gz
@@ -98,24 +134,35 @@ Follow these steps to obtain the visitor’s real IP address in Apache.
     /alidata/server/httpd/bin/apxs -i -c -n mod_rpaf-2.0.so mod_rpaf-2.0.c
     ```
 
-2.  Modify the Apache configuration file `/alidata/server/httpd/conf/httpd.conf` and add the following information at the end.
+2.  Edit the Apache configuration file /alidata/server/httpd/conf/httpd.conf to add the following content at the end of the file.
+
+    **Note:** `RPAFproxy_ips` are not the public IP addresses of load balancing. Refer to the Apacha logs for the IP addresses \(usually contain two IP addresses\).
 
     ```
     LoadModule rpaf_module modules/mod_rpaf-2.0.so
     RPAFenable On
     RPAFsethostname On
-    RPAFproxy_ips IP address
+    RPAFproxy_ips ip addresses
     RPAFheader X-Forwarded-For
     ```
 
-    Where `RPAFproxy_ips ip address` is not the public IP address provided by Server Load Balancer. You can obtain the specific IP address from the Apache log. Usually two IP addresses are included.
-
-3.  Run the following command to restart Apache once you add the IP address.
+3.  Run the following command to restart Apache and bring the configuration into effect.
 
     ```
     /alidata/server/httpd/bin/apachectl restart
     ```
 
+
+**Configuration example of mod-rpaf**
+
+```
+
+LoadModule rpaf_module modules/mod_rpaf-2.0.so
+RPAFenable On
+RPAFsethostname On
+RPAFproxy_ips 10.242.230.65 10.242.230.131
+RPAFheader X-Forwarded-For
+```
 
 ## Tomcat {#section_tpf_gkc_p2b .section}
 
