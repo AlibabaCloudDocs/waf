@@ -59,7 +59,7 @@ WAF keeps detailed log entries for your domains, including access requests and a
 |request\_method|The HTTP request method used in the access request.|GET|
 |request\_path|The relative path of the request. The query string is not included.|/news/search.php|
 |request\_time\_msec|The request time, which is measured in microseconds.|44|
-|request\_traceid|The unique ID of the access request that is recorded by WAF.|7837b11715410386943437009ea1f0|
+|request\_traceid|The unique ID of the access request that is recorded by WAF.|7837b\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*ea1f0|
 |server\_protocol|The response protocol and the version number of the origin server.|HTTP/1.1|
 |status|The status of the HTTP response to the client returned by WAF.|200|
 |time|The time when the access request occurs.|2018-05-02T16:03:59+08:00|
