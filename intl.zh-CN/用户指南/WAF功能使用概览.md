@@ -47,20 +47,31 @@ WAF是阿里云云盾提供的Web应用防火墙，帮助您监控网站上的HT
 
 ## 接入WAF {#implement .section}
 
-开通WAF后，您需要在WAF控制台创建网站配置来关联要防护的域名，并通过[域名解析（DNS）](https://en.wikipedia.org/wiki/Domain_Name_System)，将网站访问请求流转到WAF进行监控。
+开通WAF后，您可以使用透明代理模式或DNS配置模式将网站接入WAF进行防护。
 
--   添加网站配置：网站配置描述了被防护网站的流量转发关系。您可以使用自动或手动的方式添加网站配置。在网站配置中，您需要指定要防护的网站域名和源站服务器地址等信息。完成网站配置后，WAF分配给这个域名一个专用的[CNAME地址](https://en.wikipedia.org/wiki/CNAME_record)。
+**说明：** 透明代理模式和DNS配置模式只能选择一种，即如果要使用透明代理模式，必须先清空DNS配置模式下的域名配置记录，反之亦然。
 
-    **说明：** 如果您的域名使用 [阿里云云解析DNS](https://www.alibabacloud.com/product/dns)进行域名解析，在添加网站配置时支持一键自动创建，完成WAF接入；否则，您需要手动创建网站配置并修改DNS解析。
+-   透明代理模式：将所配置的源站服务器公网IP的80端口接收到的HTTP协议的流量直接牵引到WAF，经WAF处理后再将正常的访问流量回注给源站服务器。
 
--   修改DNS解析：只有当您在对应域名的解析记录中添加并应用WAF CNAME记录后，才可以正式将网站访问流量导向WAF实例进行监控。
+    该方式需要您授权WAF读取您的ECS实例信息。配置过程中只用在WAF控制台添加域名和勾选相应的服务器IP。
+
+-   DNS配置模式：通过修改域名解析的方式，将被防护域名的访问流量指向WAF；WAF根据域名配置的源站服务器地址，将处理后的请求转发回源站服务器。
+
+    该方式需要您在WAF控制台添加网站配置来关联要防护的域名，并通过[域名解析（DNS）](https://en.wikipedia.org/wiki/Domain_Name_System)，将网站访问请求流转到WAF进行监控。
+
+    -   添加网站配置：网站配置描述了被防护网站的流量转发关系。您可以使用自动或手动的方式添加网站配置。在网站配置中，您需要指定要防护的网站域名和源站服务器地址等信息。完成网站配置后，WAF分配给这个域名一个专用的[CNAME地址](https://en.wikipedia.org/wiki/CNAME_record)。
+
+        **说明：** 如果您的域名使用 [阿里云云解析DNS](https://www.alibabacloud.com/product/dns)进行域名解析，在添加网站配置时支持一键自动创建，完成WAF接入；否则，您需要手动创建网站配置并修改DNS解析。
+
+    -   修改DNS解析：只有当您在对应域名的解析记录中添加并应用WAF CNAME记录后，才可以正式将网站访问流量导向WAF实例进行监控。
 
 网站接入WAF后，WAF帮助您过滤恶意请求，放行合法的访问请求至源站服务器。
 
 **操作导航**
 
--   [网站配置](intl.zh-CN/用户指南/接入WAF/网站配置.md#)
--   [业务接入WAF配置](intl.zh-CN/用户指南/接入WAF/业务接入WAF配置.md#)
+-   [使用透明代理模式接入WAF](intl.zh-CN/用户指南/使用透明代理模式接入WAF.md#)
+-   [（DNS配置模式）网站配置](intl.zh-CN/用户指南/使用DNS配置模式接入WAF/网站配置.md#)
+-   [（DNS配置模式）业务接入WAF配置](intl.zh-CN/用户指南/使用DNS配置模式接入WAF/业务接入WAF配置.md#)
 
 ## 防护配置 {#configure .section}
 
@@ -163,11 +174,11 @@ WAF提供实例层面的设置功能，帮助您了解和管理WAF实例资源�
 
     启用WAF后，源站服务器IP对客户端是隐藏的。如果您的源站服务器IP已公开或不慎泄露，攻击者可能越过WAF，直接对您的源站发动攻击。配置源站保护可以有效防护这种情形。
 
--   [同时部署WAF和DDoS高防IP](intl.zh-CN/用户指南/接入WAF/同时部署WAF和DDoS高防.md#)
+-   [同时部署WAF和DDoS高防IP](intl.zh-CN/用户指南/使用DNS配置模式接入WAF/同时部署WAF和DDoS高防.md#)
 
     如果您同时开通了阿里云[DDoS高防IP服务](https://www.alibabacloud.com/product/ddos-pro)和Web应用防火墙，您可以参照本实践进行配置。
 
--   [同时部署WAF和CDN](intl.zh-CN/用户指南/接入WAF/同时部署WAF和CDN.md#)
+-   [同时部署WAF和CDN](intl.zh-CN/用户指南/使用DNS配置模式接入WAF/同时部署WAF和CDN.md#)
 
     如果您同时开通了阿里云[CDN服务](https://www.alibabacloud.com/product/cdn)和Web应用防火墙，您可以参照本实践进行配置。
 
@@ -180,5 +191,5 @@ WAF提供实例层面的设置功能，帮助您了解和管理WAF实例资源�
 
 **说明：** 请参考[钉钉官网](https://www.dingtalk.com/)，下载并安装钉钉聊天软件。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15550/15511464807113_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15550/15532340227113_zh-CN.png)
 
