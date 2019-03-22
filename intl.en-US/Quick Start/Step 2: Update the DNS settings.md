@@ -1,76 +1,76 @@
 # Step 2: Update the DNS settings {#concept_afg_dy1_p2b .concept}
 
-When a website configuration is created, Alibaba Cloud WAF generates a dedicated CNAME address for the website. In this step, you enable a CNAME record for the website by using the WAF CNAME address as the value, to redirect web requests to WAF for inspection.
+After you use the DNS proxy mode to configure Web Application Firewall \(WAF\) for your website and add the website configuration, WAF automatically generates a CNAME address for your website. You can use this CNAME address to update the CNAME value to redirect requests that are sent to your website to WAF for monitoring.
 
--   If the DNS settings have been updated in [Step 1: Add a website configuration](intl.en-US/Quick Start/Step1: Automatically add a website configuration.md#) and the DNS resolution status is Normal, go to [Step 3: Configure WAF protection policies](intl.en-US/Quick Start/Step 3: Configure WAF protection polices.md#).
--   If you are prompted to manually update the DNS settings in [Step 1: Add a website configuration](intl.en-US/Quick Start/Step1: Automatically add a website configuration.md#), or the DNS resolution status is Exception, perform this task.
+-   If the DNS settings have been automatically updated in [Step 1: Automatically add a website configuration](reseller.en-US/Quick Start/Step 1: Automatically add a website configuration.md#) and the DNS resolution status is Normal, skip this step and perform [Step 3: Configure WAF protection policies](reseller.en-US/Quick Start/Step 3: Configure WAF protection polices.md#).
+-   If you are required to update DNS settings manually or the DNS resolution status is Exception in [Step 1: Automatically add a website configuration](reseller.en-US/Quick Start/Step 1: Automatically add a website configuration.md#), perform the following steps to update the DNS settings.
 
-    The following procedure takes **Alibaba Cloud DNS** as an example to explain how to update the DNS settings, especially the **CNAME record**. If your domain’s DNS is hosted on Alibaba Cloud DNS, follow the procedure. Otherwise, refer to the following procedure and log on to your DNS host's system to update the DNS settings.
+    The following example uses **Alibaba Cloud DNS** to describe how to change a **CNAME** record. If your domain name is managed by Alibaba Cloud DNS, perform the following steps to update the DNS settings. If your domain name is managed by other DNS service providers, perform the following steps to update the DNS settings in the system of your DNS service provider.
 
-    **Note:** We recommend that you use the WAF CNAME address to update the DNS settings. However, using an A record is also supported. In case you must use an A record to update the DNS settings \(for example, CNAME record conflicts with MX record\), see [WAF deployment guide](../../../../intl.en-US/User Guide/Access WAF/WAF deployment guide.md#).
+    **Note:** To enable WAF, you need to add a CNAME or A record to redirect requests. For more information about using A records, see [Configure DNS settings](../../../../../reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Configure DNS settings.md#).
 
 
 ## Prerequisites {#section_iz2_pdl_5fb .section}
 
--   Obtain the WAF CNAME address.
-    1.  Log on to the [Alibaba Cloud WAF console](https://yundun.console.aliyun.com/?p=waf).
-    2.  On the top of the page, select the region: **Mainland China**, **International**.
-    3.  On the **Management** \> **Website Configuration** page, move the pointer onto the domain name you want to operate. You will see the **Copy CName** button.
+-   You have obtained the WAF CNAME address.
+    1.  Log on to the [Alibaba Cloud WAF console](https://partners-intl.console.aliyun.com/#/waf).
+    2.  On the top of the page, select **Mainland China** or **International**.
+    3.  Choose **Management** \> **Website Configuration** and select **DNS Proxy Mode**. Select the website configuration and hover over the domain name. A **Copy CName** button appears.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15440743877565_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15532337907565_en-US.png)
 
-    4.  Click **Copy CName** to copy the WAF CNAME address to the clipboard.
+    4.  Click **Copy CName** to copy the WAF CNAME address.
 
-        **Note:** If you want to update A record to redirect web traffic to WAF, you can ping this CNAME address to obtain the corresponding WAF IP address. For more information, see [WAF deployment guide](../../../../intl.en-US/User Guide/Access WAF/WAF deployment guide.md#). In general, the WAF IP address seldom changes.
+        **Note:** If you want to use an A record to redirect requests to WAF, ping this CNAME address to obtain the corresponding WAF IP address. For more information, see [Set DNS settings](../../../../../reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Configure DNS settings.md#). The IP address of the WAF instance that protects your website changes infrequently.
 
--   You have permissions to edit the domain’s DNS settings in the DNS host's system. In this example, the domain name is hosted on Alibaba Cloud DNS with the same Alibaba Cloud account as the WAF subscription.
+-   You have the permissions to change the domain DNS settings in the system of your DNS service provider. This example uses a DNS record that is managed by Alibaba Cloud DNS, and WAF is activated under the same account.
 
 ## Procedure {#section_nxs_bfl_5fb .section}
 
-1.  Log on to the [Alibaba Cloud DNS console](https://dns.console.aliyun.com/#/dns/domainList).
-2.  Select the domain to be operated and click **Configure**.
+1.  Log on to the **Alibaba Cloud DNS console**.
+2.  Select the domain name and click **Configure**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15440743877588_en-US.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15532337907588_en-US.jpg)
 
-3.  Select the **Host** \(hostname\) to be operated and click **Edit**.
+3.  Select the specified **host** \(hostname\) and click **Edit**.
 
-    Take `abc.com` as an example. You can select hostname as follows:
+    The following example uses `abc.com`:
 
-    -   **www**: matches the subdomain starting with www, in this case `www.abc.com`.
-    -   **@**: matches the root domain, in this case `abc.com`.
-    -   **\***： matches a wildcard domain name that includes both the root domain and all subdomains, in this case `blog.abc.com`, `www.abc.com`, `abc.com`, and so on.
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15440743877589_en-US.jpg)
+    -   **www**: Used to select domain names that begin with www, such as `www.abc.com`.
+    -   **@**: Matches the root domain `abc.com`.
+    -   **\***: Matches all wildcard domains including root domains and subdomains, such as `blog.abc.com`, `www.abc.com`, and `abc.com`.
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15532337917589_en-US.jpg)
 
-4.  In the Edit Record dialog box, do the following:
+4.  In the Edit Record dialog box, perform the following operations:
 
     -   **Type**: Select **CNAME**.
-    -   **Value**: Enter the WAF CNAME address.
-    -   Leave other settings as they are. We recommend that you set TTL value to 10 minutes. The larger the TTL value, the slower the DNS propagation.
-    Notes about editing DNS records:
+    -   **Value**: Paste the WAF CNAME address that you have copied in the preceding step.
+    -   Keep the remaining settings unchanged. We recommend that you set the TTL to 10 minutes. A longer TTL indicates that the system takes a longer time to synchronize and update the DNS record.
+    Notes:
 
-    -   For a hostname, the CNAME record is unique. You must edit it to the WAF CNAME address.
-    -   Different record type conflicts with each other. For example, for a hostname, the CNAME record cannot coexist with an A record, MX record, or TXT record. If you cannot change the record type directly, you can first delete the conflicting records and add a new CNAME record.
+    -   You can only specify one CNAME record for each hostname. Change the value to the WAF CNAME address.
+    -   Different record types conflict with each other. For example, a CNAME record, an A record, an MX record, and a TXT record cannot coexist with each other under the same hostname. If you cannot change the record type, delete all conflicting records, and then add a new CNAME record.
 
-        **Note:** The whole process of deleting and adding must be performed in a short time. Otherwise, your domain becomes inaccessible.
+        **Note:** You must delete conflicting records and add the new CNAME record in a short period of time. Otherwise, your domain becomes inaccessible.
 
-    -   If the MX record is being used, you can use an A record to redirect web traffic to WAF. For more information, see [WAF deployment guide](../../../../intl.en-US/User Guide/Access WAF/WAF deployment guide.md#).
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15440743877590_en-US.jpg)
+    -   If you must keep the MX record, you can use an A record to redirect requests to WAF. For more information, see [Set DNS settings](../../../../../reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Configure DNS settings.md#).
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15532337917590_en-US.jpg)
 
-5.  Click **OK** to complete the DNS settings and wait for the DNS change to take effect.
-6.  \(Optional\) Verify the DNS settings. You can ping the domain or use [DNS Check](https://mxtoolbox.com/dnscheck.aspx) to validate whether the DNS change is effective.
+5.  Click **OK** and wait for the DNS record to take effect.
+6.  \(Optional\) Verify the DNS settings. Ping the domain or use [DNS Check](https://mxtoolbox.com/dnscheck.aspx) to check whether the DNS record takes effect.
 
-    **Note:** It takes a certain time for the setting to be in effect. If the validation fails, wait for about 10 minutes and re-validate it again.
+    **Note:** It takes some time for the DNS record to take effect. If the verification fails, verify the DNS record again in 10 minutes.
 
 7.  Check the DNS resolution status.
-    1.  Log on to the [Alibaba Cloud WAF console](https://yundun.console.aliyun.com/?p=waf).
-    2.  On the **Management** \> **Website Configuration** page, check the **DNS resolution status** of the domain name.
-        -   **Normal**: Alibaba Cloud WAF has been successfully deployed and the web traffic is being monitored by WAF.
-        -   **Exception**: With the exception messages of **NO CNAME resolution detected**, **No traffic**, or **DNS check failed**, the DNS settings might be incorrect.
+    1.  Log on to the [WAF console](https://partners-intl.console.aliyun.com/#/waf).
+    2.  Choose **Management** \> **Website Configuration** and select **DNS Proxy Mode** to view the **DNS translation status**.
+        -   **Normal** indicates that WAF has been successfully configured for your website. All requests that are sent to your website are redirected to WAF for monitoring.
+        -   **Exception** indicates that you have not correctly configured WAF for you website if the following error messages appear: **No CNAME resolution detected**, **No traffic**, and **DNS check failed**.
 
-            In this case, check the DNS settings. If you confirm that the DNS settings are correct, wait for an hour and refresh the DNS resolution status. For more information, see [DNS resolution status exception](../../../../intl.en-US/FAQ/DNS resolution status exception.md#).
+            If you confirm that the DNS settings are correct, check the DNS translation status again in an hour, or troubleshoot the errors. For more information about troubleshooting, see [DNS resolution status exception](../../../../../reseller.en-US/FAQ/DNS resolution status exception.md#).
 
-            **Note:** The exception here indicates that WAF is not properly deployed. Your website access is not affected.
+            **Note:** The error message, as shown in the following figure, only indicates whether you have correctly configured WAF for your website. It does not indicate whether your website is accessible.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15440743877591_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15549/15532337917591_en-US.jpg)
 
 
