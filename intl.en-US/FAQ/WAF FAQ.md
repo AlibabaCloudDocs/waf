@@ -21,7 +21,6 @@
 -   [Can the source IP addresses of HTTP flood attacks be viewed in WAF console?](#)
 -   [How to query the bandwidth traffic used by WAF?](#)
 -   [Does the IP field in HTTP ACL policies of WAF support entry of a network segment?](#)
--   [How soon can a disabled IP address be recovered, after the malicious IP penalty function is disabled?](#)
 -   [What are the features of the Anti-DDoS capability provided by WAF?](#)
 -   [Does WAF support HTTPS two-way authentication?](#)
 -   [Does WAF support Websocket and HTTP 2.0 or SPDY protocol?](#)
@@ -58,7 +57,7 @@ WAF can handle HTTPS traffic if the SSL certificate and key are uploaded as need
 
 The Business and Enterprise editions of WAF support user-defined non-standard ports. The Business version supports up to 10 non-standard ports and the Enterprise version supports up to 50 non-standard ports.
 
-**Note:** For more information, see [Supported non-standard ports](../../../../../reseller.en-US/User Guide/Implementation/Supported non-standard ports.md#).
+**Note:** For more information, see [Supported non-standard ports](../../../../../reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Supported non-standard ports.md#).
 
 ## Does the QPS limitation of WAF aim at the QPS summarized by the whole WAF instances or the QPS upper limit for one configured domain name? {#section_yfb_j5k_q2b .section}
 
@@ -78,7 +77,7 @@ The WAF is fully compatible with CDN and Anti-DDoS services. Fundamental archite
 
 For service combination with Anti-DDoS or CDN, WAF’s CNAME must be entered as the origin for Anti-DDoS or CDN. This action turns the traffic towards WAF after it goes through Anti-DDoS or CDN. WAF then returns the traffic to the origin.
 
-For more information, see [Use Anti-DDoS Pro with WAF](../../../../../reseller.en-US/User Guide/Implementation/Deploy WAF and Anti-DDoS Pro together.md#) and [Use CDN with WAF](../../../../../reseller.en-US/User Guide/Implementation/Deploy WAF and CDN together.md#).
+For more information, see [Use Anti-DDoS Pro with WAF](../../../../../reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Deploy WAF and Anti-DDoS Pro together.md#) and [Use CDN with WAF](../../../../../reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Deploy WAF and CDN together.md#).
 
 ## Can WAF protect IP addresses of multiple origins under one domain name? {#section_cgb_j5k_q2b .section}
 
@@ -131,10 +130,6 @@ You can view query the used bandwidth traffic on the overview page in the WAF co
 ## Does the IP field in HTTP ACL policies of WAF support entry of a network segment? {#section_ngb_j5k_q2b .section}
 
 Yes, WAF supports the entry of an IP network segment in the IP field of HTTP ACL policies.
-
-## How soon can a disabled IP address be recovered, after the malicious IP penalty function is disabled? {#section_ogb_j5k_q2b .section}
-
-The disabled IP address is released six minutes later once the malicious IP penalty function is disabled.
 
 ## What are the features of the Anti-DDoS capability provided by WAF? {#section_pgb_j5k_q2b .section}
 
