@@ -1,15 +1,18 @@
-# DescribeAsyncTaskStatus {#doc_api_908483 .reference}
+# DescribeAsyncTaskStatus {#doc_api_1097665 .reference}
 
 调用DescribeAsyncTaskStatus接口查询WAF任务执行状态。
 
 ## 调试 {#apiExplorer .section}
 
-单击[这里](https://api.aliyun.com/#product=waf-openapi&api=DescribeAsyncTaskStatus)在OpenAPI Explorer中进行可视化调试，并生成SDK代码示例。
+前往【[API Explorer](https://api.aliyun.com/#product=waf-openapi&api=DescribeAsyncTaskStatus)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
 
 ## 请求参数 {#parameters .section}
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
+|Action|String|是|DescribeAsyncTaskStatus|要执行的操作。取值：**DescribeAsyncTaskStatus**。
+
+ |
 |InstanceId|String|是|waf\_elasticity-cn-0xldbqtm005|WAF实例ID。
 
  **说明：** 您可以通过调用[DescribePayInfo](~~86651~~)接口查看您当前WAF实例ID。
@@ -66,6 +69,7 @@
 ``` {#request_demo}
 
 https://wafopenapi.cn-hangzhou.aliyuncs.com/?Action=DescribeAsyncTaskStatus
+&InstanceId=waf_elasticity-cn-0xldbqtm005
 &WafRequestId=aliyun.waf.20180719140433783.SvaZeY
 &公共请求参数
 
