@@ -21,13 +21,13 @@ When you configure WAF by using the DNS proxy mode, WAF can automatically read t
 2.  On the top of the page, select **Mainland China** or **International**.
 3.  Choose **Management** \> **Website Configuration** and select **DNS Proxy Mode**.
 
-    ![](images/40172_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/155323392840172_en-US.png)
 
 4.  Click **Add Domain**.
 
     WAF automatically lists the domain names that have an A record configured on Alibaba Cloud DNS under the current Alibaba Cloud account. If you have not created an A record on Alibaba Cloud DNS, the Please choose your domain page will not appear. You can manually add the website configuration by following the procedure described in [Website configuration](../../../../../reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Website configuration.md#).
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15532337737562_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15532339287562_en-US.png)
 
 5.  On the Please choose your domain page, choose the **domain name** and the **protocol type** for the website.
 6.  \(Optional\) If you choose **HTTPS**, you must verify the certificate before you add the website configuration.
@@ -42,7 +42,7 @@ When you configure WAF by using the DNS proxy mode, WAF can automatically read t
 
             For more information, see [Update HTTPS certificates](../../../../../reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Update HTTPS certificates.md#).
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15532337737567_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15532339287567_en-US.png)
 
     3.  Click **Verify** to verify the uploaded certificate.
 7.  Click **Add domain protection now**.
@@ -57,6 +57,6 @@ When you configure WAF by using the DNS proxy mode, WAF can automatically read t
 
         If the DNS settings are not configured correctly, see [Step 2: Update the DNS settings](reseller.en-US/Quick Start/Step 2: Update the DNS settings.md#). For more information, see [DNS resolution status exception](../../../../../reseller.en-US/FAQ/DNS resolution status exception.md#).
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15532337737570_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15532339287570_en-US.png)
 
 
