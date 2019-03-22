@@ -1,4 +1,4 @@
-# DescribePayInfo {#doc_api_908124 .reference}
+# DescribePayInfo {#doc_api_1096868 .reference}
 
 调用DescribePayInfo接口获取指定地域的WAF实例当前信息。
 
@@ -6,12 +6,15 @@
 
 ## 调试 {#apiExplorer .section}
 
-单击[这里](https://api.aliyun.com/#product=waf-openapi&api=DescribePayInfo)在OpenAPI Explorer中进行可视化调试，并生成SDK代码示例。
+前往【[API Explorer](https://api.aliyun.com/#product=waf-openapi&api=DescribePayInfo)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
 
 ## 请求参数 {#parameters .section}
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
+|Action|String|是|DescribePayInfo|要执行的操作。取值：**DescribePayInfo**。
+
+ |
 |InstanceSource|String|否|cn|实例来源。默认值：**waf-cloud**。
 
  |
