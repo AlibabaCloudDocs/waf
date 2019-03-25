@@ -6,7 +6,7 @@ This topic describes how to integrate Alibaba Cloud WAF log with syslog to guara
 
 The following figure illustrates the syslog integration architecture:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010981638718_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350365638718_en-US.png)
 
 **Alibaba Cloud Log Service** is a one-stop service for log data. Log Service experiences massive big data scenarios of Alibaba Group. Log Service \(LOG or SLS\) allows you to quickly complete the collection, consumption, shipping, query, and analysis of log data without the need for development, which improves the Operation & Maintenance \(O&M\) efficiency and the operational efficiency, and builds the processing capabilities to handle massive logs in the DT \(data technology\) era. For more information, see [Log Service Production Introduction](../../../../../reseller.en-US/Product Introduction/What is Log Service.md#).
 
@@ -18,7 +18,7 @@ The following figure illustrates the syslog integration architecture:
 
 Before you begin, make sure of the following:
 
--   You have purchased Alibaba Cloud WAF business edition or above to protect your website. For more information, see [Purchase Alibaba Cloud WAF](../../../../../reseller.en-US/Pricing/Subscription/Purchase Web Application Firewall.md#) and [Implement Alibaba Cloud WAF](../../../../../reseller.en-US/User Guide/Access WAF/WAF deployment guide.md#).
+-   You have purchased Alibaba Cloud WAF business edition or above to protect your website. For more information, see [Purchase Alibaba Cloud WAF](../../../../../reseller.en-US/Pricing/Subscription/Purchase Web Application Firewall.md#) and [Implement Alibaba Cloud WAF](../../../../../reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Configure DNS settings.md#).
 -   You have a Linux ECS server with the following recommended hardware spec:
     -   Operating System with Ubuntu
     -   8 vCPUs with 2.0+ GHz
@@ -36,27 +36,27 @@ Before you begin, make sure of the following:
     2.  In the left-side navigation pane, select**App Market** \> **App Management**.
     3.  Under **Real-time Log Query and Analysis Service**, click **Upgrade**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010981638719_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350365638719_en-US.png)
 
     4.  On the Update page, enable **Access Log Service** and select **Log Storage Period** and **Log storage Size** accordingly.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010981738720_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350365638720_en-US.png)
 
     5.  After activating Log service, click **Authorization** under **Real-time Log Query and Analysis Service**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010981738721_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350365638721_en-US.png)
 
     6.  On the Cloud Resource Access Authorization page, click **Confirm Authorization Policy**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010981738723_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350365738723_en-US.png)
 
     7.  Under **Real-time Log Query and Analysis Service**, click **Configure**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010981738724_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350365738724_en-US.png)
 
     8.  In the domain name drop-down box, enable the website you want to enable Log service.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010981738725_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350365738725_en-US.png)
 
 2.  Set up the Python environment in ECS.
 
@@ -88,14 +88,14 @@ Before you begin, make sure of the following:
 
         |Parameter|Meaning|Description|
         |---------|-------|-----------|
-        |SLS Project|Log Service project name|Project is Log Service's resource management unit, used to isolate and control resources. You can find the Project Name in the [Alibaba Cloud Log Service console](https://partners-intl.console.aliyun.com/#/sls).![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010981738727_en-US.png)
+        |SLS Project|Log Service project name|Project is Log Service's resource management unit, used to isolate and control resources. You can find the Project Name in the [Alibaba Cloud Log Service console](https://partners-intl.console.aliyun.com/#/sls).![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350365738727_en-US.png)
 
 |
         |SLS Endpoint|Log Service Endpoint|Log Service Endpoint is a URL used to access a project and logs within the project, and is associated with the Alibaba Cloud region where the project resides and the project name. You can find the Endpoint URL in [Service endpoint](../../../../../reseller.en-US/API Reference/Service endpoint.md#).|
-        |SLS Logstore|Logstore|Logstore is a unit in Log Service for the collection, storage, and query of log data. Each Logstore belongs to a project, and each project can create multiple Logstores. You can find the Logstore Name under your Log Service Project in the [Alibaba Cloud Log Service console](https://partners-intl.console.aliyun.com/#/sls):![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010981738728_en-US.png)
+        |SLS Logstore|Logstore|Logstore is a unit in Log Service for the collection, storage, and query of log data. Each Logstore belongs to a project, and each project can create multiple Logstores. You can find the Logstore Name under your Log Service Project in the [Alibaba Cloud Log Service console](https://partners-intl.console.aliyun.com/#/sls):![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350365738728_en-US.png)
 
 |
-        |SLS accessKeyId and accessKey|AccessKey|AccessKey is a "secure password" designed for you to access your cloud resources by using APIs \(not the console\). You can use the AccessKey to sign API request content to pass the security authentication in Log Service. For more information, see [AccessKey Introduction](../../../../../reseller.en-US/API Reference/AccessKey.md#). You can find your Accesskey in the User Management console:![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010981738729_en-US.png)
+        |SLS accessKeyId and accessKey|AccessKey|AccessKey is a "secure password" designed for you to access your cloud resources by using APIs \(not the console\). You can use the AccessKey to sign API request content to pass the security authentication in Log Service. For more information, see [AccessKey Introduction](../../../../../reseller.en-US/API Reference/AccessKey.md#). You can find your Accesskey in the User Management console:![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350365738729_en-US.png)
 
 |
         |Syslog Host|Syslog Host|Syslog host is same as the IP address/Hostname you access syslog server.|
@@ -111,7 +111,7 @@ Before you begin, make sure of the following:
             endpoint = os.environ.get('SLS_ENDPOINT', 'http://ap-southeast-1.log.aliyuncs.com')
             accessKeyId = os.environ.get('SLS_AK_ID', 'replace to your accessid')
             accessKey = os.environ.get('SLS_AK_KEY', 'replace to your accesskey')
-            project = os.environ.get('SLS_PROJECT', 'waf-project-5486134142760591-ap-southeast-1')
+            project = os.environ.get('SLS_PROJECT', 'waf-project-548613414276****-ap-southeast-1')
             logstore = os.environ.get('SLS_LOGSTORE', 'waf-logstore')
             consumer_group = os.environ.get('SLS_CG', 'WAF-SLS')
             ```
@@ -155,6 +155,4 @@ Before you begin, make sure of the following:
 
 
 You are able to search the WAF log in syslog server now.
-
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010981738730_en-US.png)
 
