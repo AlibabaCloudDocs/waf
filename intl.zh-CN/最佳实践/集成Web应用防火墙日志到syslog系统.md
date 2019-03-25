@@ -6,11 +6,11 @@
 
 该方案的整体集成架构如下图所示：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010962038718_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350360338718_zh-CN.png)
 
 **阿里云日志服务**为日志数据提供一站式服务，被广泛应用于阿里巴巴集团的许多大数据场景中。日志服务在无需开发介入的前提下，帮助您快速完成数据采集、消费、投递、查询和分析，提高运维运营效率，建立DT时代海量数据的处理能力。更多信息，请查看[什么是日志服务](../../../../../intl.zh-CN/产品简介/什么是日志服务.md#)。
 
-**Python Program** 是运行在ECS上的一段日志投递程序，帮助您将WAF日志投递到syslog服务器。消费库（Consumer Library）是对LogHub消费者提供的高级模式，它使用消费组（Consumer Group）统一处理消费端问题。相比于直接使用SDK读取数据，消费库让您只关注业务逻辑，而无需在意日志服务的实施细节或多消费者间的容错问题。更多信息，请查看[消费组消费](../../../../../intl.zh-CN/用户指南/实时消费/消费组消费/消费组消费.md#)。
+**Python Program** 是运行在ECS上的一段日志投递程序，帮助您将WAF日志投递到syslog服务器。消费库（Consumer Library）是对LogHub消费者提供的高级模式，它使用消费组（Consumer Group）统一处理消费端问题。相比于直接使用SDK读取数据，消费库让您只关注业务逻辑，而无需在意日志服务的实施细节或多消费者间的容错问题。更多信息，请查看[消费组消费](../../../../../intl.zh-CN/用户指南/实时消费/消费组消费/通过消费组消费日志.md#)。
 
 **Syslog服务器**是一个集中的日志消息管理服务器，它可以从多个syslog源接收数据。
 
@@ -18,7 +18,7 @@
 
 进行配置前，请确保满足以下条件：
 
--   您已购买企业版或旗舰版Web应用防火墙，并为您的网站配置防护。更多信息，请查看[购买Web应用防火墙](../../../../../intl.zh-CN/产品定价/开通WAF/购买Web应用防火墙.md#)和[业务接入WAF配置](../../../../../intl.zh-CN/用户指南/接入WAF/业务接入WAF配置.md#)。
+-   您已购买企业版或旗舰版Web应用防火墙，并为您的网站配置防护。更多信息，请查看[购买Web应用防火墙](../../../../../intl.zh-CN/产品定价/开通WAF/开通Web应用防火墙.md#)和[业务接入WAF配置](../../../../../intl.zh-CN/用户指南/使用DNS配置模式接入WAF/业务接入WAF配置.md#)。
 -   您拥有一个Linux ECS服务器，该服务器满足以下推荐配置：
     -   Ubuntu操作系统
     -   8核处理器，2.0Ghz以上主频率
@@ -36,27 +36,27 @@
     2.  在左侧导航栏，选择**市场管理** \> **应用管理**。
     3.  在**日志服务实时查询分析**应用下，单击**升级**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010962038719_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350360338719_zh-CN.png)
 
     4.  在变配页面，开通**日志服务**， 并根据实际需求选择**日志存储时长**和**日志存储容量**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010962038720_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350360338720_zh-CN.png)
 
     5.  开通日志服务后，在**日志服务实时查询分析**应用下，单击**授权**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010962038721_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350360338721_zh-CN.png)
 
     6.  在云资源访问授权页面，单击**同意授权**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010962038723_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350360338723_zh-CN.png)
 
     7.  在**日志服务实时查询分析**应用下，单击**配置**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010962038724_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350360338724_zh-CN.png)
 
     8.  在下拉框中选择要配置的域名，并打开功能开关。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010962038725_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350360338725_zh-CN.png)
 
 2.  在ECS中配置Python环境。
 
@@ -88,14 +88,14 @@
 
         |参数|释义|描述|
         |--|--|--|
-        |SLS Project|日志项目名称|日志项目是日志服务的资源管理单元，用来划分和操作资源。您可以在[阿里云日志服务控制台](https://sls.console.aliyun.com/#/)上查看项目名称。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010962038727_zh-CN.png)
+        |SLS Project|日志项目名称|日志项目是日志服务的资源管理单元，用来划分和操作资源。您可以在[阿里云日志服务控制台](https://sls.console.aliyun.com/#/)上查看项目名称。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350360338727_zh-CN.png)
 
 |
         |SLS Endpoint|日志服务入口|日志服务入口是访问一个日志项目及其内部日志数据的URL。它和项目所在的阿里云地域及日志项目名称相关。您可以在[服务入口](../../../../../intl.zh-CN/API 参考/服务入口.md#)中查看服务入口URL。|
-        |SLS Logstore|日志库|日志库是日志服务用来采集、存储和查询日志数据的单元。每个日志库归属在一个项目下，每个项目可以拥有多个日志库。您可以在[阿里云日志服务控制台](https://sls.console.aliyun.com/#/)，特定日志服务项目下查看日志库的名称。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010962038728_zh-CN.png)
+        |SLS Logstore|日志库|日志库是日志服务用来采集、存储和查询日志数据的单元。每个日志库归属在一个项目下，每个项目可以拥有多个日志库。您可以在[阿里云日志服务控制台](https://sls.console.aliyun.com/#/)，特定日志服务项目下查看日志库的名称。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350360338728_zh-CN.png)
 
 |
-        |SLS accessKeyId和accessKey|访问密钥|访问密钥是您在使用API（而非控制台）访问云资源时的“密码”。您需要使用AccessKey为API请求内容签名，使其能够通过日志服务的安全认证。具体请参考[访问密钥](../../../../../intl.zh-CN/API 参考/访问秘钥.md#)。您可以在[用户信息管理控制台](https://usercenter.console.aliyun.com/#/manage/ak)查看您的AccessKey信息。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010962038729_zh-CN.png)
+        |SLS accessKeyId和accessKey|访问密钥|访问密钥是您在使用API（而非控制台）访问云资源时的“密码”。您需要使用AccessKey为API请求内容签名，使其能够通过日志服务的安全认证。具体请参考[访问密钥](../../../../../intl.zh-CN/API 参考/访问秘钥.md#)。您可以在[用户信息管理控制台](https://usercenter.console.aliyun.com/#/manage/ak)查看您的AccessKey信息。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155350360338729_zh-CN.png)
 
 |
         |Syslog Host|Syslog主机|Syslog服务器的IP地址或主机名称。|
@@ -111,7 +111,7 @@
             endpoint = os.environ.get('SLS_ENDPOINT', 'http://ap-southeast-1.log.aliyuncs.com')
             accessKeyId = os.environ.get('SLS_AK_ID', '替换成您自己的AccessKey ID')
             accessKey = os.environ.get('SLS_AK_KEY', '替换成您自己的AccessKey')
-            project = os.environ.get('SLS_PROJECT', 'waf-project-5486134142760591-ap-southeast-1')
+            project = os.environ.get('SLS_PROJECT', 'waf-project-548613414276****-ap-southeast-1')
             logstore = os.environ.get('SLS_LOGSTORE', 'waf-logstore')
             consumer_group = os.environ.get('SLS_CG', 'WAF-SLS')
             ```
@@ -155,6 +155,4 @@
 
 
 完成以上操作后，您可以在syslog服务器中查询WAF日志。
-
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123589/155010962038730_zh-CN.png)
 
