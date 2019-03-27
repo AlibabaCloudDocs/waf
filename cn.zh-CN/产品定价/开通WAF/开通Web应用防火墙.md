@@ -54,7 +54,7 @@
     -   **3年**
 |
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15539/15536763207280_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15539/15536775247280_zh-CN.png)
 
 5.  （可选）在按量付费页签下，确认基本配置。 
 
@@ -62,7 +62,7 @@
 
     **说明：** 开通按量付费实例后，如果WAF实例连续五天不存在业务流量且未产生后付费账单，实例将会自动释放。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15539/15536763207281_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15539/15536775247281_zh-CN.png)
 
 6.  完成服务配置后，单击**立即购买**并完成支付。 
 
