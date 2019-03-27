@@ -32,4 +32,14 @@ Generally, we recommend that you consider the Business or Enterprise plan to bui
 |Data visualization|√**Note:** Not support for international region. Consider the Business or Enterprise plan.
 
 |√|√|
+|**Pricing**| -   China Mainland: 499 USD per month
+-   International: 299 USD per month
+
+ | -   China Mainland: 1,399 USD per month
+-   International: 599 USD per month
+
+ | -   China Mainland: 4,999 USD per month
+-   International: 2,999 USD per month
+
+ |
 
