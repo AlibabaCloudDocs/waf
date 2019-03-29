@@ -36,7 +36,7 @@
     -   **3年**
 |
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15539/155367812839280_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15539/155382329239280_zh-CN.png)
 
 4.  完成服务配置后，单击**立即购买**并完成支付。 
 
