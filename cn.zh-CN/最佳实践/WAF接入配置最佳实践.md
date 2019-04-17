@@ -15,7 +15,8 @@
 |**网站和业务信息**|
 |网站/应用业务每天的流量峰值情况，包括Mbps、QPS|判断风险时间点，并且可作为WAF实例的业务带宽和业务QPS规格的选择依据。|
 |业务的主要用户群体（例如，访问用户的主要来源地区）|判断非法攻击来源，后续可使用**地区封禁**功能屏蔽非法来源地区。|
-|业务是否为CS架构|如果是CS架构，进一步明确是否有App客户端、Windows客户端、Linux客户端、或其他环境的客户端|
+|业务是否为C/S架构|如果是C/S架构，进一步明确是否有App客户端、Windows客户端、Linux客户端、代码回调或其他环境的客户端。|
+|源站是否部署在非中国大陆地域|判断所配置的实例是否符合最佳网络架构。|
 |源站服务器的操作系统（Linux、Windows）和所使用的Web服务中间件（Apache、Nginx、IIS等）|判断源站是否存在访问控制策略，避免源站误拦截WAF回源IP转发的流量。|
 |域名使用协议|判断所使用的通信协议WAF是否支持。|
 |业务端口|判断源站业务端口是否在[WAF支持的端口](../../../../cn.zh-CN/用户指南/使用DNS配置模式接入WAF/非标端口支持.md#)范围内。|
@@ -70,7 +71,7 @@
     -   **标记WAF回源流量**：将网站域名接入WAF进行防护后，您可以为网站域名[设置流量标记](../../../../cn.zh-CN/用户指南/使用DNS配置模式接入WAF/标记WAF回源流量.md#)。通过设置流量标记的方式，方便地标识经过WAF转发的流量，从而实现精准的源站保护（访问控制）、防护效果分析，有效防止流量绕过WAF请求源站。
     **说明：** 如果您接入WAF的网站域名的业务源站使用的是Windows IIS Web服务，在配置HTTPS域名时，IIS默认会启用**需要服务器名称指示**（即SNI）。这种情况下，在将域名接入WAF后可能会出现访问空白页502的错误信息，您只需禁用该配置选项即可解决该问题。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/155546685444407_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/155548016344407_zh-CN.png)
 
 3.  **防护策略配置** 
 
@@ -80,7 +81,7 @@
 
         一般情况下，建议选用**防护**模式，并选用**中等规则**防护策略。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/155546685437895_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/155548016537895_zh-CN.png)
 
         **说明：** 业务接入WAF防护一段时间后（一般为2-3天），如果出现网站业务的正常请求被WAF误拦截的情况，您可以通过[设置自定义规则组](cn.zh-CN/最佳实践/通过设置自定义规则组提升Web防护效果.md#)的方式提升Web防护效果。
 
@@ -90,7 +91,7 @@
 
         **说明：** 由于CC防护的攻击紧急模式可能产生一定量的误拦截，如果您的业务为App业务或Web API服务，不建议您开启攻击紧急模式。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/155546685537896_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/155548016537896_zh-CN.png)
 
         **说明：** 业务接入WAF防护一段时间后（一般为2-3天），可以通过分析业务日志数据（例如，访问URL、单个IP访问QPS情况等）评估单个IP的请求QPS峰值，提前通过自定义CC攻击防护配置限速策略，避免遭受攻击后的被动响应和临时策略配置。
 
@@ -213,7 +214,7 @@
 
 购买开通云盾Web应用防火墙后，您可以在管理控制台中通过钉钉扫描二维码直接联系阿里云安全服务专家。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/155546685538115_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/155548016538115_zh-CN.png)
 
 安全专家将针对您的业务场景提供WAF接入配置指导、安全攻击分析和防御相关安全服务，基于业务实际情况帮助您更好地使用WAF对业务进行安全防护，保障您业务的网络应用安全。
 
