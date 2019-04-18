@@ -1,4 +1,4 @@
-# ModifyDomainConfig {#doc_api_1097625 .reference}
+# ModifyDomainConfig {#doc_api_waf-openapi_ModifyDomainConfig .reference}
 
 调用ModifyDomainConfig接口修改指定域名配置信息。
 
@@ -27,7 +27,14 @@
 -   **1**：表示有。
 
  |
-|HttpPort|String|否|80|HTTP协议配置的端口。指定多个HTTP端口时，使用“,”进行分隔。
+|Protocols|String|是|http|该域名所支持的访问协议，取值：
+
+ -   **http**：表示支持HTTP协议。
+-   **https**：表示支持HTTPS协议。
+-   **http,https**：同时支持HTTP、HTTPS协议。
+
+ |
+|HttpPort|String|否|80|HTTP协议配置的端口。指定多个HTTP端口时，使用“,”进行分隔。示例值：\\80。
 
  **说明：** 配置协议为HTTP时，该参数为必填项。默认值为**80**。**HttpPort**与**HttpsPort**两个请求参数至少需要填一个。
 
@@ -40,9 +47,15 @@
  **说明：** 如果您的网站不支持HTTPS回源，开启HTTP回源（默认回源端口是80端口）功能项，即可通过WAF实现HTTPS访问。
 
  |
-|HttpsPort|String|否|443|HTTPS协议配置的端口。指定多个HTTPS端口时，使用“,”进行分隔。
+|HttpsPort|String|否|443|HTTPS协议配置的端口。指定多个HTTPS端口时，使用“,”进行分隔。示例值：\\443。
 
  **说明：** 配置协议为HTTPS时，该参数为必填项。默认值为**443**。**HttpPort**与**HttpsPort**两个请求参数至少需要填一个。
+
+ |
+|HttpsRedirect|Integer|否|1|Https跳转状态。取值：
+
+ -   **1**：开启
+-   **0**：关闭（默认）
 
  |
 |LoadBalancing|Integer|否|0|负载均衡的方式，取值：
@@ -51,20 +64,13 @@
 -   **1**：轮询
 
  |
-|Protocols|String|否|http|该域名所支持的访问协议，取值：
-
- -   **http**：表示支持HTTP协议。
--   **https**：表示支持HTTPS协议。
--   **http,https**：同时支持HTTP、HTTPS协议。
-
- |
 |Region|String|否|cn|WAF实例所在的地域。取值：
 
- -   **cn**：表示中国大陆地区。
--   **cn-hongkong**：表示海外地区。
+ -   **cn**：表示中国大陆地区（默认）
+-   **cn-hongkong**：表示海外地区
 
  |
-|SourceIps|String|否|1.1.1.1|源站IP，支持指定多个IP。
+|SourceIps|String|否|1.1.1.1|源站IP，支持指定多个IP。示例：\\"1.1.1.1"。
 
  |
 
