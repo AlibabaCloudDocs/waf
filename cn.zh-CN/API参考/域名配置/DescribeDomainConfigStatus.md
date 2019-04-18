@@ -1,4 +1,4 @@
-# DescribeDomainConfigStatus {#doc_api_1097626 .reference}
+# DescribeDomainConfigStatus {#doc_api_waf-openapi_DescribeDomainConfigStatus .reference}
 
 调用DescribeDomainConfigStatus接口查询指定域名的转发配置是否生效。
 
@@ -13,18 +13,18 @@
 |Action|String|是|DescribeDomainConfigStatus|要执行的操作。取值：**DescribeDomainConfigStatus**。
 
  |
+|Domain|String|是|rstest.cdn.com|已添加的域名名称。
+
+ |
 |InstanceId|String|是|waf\_elasticity-cn-0xldbqtm005|WAF实例ID。
 
  **说明：** 您可以通过调用[DescribePayInfo](~~86651~~)接口查看您当前WAF实例ID。
 
  |
-|Domain|String|否|rstest.cdn.com|已添加的域名名称。
-
- |
 |Region|String|否|cn|WAF实例所在的地域。取值：
 
- -   **cn**：表示中国大陆地区。
--   **cn-hongkong**：表示海外地区。
+ -   **cn**：表示中国大陆地区（默认）
+-   **cn-hongkong**：表示海外地区
 
  |
 
