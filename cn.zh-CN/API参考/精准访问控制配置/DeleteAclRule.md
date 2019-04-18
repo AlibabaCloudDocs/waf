@@ -1,4 +1,4 @@
-# DeleteAclRule {#doc_api_1097651 .reference}
+# DeleteAclRule {#doc_api_waf-openapi_DeleteAclRule .reference}
 
 调用DeleteAclRule接口删除指定精准访问控制规则。
 
@@ -26,8 +26,8 @@
  |
 |Region|String|否|cn|WAF实例所在的地域。取值：
 
- -   **cn**：表示中国大陆地区。
--   **cn-hongkong**：表示海外地区。
+ -   **cn**：表示中国大陆地区（默认）
+-   **cn-hongkong**：表示海外地区
 
  |
 
