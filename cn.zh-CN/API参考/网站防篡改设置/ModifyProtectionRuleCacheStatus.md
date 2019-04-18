@@ -1,4 +1,4 @@
-# ModifyProtectionRuleCacheStatus {#doc_api_1097661 .reference}
+# ModifyProtectionRuleCacheStatus {#doc_api_waf-openapi_ModifyProtectionRuleCacheStatus .reference}
 
 调用ModifyProtectionRuleCacheStatus接口更新指定网站防篡改规则所防护的页面的缓存。
 
@@ -27,8 +27,8 @@
  |
 |Region|String|否|cn|地域ID。取值：
 
- -   **cn**：中国大陆地区。
--   **cn-hongkong**：海外地区。
+ -   **cn**：中国大陆地区（默认）
+-   **cn-hongkong**：海外地区
 
  |
 
