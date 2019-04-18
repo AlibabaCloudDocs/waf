@@ -1,4 +1,4 @@
-# ModifyWafSwitch {#doc_api_1097640 .reference}
+# ModifyWafSwitch {#doc_api_waf-openapi_ModifyWafSwitch .reference}
 
 调用ModifyWafSwitch接口打开或关闭Web攻击防护功能开关。
 
@@ -29,8 +29,8 @@
  |
 |Region|String|否|cn|WAF实例所在的地域。取值：
 
- -   **cn**：表示中国大陆地区。
--   **cn-hongkong**：表示海外地区。
+ -   **cn**：表示中国大陆地区（默认）
+-   **cn-hongkong**：表示海外地区
 
  |
 
