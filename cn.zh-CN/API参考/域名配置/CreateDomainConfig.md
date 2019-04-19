@@ -1,4 +1,4 @@
-# CreateDomainConfig {#doc_api_908425 .reference}
+# CreateDomainConfig {#doc_api_waf-openapi_CreateDomainConfig .reference}
 
 调用CreateDomainConfig接口添加域名配置信息。
 
@@ -18,12 +18,15 @@
 
 ## 调试 {#apiExplorer .section}
 
-单击[这里](https://api.aliyun.com/#product=waf-openapi&api=CreateDomainConfig)在OpenAPI Explorer中进行可视化调试，并生成SDK代码示例。
+前往【[API Explorer](https://api.aliyun.com/#product=waf-openapi&api=CreateDomainConfig)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
 
 ## 请求参数 {#parameters .section}
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
+|Action|String|是|CreateDomainConfig|要执行的操作。取值：**CreateDomainConfig**。
+
+ |
 |Domain|String|是|rstest.cdn.com|域名名称。
 
  |
@@ -39,12 +42,12 @@
 -   **http,https**：同时支持HTTP、HTTPS协议。
 
  |
-|SourceIps|String|是|1.1.1.1|源站IP，支持指定多个IP。
+|SourceIps|String|是|1.1.1.1|源站IP，支持指定多个IP。示例值：`["1.1.1.1"]`。
 
  |
-|HttpPort|String|否|80|HTTP协议配置的端口。指定多个HTTP端口时，使用“,”进行分隔。
+|HttpPort|String|否|80|HTTP协议配置的端口。指定多个HTTP端口时，使用“,”进行分隔。示例值：`[80]`。
 
- **说明：** 配置协议为HTTP时，该参数为必填项。默认值为80。**HttpPort**与**HttpsPort**两个请求参数至少需要填一个。
+ **说明：** 配置协议为HTTP时，该参数为必填项。默认值为**80**。**HttpPort**与**HttpsPort**两个请求参数至少需要填一个。
 
  |
 |HttpToUserIp|Integer|否|0|是否开启HTTPS访问请求通过HTTP协议转发回源站，取值：
@@ -55,9 +58,9 @@
  **说明：** 如果您的网站不支持HTTPS回源，开启HTTP回源（默认回源端口是80端口）功能项，即可通过WAF实现HTTPS访问。
 
  |
-|HttpsPort|String|否|443|HTTPS协议配置的端口。指定多个HTTPS端口时，使用“,”进行分隔。
+|HttpsPort|String|否|443|HTTPS协议配置的端口。指定多个HTTPS端口时，使用“,”进行分隔。示例值：`[443]`。
 
- **说明：** 配置协议为HTTPS时，该参数为必填项。默认值为443。**HttpPort**与**HttpsPort**两个请求参数至少需要填一个。
+ **说明：** 配置协议为HTTPS时，该参数为必填项。默认值为**443**。**HttpPort**与**HttpsPort**两个请求参数至少需要填一个。
 
  |
 |HttpsRedirect|Integer|否|0|是否开启HTTPS强制跳转，取值：
@@ -82,8 +85,8 @@
  |
 |Region|String|否|cn|WAF实例所在的地域。取值：
 
- -   **cn**：表示中国大陆地区。
--   **cn-hongkong**：表示海外地区。
+ -   **cn**：表示中国大陆地区（默认）
+-   **cn-hongkong**：表示海外地区
 
  |
 |RsType|Integer|否|0|该域名的回源地址类型，取值：
