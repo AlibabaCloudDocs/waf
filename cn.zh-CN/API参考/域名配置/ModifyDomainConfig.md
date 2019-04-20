@@ -27,14 +27,14 @@
 -   **1**：表示有。
 
  |
-|Protocols|String|是|http|该域名所支持的访问协议，取值：
+|Protocols|String|是|\["http"\]|该域名所支持的访问协议，取值：
 
  -   **http**：表示支持HTTP协议。
 -   **https**：表示支持HTTPS协议。
 -   **http,https**：同时支持HTTP、HTTPS协议。
 
  |
-|HttpPort|String|否|80|HTTP协议配置的端口。指定多个HTTP端口时，使用“,”进行分隔。示例值：`[80]`。
+|HttpPort|String|否|\[80\]|HTTP协议配置的端口。指定多个HTTP端口时，使用“,”进行分隔。示例值：`[80]`。
 
  **说明：** 配置协议为HTTP时，该参数为必填项。默认值为**80**。**HttpPort**与**HttpsPort**两个请求参数至少需要填一个。
 
@@ -47,7 +47,7 @@
  **说明：** 如果您的网站不支持HTTPS回源，开启HTTP回源（默认回源端口是80端口）功能项，即可通过WAF实现HTTPS访问。
 
  |
-|HttpsPort|String|否|443|HTTPS协议配置的端口。指定多个HTTPS端口时，使用“,”进行分隔。示例值：`[443]`。
+|HttpsPort|String|否|\[443\]|HTTPS协议配置的端口。指定多个HTTPS端口时，使用“,”进行分隔。示例值：`[443]`。
 
  **说明：** 配置协议为HTTPS时，该参数为必填项。默认值为**443**。**HttpPort**与**HttpsPort**两个请求参数至少需要填一个。
 
@@ -70,7 +70,7 @@
 -   **cn-hongkong**：表示海外地区
 
  |
-|SourceIps|String|否|1.1.1.1|源站IP，支持指定多个IP。示例：`["1.1.1.1"]`。
+|SourceIps|String|否|\[1.1.1.1\]|源站IP，支持指定多个IP。示例：`["1.1.1.1"]`。
 
  |
 
