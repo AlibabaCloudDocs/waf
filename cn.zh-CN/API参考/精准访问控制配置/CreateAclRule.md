@@ -51,8 +51,8 @@
 -   **Conditions**，Array类型，可选，规则匹配条件，数组中具体定义见下表。
     -   **Key**，String类型，必选，匹配字段，取值包括IP、URL、Referer、User-Agent、Params、Cookie、Content-Type、X-Forwarded-For、Content-Length、Post-Body、Http-Method、Header。不同版本的WAF实例支持的匹配字段不同，您可以在Web应用防火墙管理控制台中查看您的实例当前所支持的匹配字段。
     -   **Contain**，Integer类型，必选，逻辑符，取值：
-        -   **0**：表示不包含。
-        -   **1**：表示包含。
+        -   **0**：表示不包含或不属于。
+        -   **1**：表示包含或属于。
         -   **2**：表示不存在。
         -   **10**：表示不等于。
         -   **11**：表示等于。
