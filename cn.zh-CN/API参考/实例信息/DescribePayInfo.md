@@ -1,4 +1,4 @@
-# DescribePayInfo {#doc_api_1096868 .reference}
+# DescribePayInfo {#doc_api_waf-openapi_DescribePayInfo .reference}
 
 调用DescribePayInfo接口获取指定地域的WAF实例当前信息。
 
@@ -15,13 +15,13 @@
 |Action|String|是|DescribePayInfo|要执行的操作。取值：**DescribePayInfo**。
 
  |
-|InstanceSource|String|否|cn|实例来源。默认值：**waf-cloud**。
+|InstanceSource|String|否|waf-cloud|实例来源。默认值：**waf-cloud**。
 
  |
 |Region|String|否|cn|地域ID，取值：
 
- -   **cn**：表示中国大陆地区。
--   **cn-hongkong**：表示海外地区。
+ -   **cn**：表示中国大陆地区（默认）
+-   **cn-hongkong**：表示海外地区
 
  |
 
