@@ -13,6 +13,7 @@ The real-time log analysis feature in WAF collects and stores access logs in rea
 
 ## Benefits {#section_mds_fpd_2gb .section}
 
+-   Compliance: Stores the website's access logs for more than six months to help the website meet the compliance requirements.
 -   Simple configuration: You can easily configure the service to collect access logs and attack logs on your site.
 -   Real-time analysis: Integrated with Log Service, the service supports real-time log analysis and offers a ready-to-use report center. You can easily gain information about the details of attacks, and visits to your site.
 -   Real-time alarms: Near real-time monitoring and custom alarms based on specific metrics are available to ensure a timely response to critical service failures.
@@ -22,8 +23,8 @@ The real-time log analysis feature in WAF collects and stores access logs in rea
 
 To use the real-time analysis feature in WAF, you must meet the following prerequisites:
 
--   You have activated [Log Service](../../../../../reseller.en-US/Quick Start/5-minute quick start.md#).
--   You have activated [WAF Enterprise Edition](../../../../../reseller.en-US/Pricing/Subscription/Purchase Web Application Firewall.md#) and enabled the log analysis module.
+-   You have activated [Log Service](../../../../reseller.en-US/Quick Start/5-minute quick start.md#).
+-   You have activated [WAF Enterprise Edition](../../../../reseller.en-US/Pricing/Subscription/Purchase Web Application Firewall.md#) and enabled the log analysis module.
 
 All log data in WAF is stored in an exclusive logstore that has the following limits:
 
