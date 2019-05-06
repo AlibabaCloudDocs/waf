@@ -24,7 +24,7 @@ The real-time log analysis feature in WAF collects and stores access logs in rea
 To use the real-time analysis feature in WAF, you must meet the following prerequisites:
 
 -   You have activated [Log Service](../../../../reseller.en-US/Quick Start/5-minute quick start.md#).
--   You have activated [WAF Enterprise Edition](../../../../reseller.en-US/Pricing/Subscription/Purchase Web Application Firewall.md#) and enabled the log analysis module.
+-   You have activated [WAF Enterprise Edition](../../../../reseller.en-US/Pricing/Subscription/Activate Alibaba Cloud WAF.md#) and enabled the log analysis module.
 
 All log data in WAF is stored in an exclusive logstore that has the following limits:
 
