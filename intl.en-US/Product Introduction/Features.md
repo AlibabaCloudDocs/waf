@@ -23,7 +23,7 @@ Monitors the HTTP and HTTPS \(only for WAF Business and Enterprise editions\) re
 
 **HTTP ACL Policy**
 
--   Provides a user-friendly configuration console that supports condition combinations of common HTTP fields such as IP, URL, Referer, and User-Agent to form precise access control policies. Also supports anti-leech protection, website back end protection, and so on.
+-   Provides a user-friendly configuration console that supports condition combinations of common HTTP fields such as IP, URL, Referer, and User-Agent to form precise access control policies. Also supports anti-leech protection, website backend protection, and so on.
 -   Combined with common web attack protection and HTTP flood protection, access control helps to create multiple layers of protection to suit a variety of needs to identify legitimate and malicious requests.
 
 **Virtual patches**
@@ -39,6 +39,4 @@ Supports centralized management and analysis of attack events, attack traffic, a
 -   **Load balancing**: Provides services in cluster mode, with load balancing among multiple devices. Supports multiple load balancing policies.
 -   **Smooth capacity expansion**: Reduces or increases the number of cluster devices based on actual traffic and performs flexible capacity expansion of service.
 -   **No single-point issues**: Even if a single device breaks down or is offline for repair, services are not affected at all.
-
-For more information, see the [Web Application Firewall product detail](https://www.alibabacloud.com/zh/product/waf) page.
 
