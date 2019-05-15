@@ -8,7 +8,7 @@ Consul使用Go语言编写，因此具有天然的可移植性（支持Linux、W
 
 ## 漏洞名称 {#section_urn_xp4_m2b .section}
 
-Hashicorp Consul Services API远程命令执行远程命令执行漏洞
+Hashicorp Consul Services API远程命令执行漏洞
 
 ## 漏洞描述 {#section_l12_zp4_m2b .section}
 
@@ -18,15 +18,11 @@ Hashicorp Consul Services API远程命令执行远程命令执行漏洞
 
 1.  验证Consul服务端存在该远程命令执行漏洞。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/218967/155790340147331_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/218967/155790426047331_zh-CN.png)
 
-2.  构造HTTP PUT请求。
+2.  构造HTTP PUT请求，实现在Consul服务端远程执行命令。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/218967/155790340147320_zh-CN.png)
-
-3.  远程命令执行成功。
-
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/218967/155790340147321_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/218967/155790426147320_zh-CN.png)
 
 
 ## 影响范围 {#section_kch_bq4_m2b .section}
@@ -42,7 +38,7 @@ Hashicorp Consul Services API远程命令执行远程命令执行漏洞
 -   确保Consul HTTP API服务无法通过外网访问或调用
 -   启用Web应用防火墙的精准访问控制功能，配置以下防护规则。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/218967/155790340147322_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/218967/155790426147322_zh-CN.png)
 
 
 ## 更多信息 {#section_yls_mn4_m2b .section}
