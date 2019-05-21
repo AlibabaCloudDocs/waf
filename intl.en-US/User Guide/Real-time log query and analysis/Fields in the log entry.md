@@ -81,4 +81,5 @@ WAF keeps detailed log entries for your domains, including access requests and a
 
  |block|
 |web\_attack\_type|The Web attack type such as xss, code\_exec, webshell, sqli, lfilei, rfilei, and other.|xss|
+|waf\_rule\_id|The ID of the WAF rule that is matched.|100|
 
