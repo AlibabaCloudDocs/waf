@@ -43,9 +43,9 @@ Shared hosts use shared IP addresses, which means that the origin is used by mul
 
 ## How to prevent HTTP flood attacks? {#section_vfb_j5k_q2b .section}
 
-WAF provides HTTP flood protection in the Normal and Emergency modes. You can switch the protection mode based on the actual situation. For more information, see [Configure the HTTP flood protection mode](../../../../../reseller.en-US/User Guide/Configuration/HTTP flood protection.md#).
+WAF provides HTTP flood protection in the Normal and Emergency modes. You can switch the protection mode based on the actual situation. For more information, see [Configure the HTTP flood protection mode](../../../../intl.en-US/User Guide/Configuration/HTTP flood protection.md#).
 
-For better protection effects and lower false positives rate, you can use the WAF Business Edition or WAF Enterprise Edition, to customize or request the security professional to customize targeted protection policies for you. For more information, see [Customize HTTP flood protection](../../../../../reseller.en-US/User Guide/Configuration/Custom HTTP flood protection.md#).
+For better protection effects and lower false positives rate, you can use the WAF Business Edition or WAF Enterprise Edition, to customize or request the security professional to customize targeted protection policies for you. For more information, see [Customize HTTP flood protection](../../../../intl.en-US/User Guide/Configuration/Custom HTTP flood protection.md#).
 
 ## Does WAF support HTTPS? {#section_wfb_j5k_q2b .section}
 
@@ -57,7 +57,7 @@ WAF can handle HTTPS traffic if the SSL certificate and key are uploaded as need
 
 The Business and Enterprise editions of WAF support user-defined non-standard ports. The Business version supports up to 10 non-standard ports and the Enterprise version supports up to 50 non-standard ports.
 
-**Note:** For more information, see [Supported non-standard ports](../../../../../reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Supported non-standard ports.md#).
+**Note:** For more information, see [Supported non-standard ports](../../../../intl.en-US/User Guide/Use the DNS proxy mode to configure WAF/Supported non-standard ports.md#).
 
 ## Does the QPS limitation of WAF aim at the QPS summarized by the whole WAF instances or the QPS upper limit for one configured domain name? {#section_yfb_j5k_q2b .section}
 
@@ -65,7 +65,7 @@ The QPS limitation of WAF is for all WAF instances. For example, if the configur
 
 ## Which edition of WAF provides security against malicious SMS? {#section_zfb_j5k_q2b .section}
 
-All editions of WAF provides security against malicious SMS. For more information, see [How to select the WAF edition](../../../../../reseller.en-US/Pricing/Subscription/Subscription plans.md#).
+All editions of WAF provides security against malicious SMS. For more information, see [How to select the WAF edition](../../../../intl.en-US/Pricing/Subscription/Subscription plans.md#).
 
 ## Can the origin IP address in WAF be set to an internal network IP address of ECS? {#section_agb_j5k_q2b .section}
 
@@ -77,7 +77,7 @@ The WAF is fully compatible with CDN and Anti-DDoS services. Fundamental archite
 
 For service combination with Anti-DDoS or CDN, WAF’s CNAME must be entered as the origin for Anti-DDoS or CDN. This action turns the traffic towards WAF after it goes through Anti-DDoS or CDN. WAF then returns the traffic to the origin.
 
-For more information, see [Use Anti-DDoS Pro with WAF](../../../../../reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Deploy WAF and Anti-DDoS Pro together.md#) and [Use CDN with WAF](../../../../../reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Deploy WAF and CDN together.md#).
+For more information, see [Use Anti-DDoS Pro with WAF](../../../../intl.en-US/User Guide/Use the DNS proxy mode to configure WAF/Deploy WAF and Anti-DDoS Pro together.md#) and [Use CDN with WAF](../../../../intl.en-US/User Guide/Use the DNS proxy mode to configure WAF/Deploy WAF and CDN together.md#).
 
 ## Can WAF protect IP addresses of multiple origins under one domain name? {#section_cgb_j5k_q2b .section}
 
@@ -105,19 +105,19 @@ Generally, the modified configuration is effective within a minute.
 
 ## What is the back-to-source IP address of WAF? {#section_igb_j5k_q2b .section}
 
-You can view the back-to-source IP address on the **Management** \> **Website Configuration** page of the [Alibaba Cloud WAF console](https://partners-intl.console.aliyun.com/#/waf). For more information, see [How to View the WAF back-to-source IP address](reseller.en-US/FAQ/How to view the WAF back-to-source IP addresses?.md#).
+You can view the back-to-source IP address on the **Management** \> **Website Configuration** page of the [Alibaba Cloud WAF console](https://yundun.console.aliyun.com/?p=waf). For more information, see [How to View the WAF back-to-source IP address](intl.en-US/FAQ/How to view the WAF back-to-source IP addresses?.md#).
 
 ## Does WAF automatically add its back-to-source IP addresses to the security group? {#section_jgb_j5k_q2b .section}
 
 No, WAF does not automatically add its back-to-source IP addresses to the security group. If your origin is deployed with other firewall or host security protection software, we recommend that you manually add the WAF back-to-source IP addresses to the whitelist.
 
-For more information, see [Protect your origin server](../../../../../reseller.en-US/Best Practices/Protect your origin server.md#).
+For more information, see [Protect your origin server](../../../../intl.en-US/Best Practices/Protect your origin server.md#).
 
 ## Do I need to allow accesses from all client IP addresses to enable WAF back-to-source? {#section_kgb_j5k_q2b .section}
 
 No, because according to your service type you can only allow the WAF back-to-source IP addresses or IP addresses of all clients.
 
-For the Web service, we recommend that you only allow the WAF back-to-source IP addresses to [protect the origin](../../../../../reseller.en-US/Best Practices/Protect your origin server.md#).
+For the Web service, we recommend that you only allow the WAF back-to-source IP addresses to [protect the origin](../../../../intl.en-US/Best Practices/Protect your origin server.md#).
 
 ## Can the source IP addresses of HTTP flood attacks be viewed in WAF console? {#section_lgb_j5k_q2b .section}
 
@@ -136,7 +136,7 @@ Yes, WAF supports the entry of an IP network segment in the IP field of HTTP ACL
 -   WAF provides independent IP addresses to each user. These IP addresses are also subject to Anti-DDoS blackhole policies, and are consistent with ECS and Server Load Balancer.
 -   The blackhole threshold for WAF is the same as the ECS default threshold in the current region.
 
-You can purchase **Anti-DDoS Pro** to protect your website against DDoS attacks.
+You can purchase [Anti-DDoS Pro](https://www.alibabacloud.com/product/ddos-pro) to protect your website against DDoS attacks.
 
 ## Does WAF support HTTPS two-way authentication? {#section_rgb_j5k_q2b .section}
 
@@ -150,9 +150,11 @@ WAF is already supporting the WebSocket protocol. However, it currently does not
 
 **Supported SSL protocols**:
 
--   TLSv1
--   TLSv1.1
--   TLSv1.2
+-   WAF instance of the Mainland China region supports the following SSL protocols:
+    -   TLSv1
+    -   TLSv1.1
+    -   TLSv1.2
+-   WAF instance of the International region supports the TLSv1.2 protocol.
 
 **Example of SSL\_ciphers suite**:
 
