@@ -9,6 +9,6 @@
 1.  在手机或电脑上下载[钉钉](http://www.dingtalk.com/index-b.html#download_block)聊天软件，并注册账号。
 2.  扫描下方的钉钉二维码加入群聊，与WAF产品经理和安全专家直接在线沟通。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15603/15602303027992_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15603/15602304287992_zh-CN.png)
 
 
