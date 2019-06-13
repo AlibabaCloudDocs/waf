@@ -2,8 +2,8 @@
 
 After the website is deployed with Alibaba Cloud WAF and WAF protection policies are configured, you can access the WAF security reports to gain an insight into the security situation of your web business or conduct business analysis.
 
-1.  Log on to the [Alibaba Cloud WAF console](https://yundun.console.aliyun.com/?p=waf). 
-2.  On the top of the page, select the region: **Mainland China**, **International**. 
+1.  Log on to the [Alibaba Cloud WAF console](https://yundun.console.aliyun.com/?p=waf).
+2.  On the top of the page, select the region: **Mainland China**, **International**.
 3.  On the **Reports** \> **Overview** page, view the statistics of your **Business** and **Security** situations. 
 
     You can view the following Business statistics:
@@ -20,7 +20,7 @@ After the website is deployed with Alibaba Cloud WAF and WAF protection policies
     -   Frequencies of Web application attacks, HTTP flood attacks, and Web ACL events of the latest 30 days
     -   Risk warnings of newly exposed industry or business security events
     -   Messages of update of Alibaba Cloud WAF protection rule sets
-    For more information, see [Security overview](../../../../intl.en-US/User Guide/Protection reports/Overview.md#).
+    For more information, see [Security overview](../../../../intl.en-US/User Guide/Reporting/Business and security overview.md#).
 
 4.  On the **Reports** \> **Reports** page, query the detailed **Attack Protection** records and **Risk Warnings**. 
 
@@ -37,6 +37,6 @@ After the website is deployed with Alibaba Cloud WAF and WAF protection policies
     -   Robot scripts
     -   Web crawlers
     -   SMS interferes abuse
-    For more information, see [Attack protection reports](../../../../intl.en-US/User Guide/Protection reports/Attack protection reports.md#) and [Risk warnings](../../../../intl.en-US/User Guide/Protection reports/Risk warning report.md#).
+    For more information, see [WAF security reports](../../../../intl.en-US/User Guide/Reporting/WAF security reports.md#).
 
 
