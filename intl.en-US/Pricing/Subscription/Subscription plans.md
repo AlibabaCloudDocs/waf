@@ -20,18 +20,18 @@ Generally, we recommend that you consider the Business or Enterprise plan to bui
 |Inspecting and blocking malicious registration|√|√|√|
 |Advanced HTTP access control based on most common HTTP request header fields such as UA and Referer|√|√|√|
 |Protecting non-standard ports other than 80, 8080, 443, and 8443|×|√|√|
-|Retrieving web access logs of the last 30 days|×|√**Note:** Not supported for international region. Consider the Enterprise plan.
+|Retrieving web access logs of the last 30 days|×|√ **Note:** Not supported for international region. Consider the Enterprise plan.
 
-|√|
+ |√|
 |Rated-based access control that can limit the number of requests per specified time interval|×|√|√|
 |Geolocation-based access control that can block all requests from the specified region|×|√|√|
 |Mitigating \(API\) HTTP flood attacks|×|√|√|
 |Protecting sensitive data such as identity card number, mobile phone number, and bank card number|√|√|√|
-|Customizing protection rules by security experts|×|×|√|
+|Custom protection rule groups|×|×|√|
 |Security consulting services|×|×|√|
-|Data visualization|√**Note:** Not support for international region. Consider the Business or Enterprise plan.
+|Data visualization|√ **Note:** Not support for international region. Consider the Business or Enterprise plan.
 
-|√|√|
+ |√|√|
 |**Pricing**| -   China Mainland: 499 USD per month
 -   International: 299 USD per month
 
