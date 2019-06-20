@@ -21,7 +21,7 @@ If you are using subscription-based WAF instances, you can choose from the follo
 |Protection for ports other than 80, 8080, 443, and 8443.|[Support for non-standard ports](../../../../reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Supported non-standard ports.md#)|×|√|√|
 |Protection against common Web attacks, such as SQL injection and XSS attacks.|[Web application protection](../../../../reseller.en-US/Best Practices/Best practices for Web application protection.md#)|√|√|√|
 |Automatic update of protection rules against Web zero-day vulnerabilities|√|√|√|
-|![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15538/156102099738159_en-US.png)Custom rule groups|[Custom rule groups](../../../../reseller.en-US/User Guide/Setting/Custom rule groups.md#)|×|√ **Note:** WAF instances created in International regions must be upgraded to the Enterprise edition.
+|![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15538/156102109738159_en-US.png)Custom rule groups|[Custom rule groups](../../../../reseller.en-US/User Guide/Setting/Custom rule groups.md#)|×|√ **Note:** WAF instances created in International regions must be upgraded to the Enterprise edition.
 
  |√|
 |Protection against HTTP floods targeting Web services|[HTTP flood protection](../../../../reseller.en-US/User Guide/Configuration/HTTP flood protection.md#)|√|√|√|
@@ -37,7 +37,7 @@ If you are using subscription-based WAF instances, you can choose from the follo
 |Intelligent retrieval of access logs|[Log search](../../../../reseller.en-US/User Guide/Reporting/Log search.md#)|×|√ **Note:** WAF instances created in International regions must be upgraded to the Enterprise edition.
 
  |√|
-|![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15538/156102099738159_en-US.png)Real-time log query and analysis service **Note:** The real-time log query and analysis service is a value-added service. To use this service, you must purchase the service first. For more information about pricing, see [Billing methods](../../../../reseller.en-US/User Guide/Real-time log query and analysis/Billing method.md#).
+|![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15538/156102109738159_en-US.png)Real-time log query and analysis service **Note:** The real-time log query and analysis service is a value-added service. To use this service, you must purchase the service first. For more information about pricing, see [Billing methods](../../../../reseller.en-US/User Guide/Real-time log query and analysis/Billing method.md#).
 
  |[Real-time log analysis](../../../../reseller.en-US/User Guide/Real-time log query and analysis/Real-time log analysis.md#)|√|√|√|
 |Data visualization|[Data visualization](../../../../reseller.en-US/User Guide/Reporting/Data visualization.md#)|√ **Note:** WAF instances created in international regions must be upgraded to the Business or Enterprise edition.
