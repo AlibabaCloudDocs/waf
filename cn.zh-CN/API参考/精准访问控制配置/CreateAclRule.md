@@ -21,7 +21,7 @@
  **说明：** 您可以通过调用[DescribePayInfo](~~86651~~)接口查看您当前WAF实例ID。
 
  |
-|Rules|String|是|Rules:'\{"conditions":\[\{"key":"URL","contain":1,"value":"asfas"\}\],"continueComponent":\{"post\_action\_cc":1,"post\_action\_waf":1,"post\_action\_sa":1,"post\_action\_block\_geo":"0","post\_action\_data\_risk\_control":"1"\},"action":"1","name":"lei123"\}'|精准访问控制规则详细信息，采用JSON格式的字符串表述，具体结构见下表。
+|Rules|String|是|\{"conditions":\[\{"key":"URL","contain":1,"value":"asfas"\}\],"continueComponent":\{"post\_action\_cc":1,"post\_action\_waf":1,"post\_action\_sa":1,"post\_action\_block\_geo":"0","post\_action\_data\_risk\_control":"1"\},"action":"1","name":"lei123"\}|精准访问控制规则详细信息，采用JSON格式的字符串表述，具体结构见下表。
 
  -   **Id**：Long类型，可选，规则ID。
 -   **Name**：String类型，必选，规则名称。
