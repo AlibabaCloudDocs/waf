@@ -2,7 +2,7 @@
 
 调用DescribeRegions接口获取当前WAF支持的地域信息。
 
-**说明：** 请求该API接口时，无需指定**Region**和**InstanceId**这两个公共请求参数。
+**说明：** 请求该API接口时，无需指定 **Region** 和 **InstanceId** 这两个公共请求参数。
 
 ## 调试 {#apiExplorer .section}
 
@@ -12,7 +12,7 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|DescribeRegions|要执行的操作。取值：**DescribeRegions**。
+| Action |String|是|DescribeRegions| 要执行的操作。取值： **DescribeRegions** 。
 
  |
 
@@ -20,19 +20,19 @@
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|Regions| | |地域列表信息。
+|Regions| | | 地域列表信息。
 
  |
-|└Display|String|ture|是否在该地域提供WAF服务：
+|└Display|String|ture| 是否在该地域提供WAF服务：
 
- -   **true**：表示是。
--   **false**：表示否。
-
- |
-|└Region|String|cn|地域ID。
+ -    **true** ：表示是。
+-    **false** ：表示否。
 
  |
-|RequestId|String|276D7566-31C9-4192-9DD1-51B10DAC29D2|请求ID。
+|└Region|String|cn| 地域ID。
+
+ |
+|RequestId|String|276D7566-31C9-4192-9DD1-51B10DAC29D2| 请求ID。
 
  |
 
@@ -49,7 +49,7 @@ https://wafopenapi.cn-hangzhou.aliyuncs.com/?Action=DescribeRegions
 
 正常返回示例
 
-`XML` 格式
+ `XML` 格式
 
 ``` {#xml_return_success_demo}
 <DescribeRegionsResponse>
@@ -68,7 +68,7 @@ https://wafopenapi.cn-hangzhou.aliyuncs.com/?Action=DescribeRegions
 
 ```
 
-`JSON` 格式
+ `JSON` 格式
 
 ``` {#json_return_success_demo}
 {
@@ -90,5 +90,5 @@ https://wafopenapi.cn-hangzhou.aliyuncs.com/?Action=DescribeRegions
 
 ## 错误码 { .section}
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/waf-openapi)
+ [查看本产品错误码](https://error-center.aliyun.com/status/product/waf-openapi) 
 
