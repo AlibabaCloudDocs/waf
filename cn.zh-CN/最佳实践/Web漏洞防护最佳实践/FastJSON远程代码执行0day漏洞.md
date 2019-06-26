@@ -10,7 +10,7 @@ FastJSON远程代码执行0day漏洞
 
 利用该0day漏洞，恶意攻击者可以构造攻击请求绕过FastJSON的黑名单策略。例如，攻击者通过精心构造的请求，远程让服务端执行指定命令（以下示例中成功运行计算器程序）。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/697797/156153910250339_zh-CN.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/697797/156154017250339_zh-CN.jpg)
 
 ## 影响范围 {#section_mmd_wzu_i8a .section}
 
@@ -37,9 +37,11 @@ FastJSON远程代码执行0day漏洞
 
 ## 防护建议 {#section_xmv_5a4_yyb .section}
 
-Web应用防火墙的Web攻击防护规则中已配置相应防护规则，您可以通过[自定义规则组](../../../../cn.zh-CN/用户指南/设置/自定义规则组.md#)功能添加以下规则防护该FastJSON漏洞：
+Web应用防火墙的Web攻击防护规则中已默认配置相应规则防护该FastJSON 0day漏洞，启用Web应用防火墙的Web应用攻击防护功能即可。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/697797/156153910250340_zh-CN.png)
+如果您的业务使用[自定义规则组](../../../../cn.zh-CN/用户指南/设置/自定义规则组.md#)功能自定义所应用的防护规则，请务必在自定义规则组中添加以下规则：
+
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/697797/156154017250340_zh-CN.png)
 
 ## 更多信息 {#section_6h5_m60_j32 .section}
 
