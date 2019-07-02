@@ -44,13 +44,13 @@ If you no longer need to redirect requests for a domain name, you can restore th
 2.  On the top of the page, select **Mainland China** or **International**.
 3.  Choose **Management** \> **Website Configuration** and select **DNS Proxy Mode**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/155806173540172_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/156205425640172_en-US.png)
 
 4.  Click **Add Domain**.
 
     WAF automatically lists the domain names that have an A record configured on Alibaba Cloud DNS under the current Alibaba Cloud account. If you have not created an A record on Alibaba Cloud DNS, the Please choose your domain page will not appear. You can manually add the website configuration by following the procedure described in [Website configuration](../reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Website configuration.md#).
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15580617357562_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15620542567562_en-US.png)
 
 5.  On the Please choose your domain page, choose the **domain name** and the **protocol type** for the website.
 6.  \(Optional\) If you choose **HTTPS**, you must verify the certificate before you add the website configuration.
@@ -65,7 +65,7 @@ If you no longer need to redirect requests for a domain name, you can restore th
 
             For more information, see [Update HTTPS certificates](../reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Update HTTPS certificates.md#).
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15580617357567_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15620542567567_en-US.png)
 
     3.  Click **Verify** to verify the uploaded certificate.
 7.  Click **Add domain protection now**.
@@ -80,7 +80,7 @@ If you no longer need to redirect requests for a domain name, you can restore th
 
         If the DNS settings are not configured correctly, see [Step 2: Update the DNS settings](../reseller.en-US/Quick Start/Step 2: Update the DNS settings.md#). For more information, see [DNS resolution status exception](../reseller.en-US/FAQ/DNS resolution status exception.md#).
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15580617367570_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15546/15620542567570_en-US.png)
 
 
 ## Add website configurations manually {#manual-website-configuration .section}
@@ -113,10 +113,13 @@ If you no longer need to redirect requests for a domain name, you can restore th
     -   If you enter a wildcard domain and a specific domain name, such as `*.aliyun.com` and `www.aliyun.com`, WAF will use the redirection rules and protections policies of the specific domain name.
     -   Currently, .edu domain names are not supported. If you need to use a .edu domain name, submit a ticket to Alibaba Cloud technical support.
  |
-    |**Protocol type**|Select a protocol type. Valid values: **HTTP** and **HTTPS**. **Note:** 
+    |**Protocol type**|Select a protocol type. Valid values: **HTTP**, **HTTPS** and **HTTP2.0**. **Note:** 
 
     -   If your website supports HTTPS, select HTTPS and upload the certificate and the private key file after you add the website configuration. For more information, see [Update HTTPS certificates](reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Update HTTPS certificates.md#).
     -   After you select HTTPS, click **Advanced settings** to enable HTTP force redirect and HTTP back-to-origin to ensure efficient access to your website. For more information, see [HTTPS advanced settings](reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/HTTPS advanced settings.md#).
+    -   To select HTTP2.0, the following conditions must be met:
+        -   Your WAF instance has been upgraded to the Business or Enterprise edition.
+        -   You have selected the HTTPS protocol type.
  |
     |**Server address**|Enter the origin server IP address of the website. IP addresses and other formats of addresses are supported. WAF will filter and redirect requests to the server address.     -   \(Recommended\) Select **IP** and enter the public IP address of the origin server, such as the IP address of the ECS or SLB instance.
 
@@ -139,6 +142,7 @@ If you no longer need to redirect requests for a domain name, you can restore th
 
 **Note:** The protocol and the port must be the same as those of the origin server IP address. You cannot change the port after it is specified.
 
+    -   HTTP2.0 uses the same port as HTTPS does.
  |
     |**Any layer 7 proxy \(e.g. Anti-DDoS/CDN\) enabled?**|Select yes or no based on the actual status of your website. If you need to configure a layer 7 proxy to redirect requests before WAF, select **yes**. Otherwise, WAF cannot obtain the real IP addresses of clients that initiate requests to your website.|
     |**Load balancing algorithm**|When multiple origin server addresses are specified, select **IP hash** or **Round-robin**. WAF will distribute requests to these servers based on the specified algorithm to balance the load.|
