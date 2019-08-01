@@ -11,7 +11,7 @@ To view the **DNS resolution status**, log on to the [Alibaba Cloud WAF console]
 
 The **Normal** status displays as follows.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15598/15477826187971_en-US.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15598/15646411007971_en-US.jpg)
 
 If the DNS resolution status is **Exception**, then Alibaba Cloud WAF may not be correctly configured. This topic explains how does WAF determine the DNS resolution status and lists common exception statuses.
 
@@ -20,7 +20,7 @@ If the DNS resolution status is **Exception**, then Alibaba Cloud WAF may not be
 Alibaba Cloud WAF determines the DNS resolution status by the following conditions. When one of the conditions is met, the DNS resolution status is normal.
 
 -   Condition A: The domain name is resolved to the WAF CNAME address.
--   Condition B: Web traffic of the domain name passes through WAF. When at least 10 requests are detected in the last five seconds, it is ok. Two or three requests per minute are regarded as no traffic. To view the history of web traffic, you can check the Attack protection report of HTTP flood. For more information, see [Attack protection reports](../../../../../reseller.en-US/User Guide/Protection reports/Attack protection reports.md#).
+-   Condition B: Web traffic of the domain name passes through WAF. When at least 10 requests are detected in the last five seconds, it is ok. Two or three requests per minute are regarded as no traffic. To view the history of web traffic, you can check the Attack protection report of HTTP flood. For more information, see [WAF security reports](../../../../reseller.en-US/User Guide/Reporting/WAF security reports.md#).
 
 We recommend that you use a CNAME record to redirect web traffic to WAF. Using CNAME supports node switch or even redirecting traffic back to the origin in case of node failure or machine failure, which improves your business’s availability and failure recovery capacity. If CNAME record conflicts with your current DNS settings, you can use an A record to do traffic redirection.
 
@@ -28,15 +28,15 @@ We recommend that you use a CNAME record to redirect web traffic to WAF. Using C
 
 -   For a fully qualified domain name \(FQDN, such as example.abc.com\), if both the Domain to CNAME and Web traffic checks fail, the exception status displays as follows.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15598/15477826187972_en-US.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15598/15646411007972_en-US.jpg)
 
 -   For a wildcard domain name \(for example, \*.abc.com\), the exception status displays as follows.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15598/15477826187973_en-US.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15598/15646411007973_en-US.jpg)
 
 -   When the website is deployed with CDN or other proxy servers in front of WAF, the domain name is resolved to CDN and other proxy servers rather than WAF. As a result, the Domain to CNAME check fails. In addition, the CDN-returned traffic received by WAF is low, which may result in the Web traffic check fails. In this case, the exception message does not definitely indicate that WAF is ill-configured.
 
-    For more information about how to deploy WAF and CDN together, see [Deploy WAF and CDN together](../../../../../reseller.en-US/User Guide/Access WAF/Deploy WAF and CDN together.md#).
+    For more information about how to deploy WAF and CDN together, see [Deploy WAF and CDN together](../../../../reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Deploy WAF and CDN together.md#).
 
 
 ## Manually test if WAF is working {#section_cts_g1l_q2b .section}
