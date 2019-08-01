@@ -20,7 +20,7 @@ Follow these steps to manually renew your subscription on the Alibaba Cloud WAF 
 2.  At the top of the page, select the region of your WAF instance \(Mainland China or International\).
 3.  In the upper-right corner, click **Renew**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15543/15419878757411_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15543/15646411927411_en-US.png)
 
 4.  On the Renew page, select **Renewal Duration** and proceed with the payment.
 
@@ -42,13 +42,13 @@ Follow these steps to manage renewal for your subscription on the Renew page of 
         -   If you manually renew your instance before the billing day, auto-renewal is then performed based on the new expiration date calculated by your manual renewal plan.
         -   If you enable auto-renewal today, it will be effective from tomorrow.
         -   Auto-renewal payment supports coupons.
-    -   If you decide not to use Alibaba Cloud WAF after expiration, click **Don't Renew**, and confirm **Don't Renew**. If you choose not to renew, you will be reminded only once before the instance expires. You can change your settings on the **Don't Renew** page anytime before the instance is stopped.
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15543/15419878759702_en-US.png)
+    -   If you decide not to use Alibaba Cloud WAF after the instance expires, click **Don't Renew**, and confirm **Don't Renew**. If you choose not to renew, you will be reminded only once before the instance expires. You can change your settings on the **Don't Renew** page anytime before the instance is stopped.
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15543/15646411929702_en-US.png)
 
 
 ## Upgrade {#section_st4_hdn_42b .section}
 
-If the specification of your current Alibaba Cloud WAF subscription does not suit your requirements, you can upgrade the subscription to a higher version before its expiry, to obtain more advanced protection. For more information, see [Subscription plans](reseller.en-US/Pricing/Subscription/Subscription plans.md#).
+If the specification of your current Alibaba Cloud WAF subscription does not suit your requirements, you can upgrade the subscription to a higher version before its expiry, to obtain more advanced protection. For more information, see [Subscription plans](reseller.en-US/Pricing/Subscription/Editions and features.md#).
 
 Follow these steps to upgrade your WAF subscription:
 
@@ -56,9 +56,9 @@ Follow these steps to upgrade your WAF subscription:
 2.  At the top of the page, select the region of your WAF instance \(Mainland China or International\).
 3.  In the upper-right corner, click **Upgrade**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15543/15419878757412_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15543/15646411927412_en-US.png)
 
-4.  On the Upgrade page, select the expected configuration and proceed with the payment. For more information about the configuration, see [Activate Alibaba Cloud WAF](reseller.en-US/Pricing/Subscription/Purchase Web Application Firewall.md#).
+4.  On the Upgrade page, select the expected configuration and proceed with the payment. For more information about the configuration, see [Activate Alibaba Cloud WAF](reseller.en-US/Pricing/Subscription/Activate Alibaba Cloud WAF.md#).
 
 **Note:** After the upgrade, the new WAF instance follows the original service cycle.
 
