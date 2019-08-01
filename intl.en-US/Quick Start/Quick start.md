@@ -2,7 +2,7 @@
 
 This topic describes how to configure and use Web Application Firewall \(WAF\) after you activate WAF. To use WAF, you must complete the configuration procedure of WAF so that your website can be protected by WAF. You can view the security reports and statistics to learn about the security status of your website.
 
-**Note:** You can use the transparent proxy mode or the DNS proxy mode to configure WAF for your website. This topic describes how to use the DNS proxy mode to configure WAF. For more information about the transparent proxy mode, see [Use the transparent proxy mode to configure WAF](../../../../../reseller.en-US/User Guide/Use the transparent proxy mode to implement WAF.md#).
+**Note:** You can use the transparent proxy mode or the DNS proxy mode to configure WAF for your website. This topic describes how to use the DNS proxy mode to configure WAF. For more information about the transparent proxy mode, see [Use the transparent proxy mode to configure WAF](../../../../reseller.en-US/User Guide/Use the transparent proxy mode to implement WAF.md#).
 
 ## Procedure {#section_cl3_pmq_dgb .section}
 
@@ -13,9 +13,9 @@ This topic describes how to configure and use Web Application Firewall \(WAF\) a
 -   \(HTTPS-based websites\) You have obtained the HTTPS certificate and the private key file of the website, or the HTTPS certificate is managed by Alibaba Cloud SSL Certificates Service.
 
  |
-|[\(Optional\) 2. Change DNS records](reseller.en-US/Quick Start/Step 2: Update the DNS settings.md#)|Change the DNS record of the website to redirect requests that are sent to the website to WAF for monitoring.**Note:** You must perform this operation when you are required to manually change the DNS record, or you need to manually add a website configuration.
+|[\(Optional\) 2. Change DNS records](reseller.en-US/Quick Start/Step 2: Update the DNS settings.md#)|Change the DNS record of the website to redirect requests that are sent to the website to WAF for monitoring. **Note:** You must perform this operation when you are required to manually change the DNS record, or you need to manually add a website configuration.
 
-|Change the CNAME record to configure WAF.| -   You have obtained the WAF CNAME address.
+ |Change the CNAME record to configure WAF.| -   You have obtained the WAF CNAME address.
 -   You have the permissions to change DNS records at your DNS service provider.
 
  |
@@ -25,5 +25,5 @@ This topic describes how to configure and use Web Application Firewall \(WAF\) a
 
  |You have configured WAF for your website and DNS resolution is working properly.|
 
-For more information, see [Overview](../../../../../reseller.en-US/User Guide/Overview.md#) and [User guide](../../../../../reseller.en-US/User Guide/Get started with Alibaba Cloud WAF.md#).
+For more information, see [Overview](../../../../reseller.en-US/User Guide/Overview.md#).
 
