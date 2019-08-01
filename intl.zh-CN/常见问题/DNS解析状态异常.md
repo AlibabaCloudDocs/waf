@@ -11,7 +11,7 @@
 
 **正常**接入的结果如下图：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15598/15477826067971_zh-CN.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15598/15646400317971_zh-CN.jpg)
 
 如果DNS解析状态提示**异常**，则WAF可能没有正确接入。如果您确认已将域名解析到WAF的CNAME地址，并且业务访问也都正常，可以忽略此处的提示。
 
@@ -20,7 +20,7 @@
 WAF根据以下条件判断域名的DNS解析状态，当满足其中一个条件就判断为接入正常。
 
 -   条件1：接入的域名是通过CNAME解析过来的。
--   条件2：接入的域名有一定的流量。在五秒内至少有多于10个请求才判断为有一定流量。如果每分钟只有两、三个请求，则流量太低，判断为无流量。历史流量可在[攻击防护报表](../../../../../intl.zh-CN/用户指南/防护统计/攻击防护报表.md#)下的CC攻击报表中查看。
+-   条件2：接入的域名有一定的流量。在五秒内至少有多于10个请求才判断为有一定流量。如果每分钟只有两、三个请求，则流量太低，判断为无流量。历史流量可在[WAF安全报表](../../../../intl.zh-CN/用户指南/防护统计/WAF安全报表.md#)下的CC攻击报表中查看。
 
 推荐您使用CNAME而不是A记录的方式接入WAF，因为前者可以在机房故障等极端情况下切换到其他的节点或机房，实现灾备，使用A记录接入时则无法实现灾备。正常情况下，WAF也支持使用A记录接入。
 
@@ -28,15 +28,15 @@ WAF根据以下条件判断域名的DNS解析状态，当满足其中一个条�
 
 -   当您使用精确域名（不包含“\*”的域名，如example.abc.com）接入WAF时，如果既没有CNAME接入，又没有流量，则会显示以下异常状态：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15598/15477826067972_zh-CN.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15598/15646400327972_zh-CN.jpg)
 
 -   当您使用泛域名（如\*.abc.com）接入WAF时，除了正常的解析状态，只会出现以下一种异常状态：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15598/15477826077973_zh-CN.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15598/15646400327973_zh-CN.jpg)
 
 -   当WAF前部署了CDN等代理（假设接入架构为CDN \> WAF）时，则域名解析在CDN上，这时不会检测到WAF有CNAME接入。通常CDN回源到WAF的流量很低，可能会由于流量太小而引起接入状态异常。这种情况下，如果您确认配置没有问题，则接入状态显示异常并不一定代表WAF没有正确接入。
 
-    关于CDN结合Web应用防火墙的配置，请参考[同时部署WAF和CDN](../../../../../intl.zh-CN/用户指南/接入WAF/同时部署WAF和CDN.md#)。
+    关于CDN结合Web应用防火墙的配置，请参考[同时部署WAF和CDN](../../../../intl.zh-CN/用户指南/使用DNS配置模式接入WAF/同时部署WAF和CDN.md#)。
 
 
 ## 如何手动测试WAF在正常防护网站 {#section_cts_g1l_q2b .section}
