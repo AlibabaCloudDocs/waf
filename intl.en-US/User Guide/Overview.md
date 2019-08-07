@@ -19,28 +19,28 @@ WAF supports the Subscription billing method. When you use the Subscription bill
 
 After you activate WAF, you will obtain a WAF instance and a WAF IP address. This WAF instance provides protection for up to 10 domains. These domains must use the same top-level domain.
 
-**Related topics**
+**Related topics** 
 
--   [WAF billing methods](../../../../../reseller.en-US/Pricing/Billing method.md#)
--   [Activate Web Application Firewall](../../../../../reseller.en-US/Pricing/Subscription/Activate Alibaba Cloud WAF.md#)
--   [WAF renewal and upgrade](../../../../../reseller.en-US/Pricing/Renewal and upgrade.md#)
+-   [WAF billing methods](../../../../reseller.en-US/Pricing/Billing method.md#)
+-   [Activate Web Application Firewall](../../../../reseller.en-US/Pricing/Subscription/Activate Alibaba Cloud WAF.md#)
+-   [WAF renewal and upgrade](../../../../reseller.en-US/Pricing/Renewal and upgrade.md#)
 -   [Disable Web Application Firewall](reseller.en-US/User Guide/Setting/Release WAF instance.md#)
 
-**WAF instance specifications**
+**WAF instance specifications** 
 
--   [Subscription plans](../../../../../reseller.en-US/Pricing/Subscription/Subscription plans.md#)
+-   [Subscription plans](../../../../reseller.en-US/Pricing/Subscription/Editions and features.md#) 
 
     Web Application Firewall offers three Subscription plans: Advanced, Enterprise, and Flagship. You can select an appropriate Subscription plan based on your Web business scale and actual protection requirements.
 
--   [Extra bandwidth](../../../../../reseller.en-US/Pricing/Subscription/Extra bandwidth.md#)
+-   [Extra bandwidth](../../../../reseller.en-US/Pricing/Subscription/Extra bandwidth.md#) 
 
     Before you choose a WAF Subscription plan, you need to evaluate your normal business traffic to separate normal traffic from unusual traffic, such as DDoS attacks. Different Subscription plans support different bandwidth conditions. If your actual business traffic exceeds the upper limit offered by the plan, you must purchase extra bandwidth.
 
--   [Extra domain quotas](../../../../../reseller.en-US/Pricing/Subscription/Extra domain quota.md#)
+-   [Extra domain quotas](../../../../reseller.en-US/Pricing/Subscription/Extra domain quota.md#) 
 
     If you need to protect domain names that use different top-level domains, you must purchase extra domain quotas.
 
--   [Exclusive WAF IP addresses](../../../../../reseller.en-US/Pricing/Subscription/Exclusive WAF IP.md#)
+-   [Exclusive WAF IP addresses](../../../../reseller.en-US/Pricing/Subscription/Exclusive WAF IP.md#) 
 
     If you need exclusive protection for an important domain, instead of using one WAF IP address to protect all domains, you can purchase an exclusive WAF IP address.
 
@@ -67,7 +67,7 @@ After you activate WAF, you can use the transparent proxy mode or DNS proxy mode
 
 After you configure WAF for your website, WAF can filter out malicious requests. Only valid requests are allowed to access the origin server.
 
-**Related topics**
+**Related topics** 
 
 -   [Use the transparent proxy mode to configure WAF](reseller.en-US/User Guide/Use the transparent proxy mode to implement WAF.md#)
 -   [Website configuration \(DNS proxy mode\)](reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Website configuration.md#)
@@ -81,41 +81,37 @@ You can create custom ACL rules or use the built-in protection features. The Web
 
 **Note:** WAF uses a multi-layer filtering mechanism. After you enable WAF and configure a protection policy, a request sent from a client to WAF has been filtered on multiple layers. Default detection sequence: **Access Control** \> **HTTP Flood Protection** \> **Web Application Protection**.
 
-**Related topics**
+**Related topics** 
 
--   [HTTP ACL policy](reseller.en-US/User Guide/Configuration/HTTP ACL policy.md#) and [Configure a whitelist or blacklist](reseller.en-US/User Guide/Configuration/Configure a whitelist or blacklist.md#)
+-   [HTTP ACL policy](reseller.en-US/User Guide/Configuration/HTTP ACL policy.md#) and [Configure a whitelist or blacklist](reseller.en-US/User Guide/Configuration/Configure a whitelist or blacklist.md#) 
 
     Custom access control rules allow WAF to filter requests based on client IP addresses, request URLs, and common request header fields.
 
--   [Web application protection](reseller.en-US/User Guide/Configuration/Web application protection.md#)
+-   [Web application protection](reseller.en-US/User Guide/Configuration/Web application protection.md#) 
 
     This feature protects your Web applications against common Web attacks, such as SQL injection and XSS attacks.
 
--   [HTTP flood protection](reseller.en-US/User Guide/Configuration/HTTP flood protection.md#) and [Custom HTTP flood protection](reseller.en-US/User Guide/Configuration/Custom HTTP flood protection.md#)
+-   [HTTP flood protection](reseller.en-US/User Guide/Configuration/HTTP flood protection.md#) and [Custom HTTP flood protection](reseller.en-US/User Guide/Configuration/Custom HTTP flood protection.md#) 
 
     These features protect your Web applications against HTTP floods.
 
--   [New intelligent protection engine](reseller.en-US/User Guide/Configuration/New intelligent protection engine.md#)
+-   [New intelligent protection engine](reseller.en-US/User Guide/Configuration/New intelligent protection engine.md#) 
 
     This feature performs semantic analysis on requests, detects malicious requests, and protects your Web applications against attacks such as confusion attacks and attack variants.
 
--   [Malicious IP blocking](reseller.en-US/User Guide/Configuration/Malicious IP Penalty.md#)
-
-    This feature automatically blocks a client IP address that has launched multiple attacks on your website in a short period of time.
-
--   [Blocked regions](reseller.en-US/User Guide/Configuration/Blocked regions.md#)
+-   [Blocked regions](reseller.en-US/User Guide/Configuration/Blocked regions.md#) 
 
     This feature blocks access requests based on the geographic location of the client's IP address and supports blocking all requests from one or more specified Chinese provinces or other countries or regions.
 
--   [Antifraud Service](reseller.en-US/User Guide/Configuration/Data risk control.md#)
+-   [Antifraud Service](reseller.en-US/User Guide/Configuration/Data risk control.md#) 
 
     This feature protects your Web applications against bot attacks such as zombie accounts, account theft, vote cheating, and spam messages.
 
--   [Webpage defacement protection](reseller.en-US/User Guide/Configuration/Website tamper-proofing.md#)
+-   [Webpage defacement protection](reseller.en-US/User Guide/Configuration/Website tamper-proofing.md#) 
 
     This feature can lock specified webpages to avoid content tampering. When a locked webpage receives a request, only the cached page that you have set is returned.
 
--   [Data leakage prevention](reseller.en-US/User Guide/Configuration/Data leakage prevention.md#)
+-   [Data leakage prevention](reseller.en-US/User Guide/Configuration/Data leakage prevention.md#) 
 
     This feature masks sensitive information in the response returned by the server, such as the ID number, bank card number, telephone number, and sensitive words.
 
@@ -124,17 +120,17 @@ You can create custom ACL rules or use the built-in protection features. The Web
 
 Web Application Firewall provides visualized data and statistics for you to learn about your business status and security statistics.
 
-**Related topics**
+**Related topics** 
 
--   [Overview](reseller.en-US/User Guide/Reporting/Business and security overview.md#)
+-   [Overview](reseller.en-US/User Guide/Reporting/Business overview.md#) 
 
     View business QPS data and security protection statistics.
 
--   [Security reports](reseller.en-US/User Guide/Reporting/WAF security reports.md#)
+-   [Security reports](reseller.en-US/User Guide/Reporting/WAF security reports.md#) 
 
     Search for attack details and risk warnings on your domain name within 30 days.
 
--   [Full logs](reseller.en-US/User Guide/Reporting/Log search.md#)
+-   [Full logs](reseller.en-US/User Guide/Reporting/Log search.md#) 
 
     Search for your website logs and use online analysis to quickly locate requests.
 
@@ -145,17 +141,17 @@ Web Application Firewall provides visualized data and statistics for you to lear
 
 You can learn about WAF resources and manage alarm settings and custom rule groups on the Settings page.
 
-**Related topics**
+**Related topics** 
 
--   [View product information](reseller.en-US/User Guide/Setting/View product information.md#)
+-   [View product information](reseller.en-US/User Guide/Setting/View product information.md#) 
 
     You can view resource details of your WAF instance, updates on WAF protection policies and features, and WAF back-to-origin CIDR block.
 
--   [Alarm settings](reseller.en-US/User Guide/Setting/Configure alarm settings.md#)
+-   [Alarm settings](reseller.en-US/User Guide/Setting/Configure alarm settings.md#) 
 
     WAF informs you about security events and system alarms through emails or SMS. You can configure the alarm triggering condition, alarm interval, and the method to receive alarms.
 
--   [Custom rule groups](reseller.en-US/User Guide/Setting/Custom rule groups.md#)
+-   [Custom rule groups](reseller.en-US/User Guide/Setting/Custom rule groups.md#) 
 
     A rule group is a combination of the built-in protection rules of WAF that make up a protection policy for a specific protection feature. You can create and use a custom rule group for a specific protection feature of WAF to suit your needs.
 
@@ -164,21 +160,21 @@ You can learn about WAF resources and manage alarm settings and custom rule grou
 
 Best practices help you improve the management and use of WAF.
 
-**Related topics**
+**Related topics** 
 
--   [Obtain authentic client IP address](../../../../../reseller.en-US/Best Practices/Get real client IP address.md#)
+-   [Obtain authentic client IP address](../../../../reseller.en-US/Best Practices/Get real client IP address.md#) 
 
     After you configure WAF for a website, all requests that are received by the origin server are redirected by WAF. The IP addresses of the clients that initiate the requests are not displayed. This topic describes how to obtain the real IP address that initiates the request to your origin server.
 
--   [Protect your origin server](../../../../../reseller.en-US/Best Practices/Protect your origin server.md#)
+-   [Protect your origin server](../../../../reseller.en-US/Best Practices/Protect your origin server.md#) 
 
     After WAF is activated, the origin server IP address is not visible to the client. If your origin server IP address is exposed or unintentionally disclosed, attackers can bypass WAF and launch attacks on your origin server. This topic describes how to configure protection features to protect your origin server.
 
--   [Deploy WAF and Anti-DDoS Pro together](reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Deploy WAF and Anti-DDoS Pro together.md#)
+-   [Deploy WAF and Anti-DDoS Pro together](reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Deploy WAF and Anti-DDoS Pro together.md#) 
 
     If you have activated Alibaba Cloud Anti-DDoS Pro and Web Application Firewall, you can follow the procedures in this topic to complete the configuration.
 
--   [Deploy WAF and CDN together](reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Deploy WAF and CDN together.md#)
+-   [Deploy WAF and CDN together](reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Deploy WAF and CDN together.md#) 
 
     If you have activated Alibaba CloudCDN and Web Application Firewall, you can follow the procedures in this topic to complete the configuration.
 
@@ -191,5 +187,5 @@ Scan the QR code with DingTalk to join the technical support group to consult th
 
 **Note:** You can download DingTalk on the [DingTalk website](https://www.dingtalk.com/).
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15550/15532340347113_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15550/15651477777113_en-US.png)
 
