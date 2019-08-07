@@ -6,9 +6,9 @@ This topic describes common scenarios of HTTP flood attacks and introduces relat
 
 During HTTP flood attacks, the request rate of a single zombie server is typically far higher than that of a normal user. The most effective way to defend against this type of attack is to restrict the request rate of the source IP.
 
-You can create [custom HTTP flood protection rules](../../../../../intl.en-US/User Guide/Configuration/Custom HTTP flood protection.md#) to implement restrictions on the request rate. Example:
+You can create [custom HTTP flood protection rules](../../../../reseller.en-US/User Guide/Configuration/Custom HTTP flood protection.md#) to implement restrictions on the request rate. Example:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/81368/155437520434768_en-US.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/81368/156514763134768_en-US.jpg)
 
 This rule uses **prefix match** to select all paths under the domain. If an IP address sends more than 1,000 requests to the domain within 30 seconds, the IP address is blocked for 10 hours. This rule can be used to protect small and medium-sized websites.
 
@@ -16,23 +16,23 @@ You can modify the protected paths, adjust the blocking threshold, and change th
 
 Note the following points when you use HTTP flood protection:
 
--   The **Human-machine Identification** **blocking type** can verify whether requests are sent from Web browsers or automation scripts. You can use this blocking type to protect Web and HTML5 applications, but not native apps or API services. To protect native apps and API services, set the **blocking type** to **block**.
--   For APIs or IP addresses that may be mistakenly blocked by HTTP flood protection, you can use [HTTP ACL Policy](../../../../../intl.en-US/User Guide/Configuration/HTTP ACL policy.md#) to whitelist these source IPs.
+-   The **Human-machine Identification****blocking type** can verify whether requests are sent from Web browsers or automation scripts. You can use this blocking type to protect Web and HTML5 applications, but not native apps or API services. To protect native apps and API services, set the **blocking type** to **block**.
+-   For APIs or IP addresses that may be mistakenly blocked by HTTP flood protection, you can use [HTTP ACL Policy](../../../../reseller.en-US/User Guide/Configuration/HTTP ACL policy.md#) to whitelist these source IPs.
 -   Do not enable the emergency mode for native apps or API services.
 
 We recommend that you use **Anti-Bot Service** for more targeted protection and flexible handling methods.
 
 For example, blocking IP addresses may affect NAT. Anti-Bot Service allows you to use cookies or request parameters to calculate the request rate. You can also use slider captcha to verify the identity of the requester. In the following example, the request rate is calculated based on the user's cookie. Slider captcha is used to verify the identity of the user. Assume that the cookie format is as follows: uid=12345.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/81368/155437520434769_en-US.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/81368/156514763134769_en-US.jpg)
 
 ## Attacks originating from international regions and public clouds {#section_utg_mvm_2gb .section}
 
 A large portion of HTTP flood attacks originate from international regions, data centers, and public clouds. If your website targets Chinese users, you can block requests from international regions to mitigate this attack.
 
-WAF provides the [Blocked Regions](../../../../../intl.en-US/User Guide/Configuration/Blocked regions.md#) feature for this purpose.
+WAF provides the [Blocked Regions](../../../../reseller.en-US/User Guide/Configuration/Blocked regions.md#) feature for this purpose.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/81368/155437520434770_en-US.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/81368/156514763234770_en-US.jpg)
 
 If you need to block IP addresses from data centers or public clouds, such as Alibaba Cloud or Tencent Cloud, contact customer service through **DingTalk**.
 
@@ -47,7 +47,7 @@ Malicious requests in HTTP flood attacks are arbitrarily constructed and contain
 -   Missing HTTP headers: For example, normal requests usually contain the authorization header while malicious requests usually do not.
 -   Incorrect request method: For example, if an API has only received POST requests before and is now overwhelmed by GET requests, then you can directly block GET requests.
 
-To handle these requests, you can analyze their features and add [HTTP ACL policies](../../../../../intl.en-US/User Guide/Configuration/HTTP ACL policy.md#) to block the malicious requests.
+To handle these requests, you can analyze their features and add [HTTP ACL policies](../../../../reseller.en-US/User Guide/Configuration/HTTP ACL policy.md#) to block the malicious requests.
 
 ![](images/34776_en-US.jpg "Example 1: Block requests that do not contain cookies")
 
@@ -55,7 +55,7 @@ To handle these requests, you can analyze their features and add [HTTP ACL polic
 
 ## API abuses {#section_yfn_2wm_2gb .section}
 
-We recommend that you use [Data Risk Control](../../../../../intl.en-US/User Guide/Configuration/Data risk control.md#) to protect important APIs from abuses. These APIs include logon, registration, voting, and SMS verification APIs.
+We recommend that you use [Data Risk Control](../../../../reseller.en-US/User Guide/Configuration/Data risk control.md#) to protect important APIs from abuses. These APIs include logon, registration, voting, and SMS verification APIs.
 
 Data Risk Control injects a JavaScript snippet into your webpage and collects information about user behavior and environment variables to determine whether the request is sent from a real user or an automation script. Data Risk Control makes decisions based on human identification. The request rate and source IP address are not taken into account. The service is very effective in mitigating low-frequency attacks.
 
@@ -63,11 +63,11 @@ Data Risk Control injects a JavaScript snippet into your webpage and collects in
 
 ## Malicious scans {#section_str_3wm_2gb .section}
 
-A large number of malicious scans pose a serious threat to the performance of your servers. Apart from restricting scans based on frequency, you can also use [Malicious IP Blocking](../../../../../intl.en-US/User Guide/Configuration/Malicious IP Penalty.md#) to enhance protection.
+A large number of malicious scans pose a serious threat to the performance of your servers. Apart from restricting scans based on frequency, you can also use Malicious IP Blocking to enhance protection.
 
 Scan requests displaying common attack patterns are automatically blocked by WAF based on default protection rules. Malicious IP Blocking can directly block IP addresses that frequently trigger protection rules.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/81368/155437520434778_en-US.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/81368/156514763234778_en-US.jpg)
 
 ## Fake apps {#section_fmz_jwm_2gb .section}
 
@@ -75,7 +75,7 @@ To protect your business from fake apps, you can use a number of different mitig
 
 After you integrate the SDK with your app, all incoming requests must be verified before they are sent to the server. The device information and request signature are combined to determine if the request is sent from a legitimate app. Requests that do not originate from the official app are automatically blocked. This ensures that only requests from legitimate clients are served. You do not need to analyze the patterns of illegitimate requests.
 
-To use the security SDK, you must activate Anti-Bot Service. For more information, see [SDK instructions](../../../../../intl.en-US/User Guide/App protection/Overview.md#).
+To use the security SDK, you must activate Anti-Bot Service. For more information, see [SDK instructions](../../../../reseller.en-US/User Guide/App protection/Solution overview.md#).
 
 ## Web crawlers {#section_f42_lwm_2gb .section}
 
