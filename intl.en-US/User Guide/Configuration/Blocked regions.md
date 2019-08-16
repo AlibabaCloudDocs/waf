@@ -17,13 +17,13 @@ To enable and specify blocked regions, follow these steps:
 
     **Note:** To make the Area Blocking polices be effective, ensure that the system default rule is enabled in HTTP ACL Policy.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15566/15659353427072_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15566/15659373747072_en-US.png)
 
 5.  Click **Settings**, select the **Mainland China** or **International** scope, and select the areas that you want to block. Then, click **OK**. 
 
     **Note:** When you select the **International** scope, you can quickly find the country or area through the initial letter of the country name or the quick search.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15566/15659353427073_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15566/15659373747073_en-US.png)
 
 
 After you confirm the settings, all requests from the IP addresses in the blocked areas are blocked by WAF.
