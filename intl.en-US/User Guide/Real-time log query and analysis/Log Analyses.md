@@ -37,19 +37,19 @@ The following operations are available in the Log Analyses page.
     <The original query statement> and request_method: GET
     ```
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156574740821315_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156592504621315_en-US.png)
 
 -   **View analysis graphs** 
 
     Log Service enables you to display the analysis results in graphs. You can select the graph type as needed in the Graph tab. For more information, see [Analysis graph](reseller.en-US/Index and query/Query and visualization/Analysis graph/Graph description.md#section_pn5_ymv_tdb).
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156574740821319_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156592504621319_en-US.png)
 
 -   **Perform quick analysis** 
 
     The Quick Analysis feature in the Raw Logs tab provides you with an one-click interactive experience, which gives you a quick access to the distribution of log entries by a single property within a specified time period. This feature can reduce the time used for indexing key data. For more information, see [Quick analysis](reseller.en-US/Index and query/Query/Quick analysis.md#section_lly_xvj_5cb) in the following section.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156574740821324_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156592504621324_en-US.png)
 
 
 ## Customize query and analysis {#section_ncn_mvt_j2b .section}
@@ -199,7 +199,7 @@ In addition, each log entry has a built-in field `__time__`, which is also used 
         limit 10
     ```
 
-     ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156574740921335_en-US.png)
+     ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156592504621335_en-US.png)
 
 -   **Calculate using time.** 
 
@@ -214,7 +214,7 @@ In addition, each log entry has a built-in field `__time__`, which is also used 
 
     **Note:** In this example, `round((to_unixtime(now()) - __time__)/86400, 1)` is used to calculate the number of days that have elapsed since the domain had a HTTP flood attack. First, use `now()` to get the current time, and convert the current time into a Unix timestamp using `to_unixtime`. Then, subtract the converted time with the value of the built-in field `__time__` to get the number of seconds that have elapsed. Finally, divide it by `86400` \(the total number of seconds in a day\) and apply the `round(data, 1)` function to keep one decimal place. The result is the number of days that have elapsed since each attack log entry is generated.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156574740921341_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156592504621341_en-US.png)
 
 -   **Perform group statistics based on a specific time** 
 
@@ -229,11 +229,11 @@ In addition, each log entry has a built-in field `__time__`, which is also used 
 
     **Note:** In this example, the built-in field `__time__` is used by the `date_trunc('day', ..)` function to align the time of the entries by day. Each log entry is assigned to a group based on the day when the log entry is generated. The total number of log entries in each group is counted using count\(1\). Then, these entries are ordered by the group. You can use other values for the first parameter of the `date_trunc` function to group the log entries based on other time units, such as `second`, `minute`, `hour`, `week`, `month`, and `year`. For more information about this function, see [Date and time functions](../../../../reseller.en-US/Index and query/Analysis grammar/Date and time functions.md#).
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156574740921342_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156592504621342_en-US.png)
 
     **Note:** You can also display the results with a line chart.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156574740921343_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156592504721343_en-US.png)
 
 -   **Perform group statistics based on time.** 
 
@@ -250,11 +250,11 @@ In addition, each log entry has a built-in field `__time__`, which is also used 
 
     **Note:** In this example, the built-in field is used for aligning the time by using the formula `__time__ - __time__% 300`, and the `from_unixtime` function converts the format of the result. Then, each entry is assigned to a group that indicates a time period of five minutes \(300 seconds\), and the total number of log entries in each group is counted using count\(1\). Finally, the query results are ordered by group and the first 1,000 results are returned, which include the log entries that are generated within 83 hours before the specified time period.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156574741021344_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156592504721344_en-US.png)
 
     **Note:** You can also display the results with a line graph.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156574741021345_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156592504721345_en-US.png)
 
 
 The `date_parse` and `date_format` functions are used to convert the time format. For more information about the functions that can be used to parse the time field, see [Date and time functions](../../../../reseller.en-US/Index and query/Analysis grammar/Date and time functions.md#).
@@ -278,7 +278,7 @@ The WAF log contains the field `real_client_ip`, which reflects the real client 
 
     **Note:** You can also display the results with a world map.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156574741021347_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156592504821347_en-US.png)
 
 -   **Distribution of visitors by province** 
 
@@ -293,11 +293,11 @@ The WAF log contains the field `real_client_ip`, which reflects the real client 
 
     **Note:** In this example, the `ip_to_province` function is used to get the country information from the real IP address of the client. If the IP address is not in the Mainland of China, the function returns the province or state of the IP address in the country field. However, if you choose to display the results with a map of China, IP addresses that are not in the Mainland of China are not displayed.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156574741021348_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156592504821348_en-US.png)
 
     **Note:** You can also display the results with a map of China.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156574741121349_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/41248/156592504821349_en-US.png)
 
 -   **Heat map that indicates the distribution of attackers** 
 
