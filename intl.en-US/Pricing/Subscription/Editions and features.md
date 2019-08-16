@@ -17,30 +17,42 @@ If you are using subscription-based WAF instances, you can choose from the follo
 
 |Feature|Reference|Pro|Business|Enterprise|
 |-------|---------|---|--------|----------|
-|Enable HTTPS protection for a website| [HTTPS advanced settings](../../../../reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/HTTPS advanced settings.md#) |√|√|√|
-|Protection for ports other than 80, 8080, 443, and 8443.| [Support for non-standard ports](../../../../reseller.en-US/User Guide/Use the DNS proxy mode to configure WAF/Supported non-standard ports.md#) |×|√|√|
-|Protection against common Web attacks, such as SQL injection and XSS attacks.| [Web application protection](../../../../reseller.en-US/Best Practices/Best practices for Web application protection.md#) |√|√|√|
+|Enable HTTPS protection for a website|[HTTPS advanced settings](../../../../intl.en-US/User Guide/Use the DNS proxy mode to configure WAF/HTTPS advanced settings.md#)|√|√|√|
+|Protection for ports other than 80, 8080, 443, and 8443.|[Support for non-standard ports](../../../../intl.en-US/User Guide/Use the DNS proxy mode to configure WAF/Supported non-standard ports.md#)|×|√|√|
+|Protection against common Web attacks, such as SQL injection and XSS attacks.|[Web application protection](../../../../intl.en-US/Best Practices/Best practices for Web application protection.md#)|√|√|√|
 |Automatic update of protection rules against Web zero-day vulnerabilities|√|√|√|
-| ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15538/156144227438159_en-US.png)Custom rule groups| [Custom rule groups](../../../../reseller.en-US/User Guide/Setting/Custom rule groups.md#) |×|×|√|
-|Protection against HTTP floods targeting Web services| [HTTP flood protection](../../../../reseller.en-US/User Guide/Configuration/HTTP flood protection.md#) |√|√|√|
-|Protection against HTTP floods targeting API services| [Custom HTTP flood protection](../../../../reseller.en-US/User Guide/Configuration/Custom HTTP flood protection.md#) |×|√|√|
-|Access frequency control for URLs| [Custom HTTP flood protection](../../../../reseller.en-US/User Guide/Configuration/Custom HTTP flood protection.md#) |×|√|√|
-|IP whitelist, IP blacklist, URL whitelist, and URL blacklist| [Configure a whitelists or blacklist](../../../../reseller.en-US/User Guide/Configuration/Configure a whitelist or blacklist.md#) |√|√|√|
-|Advanced HTTP request control based on header fields including US and Referer| [Access control list](../../../../reseller.en-US/User Guide/Configuration/HTTP ACL policy.md#) |√|√|√|
-|Targeted Web attack protection, for example, penetration tests.| [Access control list](../../../../reseller.en-US/User Guide/Configuration/HTTP ACL policy.md#) |√|√|√|
-|Location-based IP blocking \(block access requests from international regions\)| [Blocked regions](../../../../reseller.en-US/User Guide/Configuration/Blocked regions.md#) |×|×|√|
-|Webpage tamper-proofing| [Website tamper-proofing](../../../../reseller.en-US/User Guide/Configuration/Website tamper-proofing.md#) |×|√ **Note:** WAF instances created in International regions must be upgraded to the Enterprise edition.
+|![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15538/156592780238159_en-US.png)Custom rule groups|[Custom rule groups](../../../../intl.en-US/User Guide/Setting/Custom rule groups.md#)|×|√ **Note:** WAF instances created in International regions must be upgraded to the Enterprise edition.
 
  |√|
-|Malicious registration interception| [Data risk control](../../../../reseller.en-US/User Guide/Configuration/Data risk control.md#) |×|√ **Note:** WAF instances created in International regions must be upgraded to the Enterprise edition.
+|Protection against HTTP floods targeting Web services|[HTTP flood protection](../../../../intl.en-US/User Guide/Configuration/HTTP flood protection.md#)|√|√|√|
+|Protection against HTTP floods targeting API services|[Custom HTTP flood protection](../../../../intl.en-US/User Guide/Configuration/Custom HTTP flood protection.md#)|×|√|√|
+|Access frequency control for URLs|[Custom HTTP flood protection](../../../../intl.en-US/User Guide/Configuration/Custom HTTP flood protection.md#)|×|√|√|
+|IP whitelist, IP blacklist, URL whitelist, and URL blacklist|[Configure a whitelists or blacklist](../../../../intl.en-US/User Guide/Configuration/Configure a whitelist or blacklist.md#)|√|√|√|
+|Advanced HTTP request control based on header fields including US and Referer|[Access control list](../../../../intl.en-US/User Guide/Configuration/HTTP ACL policy.md#)|√|√|√|
+|Targeted Web attack protection, for example, penetration tests.|[Access control list](../../../../intl.en-US/User Guide/Configuration/HTTP ACL policy.md#)|√|√|√|
+|Location-based IP blocking \(block access requests from international regions\)|[Blocked regions](../../../../intl.en-US/User Guide/Configuration/Blocked regions.md#)|×|√ **Note:** WAF instances created in International regions must be upgraded to the Enterprise edition.
 
  |√|
-|Data masking, such as ID card, phone number, and bank card number.| [Data leakage prevention](../../../../reseller.en-US/User Guide/Configuration/Data leakage prevention.md#) |×|√|√|
-|Intelligent retrieval of access logs| [Log search](../../../../reseller.en-US/User Guide/Reporting/Log search.md#) |×|×|√|
-| ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15538/156144227438159_en-US.png)Real-time log query and analysis service **Note:** The real-time log query and analysis service is a value-added service. To use this service, you must purchase the service first. For more information about pricing, see [Billing methods](../../../../reseller.en-US/User Guide/Real-time log query and analysis/Billing method.md#).
+|Webpage tamper-proofing|[Website tamper-proofing](../../../../intl.en-US/User Guide/Configuration/Website tamper-proofing.md#)|√ **Note:** WAF instances created in International regions must be upgraded to the Enterprise edition.
 
- | [Real-time log analysis](../../../../reseller.en-US/User Guide/Real-time log query and analysis/Real-time log analysis.md#) |√|√|√|
+ |√ **Note:** WAF instances created in International regions must be upgraded to the Enterprise edition.
+
+ |√|
+|Malicious registration interception|[Data risk control](../../../../intl.en-US/User Guide/Configuration/Data risk control.md#)|√ **Note:** WAF instances created in International regions must be upgraded to the Enterprise edition.
+
+ |√ **Note:** WAF instances created in International regions must be upgraded to the Enterprise edition.
+
+ |√|
+|Data masking, such as ID card, phone number, and bank card number.|[Data leakage prevention](../../../../intl.en-US/User Guide/Configuration/Data leakage prevention.md#)|√ **Note:** WAF instances created in International regions must be upgraded to the Business or Enterprise edition.
+
+ |√|√|
+|Intelligent retrieval of access logs|[Log search](../../../../intl.en-US/User Guide/Reporting/Log search.md#)|×|√ **Note:** WAF instances created in International regions must be upgraded to the Enterprise edition.
+
+ |√|
+|![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15538/156592780238159_en-US.png)Real-time log query and analysis service **Note:** The real-time log query and analysis service is a value-added service. To use this service, you must purchase the service first. For more information about pricing, see [Billing methods](../../../../intl.en-US/User Guide/Real-time log query and analysis/Billing method.md#).
+
+ |[Real-time log analysis](../../../../intl.en-US/User Guide/Real-time log query and analysis/Real-time log analysis.md#)|√|√|√|
 |Data visualization **Note:** The data visualization service is a value-added service. To use this service, you must purchase the service first.
 
- | [Data visualization](../../../../reseller.en-US/User Guide/Reporting/Data visualization.md#) |√|√|√|
+ |[Data visualization](../../../../intl.en-US/User Guide/Reporting/Data visualization.md#)|√|√|√|
 
