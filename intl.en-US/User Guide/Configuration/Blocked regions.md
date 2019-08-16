@@ -4,6 +4,8 @@ Use this feature to add specific areas of Mainland China, Hong Kong, Macao and T
 
 To enable the Blocked Regions feature, you must upgrade WAF to Business Edition or above. For more information about the upgrade, see [Renewal and upgrade](../../../../intl.en-US/Pricing/Renewal and upgrade.md#).
 
+**Note:** WAF instances created in International regions must be upgraded to the Enterprise edition.
+
 To enable and specify blocked regions, follow these steps:
 
 **Note:** Ensure that you have added the target domain in WAF for protection. For more information, see [CNAME access guide](intl.en-US/User Guide/Use the DNS proxy mode to configure WAF/Configure DNS settings.md#).
@@ -15,13 +17,13 @@ To enable and specify blocked regions, follow these steps:
 
     **Note:** To make the Area Blocking polices be effective, ensure that the system default rule is enabled in HTTP ACL Policy.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15566/15604825797072_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15566/15659353427072_en-US.png)
 
 5.  Click **Settings**, select the **Mainland China** or **International** scope, and select the areas that you want to block. Then, click **OK**. 
 
     **Note:** When you select the **International** scope, you can quickly find the country or area through the initial letter of the country name or the quick search.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15566/15604825797073_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15566/15659353427073_en-US.png)
 
 
 After you confirm the settings, all requests from the IP addresses in the blocked areas are blocked by WAF.
