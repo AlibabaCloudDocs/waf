@@ -20,6 +20,7 @@
 |源站服务器的操作系统（Linux、Windows）和所使用的Web服务中间件（Apache、Nginx、IIS等）|判断源站是否存在访问控制策略，避免源站误拦截WAF回源IP转发的流量。|
 |域名使用协议|判断所使用的通信协议WAF是否支持。|
 |业务端口|判断源站业务端口是否在[WAF支持的端口](../../../../cn.zh-CN/用户指南/使用DNS配置模式接入WAF/非标端口支持.md#)范围内。|
+|业务是否有获取并校验真实源IP机制|接入WAF后，真实源IP会发生变化。请确认是否要在源站上调整获取真实源IP配置，避免影响业务。|
 |业务是否使用TLS 1.0或弱加密套件|判断业务使用的加密套件是否支持。|
 |业务是否需要支持IPv6协议|WAF企业版和旗舰版实例已支持IPv6协议。|
 |（针对HTTPS业务）业务是否使用双向认证|WAF虚拟独享集群目前已支持双向认证。如果您的HTTPS业务采用双向认证，请通过工单或WAF安全专家服务钉钉群联系阿里云技术支持人员。|
@@ -71,7 +72,7 @@
     -   **标记WAF回源流量**：将网站域名接入WAF进行防护后，您可以为网站域名[设置流量标记](../../../../cn.zh-CN/用户指南/使用DNS配置模式接入WAF/标记WAF回源流量.md#)。通过设置流量标记的方式，方便地标识经过WAF转发的流量，从而实现精准的源站保护（访问控制）、防护效果分析，有效防止流量绕过WAF请求源站。
     **说明：** 如果您接入WAF的网站域名的业务源站使用的是Windows IIS Web服务，在配置HTTPS域名时，IIS默认会启用**需要服务器名称指示**（即SNI）。这种情况下，在将域名接入WAF后可能会出现访问空白页502的错误信息，您只需禁用该配置选项即可解决该问题。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/156557619244407_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/156618114044407_zh-CN.png)
 
 3.  **防护策略配置** 
 
@@ -81,7 +82,7 @@
 
         一般情况下，建议选用**防护**模式，并选用**中等规则**防护策略。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/156557619237895_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/156618114037895_zh-CN.png)
 
         **说明：** 业务接入WAF防护一段时间后（一般为2-3天），如果出现网站业务的正常请求被WAF误拦截的情况，您可以通过[设置自定义规则组](cn.zh-CN/最佳实践/通过设置自定义规则组提升Web防护效果.md#)的方式提升Web防护效果。
 
@@ -93,7 +94,7 @@
 
         如果使用CC安全防护的正常模式仍发现误拦截现象，建议您使用精准访问控制功能放行特定类型请求。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/156557619337896_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/156618114037896_zh-CN.png)
 
         **说明：** 业务接入WAF防护一段时间后（一般为2-3天），可以通过分析业务日志数据（例如，访问URL、单个IP访问QPS情况等）评估单个IP的请求QPS峰值，提前通过自定义CC攻击防护配置限速策略，避免遭受攻击后的被动响应和临时策略配置。
 
@@ -216,7 +217,7 @@
 
 购买开通云盾Web应用防火墙后，您可以在管理控制台中通过钉钉扫描二维码直接联系阿里云安全服务专家。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/156557619338115_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/116974/156618114038115_zh-CN.png)
 
 安全专家将针对您的业务场景提供WAF接入配置指导、安全攻击分析和防御相关安全服务，基于业务实际情况帮助您更好地使用WAF对业务进行安全防护，保障您业务的网络应用安全。
 
