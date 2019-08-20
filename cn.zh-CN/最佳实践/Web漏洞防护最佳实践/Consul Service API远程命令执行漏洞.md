@@ -14,15 +14,15 @@ Hashicorp Consul Service API远程命令执行漏洞
 
 在特定配置下，恶意攻击者可以通过发送精心构造的HTTP请求在未经授权的情况下在Consul服务端远程执行命令。关于该Consul漏洞的更多详细信息，请查看[HashiCorp官方公告](https://www.hashicorp.com/blog/protecting-consul-from-rce-risk-in-specific-configurations)。
 
-**漏洞复现过程** 
+漏洞复现过程
 
 1.  验证Consul服务端存在该远程命令执行漏洞。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/218967/155790881947331_zh-CN.png)
+    ![验证漏洞](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/218967/156629514347331_zh-CN.png)
 
 2.  构造HTTP PUT请求，实现在Consul服务端远程执行命令。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/218967/155790881947320_zh-CN.png)
+    ![构造请求](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/218967/156629514447320_zh-CN.png)
 
 
 ## 影响范围 {#section_kch_bq4_m2b .section}
@@ -33,12 +33,12 @@ Hashicorp Consul Service API远程命令执行漏洞
 
 您可以通过选择以下适合的方案防护该Consul漏洞：
 
--   禁用Consul服务器上的脚本检查功能
+-   禁用Consul服务器上的脚本检查功能。
 -   如果您需要使用Consul的脚本检查功能，请升级至0.9.4、1.0.8、1.1.1、1.2.4中的一个版本（这些版本中包含-enable-local-script-checks参数），将Consul配置中的-enable-script-checks更改为-enable-local-script-checks。
--   确保Consul HTTP API服务无法通过外网访问或调用
+-   确保Consul HTTP API服务无法通过外网访问或调用。
 -   启用Web应用防火墙的精准访问控制功能，配置以下防护规则。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/218967/155790881947322_zh-CN.png)
+    ![编辑规则,精确访问控制](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/218967/156629514447322_zh-CN.png)
 
 
 ## 更多信息 {#section_yls_mn4_m2b .section}
