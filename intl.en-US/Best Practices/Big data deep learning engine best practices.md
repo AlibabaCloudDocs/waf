@@ -18,11 +18,11 @@ For example, you can enable the big data deep learning engine feature in WAF to 
 
 In this case, the following XSS attack requests are not blocked by web application attack protection rules.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/895635/156678997451287_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/895635/156679024951287_en-US.png)
 
 After enable the [Big Data Deep Learning Engine](../../../../reseller.en-US/User Guide/Configuration/Big data deep learning engine.md#) feature, the XSS attack request that exceeds the regular rule engine's detection capability is successfully blocked.
 
 Additionally, you can view detailed attack log information in the web application attack report. The attack type is**Deep learning**.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/895635/156678997451289_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/895635/156679024951289_en-US.png)
 
