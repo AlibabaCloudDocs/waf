@@ -1,10 +1,10 @@
-# DescribeAsyncTaskStatus {#doc_api_1097665 .reference}
+# DescribeAsyncTaskStatus {#doc_api_waf-openapi_DescribeAsyncTaskStatus .reference}
 
 调用DescribeAsyncTaskStatus接口查询WAF任务执行状态。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=waf-openapi&api=DescribeAsyncTaskStatus)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=waf-openapi&api=DescribeAsyncTaskStatus&type=RPC&version=2018-01-17)
 
 ## 请求参数 {#parameters .section}
 
@@ -23,12 +23,12 @@
  |
 |Region|String|否|cn|WAF实例所在的地域。取值：
 
- -   **cn**：表示中国大陆地区。
--   **cn-hongkong**：表示海外地区。
+ -   **cn**：表示中国大陆地区（默认）
+-   **cn-hongkong**：表示海外地区
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
@@ -38,27 +38,27 @@
 |Result| | |返回结果
 
  |
-|└AsyncTaskStatus|String|2|异步任务执行状态：
+|AsyncTaskStatus|String|2|异步任务执行状态：
 
  -   **0**：表示该请求等待执行。
 -   **1**：表示该请求正在执行中。
 -   **2**：表示该请求已执行完成。
 
  |
-|└Data|String|xx|异步任务需要返回的业务数据。
+|Data|String|xx|异步任务需要返回的业务数据。
 
  |
-|└ErrCode|String|400|错误代码。
+|ErrCode|String|400|错误代码。
 
  **说明：** 该参数仅在请求执行发生错误时返回。
 
  |
-|└ErrMsg|String|xx|错误信息描述。
+|ErrMsg|String|xx|错误信息描述。
 
  **说明：** 该参数仅在请求执行发生错误时返回。
 
  |
-|└Progress|Integer|90|异步任务执行进度（百分比）。
+|Progress|Integer|90|异步任务执行进度（百分比）。
 
  |
 
@@ -81,15 +81,14 @@ https://wafopenapi.cn-hangzhou.aliyuncs.com/?Action=DescribeAsyncTaskStatus
 
 ``` {#xml_return_success_demo}
 <DescribeAsyncTaskStatusResponse>
-  <RequestId>12EF3845-CCEB-4B84-AE60-2B49B2FF1EE5</RequestId>
-  <Result>
-    <DomainConfig>
-      <Progress>100</Progress>
-      <AsyncTaskStatus>2</AsyncTaskStatus>
-    </DomainConfig>
-  </Result>
+      <RequestId>12EF3845-CCEB-4B84-AE60-2B49B2FF1EE5</RequestId>
+      <Result>
+            <DomainConfig>
+                  <Progress>100</Progress>
+                  <AsyncTaskStatus>2</AsyncTaskStatus>
+            </DomainConfig>
+      </Result>
 </DescribeAsyncTaskStatusResponse>
-
 ```
 
 `JSON` 格式
@@ -108,5 +107,5 @@ https://wafopenapi.cn-hangzhou.aliyuncs.com/?Action=DescribeAsyncTaskStatus
 
 ## 错误码 { .section}
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/waf-openapi)
+访问[错误中心](https://error-center.aliyun.com/status/product/waf-openapi)查看更多错误码。
 
