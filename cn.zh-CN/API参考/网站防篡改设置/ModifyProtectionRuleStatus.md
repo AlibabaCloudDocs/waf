@@ -1,10 +1,10 @@
-# ModifyProtectionRuleStatus {#doc_api_1097662 .reference}
+# ModifyProtectionRuleStatus {#doc_api_waf-openapi_ModifyProtectionRuleStatus .reference}
 
 调用ModifyProtectionRuleStatus接口启用或关闭指定的网站防篡改规则。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=waf-openapi&api=ModifyProtectionRuleStatus)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=waf-openapi&api=ModifyProtectionRuleStatus&type=RPC&version=2018-01-17)
 
 ## 请求参数 {#parameters .section}
 
@@ -36,12 +36,12 @@
  |
 |Region|String|否|cn|地域ID。取值：
 
- -   **cn**：中国大陆地区。
--   **cn-hongkong**：海外地区。
+ -   **cn**：中国大陆地区（默认）
+-   **cn-hongkong**：海外地区
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
@@ -73,6 +73,7 @@ https://wafopenapi.cn-hangzhou.aliyuncs.com/?Action=ModifyProtectionRuleStatus
 &Id=111
 &RuleStatus=1
 &LockVersion=0
+&<公共请求参数>
 
 ```
 
@@ -82,15 +83,14 @@ https://wafopenapi.cn-hangzhou.aliyuncs.com/?Action=ModifyProtectionRuleStatus
 
 ``` {#xml_return_success_demo}
 <ModifyProtectionRuleStatusResponse>
-  <code>200</code>
-  <data>
-    <TaskStatus>2</TaskStatus>
-    <WafTaskId>1232</WafTaskId>
-  </data>
-  <requestId>66A98669-CC6E-4F3E-80A6-3014697B11AE</requestId>
-  <success>true</success>
+     <code>200</code>
+     <data>
+          <TaskStatus>2</TaskStatus>
+          <WafTaskId>1232</WafTaskId>
+     </data>
+     <requestId>66A98669-CC6E-4F3E-80A6-3014697B11AE</requestId>
+     <success>true</success>
 </ModifyProtectionRuleStatusResponse>
-
 ```
 
 `JSON` 格式
@@ -109,5 +109,5 @@ https://wafopenapi.cn-hangzhou.aliyuncs.com/?Action=ModifyProtectionRuleStatus
 
 ## 错误码 { .section}
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/waf-openapi)
+访问[错误中心](https://error-center.aliyun.com/status/product/waf-openapi)查看更多错误码。
 
