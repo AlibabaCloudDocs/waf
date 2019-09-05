@@ -1,10 +1,10 @@
-# DescribeDomainConfig {#doc_api_1097627 .reference}
+# DescribeDomainConfig {#doc_api_waf-openapi_DescribeDomainConfig .reference}
 
 调用DescribeDomainConfig接口获取指定域名的转发配置信息。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=waf-openapi&api=DescribeDomainConfig)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=waf-openapi&api=DescribeDomainConfig&type=RPC&version=2018-01-17)
 
 ## 请求参数 {#parameters .section}
 
@@ -23,12 +23,12 @@
  |
 |Region|String|否|cn|WAF实例所在的地域。取值：
 
- -   **cn**：表示中国大陆地区。
--   **cn-hongkong**：表示海外地区。
+ -   **cn**：表示中国大陆地区（默认）
+-   **cn-hongkong**：表示海外地区
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
@@ -38,30 +38,30 @@
 |Result| | |返回结果。
 
  |
-|└DomainConfig| | |域名配置结构体。
+|DomainConfig| | |域名配置结构体。
 
  |
-|└Cname|String|xxxxxxxxxxxxxx.fakewaf.com|WAF实例分配的CNAME。
+|Cname|String|xxxxxxxxxxxxxx.fakewaf.com|WAF实例分配的CNAME。
 
  |
-|└ProtocolType|Integer|2|协议类型：
+|ProtocolType|Integer|2|协议类型：
 
  -   **0**：表示支持HTTP协议。
 -   **1**：表示支持HTTPS协议。
 -   **2**：表示同时支持HTTP和HTTPS协议。
 
  |
-|└SourceIps|String|1.1.1.1|源站IP。
+|SourceIps|String|1.1.1.1|源站IP。
 
  |
-|└Status|Integer|2|请求执行状态：
+|Status|Integer|2|请求执行状态：
 
  -   **0**：表示该请求等待执行。
 -   **1**：表示该请求正在执行中。
 -   **2**：表示该请求已执行完成。
 
  |
-|└WafTaskId|String|aliyun.waf.20180712180229702.Y6re3d|WAF的请求ID。
+|WafTaskId|String|aliyun.waf.20180712180229702.Y6re3d|WAF的请求ID。
 
  |
 
@@ -84,19 +84,18 @@ https://wafopenapi.cn-hangzhou.aliyuncs.com/?Action=DescribeDomainConfig
 
 ``` {#xml_return_success_demo}
 <DescribeDomainConfigResponse>
-  <RequestId>56B40D30-4960-4F19-B7D5-2B1F0EE6CB70</RequestId>
-  <Result>
-    <Status>2</Status>
-    <DomainConfig>
-      <ProtocolType>2</ProtocolType>
-      <SourceIps>x.x.x.x</SourceIps>
-      <SourceIps>x.x.x.x</SourceIps>
-      <Cname>xxxxxxxxxxxxxx.fakewaf.com</Cname>
-    </DomainConfig>
-    <WafTaskId>aliyun.waf.20180712180229702.Y6re3d</WafTaskId>
-  </Result>
+      <RequestId>56B40D30-4960-4F19-B7D5-2B1F0EE6CB70</RequestId>
+      <Result>
+            <Status>2</Status>
+            <DomainConfig>
+                  <ProtocolType>2</ProtocolType>
+                  <SourceIps>x.x.x.x</SourceIps>
+                  <SourceIps>x.x.x.x</SourceIps>
+                  <Cname>xxxxxxxxxxxxxx.fakewaf.com</Cname>
+            </DomainConfig>
+            <WafTaskId>aliyun.waf.20180712180229702.Y6re3d</WafTaskId>
+      </Result>
 </DescribeDomainConfigResponse>
-
 ```
 
 `JSON` 格式
@@ -121,5 +120,5 @@ https://wafopenapi.cn-hangzhou.aliyuncs.com/?Action=DescribeDomainConfig
 
 ## 错误码 { .section}
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/waf-openapi)
+访问[错误中心](https://error-center.aliyun.com/status/product/waf-openapi)查看更多错误码。
 
