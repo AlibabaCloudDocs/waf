@@ -4,9 +4,9 @@
 
 **说明：** 您也可以调用该接口为指定域名配置更新已上传的证书及私钥信息。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=waf-openapi&api=CreateCertAndKey)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=waf-openapi&api=CreateCertAndKey&type=RPC&version=2018-01-17)
 
 ## 请求参数 {#parameters .section}
 
@@ -39,7 +39,7 @@
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
@@ -49,14 +49,14 @@
 |Result| | |返回结果。
 
  |
-|└Status|Integer|2|请求执行状态：
+|Status|Integer|2|请求执行状态：
 
  -   **0**：表示该请求等待执行。
 -   **1**：表示该请求正在执行中。
 -   **2**：表示该请求已执行完成。
 
  |
-|└WafTaskId|String|aliyun.waf.20180712214032277.qmxI9a|WAF的请求ID。
+|WafTaskId|String|aliyun.waf.20180712214032277.qmxI9a|WAF的请求ID。
 
  |
 
@@ -81,13 +81,12 @@ https://wafopenapi.cn-hangzhou.aliyuncs.com/?Action=DeleteDomainConfig
 
 ``` {#xml_return_success_demo}
 <CreateCertAndKeyResponse>
-  <RequestId>D7861F61-5B61-46CE-A47C-6B19160D5EB0</RequestId>
-  <Result>
-    <Status>2</Status>
-    <WafTaskId>aliyun.waf.20180712214032277.qmxI9a</WafTaskId>
-  </Result>
+      <RequestId>D7861F61-5B61-46CE-A47C-6B19160D5EB0</RequestId>
+      <Result>
+            <Status>2</Status>
+            <WafTaskId>aliyun.waf.20180712214032277.qmxI9a</WafTaskId>
+      </Result>
 </CreateCertAndKeyResponse>
-
 ```
 
 `JSON` 格式
@@ -104,5 +103,5 @@ https://wafopenapi.cn-hangzhou.aliyuncs.com/?Action=DeleteDomainConfig
 
 ## 错误码 { .section}
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/waf-openapi)
+访问[错误中心](https://error-center.aliyun.com/status/product/waf-openapi)查看更多错误码。
 
