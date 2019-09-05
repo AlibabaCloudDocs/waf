@@ -1,15 +1,18 @@
-# DescribeWafSourceIpSegment {#doc_api_919609 .reference}
+# DescribeWafSourceIpSegment {#doc_api_waf-openapi_DescribeWafSourceIpSegment .reference}
 
 调用DescribeWafSourceIpSegment接口获取WAF实例的回源IP网段列表。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-单击[这里](https://api.aliyun.com/#product=waf-openapi&api=DescribeWafSourceIpSegment)在OpenAPI Explorer中进行可视化调试，并生成SDK代码示例。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=waf-openapi&api=DescribeWafSourceIpSegment&type=RPC&version=2018-01-17)
 
 ## 请求参数 {#parameters .section}
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
+|Action|String|是|DescribeWafSourceIpSegment|要执行的操作。取值：**DescribeWafSourceIpSegment**。
+
+ |
 |InstanceId|String|是|waf\_elasticity-cn-0xldbqtm005|WAF实例ID。
 
  **说明：** 您可以通过调用[DescribePayInfo](~~86651~~)接口查看您当前WAF实例ID。
@@ -17,12 +20,12 @@
  |
 |Region|String|否|cn|WAF实例所在的地域。取值：
 
- -   **cn**：表示中国大陆地区。
--   **cn-hongkong**：表示海外地区。
+ -   **cn**：表示中国大陆地区（默认）
+-   **cn-hongkong**：表示海外地区
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
@@ -51,11 +54,10 @@ https://wafopenapi.cn-hangzhou.aliyuncs.com/?Action=DescribeWafSourceIpSegment
 `XML` 格式
 
 ``` {#xml_return_success_demo}
-<DescribeWafSourceIpSegment>
-  <RequestId>9087ADDC-9047-4D02-82A7-33021B58083C</RequestId>
-  <Ips>121.43.18.0/24,120.25.115.0/24,101.200.106.0/24</Ips>
-</DescribeWafSourceIpSegment>
-
+<DescribeWafSourceIpSegmentResponse>
+     <Ips>121.43.18.0/24,120.25.115.0/24,101.200.106.0/24</Ips>
+     <RequestId>9087ADDC-9047-4D02-82A7-33021B58083C</RequestId>
+</DescribeWafSourceIpSegmentResponse>
 ```
 
 `JSON` 格式
@@ -69,5 +71,5 @@ https://wafopenapi.cn-hangzhou.aliyuncs.com/?Action=DescribeWafSourceIpSegment
 
 ## 错误码 { .section}
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/waf-openapi)
+访问[错误中心](https://error-center.aliyun.com/status/product/waf-openapi)查看更多错误码。
 
