@@ -6,7 +6,7 @@ This topic describes how to enable WAF protection for your website in CNAME mode
 
     **Note:** The total number of domain names that can be added to a WAF instance depends on the specifications of the instance and the number of extra domain name packages that you purchase. For more information, see [Extra domain quota](/intl.en-US/Pricing/Subscription/Extra domain quota.md).
 
--   To add a domain name to a WAF instance that is deployed in mainland China, the domain name must have an ICP license issued by the Ministry of Industry and Information Technology.
+-   If your domain name is protected by a WAF instance in mainland China, you must complete ICP filing for your domain name. If you do not complete ICP filing but still add your domain name to WAF, an error may occur and the system prompts you to complete ICP filing.
 
 You can use either of the following methods to add your website configurations:
 
@@ -14,7 +14,7 @@ You can use either of the following methods to add your website configurations:
 
     **Note:** The account that you use to add domain names must have management permissions on Alibaba Cloud DNS resources. Otherwise, DNS resolution fails. If DNS resolution fails, you can manually change the DNS record of the domain name after the domain name is automatically added.
 
--   [Manually add website configurations](#section_i0l_fp0_t66): This mode requires you to manually add your website configurations, such as the domain name, network protocol, server address, and server port. Also, you must change the DNS record of the domain name to forward the website requests to WAF for traffic scrubbing.
+-   [Manually add website configurations](#section_i0l_fp0_t66): This mode requires you to manually add your website configurations, such as the domain name, protocol, server address, and server port. You also need to change the DNS record of the domain name to forward the web requests of the website to WAF for traffic scrubbing.
 
 ## Configure WAF to automatically add website configurations
 
@@ -54,11 +54,11 @@ Eligible domain names contain only valid domain names that are configured in Ali
         -   If the certificate verification fails, verify the certificate again based on the error message, such as **The certificate and key do not match**, until the verification succeeds.
     WAF automatically adds the website configurations and changes the DNS record.
 
-    **Note:** If you want to add ports other than 80 and 443, manually edit the domain name after the domain name is automatically added. For more information, see [What to do next](#section_l50_3ox_mix).
+    **Note:** If you want to add ports other than 80 and 443, manually edit the domain name after the domain name is automatically added. For more information, see [References](#section_l50_3ox_mix).
 
     Possible issues and solutions:
 
-    -   **Domain name was added successfully, but you need to manually change the DNS record.**
+    -   **Domain name was added, but you need to manually change the DNS record.**
 
         Possible causes: The account that you use to add the domain name does not have management permissions on Alibaba Cloud DNS resources, or the uploaded HTTPS certificate does not match your domain name.
 
@@ -87,7 +87,7 @@ Eligible domain names contain only valid domain names that are configured in Ali
 
 5.  On the **Add Domain Name** page, click **Manually Add Other Websites**.
 
-    **Note:** The **Add Domain Name** page appears only when an eligible domain name exists. If the **Add Domain Name** page does not appear, skip this step.
+    **Note:** The **Add Domain Name** page appears only when an eligible domain name exists. For more information, see [Configure WAF to automatically add website configurations](#section_06w_k6n_iiw). If the **Add Domain Name** page does not appear, skip this step.
 
 6.  Complete the **Add Domain Name** wizard.
 
@@ -101,7 +101,7 @@ Eligible domain names contain only valid domain names that are configured in Ali
             -   If you use a wildcard domain, WAF automatically matches all subdomains of the wildcard domain.
             -   If you configure both a wildcard domain and an exact match domain, WAF uses the forwarding rules and protection policies of the exact match domain.
         -   Currently, `.edu` domain names are not supported. To add `.edu` domain names, submit a ticket for technical support. |
-        |**Protection Resource**|If you are using the WAF Exclusive edition, select a protection resource. **Note:** This parameter is available only for the WAF Exclusive edition.
+        |**Protection Resource**\(applicable to only the Exclusive edition\)|If you are using the WAF Exclusive edition, select a protection resource. **Note:** This **** is available only for the WAF Exclusive edition.
 
 Valid values:
 
@@ -172,7 +172,7 @@ Click **View Allowed Port Range** to query all supported ports. Separate multipl
 
 **Note:** You can select **Least time** only when intelligent load balancing is enabled. For more information, see [Intelligent load balancing](/intl.en-US/Pricing/Subscription/Intelligent load balancing.md).
 
-After the setting takes effect, WAF distributes back-to-origin requests to multiple origin IP addresses to achieve load balancing. |
+After the setting takes effect, WAF distributes back-to-origin requests to the IP addresses of multiple origin servers to achieve load balancing. |
         |**Does a layer 7 proxy \(DDoS Protection/CDN, etc.\) exist in front of WAF**|Select **Yes** if you need to configure a Layer 7 proxy in front of WAF. Otherwise, WAF cannot obtain the actual IP addresses of clients. For more information, see the following topics:         -   [Deploy WAF and Anti-DDoS Pro together](/intl.en-US/Website Access/Connect cloud services to WAF/Deploy WAF and Anti-DDoS Pro together.md)
         -   [t15558.md\#](/intl.en-US/Website Access/Connect cloud services to WAF/Deploy WAF and CDN together.md)
 Select **No** if you do not need to configure a Layer 7 proxy in front of WAF. |
@@ -192,11 +192,17 @@ Select **No** if you do not need to configure a Layer 7 proxy in front of WAF. |
         Click **Completed. Return to the website list.** The Website Access page appears.
 
 
+## What to do next
+
+After you add a domain name, WAF forwards access requests to your website for protection. You can also configure website protection configurations for better protection.
+
+WAF provides multiple protection features to protect your website against different types of attacks. Among the features, only **RegEx Protection Engine** and **HTTP Flood Protection** are enabled by default. The RegEx Protection Engine feature protects your website against common web attacks, such as SQL injection, XSS, and webshell upload. The HTTP Flood Protection feature protects your website against HTTP flood attacks. You need to manually enable other features and configure protection rules. For more information, see [Overview](/intl.en-US/Website Protection Settings/Overview.md).
+
 ## Upload HTTPS certificates
 
 If your domain name uses **HTTPS**, you must upload the valid and correct HTTPS certificate associated with the domain name in the WAF console. This ensures that WAF protects HTTPS requests.
 
-You can upload an HTTPS certificate by using one of the following methods:
+You can upload an HTTPS certificate by using the following methods:
 
 -   Manual uploading:
 
@@ -204,14 +210,7 @@ You can upload an HTTPS certificate by using one of the following methods:
 
     -   The certificate file in the CRT or PEM format
     -   The private key file in the KEY format
--   Automatic uploading: If the certificate to be uploaded is issued by Alibaba Cloud SSL Certificates Service, you can select the certificate from those issued and upload it in the SSL Certificates Service console.
-
-    SSL Certificates Service is provided by Alibaba Cloud in joint with a number of certificate authorities \(CAs\) inside and outside China. It offers digital server certificates on the Alibaba Cloud platform and also provides value-added services, such as Flexible HTTPS, extended certificates, and hosting. This allows you to change the protocol of your website from HTTP to HTTPS at the minimum costs. HTTPS provides identity verification and encrypted data transmission for your website and mobile applications. For more information, see [What is SSL Certificates Service?](/intl.en-US/Product Introduction/What is SSL Certificates Service?.md).
-
-    Certificates can be issued in one of the following methods:
-
-    -   Use the SSL Certificates Service console to purchase certificates and complete the certificate application and review. For more information, see [Select and purchase certificates](/intl.en-US/.md) and [Step 1: Fill in certificate application information]().
-    -   Upload existing certificates to the SSL Certificates Service console. For more information, see [Upload certificates](/intl.en-US/Manage the certificates/Upload certificates.md).
+-   Selecting an existing certificate: You can select the certificate that is associated with the domain name. For more information, see [SSL Certificates Service](/intl.en-US/Product Introduction/What is SSL Certificates Service?.md).
 
 **Procedure**
 
@@ -227,7 +226,7 @@ You can upload an HTTPS certificate by using one of the following methods:
 
     ![HTTPS status](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/3145248951/p31793.png)
 
-    If the HTTPS status is Abnormal, no certificate is uploaded or the uploaded certificate is invalid, for example, the certificate format is incorrect or the certificate does not match the target domain name. The HTTPS status changes to Normal after a valid certificate is uploaded to the WAF console.
+    If the HTTPS status is Abnormal, no certificates are uploaded or the uploaded certificate is invalid, for example, the certificate format is incorrect or the certificate does not match the domain name. The HTTPS status changes to Normal after a valid certificate is uploaded to the WAF console.
 
 5.  In the **Upload Certificate** or **Update Certificate** dialog box, specify **Upload Type** to upload an HTTPS certificate.
 
@@ -246,9 +245,9 @@ You can upload an HTTPS certificate by using one of the following methods:
 
         ![Select Existing Certificate](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/3145248951/p31795.png)
 
-        The **Certificate** drop-down list is a collection of certificates that are issued in the SSL Certificates Service console. You can select the certificate associated with the target domain name in this list. You can click **Cloud Security - Certificates Service** to go to the SSL Certificates Service console to manage certificates.
+        The **Certificate** drop-down list is a collection of certificates that are issued in the SSL Certificates Service console. You can select the certificate associated with the domain name in this list. You can click **Cloud Security - Certificates Service** to go to the SSL Certificates Service console to manage certificates.
 
-    -   **Purchase Certificate**: Click **Buy Now** to go to the configuration page of SSL Certificates Service to purchase a certificate for the target domain name.
+    -   **Purchase Certificate**: Click **Buy Now** to go to the configuration page of SSL Certificates Service to purchase a certificate for the domain name.
 
         ![Select Purchase Certificate](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/3145248951/p99119.png)
 
@@ -263,7 +262,7 @@ You can upload an HTTPS certificate by using one of the following methods:
     ![Normal HTTPS status](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/4284130061/p99223.png)
 
 
-## What to do next
+## References
 
 You can go to the **Website Access** page to view the added domain name in the list and perform the following operations as required:
 
@@ -281,7 +280,7 @@ You can go to the **Website Access** page to view the added domain name in the l
 
     For more information, see [Enable log collection](/intl.en-US/Log Management/Log service/Enable log collection.md).
 
-    **Note:** Log Service for WAF is a value-added service provided by WAF. It is available only after enabled. For more information, see [Enable Log Service for WAF](/intl.en-US/Log Management/Log service/Enable Log Service for WAF.md).
+    **Note:** Log Service for WAF is a value-added service provided by WAF. It is available only after you enable it. For more information, see [Enable Log Service for WAF](/intl.en-US/Log Management/Log service/Enable Log Service for WAF.md).
 
 -   Configure protection resources: Click the ![Configure protection resources](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/3145248951/p97139.png) icon in the **Protection Resource** column to configure protection resources for the domain name.
 
@@ -291,11 +290,11 @@ You can go to the **Website Access** page to view the added domain name in the l
 
         **Note:** By default, websites that are automatically added use protection resources of the **Shared Cluster and Shared IP** type.
 
-    -   **Shared Cluster and Exclusive IP**: For more information, see [Exclusive WAF IP addresses](/intl.en-US/Pricing/Subscription/Exclusive WAF IP addresses.md).
+    -   **Shared Cluster and Exclusive IP**: For more information, see [Exclusive IP addresses](/intl.en-US/Pricing/Subscription/Exclusive IP addresses.md).
     -   **Shared Cluster and Load Balancing Among Multiple WAF Nodes**: For more information, see [Intelligent load balancing](/intl.en-US/Pricing/Subscription/Intelligent load balancing.md).
     -   **Exclusive Cluster**: For more information, see [Create an exclusive cluster](/intl.en-US/System Management/Create an exclusive cluster.md).
 -   View attack monitoring reports: Click **View Report** in the **Attack Monitoring** column to navigate to the **Security report** page to view the protection report of the domain name. For more information, see [View security reports](/intl.en-US/.md).
--   Configure protection policies: Click **Config** in the Actions column to navigate to the **Website Protection** page. On the page that appears, you can configure **Web Security**, **Bot Management**, and **Access Control/Throttling** policies. For more information, see [Configure the RegEx Protection Engine](/intl.en-US/Website Protection Settings/Web intrusion prevention/Configure the RegEx Protection Engine.md).
+-   Configure protection policies: Click **Config** in the Actions column to navigate to the **Website Protection** page. On the page that appears, you can configure **Web Security**, **Bot Management**, and **Access Control/Throttling** policies. For more information, see [Configure the RegEx Protection Engine](/intl.en-US/Website Protection Settings/Web security/Configure the RegEx Protection Engine.md).
 -   Edit a domain name: Click **Edit** in the Actions column to modify the website configurations, such as the protocol type, server address, and server port. Domain names cannot be changed.
 -   Delete a domain name: Click **Delete** in the Actions column to delete a domain name.
 
@@ -308,5 +307,5 @@ What do I need to know about migrating website configurations across accounts?
 
 To prevent traffic forwarding errors caused by improper operations during website configuration migration, a 30-minute protection period is configured for your website. To migrate the website configurations to another account, you must delete the website configurations from the current account. Thirty minutes later, you can add the website configurations to the WAF instance of another account.
 
-If you want to immediately migrate the website configurations, submit a ticket or apply for a protection period cancellation for this domain name in the DingTalk customer support group. After the protection period is canceled, you can add the website configurations to the WAF instance of another account.
+If you want to immediately migrate the website configurations, submit a[ticket](https://workorder-intl.console.aliyun.com/?#/ticket/add/?productId=80) or apply for a protection period cancellation for this domain name in the DingTalk customer support group. After the protection period is canceled, you can add the website configurations to the WAF instance of another account.
 
