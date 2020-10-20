@@ -1,138 +1,124 @@
 ---
-keyword: [网站防护, 安全报表, Web应用攻击, 访问控制/限流, 数据安全, 高级防护, Bot管理]
+keyword: [website protection, security report, web application attack, access control and throttling, data security, advanced protection, bot management]
 ---
 
-# 查看安全报表
+# View security reports
 
-Web应用防火墙（WAF）安全报表向您展示WAF各个防护模块的防护记录。您可以使用安全报表查看WAF已防护域名的Web安全、Bot管理、访问控制/限流防护记录，进行业务安全分析。
+Web Application Firewall \(WAF\) provides security reports to display the protection records of each protection module. You can view the web security, bot management, and access control and throttling records on domains that are added to WAF. This allows you to analyze business security.
 
-## 前提条件
+**Note:** This topic describes security reports in the WAF console released in January 2020. If your WAF instance was created before this date, see [WAF security reports](/intl.en-US/User Guide (Unavailable Soon)/WAF security reports.md).
 
--   已完成网站接入。更多信息，请参见[添加域名](/intl.zh-CN/接入WAF/CNAME接入/添加域名.md)。
--   已开启了WAF防护。
+## Prerequisites
 
-    域名接入WAF后，WAF会自动为该域名开启**正则防护引擎**和**CC安全防护**模块，其他模块需要您手动开启。更多信息，请参见[概述](/intl.zh-CN/网站防护配置/概述.md)。
+-   A WAF instance is purchased. For more information, see [Purchase a WAF instance](/intl.en-US/Pricing/Subscription/Purchase a WAF instance.md).
+-   Your website is added to the WAF console. For more information, see [Add domain names](/intl.en-US/Website Access/Website access with CNAME/Add domain names.md).
 
+## Access the security report page
 
-## 访问报表页面
+1.  Log on to the [Web Application Firewall console](https://yundun.console.aliyun.com/?p=waf).
 
-1.  登录[Web应用防火墙控制台](https://yundun.console.aliyun.com/?p=waf)。
+2.  In the top navigation bar, select the resource group to which the instance belongs and the region, **Mainland China** or **International**, in which the instance is deployed.
 
-2.  在顶部菜单栏，选择Web应用防火墙实例的资源组和地域（**中国内地**、**海外地区**）。
+3.  In the left-side navigation pane, click **Security report**.
 
-3.  在左侧导航栏，单击**安全报表**。
-
-4.  在安全报表页面，通过页签选择要查看的报表类型（**Web安全**、**Bot管理**、**访问控制/限流**），查看对应报表。
-
-
-## Web安全报表概述
-
-**Web安全**报表展示了**Web入侵防护**、**防敏感信息泄露**、**账户安全**、**主动防御**和**API安全**模块的防护记录，单击页签可以切换报表。
-
-**说明：**
-
--   包年包月的高级版WAF实例（中国内地）不支持**API安全**报表。
--   包年包月的高级版WAF实例（海外地区）不支持**API安全**和**主动防御**报表。
-
--   **Web入侵防护**：展示WAF阻断的所有Web应用攻击，分为攻击统计信息（图示中①）和攻击详情记录（图示中②）。您可以使用域名、查询时间搜索某个域名在查询时间范围内的数据。
-
-    ![web应用攻击](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/3477813061/p77269.png)
-
-    -   攻击统计信息包括**安全攻击类型分布**、**攻击来源IP TOP5**和**攻击来源区域 TOP5**。
-    -   攻击详情记录展示Web攻击的详细信息，包括**攻击IP**、**所属地区**、**攻击时间**、**攻击类型**、**攻击URL**、**请求方法**、**请求参数**、**规则动作**、**规则ID**和**攻击概率**。
-
-        您可以使用以下字段筛选您关注的记录：
-
-        -   防护模块：支持选择正则防护、深度学习。
-        -   攻击类型：支持选择SQL注入、跨站脚本、代码执行、CRLF、本地文件包含、远程文件包含、webshell、CSRF、其他。
-        -   攻击IP
-        -   防护规则ID
-        单击某个记录操作列下的**查看详情**，可以查看**攻击详情**。
-
-        ![攻击详情](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/7009053951/p109944.png)
-
-    关于Web入侵防护的设置方法，请参见以下文档：
-
-    -   [设置正则防护引擎](/intl.zh-CN/网站防护配置/Web安全/设置正则防护引擎.md)
-    -   [设置大数据深度学习引擎](/intl.zh-CN/网站防护配置/Web安全/设置大数据深度学习引擎.md)
--   **防敏感信息泄露**：展示触发了防敏感信息泄露规则的Web请求记录，包括**攻击IP**、**所属地区**、**攻击时间**、**攻击URL**、**请求方法**、**请求参数**、**规则动作**、**规则ID**和**攻击概率**。您可以使用域名、查询时间搜索某个域名在查询时间范围内的数据。
-
-    单击某个记录操作列下的**查看详情**，可以查看**攻击详情**。
-
-    关于防敏感信息泄露的设置方法，请参见[设置防敏感信息泄露](/intl.zh-CN/网站防护配置/Web安全/设置防敏感信息泄露.md)。
-
--   **账户安全**：展示在账户安全中配置的防护接口上发生的风险事件记录，包括**所属域名**、**接口**、**异常时间段**、**已拦截量/总请求量**和**告警原因**。您可以使用域名、接口、查询时间搜索您关注的记录。
-
-    **说明：** 仅包年暴雨 、
-
-    关于账户安全的设置方法，请参见[设置账户安全](/intl.zh-CN/防护实验室/设置账户安全.md)。
-
--   **主动防御**：展示触发了主动防御自动生成的防护规则的Web应用攻击记录，包括**攻击IP**、**所属地区**、**攻击时间**、**攻击URL**、**请求方法**、**规则动作**、**规则ID**和**攻击概率**。您可以使用域名、查询时间搜索某个域名在查询时间范围内的数据。
-
-    单击某个记录操作列下的**查看详情**，可以查看**攻击详情**。
-
-    关于主动防御的设置方法，请参见[设置主动防御](/intl.zh-CN/网站防护配置/Web安全/设置主动防御.md)。
-
--   **API安全**：展示API安全告警记录，包括**接口ID**、**接口URL**、**攻击IP**、**所属区域**、**攻击时间**和**防护动作**。您可以使用域名、查询时间搜索某个域名在查询时间范围内的数据。
-
-    关于API安全的设置方法，请参见[开启API安全](/intl.zh-CN/防护实验室/开启API安全.md)。
+4.  On the Security report page that appears, click any of the following tabs to view the reports of required types: **Web Security**, **Bot Management**, and **Access Control/Throttling**.
 
 
-## Bot管理报表概述
+## Web Security tab
 
-**Bot管理**报表展示网站业务的爬虫请求监控数据，包括**趋势数据**和**近10分钟实时监控**数据。您可以使用域名、查询时间搜索某个域名在查询时间范围内的数据。
+The **Web Security** tab displays protection records of the following modules: **Web Intrusion Prevention**, **Data Leakage Prevention**, **Account Security**, and **Positive Security Model**.
 
-![Bot管理](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/2933219951/p96130.png)
+-   **Web Intrusion Prevention**: displays all web application attacks blocked by WAF. This tab consists of two areas: attack statistics \(area 1 in the figure\) and attack details \(area 2 in the figure\). You can specify a domain and query time period to search for corresponding data.
 
--   **趋势数据**分为**防护概览**和**拦截分析**。**防护概览**展示了总请求量和触发了不同防护模块下策略的爬虫请求数量的趋势图。**拦截分析**展示了请求量和拦截量的相对趋势图。
--   **近10分钟实时监控**：展示近10分钟内触发了不同防护模块下策略的爬虫请求记录。
+    ![Web application attacks](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/1097023061/p77269.png)
 
-关于Bot管理的设置方法，请参见以下文档：
+    -   The attack statistics area includes **Security attack type distribution**, **Top 5 attack source ips**, and **Top 5 attack source regions**.
+    -   The attack details area displays the following information: **Attack IP**, **Region**, **Time Attacked**, **Attack Type**, **Attacked URL**, **Method**, **Parameter**, **Rule Action**, **Rule ID**, and **Attack Probability**. You can specify the following information to search for the records that you want to view: protection module \(valid values: Regular Protection and Deep learning\), attack type \(valid values: SQL injection, XSS, Code execution, CRLF, Local file inclusion, Remote file inclusion, webshell, CSRF, and Other\), and attack IP address.
 
--   [设置合法爬虫规则](/intl.zh-CN/网站防护配置/Bot管理/设置合法爬虫规则.md)
--   [设置爬虫威胁情报规则](/intl.zh-CN/网站防护配置/Bot管理/设置爬虫威胁情报规则.md)
--   [设置App防护](/intl.zh-CN/网站防护配置/Bot管理/App防护/设置App防护.md)
+        You can click **View Details** in the Actions column that corresponds to a record to access the **Attack Detail** pane.
 
-## 访问控制/限流报表概述
+        ![Attack Detail pane](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/4532583951/p109944.png)
 
-**访问控制/限流**报表展示触发了**CC安全防护**、**扫描防护**和**访问控制**规则的Web请求记录。您可以使用域名、查询时间搜索某个域名在查询时间范围内的数据。对于您关注的数据，也可以一键查询相关的日志。
+    For more information about how to configure web intrusion prevention, see the following topics:
 
--   **CC安全防护**：展示CC防护趋势，包括**总QPS**、**自定义CC告警**、**自定义CC拦截**、**CC系统拦截**的数量趋势，和不同**规则类型**（包括**自定义CC告警**、**自定义CC拦截**、**CC系统拦截**）的**匹配次数**。
+    -   [Configure the RegEx Protection Engine](/intl.en-US/Website Protection Settings/Web security/Configure the RegEx Protection Engine.md)
+    -   [Configure the Big Data Deep Learning Engine](/intl.en-US/Website Protection Settings/Web security/Configure the Big Data Deep Learning Engine.md)
+-   **Data Leakage Prevention**: displays the records of web requests that triggered data leakage prevention rules. The following information is provided: **Attack IP**, **Region**, **Time Attacked**, **Attacked URL**, **Method**, **Parameter**, **Rule Action**, **Rule ID**, and **Attack Probability**. You can specify a domain and query time period to search for corresponding data.
 
-    ![CC攻击](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/3933219951/p77274.png)
+    ![Data Leakage Prevention tab](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/4833219951/p77281.png)
 
-    单击某个**规则类型**的**匹配次数**，将会跳转到**日志服务**页面，并自动输入与**CC安全防护**模块相关的日志查询语句，方便您进一步查询相关日志。更多信息，请参见[使用日志查询](/intl.zh-CN/日志管理/日志服务/使用日志查询.md)。
+    You can click **View Details** in the Actions column that corresponds to a record to access the **Attack Detail** pane.
 
-    ![CC安全防护日志](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/8009053951/p109965.png)
+    For more information about how to configure data leakage prevention, see [Configure data leakage prevention](/intl.en-US/Website Protection Settings/Web security/Configure data leakage prevention.md).
 
-    关于CC安全防护的设置方法，请参见[设置CC安全防护](/intl.zh-CN/网站防护配置/访问控制/限流/设置CC安全防护.md)。
+-   **Account Security**: displays the records of risk events that occurred at the specified endpoint during the configuration of account security. The following information is provided: **Domain**, **Endpoint**, **Malicious Requests Occurred During**, **Blocked Requests/Total Requests**, and **Alert Triggered By**. You can specify a domain, endpoint, and query time period to search for corresponding data.
 
-    关于自定义CC防护规则的设置方法，请参见[设置自定义防护策略](/intl.zh-CN/网站防护配置/访问控制/限流/设置自定义防护策略.md)。
+    ![Account Security tab](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/4833219951/p77282.png)
 
--   **扫描防护**：展示扫描防护趋势，包括**总QPS**、**目录遍历防护**、**协同防御**、**高频Web攻击**、**扫描工具封禁**的数量趋势，和不同**规则类型**（包括**目录遍历防护**、**协同防御**、**高频Web攻击**、**扫描工具封禁**）的**匹配次数**。
+    For more information about how to configure account security, see [Configure account security](/intl.en-US/Protection Lab/Configure account security.md).
 
-    ![扫描防护](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/3933219951/p77275.png)
+-   **Positive Security Model**: displays the records of web application attacks that triggered automatically-generated positive security model rules. The following information is provided: **Attack IP**, **Region**, **Time Attacked**, **Attacked URL**, **Method**, **Rule Action**, **Rule ID**, and **Attack Probability**. You can specify a domain and query time period to search for corresponding data.
 
-    单击某个**规则类型**的**匹配次数**，将会跳转到**日志服务**页面，并自动输入与**扫描防护**模块相关的日志查询语句，方便您进一步查询相关日志。更多信息，请参见[使用日志查询](/intl.zh-CN/日志管理/日志服务/使用日志查询.md)。
+    ![Positive Security Model tab](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/4833219951/p77283.png)
 
-    ![扫描防护日志](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/8009053951/p109969.png)
+    You can click **View Details** in the Actions column that corresponds to a record to access the **Attack Detail** pane.
 
-    关于扫描防护的设置方法，请参见[设置扫描防护](/intl.zh-CN/网站防护配置/访问控制/限流/设置扫描防护.md)。
+    For more information about how to configure a positive security model, see [Configure the positive security model](/intl.en-US/Website Protection Settings/Web security/Configure the positive security model.md).
 
--   **访问控制**展示访问控制趋势，包括**总QPS**、**ACL访问控制拦截**、**ACL访问控制告警**、**黑名单防护**的数量趋势，和自定义规则的匹配次数记录。
 
-    ![ACL访问控制](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/3933219951/p77276.png)
+## Bot Management tab
 
-    单击某个自定义规则的**规则ID**，将会打开**编辑规则**对话框，支持查看和修改当前自定义规则的配置。更多信息，请参见[自定义规则参数描述](/intl.zh-CN/网站防护配置/访问控制/限流/设置自定义防护策略.mdtable_yyy_1au_bf1)。
+The **Bot Management** tab displays the monitoring data of access requests of crawlers generated in websites. This tab consists of two sections: **Data Trends** and **Real-time Monitoring in Last 10 Minutes**. You can specify a domain and query time period to search for corresponding data.
 
-    ![编辑规则](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/9009053951/p110085.png)
+![Bot Management tab](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/4833219951/p96130.png)
 
-    单击某个自定义规则的**匹配次数**，将会跳转到**日志服务**页面，并自动输入与**访问控制**模块相关的日志查询语句，方便您进一步查询相关日志。更多信息，请参见[使用日志查询](/intl.zh-CN/日志管理/日志服务/使用日志查询.md)。
+-   **Data Trends**: includes two tabs: **Overview** and **Interception Analysis**. The **Overview** tab displays the trend chart of total requests and access requests of crawlers that triggered the protection rules under different protection modules. The **Interception Analysis** tab displays the trend chart of requests and blocked requests.
+-   **Real-time Monitoring in Last 10 Minutes**: displays the records of access requests of crawlers that triggered the protection rules under different protection modules in the last 10 minutes.
 
-    ![访问控制日志](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/9009053951/p109981.png)
+For more information about how to configure bot management, see the following topics:
 
-    关于访问控制规则的设置方法，请参见[设置自定义防护策略](/intl.zh-CN/网站防护配置/访问控制/限流/设置自定义防护策略.md)。
+-   [Set a threat intelligence rule to allow requests from specific crawlers](/intl.en-US/Website Protection Settings/Bot management/Set a threat intelligence rule to allow requests from specific crawlers.md)
+-   [Set a bot threat intelligence rule](/intl.en-US/Website Protection Settings/Bot management/Set a bot threat intelligence rule.md)
+-   [Configure application protection](/intl.en-US/Website Protection Settings/Bot management/Integrated App protection/Configure application protection.md)
 
-    关于IP黑名单的设置方法，请参见[设置IP黑名单](/intl.zh-CN/网站防护配置/访问控制/限流/设置IP黑名单.md)。
+## Access Control/Throttling tab
+
+The **Access Control/Throttling** tab displays the records of web requests that triggered the protection rules under the following protection modules: **HTTP Flood Protection**, **Scan Protection**, and **Access Control**. You can specify a domain and query time period to search for corresponding data. You can also query data-related logs with one click.
+
+-   **HTTP Flood Protection**: displays the trend of HTTP flood protection. The following information is provided: **Total QPS**, **Alerts on Custom Rule Hit**, **Blocking on Custom Rule Hit**, and **Blocking on System Rule Hit**. This tab also displays the data of **No. of matches** for different rule types \(valid values: **Alerts on Custom Rule Hit**, **Blocking on Custom Rule Hit**, and **Blocking on System Rule Hit**\).
+
+    ![HTTP Flood Protection tab](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/4833219951/p77274.png)
+
+    You can click the value of **No. of matches** for a rule type to access the **Log Service** page. The system automatically enters the query statements of the logs related to HTTP flood protection on this page to facilitate log query. For more information, see [t41248.md\#](/intl.en-US/Log Management/Log service/Enable log query.md).
+
+    ![Log Service page](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/5532583951/p109965.png)
+
+    For more information about how to configure HTTP flood protection, see [Configure HTTP flood protection](/intl.en-US/Website Protection Settings/Access control and throttling/Configure HTTP flood protection.md).
+
+    For more information about how to customize HTTP flood protection rules, see [Create a custom protection policy](/intl.en-US/Website Protection Settings/Access control and throttling/Create a custom protection policy.md).
+
+-   **Scan Protection**: displays the trend of scan protection. The following information is provided: **Total QPS**, **Directory Traversal Protection**, **Collaborative Protection**, **High-frequency Web Attack Protection**, and **Scan Tool-based Blocking**. This tab also displays the data of **No. of matches** for different rule types \(valid values: **Directory Traversal Protection**, **Collaborative Protection**, **High-frequency Web Attack Protection**, and **Scan Tool-based Blocking**\).
+
+    ![Scan Protection tab](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/4833219951/p77275.png)
+
+    You can click the value of **No. of matches** for a rule type to access the **Log Service** page. The system automatically enters the query statements of the logs related to scan protection on this page to facilitate log query. For more information, see [t41248.md\#](/intl.en-US/Log Management/Log service/Enable log query.md).
+
+    ![Log Service page](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/6532583951/p109969.png)
+
+    For more information about how to configure scan protection, see [Configure scan protection](/intl.en-US/Website Protection Settings/Access control and throttling/Configure scan protection.md).
+
+-   **Access Control**: displays the trend of access control. The following information is provided: **Total QPS**, **Blocking by ACL Policy**, **Alerts by ACL Policy**, and **Blocking by Blacklisting**. This tab also displays the number of matches for custom rules.
+
+    ![Access Control tab](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/4833219951/p77276.png)
+
+    You can click the ID of a custom rule to view and modify the configurations of this rule in the **Edit Rule** dialog box that appears. For more information, see [Create a custom protection policy](/intl.en-US/Website Protection Settings/Access control and throttling/Create a custom protection policy.mdtable_yyy_1au_bf1).
+
+    You can click the value of **No. of matches** for a custom rule to access the **Log Service** page. The system automatically enters the query statements of the logs related to access control on this page to facilitate log query. For more information, see [t41248.md\#](/intl.en-US/Log Management/Log service/Enable log query.md).
+
+    ![Log Service page](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/6532583951/p109981.png)
+
+    For more information about how to configure access control, see [Create a custom protection policy](/intl.en-US/Website Protection Settings/Access control and throttling/Create a custom protection policy.md).
+
+    For more information about how to configure an IP address blacklist, see [Configure a blacklist](/intl.en-US/Website Protection Settings/Access control and throttling/Configure a blacklist.md).
 
 
