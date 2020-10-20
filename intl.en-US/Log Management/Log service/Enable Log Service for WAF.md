@@ -2,7 +2,7 @@
 
 WAF integrates Log Service to provide the Log Service for WAF feature. This feature collects logs of websites protected by WAF in a near-real-time manner, allows you to query and analyze the collected log data, and displays results on dashboards. This feature meets the classified protection requirements and your website protection and operations requirements. This topic describes how to enable the Log Service for WAF feature.
 
--   A WAF instance is purchased. If it is a subscription WAF instance, its edition must be**Business** or higher. For more information, see [Purchase a WAF instance](/intl.en-US/Pricing/Subscription/Purchase a WAF instance.md).
+-   A WAF instance is purchased. If it is a subscription WAF instance, its edition must be **Business** or higher. For more information, see [Purchase a WAF instance](/intl.en-US/Pricing/Subscription/Purchase a WAF instance.md).
 -   Log Service is activated.
 
     The first time you log on to the [Log Service console](https://sls.console.aliyun.com), activate Log Service as prompted.
