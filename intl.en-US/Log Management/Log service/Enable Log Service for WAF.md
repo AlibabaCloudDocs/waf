@@ -1,8 +1,8 @@
 # Enable Log Service for WAF
 
-WAF integrates Log Service to provide the Log Service for WAF feature. This feature collects real-time logs of websites protected by WAF, allows you to query and analyze the collected log data, and displays results on dashboards. This feature meets the classified protection requirements and your website protection and operations requirements. This topic describes how to enable the Log Service for WAF feature.
+WAF integrates Log Service to provide the Log Service for WAF feature. This feature collects logs of websites protected by WAF in a near-real-time manner, allows you to query and analyze the collected log data, and displays results on dashboards. This feature meets the classified protection requirements and your website protection and operations requirements. This topic describes how to enable the Log Service for WAF feature.
 
--   A WAF instance is purchased. If the instance is a subscription WAF instance, the edition of the instance must be **Pro** or higher. For more information, see [Activate Alibaba Cloud WAF](/intl.en-US/Pricing/Subscription/Activate Alibaba Cloud WAF.md).
+-   A WAF instance is purchased. If it is a subscription WAF instance, its edition must be**Business** or higher. For more information, see [Purchase a WAF instance](/intl.en-US/Pricing/Subscription/Purchase a WAF instance.md).
 -   Log Service is activated.
 
     The first time you log on to the [Log Service console](https://sls.console.aliyun.com), activate Log Service as prompted.
@@ -32,19 +32,14 @@ WAF integrates Log Service to provide the Log Service for WAF feature. This feat
 
     1.  On the **Log Service** page, click **Authorize Now**.
 
-        **Note:**
+        **Note:** If you have already completed the authorization, **Authorize Now** is not displayed.
 
     2.  On the **Cloud Resource Access Authorization** page, click **Confirm Authorization Policy**.
 
         ![Cloud Resource Access Authorization](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/4308101061/p21284.png)
 
 
-Then, you can use the Log Service for WAF feature on the **Log Service** page. To use this feature, perform the following steps:
-
-1.  On the Log Service page, turn on the Status switch of the domain name. This way, Log Service for WAF can collect and store the logs of the website that uses the domain name. For more information, see [Enable log collection](/intl.en-US/Log Management/Log service/Enable log collection.md).
-2.  Query and analyze the collected logs. For more information, see [Enable log query](/intl.en-US/Log Management/Log service/Enable log query.md) and [Enable log analysis](/intl.en-US/Log Management/Log service/Enable log analysis.md).
-
 ## What to do next
 
-[Enable log collection](/intl.en-US/Log Management/Log service/Enable log collection.md)
+After you enable the Log Service for WAF feature, you must enable log collection for domains that are protected by WAF. For more information, see [Enable log collection](/intl.en-US/Log Management/Log service/Enable log collection.md).
 
