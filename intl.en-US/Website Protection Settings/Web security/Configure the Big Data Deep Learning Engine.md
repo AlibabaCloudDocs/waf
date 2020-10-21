@@ -42,7 +42,7 @@ The RegEx Protection Engine uses strong regular expression rules. It provides op
 
 4.  In the upper part of the **Website Protection** page, select the domain name for which you want to configure the whitelist.
 
-    ![Switch domain name](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/8038549951/p77231.png)
+    ![Switch Domain Name](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/8038549951/p77231.png)
 
 5.  On the **Web Security** tab, specify the following parameters in the **Big Data Deep Learning Engine** card of the **Web Intrusion Prevention** section.
 
