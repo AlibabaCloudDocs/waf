@@ -15,14 +15,14 @@ Web Application Firewall \(WAF\) supports the majority of domain suffixes. This 
 |ag|agrar.hu|ah.cn|ai|al|am|
 |app|apps.lair.io|art.ht|as|asia|assedic.fr|
 |asso.gp|asso.ht|at|auction|audio|auto|
-|avocat.fr|avoues.fr|Not supported|Not supported|Not supported|Not supported|
+|avocat.fr|avoues.fr| | | | |
 
 ## b
 
 |ba|bar|be|best|bg|bh|
 |bi|bike|biz|biz.id|biz.pk|biz.vn|
 |bj.cn|black|bloxcms.com|blue|bo|bolt.hu|
-|bs|business|by|bz|Not supported|Not supported|
+|bs|business|by|bz| | |
 
 ## c
 
@@ -48,7 +48,7 @@ Web Application Firewall \(WAF\) supports the majority of domain suffixes. This 
 |com.sg|com.sg|com.so|com.sususu|com.sv|com.tr|
 |com.tw|com.ua|com.uy|com.vc|com.ve|com.vn|
 |company|cool|coop.ht|cq.cn|cr|credit|
-|cricket|cu|cx|cz|Not supported|Not supported|
+|cricket|cu|cx|cz| | |
 
 ## d
 
@@ -56,7 +56,7 @@ Web Application Firewall \(WAF\) supports the majority of domain suffixes. This 
 |diet|diskstation.eu|diskstation.me|diskstation.org|dj|dk|
 |dm|do|dog|domains|download|draydns.de|
 |dray-dns.de|dscloud.biz|dscloud.me|dscloud.mobi|dsmynas.com|dsmynas.net|
-|dsmynas.org|dynvpn.de|dyn-vpn.de|Not supported|Not supported|Not supported|
+|dsmynas.org|dynvpn.de|dyn-vpn.de| | | |
 
 ## e
 
@@ -65,14 +65,14 @@ Web Application Firewall \(WAF\) supports the majority of domain suffixes. This 
 |edu.gt|edu.gy|edu.hk|edu.hk|edu.hn|edu.ht|
 |edu.mo|edu.my|edu.pl|edu.rs|edu.sg|edu.tw|
 |ee|email|erotica.hu|erotika.hu|es|eu|
-|experts-comptables.fr|Not supported|Not supported|Not supported|Not supported|Not supported|
+|experts-comptables.fr| | | | | |
 
 ## f
 
 |fail|faith|family|familyds.com|familyds.net|familyds.org|
 |fans|farm|fi|film.hu|fin.ec|firm.ht|
 |fish|fit|fj.cn|flowers|fm|forum.hu|
-|fr|from.hr|fund|fyi|Not supported|Not supported|
+|fr|from.hr|fund|fyi| | |
 
 ## g
 
@@ -87,7 +87,7 @@ Web Application Firewall \(WAF\) supports the majority of domain suffixes. This 
 |gov.sg|gov.vn|gp|gp|gq|gr|
 |gr|green|greta.fr|group|gs|gs.cn|
 |gt|guide|guitars|guru|gx.cn|gy|
-|gz.cn|Not supported|Not supported|Not supported|Not supported|Not supported|
+|gz.cn| | | | | |
 
 ## h
 
@@ -95,7 +95,7 @@ Web Application Firewall \(WAF\) supports the majority of domain suffixes. This 
 |hiphop|hk|hk.cn|hk.com|hk.org|hl.cn|
 |hm|hn|hn.cn|holiday|homelink.one|host|
 |hosting|hotel.hu|house|ht|hu|hu.com|
-|huissier-justice.fr|Not supported|Not supported|Not supported|Not supported|Not supported|
+|huissier-justice.fr| | | | | |
 
 ## i
 
@@ -103,24 +103,24 @@ Web Application Firewall \(WAF\) supports the majority of domain suffixes. This 
 |il|im|im|in|in.th|inbar.int|
 |inc.hk|ind.gt|inf.ua|info|info.ec|info.ht|
 |info.hu|info.vn|ingatlan.hu|ink|int|io|
-|ir|is|it|iz.hr|Not supported|Not supported|
+|ir|is|it|iz.hr| | |
 
 ## j
 
 |je|jl.cn|jo|jobs|jogasz.hu|jp|
-|js.cn|jx.cn|Not supported|Not supported|Not supported|Not supported|
+|js.cn|jx.cn| | | | |
 
 ## k
 
 |k12.il|kg|ki|kim|konyvelo.hu|kr|
-|kr.com|kz|Not supported|Not supported|Not supported|Not supported|
+|kr.com|kz| | | | |
 
 ## l
 
 |la|lakas.hu|land|lc|li|lib.de.us|
 |life|limo|link|live|lk|ln.cn|
 |love|lt|ltd.co.im|ltd.gi|ltd.hk|ltd.ua|
-|lu|lv|ly|Not supported|Not supported|Not supported|
+|lu|lv|ly| | | |
 
 ## m
 
@@ -130,7 +130,7 @@ Web Application Firewall \(WAF\) supports the majority of domain suffixes. This 
 |mil.hn|mil.id|mil.my|mk|mn|mo|
 |mo.cn|mobi.gp|mod.gi|money|mp|ms|
 |mu|muni.il|mw|my|my|my.id|
-|myds.me|myfz.com|mymai.com|my-vigor.de|my-wan.de|N/A|
+|myds.me|myfz.com|mymai.com|my-vigor.de|my-wan.de| |
 
 ## n
 
@@ -151,7 +151,7 @@ Web Application Firewall \(WAF\) supports the majority of domain suffixes. This 
 |org.gp|org.gr|org.gt|org.gt|org.gy|org.hk|
 |org.hk|org.hn|org.hn|org.ht|org.hu|org.il|
 |org.il|org.im|org.in|org.mo|org.my|org.nz|
-|org.pe|org.pk|org.sg|org.uk|org.vn|N/A|
+|org.pe|org.pk|org.sg|org.uk|org.vn| |
 
 ## p
 
@@ -159,17 +159,17 @@ Web Application Firewall \(WAF\) supports the majority of domain suffixes. This 
 |ph|pharmacien.fr|pink|pk|pl|plc.co.im|
 |plus|pm|pn|poker|pol.ht|port.fr|
 |pr|press|priv.hu|pro|pro.ec|pro.ht|
-|ps|pt|pvt.ge|pw|Not supported|Not supported|
+|ps|pt|pvt.ge|pw| | |
 
 ## q
 
-|qa|qh.cn|qou.cn|Not supported|Not supported|Not supported|
+|qa|qh.cn|qou.cn| | | |
 
 ## r
 
 |racing|re|reklam.hu|rel.ht|remotewd.com|ren|
 |rent|rest|review|rip|ro|router.management|
-|rs|ru|run|rw|rwit.cn|N/A|
+|rs|ru|run|rw|rwit.cn| |
 
 ## s
 
@@ -181,7 +181,7 @@ Web Application Firewall \(WAF\) supports the majority of domain suffixes. This 
 |solar|sopot.pl|space|spacekit.io|sport.hu|sr|
 |st|stackspace.space|static.land|stolos.io|store|storj.farm|
 |studio|style|suli.hu|sususu.admstask3|sx.cn|syno-ds.de|
-|synology.me|synology-diskstation.de|synology-ds.de|szex.hu|Not supported|Not supported|
+|synology.me|synology-diskstation.de|synology-ds.de|szex.hu| | |
 
 ## t
 
@@ -195,18 +195,18 @@ Web Application Firewall \(WAF\) supports the majority of domain suffixes. This 
 ## u
 
 |ua|uber.space|ug|uk.com|us|us.com|
-|utazas.hu|uz|Not supported|Not supported|Not supported|Not supported|
+|utazas.hu|uz| | | | |
 
 ## v
 
 |vc|vet|veterinaire.fr|vg|video|video.hu|
-|vin|vip|vn|vpnplus.to|vu|N/A|
+|vin|vip|vn|vpnplus.to|vu| |
 
 ## w
 
 |wang|watch|web.id|webcam|website|wf|
 |win|wine|wmflabs.org|work|works|world|
-|ws|wtf|wzlm.cn|Not supported|Not supported|Not supported|
+|ws|wtf|wzlm.cn| | | |
 
 ## x
 
@@ -215,9 +215,9 @@ Web Application Firewall \(WAF\) supports the majority of domain suffixes. This 
 ## y
 
 |ybo.faith|ybo.party|ybo.review|ybo.science|ybo.trade|yn.cn|
-|yoga|yolasite.com|yombo.me|yt|Not supported|Not supported|
+|yoga|yolasite.com|yombo.me|yt| | |
 
 ## z
 
-|za.net|za.org|zhangkj.co|zj.cn|zone|N/A|
+|za.net|za.org|zhangkj.co|zj.cn|zone| |
 
