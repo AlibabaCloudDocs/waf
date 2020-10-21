@@ -1,5 +1,5 @@
 ---
-keyword: [web protection, web intrusion prevention, , Big Data Deep Learning Engine, artificial intelligence, malicious attack samples, repeated learning]
+keyword: [web protection, web intrusion prevention, , Big Data Deep Learning Engine, intelligent protection, malicious attack samples, repeated learning]
 ---
 
 # Configure the Big Data Deep Learning Engine
@@ -28,7 +28,7 @@ Based on massive operations data of Alibaba Cloud, the Big Data Deep Learning En
 
 ## Scenarios
 
-The Big Data Deep Learning Engine is used to block web requests with weak attack characteristics rather than HTTP flood attacks. If you have more precise requirements on web attack protection, we recommend that you enable the Big Data Deep Learning Engine.
+The Big Data Deep Learning Engine targets web requests with weak attack characteristics rather than HTTP flood attacks. If you have more precise requirements on web attack protection, we recommend that you enable the Big Data Deep Learning Engine.
 
 The RegEx Protection Engine uses strong regular expression rules. It provides optimal protection against requests with strong attack characteristics. The RegEx Protection Engine may fail to detect potential risks from requests with weak attack characteristics, such as cross-site scripting \(XSS\) attacks. It may also fail to detect these attacks even in strict mode. In this case, you can enable the Big Data Deep Learning Engine to identify and block requests with weak attack characteristics that cannot be detected based on strict rules of the RegEx Protection Engine.
 
@@ -44,17 +44,17 @@ The RegEx Protection Engine uses strong regular expression rules. It provides op
 
     ![Switch Domain Name](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/8038549951/p77231.png)
 
-5.  On the **Web Security** tab, specify the following parameters in the **Big Data Deep Learning Engine** card of the **Web Intrusion Prevention** section.
+5.  Click the **Web Security** tag, find the **Big Data Deep Learning Engine** section, and configure following parameters.
 
     ![Big Data Deep Learning Engine](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/8038549951/p73903.png)
 
     |Parameter|Description|
     |---------|-----------|
-    |**Status**|Enable or disable the Big Data Deep Learning Engine.|
-    |**Mode**|Specify the action that is taken on attack requests when they are detected. Valid values:    -   **Block**: blocks requests.
+    |**Status**|Enable or disable the Big Data Deep Learning Engine.**Note:** After the Big Data Deep Learning Engine is enabled, all requests destined for your website are checked by the function. You can configure a Web Intrusion Prevention rule so that requests that meet the rule bypass the check. For more information, see [Configure a whitelist for Web Intrusion Prevention](/intl.en-US/Website Protection Settings/Whitelist/Configure a whitelist for Web Intrusion Prevention.md). |
+    |**Mode**|The action that is taken on attack requests when they are detected. Valid values:    -   **Block**: blocks requests.
     -   **Warn**: triggers alerts but does not block requests. |
-    |**Attack Probability**|Set the threshold of the probability that a request is identified as an attack under deep learning. The value is an integer ranging from 50 to 100.If the parameter value is large, the standard for determining that a request is an attack is strict, and the Big Data Deep Learning Engine blocks real attacks more accurately. However, the engine may also leave more potential risks unblocked.
+    |**Attack Probability**|Threshold of the probability that a request is identified as an attack under deep learning. The value is an integer ranging from 50 to 100.If the parameter value is large, the standard for determining that a request is an attack is strict, and the Big Data Deep Learning Engine blocks real attacks more accurately. However, the engine may also leave more potential risks unblocked.****
 
-If the parameter value is small, the standard for determining that a request is an attack is not strict, and the Big Data Deep Learning Engine blocks more suspicious requests. However, the engine may also block some normal requests. |
+If the parameter value is small, the standard for determining that a request is an attack is not strict, and the Big Data Deep Learning Engine blocks more suspicious requests. However, the engine may also block some normal requests.**** |
 
 
