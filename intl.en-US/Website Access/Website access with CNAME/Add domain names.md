@@ -18,7 +18,7 @@ You can use either of the following methods to add your website configurations:
 
 ## Configure WAF to automatically add website configurations
 
-The **Add Domain Name** page appears only when an eligible domain name exists. Otherwise, you must manually add the domain name.
+The **Add Domain Name** page appears only when an eligible domain name exists. If the page appears, you can select the website that you want to add to WAF. The website is automatically added to WAF.
 
 Eligible domain names contain only valid domain names that are configured in Alibaba Cloud DNS.
 
@@ -72,7 +72,7 @@ Eligible domain names contain only valid domain names that are configured in Ali
 
     -   **No ICP filing records are found for the domain name.**
 
-        If you want to add your domain name to the WAF instance that is deployed in mainland China, you must complete ICP filing for the domain name. Otherwise, an error message is displayed, indicating that the system fails to add the website configurations. Complete ICP filing for your domain name. For more information, see [ICP filing application overview]().
+        If your domain name is protected by a WAF instance in mainland China, you must complete ICP filing for your domain name. Complete ICP filing for your domain name.
 
 
 ## Manually add website configurations
@@ -194,9 +194,9 @@ Select **No** if you do not need to configure a Layer 7 proxy in front of WAF. |
 
 ## What to do next
 
-After you add a domain name, WAF forwards access requests to your website for protection. You can also configure website protection configurations for better protection.
+After you add the domain name, access requests to the website are protected by WAF. You can also configure website protection configurations for better protection.
 
-WAF provides multiple protection features to protect your website against different types of attacks. Among the features, only **RegEx Protection Engine** and **HTTP Flood Protection** are enabled by default. The RegEx Protection Engine feature protects your website against common web attacks, such as SQL injection, XSS, and webshell upload. The HTTP Flood Protection feature protects your website against HTTP flood attacks. You need to manually enable other features and configure protection rules. For more information, see [Overview](/intl.en-US/Website Protection Settings/Overview.md).
+WAF provides multiple protection features to protect your websites against different types of attacks. Among the features, only **RegEx Protection Engine** and **HTTP Flood Protection** are enabled by default. The RegEx Protection Engine feature protects your websites against common web attacks, such as SQL injection, XSS, and webshell upload. The HTTP Flood Protection feature protects your websites against HTTP flood attacks. You need to manually enable other features and configure protection rules. For more information, see [Overview](/intl.en-US/Website Protection Settings/Overview.md).
 
 ## Upload HTTPS certificates
 
@@ -210,7 +210,7 @@ You can upload an HTTPS certificate by using the following methods:
 
     -   The certificate file in the CRT or PEM format
     -   The private key file in the KEY format
--   Selecting an existing certificate: You can select the certificate that is associated with the domain name. For more information, see [SSL Certificates Service](/intl.en-US/Product Introduction/What is SSL Certificates Service?.md).
+-   Selecting an existing certificate: You can select certificate that is associated with the domain name. For more information, see [SSL Certificates Service](/intl.en-US/Product Introduction/What is SSL Certificates Service?.md).
 
 **Procedure**
 
@@ -226,7 +226,7 @@ You can upload an HTTPS certificate by using the following methods:
 
     ![HTTPS status](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/3145248951/p31793.png)
 
-    If the HTTPS status is Abnormal, no certificates are uploaded or the uploaded certificate is invalid, for example, the certificate format is incorrect or the certificate does not match the domain name. The HTTPS status changes to Normal after a valid certificate is uploaded to the WAF console.
+    If no certificates are uploaded or the uploaded certificate is invalid, the HTTPS status is Abnormal. For example, this occurs if the format of the certificate is invalid or the certificate does not match the domain name. The HTTPS status changes to Normal after a valid certificate is uploaded to the WAF console.
 
 5.  In the **Upload Certificate** or **Update Certificate** dialog box, specify **Upload Type** to upload an HTTPS certificate.
 
@@ -294,7 +294,7 @@ You can go to the **Website Access** page to view the added domain name in the l
     -   **Shared Cluster and Load Balancing Among Multiple WAF Nodes**: For more information, see [Intelligent load balancing](/intl.en-US/Pricing/Subscription/Intelligent load balancing.md).
     -   **Exclusive Cluster**: For more information, see [Create an exclusive cluster](/intl.en-US/System Management/Create an exclusive cluster.md).
 -   View attack monitoring reports: Click **View Report** in the **Attack Monitoring** column to navigate to the **Security report** page to view the protection report of the domain name. For more information, see [View security reports](/intl.en-US/.md).
--   Configure protection policies: Click **Config** in the Actions column to navigate to the **Website Protection** page. On the page that appears, you can configure **Web Security**, **Bot Management**, and **Access Control/Throttling** policies. For more information, see [Configure the RegEx Protection Engine](/intl.en-US/Website Protection Settings/Web security/Configure the RegEx Protection Engine.md).
+-   Configure protection policies: Click **Config** in the Actions column to navigate to the **Website Protection** page. On the page that appears, you can configure **Web Security**, **Bot Management**, and **Access Control/Throttling** modules. For more information, see [Configure the RegEx Protection Engine](/intl.en-US/Website Protection Settings/Web security/Configure the RegEx Protection Engine.md).
 -   Edit a domain name: Click **Edit** in the Actions column to modify the website configurations, such as the protocol type, server address, and server port. Domain names cannot be changed.
 -   Delete a domain name: Click **Delete** in the Actions column to delete a domain name.
 
@@ -305,7 +305,7 @@ You can go to the **Website Access** page to view the added domain name in the l
 
 What do I need to know about migrating website configurations across accounts?
 
-To prevent traffic forwarding errors caused by improper operations during website configuration migration, a 30-minute protection period is configured for your website. To migrate the website configurations to another account, you must delete the website configurations from the current account. Thirty minutes later, you can add the website configurations to the WAF instance of another account.
+To prevent traffic forwarding errors caused by misoperations during website configuration migration, a 30-minute protection period is configured for your website. To migrate the website configurations to another account, you must delete the website configurations from the current account. Thirty minutes later, you can add the website configurations to the WAF instance of another account.
 
-If you want to immediately migrate the website configurations, submit a[ticket](https://workorder-intl.console.aliyun.com/?#/ticket/add/?productId=80) or apply for a protection period cancellation for this domain name in the DingTalk customer support group. After the protection period is canceled, you can add the website configurations to the WAF instance of another account.
+If you want to immediately migrate the website configurations, submit a [ticket](https://workorder-intl.console.aliyun.com/?#/ticket/add/?productId=80) or apply for a protection period cancellation for this domain name in the DingTalk customer support group. After the protection period is canceled, you can add the website configurations to the WAF instance of another account.
 
