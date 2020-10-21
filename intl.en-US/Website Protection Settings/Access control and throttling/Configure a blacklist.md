@@ -44,7 +44,7 @@ WAF supports both IP address and region blacklists.
 
 5.  On the **Access Control/Throttling** tab, find the **IP Blacklist** section. Turn on **Status** and click **Settings**.
 
-    **Note:** If you specify an IP address blacklist, all requests destined for your website are checked by this blacklist. You can also configure a whitelist for **Access Control/Throttling** to allow qualified requests to bypass the check. For more information, see [Configure the access control and throttling whitelist](/intl.en-US/Website Protection Settings/Whitelist/Configure the access control and throttling whitelist.md).
+    **Note:** If you specify an IP address blacklist, all requests destined for your website are checked by this blacklist. You can also configure a whitelist for **Access Control/Throttling** to allow qualified requests to bypass the check. For more information, see [Configure a whitelist for Access Control/Throttling](/intl.en-US/Website Protection Settings/Whitelist/Configure a whitelist for Access Control/Throttling.md).
 
     ![IP address blacklist](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/5528549951/p73946.png)
 
@@ -64,5 +64,5 @@ WAF supports both IP address and region blacklists.
 ## References
 
 -   If you need more precise access control based on blacklists, we recommend that you use a custom protection policy. For more information, see [Create a custom protection policy](/intl.en-US/Website Protection Settings/Access control and throttling/Create a custom protection policy.md).
--   If you want to allow access requests only from specified IP addresses, we recommend that you configure a whitelist for **Access Control/Throttling**. For more information, see [Configure the access control and throttling whitelist](/intl.en-US/Website Protection Settings/Whitelist/Configure the access control and throttling whitelist.md).
+-   If you want to allow access requests only from specified IP addresses, we recommend that you configure a whitelist for **Access Control/Throttling**. For more information, see [Configure a whitelist for Access Control/Throttling](/intl.en-US/Website Protection Settings/Whitelist/Configure a whitelist for Access Control/Throttling.md).
 
