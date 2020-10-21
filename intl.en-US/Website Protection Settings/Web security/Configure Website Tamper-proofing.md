@@ -30,7 +30,7 @@ After you add a website to Web Application Firewall \(WAF\), you can enable the 
 
 4.  In the upper part of the **Website Protection** page, select the domain name for which you want to configure the whitelist.
 
-    ![Switch domain name](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/8038549951/p77231.png)
+    ![Switch Domain Name](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/8038549951/p77231.png)
 
 5.  On the **Web Security** tab, find the **Website Tamper-proofing** card in the **Data Security** section. Turn on **Status** and click **Settings**.
 
