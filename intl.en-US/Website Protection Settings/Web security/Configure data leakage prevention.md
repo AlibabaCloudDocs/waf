@@ -4,7 +4,7 @@ keyword: [website protection, data security, data leakage prevention, block HTTP
 
 # Configure data leakage prevention
 
-After you set up Web Application Firewall \(WAF\) for a website, you can enable data leakage prevention for the website. Data leakage prevention helps websites filter content \(abnormal pages and keywords\) returned from the servers, and mask sensitive information, such as identity card numbers, bank card numbers, phone numbers, and sensitive words. WAF then returns masked information or default response pages denying access to visitors. You can customize data leakage prevention rules as needed.
+After you add a website to Web Application Firewall \(WAF\), you can enable data leakage prevention for the website. Data leakage prevention filters content \(abnormal pages and keywords\) returned from the servers, and mask sensitive information, such as identity card numbers, bank card numbers, phone numbers, and sensitive words. WAF then returns masked information or default response pages to visitors. You can customize data leakage prevention rules as needed.
 
 ## Prerequisites
 
@@ -12,8 +12,8 @@ After you set up Web Application Firewall \(WAF\) for a website, you can enable 
 
     -   The instance is billed on a subscription basis.
 
-        -   If the instance is deployed in **mainland China**, the instance must be the **Pro** edition or higher.
-        -   If the instance is deployed **outside mainland China**, the instance must be the **Business** edition or higher.
+        -   If the instance is deployed in **mainland China**, the instance must be of the **Pro** edition or higher.
+        -   If the instance is deployed **outside mainland China**, the instance must be of the **Business** edition or higher.
         For more information, see [Editions and features](/intl.en-US/Product Introduction/Editions and features.md).
 
     For more information, see [Purchase a WAF instance](/intl.en-US/Pricing/Subscription/Purchase a WAF instance.md).
@@ -22,11 +22,11 @@ After you set up Web Application Firewall \(WAF\) for a website, you can enable 
 
 ## Background information
 
-WAF provides the data leakage prevention feature to comply with the following regulations required by Cybersecurity Law of the People's Republic of China: Network operators shall adopt technological and other necessary measures to ensure the security of personal information they collect, and prevent information leaks, damage or loss. Where a situation of information leakage, damage or loss occurs, or might occur, they shall promptly take remedial measures, timely notify users and report the matter to the authority according to regulations. Data leakage prevention masks sensitive information \(phone numbers, identity card numbers, and bank card numbers\) in website content and triggers alerts upon sensitive information. You can also use data leakage prevention to block a specific HTTP status code.
+WAF provides the data leakage prevention function to comply with the following regulations required by Cybersecurity Law of the People's Republic of China: Network operators shall adopt technological and other necessary measures to ensure the security of personal information they collect, and prevent information leaks, damage or loss. Where a situation of information leak, damage or loss occurs, or might occur, they shall promptly take remedial measures, timely notify users and report the matter to the authority according to regulations. Data leakage prevention masks sensitive information \(phone numbers, identity card numbers, and bank card numbers\) in website content and triggers alerts upon sensitive information. You can also use data leakage prevention to block a specific HTTP status code.
 
 Features
 
-Information maintained by a website may be leaked in the following scenarios: allowing unauthorized access to a URL, such as access to the backend management system, horizontal and vertical privilege escalation, and malicious crawlers retrieving sensitive information from web pages. To prevent common sensitive information leaks, data leakage prevention provides the following functions:
+Information maintained by a website may be leaked in the following scenarios: allowing unauthorized access to a URL, such as access to the backend management system, horizontal and vertical privilege escalation, and malicious crawlers retrieving sensitive information from web pages. To prevent common sensitive information leak, data leakage prevention provides the following functions:
 
 -   Detects and identifies personal information on web pages, masks the information, and triggers alerts to protect website data. Personal information includes but is not limited to identity card numbers, phone numbers, and bank card numbers.
 
@@ -39,7 +39,7 @@ How data leakage prevention works
 
 Based on the specified protection rules, data leakage prevention detects whether a web page contains sensitive information, such as identity card numbers, phone numbers, and band card numbers. If a rule is matched, WAF triggers alerts or masks the information based on the action specified in the rule. Data leakage prevention masks sensitive information with asterisks \(\*\).
 
-Data leakage prevention allows you to set Content-Type to `text/*`, `image/*`, and `application/*` to protect web applications, native apps, and API operations.
+Data leakage prevention allows you to set Content-Type to `text/*`, `image/*`, or `application/*` to protect web applications, native applications, and API operations.
 
 ## Procedure
 
@@ -53,40 +53,42 @@ Data leakage prevention allows you to set Content-Type to `text/*`, `image/*`, a
 
     ![Switch Domain Name](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/8038549951/p77231.png)
 
-5.  Click the **Web Security** tab and find **Anti Sensitive Information Leakage** in the **Data Security** section. Turn on the **Status** switch and click **Settings**.
+5.  Click the **Web Security** tab and find the **Anti Sensitive Information Leakage** section. Then, turn on **Status** and click **Settings**.
 
-    **Note:** You must enable data risk prevention before you can set protection rules.
+    **Note:**
 
-    ![Data leakage prevention](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/1328549951/p74237.png)
+    -   You must enable data leakage prevention before you can set protection rules.
+    -   When the data leakage prevention function is enabled, all requests destined for the website are checked by the function. You can configure a Data Security rule so that the requests that match the rule bypass the check. For more information, see [Configure a whitelist for Data Security](/intl.en-US/Website Protection Settings/Whitelist/Configure a whitelist for Data Security.md).
+    ![Data Leakage Prevention](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/1328549951/p74237.png)
 
 6.  Create a data leakage prevention rule.
 
     1.  On the **Anti Sensitive Information Leakage** page, click **Add Rule**.
 
-    2.  In the **Add Rule** dialog box that appears, configure the following parameters.
+    2.  In the **Create Rule** dialog box that appears, configure the following parameters.
 
-        ![Create an alert rule](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/1328549951/p74239.png)
+        ![Create a rule](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/1328549951/p74239.png)
 
         |Parameter|Description|
         |---------|-----------|
-        |**Rule name**|Specify a name for the rule.|
-        | |Specify the types of information that you need to detect. Supported types include:         -   **Status Code**: 400, 401, 402, 403, 404, 500, 501, 502, 503, 504, 405 to 499, and 505 to 599.
+        |**Rule name**|The name of the rule that you want to create.|
+        |**Matching conditions**|The types of information that you need to detect. Supported types include:         -   **Status Code**: 400, 401, 402, 403, 404, 500, 501, 502, 503, 504, 405 to 499, and 505 to 599.
         -   **Sensitive Info**: **ID Card**, **Credit Card**, **Telephone No.**, and **Default Sensitive Word**
-**Note:** **Phone Number** supports only phone numbers and landline numbers in mainland China.
+**Note:** **Telephone No.** supports only phone numbers and landline numbers in mainland China.
 
 You can specify one or more HTTP status codes or sensitive information types.
 
 If you select the **and** check box, you can specify the **URL** that you want to check. In this case, WAF scans for sensitive information on only the specified page. |
-        |**Matching Action**|Specify the action to be performed on detected sensitive information.         -   If you set the match condition to HTTP status codes, supported actions include:
+        |**Matching Action**|The action to be performed on detected sensitive information.         -   If you set the match condition to **Status Code**, supported actions include:
             -   **Warn**: triggers alerts upon sensitive information leaks.
-            -   **Block**: blocks requests and returns the default page denying access.
-        -   If you set the match condition to sensitive information, supported actions include:
+            -   **Block**: blocks requests and returns the default page indicating that your requested website is blocked.
+        -   If you set the match condition to **Sensitive Info**, supported actions include:
             -   **Warn**: triggers alerts upon sensitive information leaks.
             -   **Sensitive information filtering**: masks sensitive information in responses. |
 
         Sample configurations
 
-        -   Mask sensitive information: Web pages may contain sensitive information, such as phone numbers and identity card numbers. You can create rules to mask or trigger alerts upon sensitive information. The following example shows you how to create a rule that masks phone numbers and identity card numbers.
+        -   Mask sensitive information: Web pages may contain sensitive information, such as phone numbers and identity card numbers. You can create rules to mask or trigger alerts upon sensitive information. The following example shows how to create a rule that masks phone numbers and identity card numbers.
 
             -   Matching conditions: ID Card and Telephone No.
             -   Matching Action: Sensitive information filtering
@@ -94,15 +96,15 @@ If you select the **and** check box, you can specify the **URL** that you want t
 
             **Note:** Phone numbers that must be provided to the public to manage business affairs, such as business cooperation and complaints, may also be masked by data leakage prevention rules.
 
-        -   Block HTTP status codes: You can create a rule to block or generate alerts upon specific HTTP status codes to prevent sensitive server information leaks. The following example shows you how to create a rule that blocks the 404 HTTP code.
+        -   Block HTTP status codes: You can create a rule to block or generate alerts upon specific HTTP status codes to prevent sensitive server information leaks. The following example shows how to create a rule that blocks the 404 HTTP code.
 
             -   Matching conditions: 404
             -   Matching Action: Block
-            After this rule is applied, if a requested page does not exist, the specified page denying access is returned, as shown in the following figure.
+            After this rule is applied, if the requested page does not exist, the specified page indicating that your requested website is blocked is returned, as shown in the following figure.
 
-        -   Masks specific sensitive information on specific pages: You can create rules to mask or generate alerts upon specific sensitive information, such as phone numbers and identity card numbers, on specific pages. The following example shows you how to create a rule that masks identity card numbers on pages whose URLs contain `admin.php`.
+        -   Mask specific sensitive information on specific pages: You can create rules to mask or generate alerts upon specific sensitive information, such as phone numbers and identity card numbers, on specific pages. The following example shows how to create a rule that masks identity card numbers on pages whose URLs contain `admin.php`.
 
-            -   Matching conditions: ID Card numbers on pages whose URLs contain `admin.php`
+            -   Matching conditions: ID card numbers on pages whose URLs contain `admin.php`
             -   Matching Action: Sensitive information filtering
             After this rule is applied, identity card numbers on pages whose URLs contain admin.php are masked.
 
