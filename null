@@ -1,35 +1,33 @@
-# 修改本机系统hosts文件来测试Web应用防火墙
+# Modify local hosts file to test WAF
 
-本文介绍了网站配置完Web应用防火墙之后，在不变更线上业务流向的情况下，如何通过修改本地hosts文件，将网站指向Web应用防火墙，来测试业务经过Web应用防火墙后是否正常。
-
-## 系统hosts文件位置
+## Location of the hosts file
 
 C:\\Windows\\System32\\drivers\\etc\\hosts
 
-## 系统hosts文件作用
+## Hosts file functionality
 
-Hosts文件中指定了域名和IP地址的对应关系。如果一个域名在hosts文件中指定了IP地址，在访问此域名时，系统将不会通过DNS（Domain Name System）来解析它的IP地址，而是直接访问所指定的IP地址。
+The hosts file specifies the correspondence between the domain name and IP address. If a domain name has an IP address specified in the hosts file, the system will not resolve its IP address through the domain name system \(DNS\) when accessing this domain name, but will directly access the specified IP address instead.
 
-因此，如果网站配置完高防IP或者Web应用防火墙之后，在不变更线上业务流向的情况下，可以通过修改本地hosts文件，将网站指向Web应用防火墙，来测试业务经过Web应用防火墙后是否正常。
+Therefore, if your website is deployed with Anti-DDoS Pro or WAF services, you can modify the local hosts file to direct the website to the WAF without changing the online business flow. This allows you to test whether or not the business services work normally after they pass through WAF.
 
-## Hosts文件修改步骤
+## Procedure
 
-1.  找到已分配的Web应用防火墙（WAF）IP地址。
+1.  Find the IP address allocated by WAF.
 
-    配置完域名后，WAF会生成一个解析用的CNAME域名。使用Ping命令可得到该域名的IP地址，即WAF IP。
+    When the domain name is configured, WAF generates a CNAME record for resolution purposes. Use the ping command to get the IP address of the CNAME record, and this IP address is the WAF IP. Use www.abc.com as an example.
 
-    1.  登录[云盾Web应用防火墙控制台](https://yundun.console.aliyun.com/?p=waf)[云盾Web应用防火墙控制台](https://partners-intl.console.aliyun.com/#/waf)，在**管理** \> **网站配置**页面找到已分配的CNAME域名。
+    1.  Log on to the [Alibaba Cloud WAF console](https://yundun.console.aliyun.com/?p=waf)[Alibaba Cloud WAF console](https://partners-intl.console.aliyun.com/#/waf) and go to the **Management** \> **Website Configuration** page to view the WAF CNAME address.
 
-        ![网站配置](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/0231087951/p7967.jpg)
+        ![](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/6085449951/p7967.jpg)
 
-    2.  使用Ping命令得到该域名的IP地址。
+    2.  Use the ping command to get the IP address of the CNAME record.
 
-        ![ping](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/0231087951/p7968.png)
+        ![](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/6085449951/p7968.png)
 
-2.  定位到C:\\Windows\\System32\\drivers\\etc\\目录。
-3.  使用记事本打开hosts文件，进行编辑。把域名指向WAF IP地址。
+2.  Locate to the C:\\Windows\\System32\\drivers\\etc\\ folder.
+3.  Open the hosts file in Notepad, and point the domain name to the WAF IP address.
 
-    Hosts文件的格式为`IP 域名`。例如，添加以下记录，将cdn.aliyundemo.cn指向xx.xx.xx.xxx：`xx.xx.xx.xxx cdn.aliyundemo.cn`。
+    The hosts file format is `<IP> <domain name>`. For example, point www.abc.com to `xx.xx.xx.xxx.xx.xx.xx.xxx www.abc.com`.
 
-4.  将修改后的hosts文件保存到C:\\Windows\\System32\\drivers\\etc\\目录下。
+4.  Save the modified hosts file to the C:\\Windows\\System32\\drivers\\etc\\ folder.
 
