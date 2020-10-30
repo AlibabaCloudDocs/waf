@@ -1,38 +1,38 @@
-# 如何获取真实客户端的IP地址？
+# How do I obtain the real IP of a client?
 
-当HTTP请求经过七层代理时，其来源IP地址会被修改为代理地址，而非真实客户端的地址。事实上，客户端的IP地址通常被写入HTTP请求头的x-forwarded-for字段中。
+When an HTTP request goes through a layer-7 proxy, the source IP of this packet is modified with the proxy IP, instead of the real IP of the client \(client IP\). Practically, the client IP is often written into the x-forwarded-for field in the HTTP head field, as shown in the following figure.
 
-阿里云Web应用防火墙的工作原理如下。
+The Alibaba Cloud WAF works as follows.
 
-假设Web应用防火墙防护的域名为“www.abc.com”。那么，从客户端发出的请求依次经过以下节点：客户端浏览器 \> Web应用防火墙 \> 源站服务器（pache/Nginx/IIS等）。在此结构下，Web应用防火墙扮演源站和客户端之间的反向代理。
+Suppose that WAF protects the domain “www.abc.com”. Generally, packets from the client follow the Client browser \> WAF \> Origin server \(Apache/Nginx/IIS and so on\) path. In this architecture, WAF acts as a reverse proxy between the client and the origin server.
 
-然而，在包含多层代理的网络结构下（例如，除过Web应用防火墙还接入了CDN和DDoS高防IP），所有代理的IP地址都会被添加在`x-forwarded-for`字段中。这是因为每经过一次转发，代理服务器都会写入代理IP地址。
+However, in a network architecture containing multiple proxies \(for example, CDN and Anti-DDoS Pro\), multiple IP addresses get added to the `x-forwarded-for` field. This is because each proxy adds on the client IP, or the last proxy IP.
 
-因此，`x-forwarded-for`字段可能显示为`X-Forwarded-For: 客户端IP, 代理IP1, 代理IP2, 代理IP3, ...`。其中，客户端IP仍会占据在第一个位置。
+Therefore, the `x-forwarded-for` field may appear as `X-Forwarded-For: Client IP, Proxy 1, Proxy 2, Proxy 3, ...` However, the client IP still occupies the first address position in the x-forwarded-for field.
 
-## 操作流程
+## Procedure
 
-参照以下步骤，获取客户端真实IP地址：
+Follow these steps to obtain the real IP address of a client:
 
-1.  请求`x-forwarded-for`字段内容。
+1.  Send a request command for the `x-forwarded-for` field content.
 
-    以下为不同语言的示例代码：
+    The following are examples of request commands for several common languages.
 
-    -   ASP
+    -   For ASP
 
         `Request.ServerVariables("HTTP_X_FORWARDED_FOR")`
 
-    -   ASP.NET\(C\#\)
+    -   For ASP.NET\(C\#\)
 
         `Request.ServerVariables["HTTP_X_FORWARDED_FOR"]`
 
-    -   PHP
+    -   For PHP
 
         `$_SERVER["HTTP_X_FORWARDED_FOR"]`
 
-    -   JSP
+    -   For JSP
 
         `request.getHeader(“HTTP_X_FORWARDED_FOR”)`
 
-2.  以逗号为分隔符分隔获得的`x-forwarded-for`内容，第一个IP地址就是客户端真实IP。
+2.  Separate the output `x-forwarded-for` with commas. The first derived IP address is the client IP.
 
