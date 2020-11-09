@@ -1,38 +1,43 @@
-# How do I obtain the real IP of a client?
+# 健康检查主动探测IP
 
-When an HTTP request goes through a layer-7 proxy, the source IP of this packet is modified with the proxy IP, instead of the real IP of the client \(client IP\). Practically, the client IP is often written into the x-forwarded-for field in the HTTP head field, as shown in the following figure.
+Web应用防火墙使用特定的IP主动探测所防护的源站服务器的健康状态，建议您放行这些健康检查的主动探测IP。
 
-The Alibaba Cloud WAF works as follows.
+为了确保源站服务器可以正常响应经Web应用防火墙转发的正常业务请求，Web应用防火墙将不定期的对所接入防护的源站服务器进行主动探测，实现健康检查。
 
-Suppose that WAF protects the domain “www.abc.com”. Generally, packets from the client follow the Client browser \> WAF \> Origin server \(Apache/Nginx/IIS and so on\) path. In this architecture, WAF acts as a reverse proxy between the client and the origin server.
+Web应用防火墙使用固定的IP对您的源站服务器进行主动探测，其探测行为仅为确认源站服务器的健康状态，对您的源站服务器不会产生任何影响。如果在源站服务器的访问日志中发现来自主动探测IP的数据包，您不必担心源站是否已遭受恶意攻击。同时，为确保Web应用防火墙的健康检查功能正常工作，建议您在源站服务器的访问控制策略中将这些健康检查主动探测IP加入白名单。
 
-However, in a network architecture containing multiple proxies \(for example, CDN and Anti-DDoS Pro\), multiple IP addresses get added to the `x-forwarded-for` field. This is because each proxy adds on the client IP, or the last proxy IP.
+## 网络三层主动探测IP
 
-Therefore, the `x-forwarded-for` field may appear as `X-Forwarded-For: Client IP, Proxy 1, Proxy 2, Proxy 3, ...` However, the client IP still occupies the first address position in the x-forwarded-for field.
+|地域|主动探测IP|
+|--|------|
+|华北1（青岛）|47.104.162.123|
+|华北2（北京）|39.107.84.97|
+|华东1（杭州）|47.97.187.10|
+|华东2（上海）|47.100.176.74|
+|华南1（深圳）|120.78.69.183|
+|大连联通cn335线路|211.93.148.207|
+|中国香港|47.52.224.185|
+|新加坡|47.74.135.107|
+|澳大利亚（悉尼）|47.91.45.70|
+|马来西亚（吉隆坡）|47.254.197.21|
+|美国（弗尼吉亚）|47.90.210.37|
+|美国（硅谷）|47.254.31.65|
+|德国（法兰克福）|47.254.133.240|
 
-## Procedure
+## 网络四层和七层主动探测IP
 
-Follow these steps to obtain the real IP address of a client:
+|类型|主动探测IP|
+|--|------|
+|私网|-   10.181.0.186
+-   10.181.0.187
+-   10.181.2.120
+-   10.181.2.126 |
+|公网|-   140.205.205.7
+-   140.205.205.6
+-   140.205.205.15
+-   140.205.205.11 |
 
-1.  Send a request command for the `x-forwarded-for` field content.
+## 附录：探测行为数据包示例
 
-    The following are examples of request commands for several common languages.
-
-    -   For ASP
-
-        `Request.ServerVariables("HTTP_X_FORWARDED_FOR")`
-
-    -   For ASP.NET\(C\#\)
-
-        `Request.ServerVariables["HTTP_X_FORWARDED_FOR"]`
-
-    -   For PHP
-
-        `$_SERVER["HTTP_X_FORWARDED_FOR"]`
-
-    -   For JSP
-
-        `request.getHeader(“HTTP_X_FORWARDED_FOR”)`
-
-2.  Separate the output `x-forwarded-for` with commas. The first derived IP address is the client IP.
+![探测行为数据包示例](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/6231087951/p36030.png)
 
