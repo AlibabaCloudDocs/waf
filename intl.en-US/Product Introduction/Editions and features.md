@@ -14,8 +14,8 @@ The following table lists the business scales supported by each edition. We reco
 |Peak queries per second \(QPS\)|2,000|5,000|Higher than 10,000|5,000|
 |Maximum bandwidth, in Mbit/s \(The origin server is deployed on Alibaba Cloud.\)|50|100|200|100|
 |Maximum bandwidth, in Mbit/s \(The origin server is not deployed on Alibaba Cloud.\)|10|30|50|30|
-|Default number of second-level domains that can be protected|1|1|1|1,000|
-|Default number of subdomains of the second-level domains that can be protected in total \(Wildcard domains are supported.\)|10|10|10|1,000|
+|Default number of second-level domains that WAF can protect|1|1|1|1,000|
+|Default number of subdomains of the second-level domains that WAF can protect in total \(Wildcard domains are supported.\)|10|10|10|1,000|
 
 For more information about how to activate WAF, see [Purchase a WAF instance](/intl.en-US/Pricing/Subscription/Purchase a WAF instance.md).
 
@@ -27,7 +27,7 @@ Symbol descriptions:
 
 -   √: indicates that the feature is supported.
 -   ×: indicates that the feature is not supported.
--   ○: indicates that the feature is a value-added service. If you want to enable it, you must pay additional fees. You can enable it when you purchase or upgrade a WAF instance.
+-   ○: indicates that the feature is a value-added service. If you want to enable it, you must pay additional fees. You can enable the feature when you purchase or upgrade a WAF instance.
 -   △: indicates that the feature must be separately enabled on the **Feature Settings** page for a pay-as-you-go WAF instance.
 
 |Feature|Description|Pro edition|Business edition|Enterprise edition|Exclusive edition\(can be purchased only by submitting a ticket\) |
@@ -61,7 +61,7 @@ Symbol descriptions:
 |[Account security](/intl.en-US/Protection Lab/Configure account security.md)|Detects credential stuffing, brute-force attacks, spam registration, weak passwords, and SMS flood attack on service endpoints, such as registration and logon endpoints.|√|√|√|√|
 |[API request security](/intl.en-US/Protection Lab/Enable API request security.md)|Allows upload of custom API definition files to ensure that only API requests that comply with the definitions are processed.|×|√|√|√|
 |**Security analysis and support**|
-|[Log Service for WAF](/intl.en-US/Log Management/Log service/Overview.md)|Collects and stores all logs, enables near-real-time query and analysis, and provides online reports.|×|○|○|○|
+|[Log Service for WAF](/intl.en-US/Log Management/Log service/Overview.md)|Collects and stores all logs, enables near-real-time query and analysis, and provides online reports.|x|○|○|○|
 
 ## Editions and supported features \(outside mainland China\)
 
@@ -95,7 +95,7 @@ The following table describes the features that each edition of WAF supports**ou
 |[Data risk control](/intl.en-US/Website Protection Settings/Bot management/Configure data risk control.md)|Protects crucial website services, such as registrations, logons, activities, and forums, against fraud.|×|×|×|×|
 |[Bot management](/intl.en-US/Website Protection Settings/Bot management/Set a bot threat intelligence rule.md)|Provides intelligent protection for bot traffic and against automated attacks. This feature is suitable for human-machine identification, scalping, and spam registration scenarios.|○|○|○|○|
 |[Application protection](/intl.en-US/Website Protection Settings/Bot management/Application protection/Configure application protection.md)|Provides trusted communications and anti-bot protection for native applications to identify proxies, emulators, and requests with invalid signatures.|○|○|○|○|
-|[Account security](/intl.en-US/Protection Lab/Configure account security.md)|Detects credential stuffing, brute-force attacks, spam registration, weak passwords, and SMS interface abuse on service endpoints, such as registration and logon endpoints.|√|√|√|√|
+|[Account security](/intl.en-US/Protection Lab/Configure account security.md)|Detects credential stuffing, brute-force attacks, spam registration, weak passwords, and SMS flood attack on service endpoints, such as registration and logon endpoints.|√|√|√|√|
 |[API request security](/intl.en-US/Protection Lab/Enable API request security.md)|Allows upload of custom API definition files to ensure that only API requests that comply with the definitions are processed.|×|×|√|√|
 |**Security analysis and support**|
 |[Log Service for WAF](/intl.en-US/Log Management/Log service/Overview.md)|Collects and stores all logs, enables near-real-time query and analysis, and provides online reports.|×|○|○|○|
