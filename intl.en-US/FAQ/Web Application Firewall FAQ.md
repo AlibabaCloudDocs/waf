@@ -34,7 +34,7 @@
 
 Yes, WAF can protect servers that are not deployed in Alibaba Cloud. WAF protects servers that are accessible over the Internet no matter whether they are deployed in Alibaba Cloud, third-party cloud platforms, or on-premises data centers.
 
-**Note:** All domain names that are hosted on servers in mainland China must apply for and receive an ICP filing as stipulated by the Ministry of Industry and Information Technology \(MIIT\). Otherwise, the domain mains cannot be added to the WAF console.
+**Note:** All domain names that are hosted on servers in mainland China must apply for and receive an ICP filing as stipulated by the Ministry of Industry and Information Technology \(MIIT\). Otherwise, the domain names cannot be added to the WAF console.
 
 ## Does WAF support Cloud Web Hosting instances?
 
@@ -99,7 +99,7 @@ Yes, WAF supports the health check feature. This feature is enabled by default. 
 
 ## Does WAF support session persistence?
 
-Yes, WAF supports session persistence. However, session persistence is disabled by default. If you want to enable session persistence, submit a [ticket](https://workorder-intl.console.aliyun.com/?#/ticket/add/?productId=80) to contact technical support.
+Yes, WAF supports session persistence. However, session persistence is disabled by default. If you want to enable session persistence, [ticket](https://workorder-intl.console.aliyun.com/?#/ticket/add/?productId=80) to contact technical support.
 
 ## Does latency occur when you change an origin server IP address in the WAF console?
 
@@ -117,7 +117,7 @@ You can query back-to-origin CIDR blocks in the WAF console. Perform the followi
 
 No, WAF does not automatically add its back-to-origin CIDR blocks to security groups. If you deploy other firewall or host protection software for origin servers, we recommend that you add the back-to-origin CIDR blocks of WAF to the required whitelists.
 
-We recommend that you configure protection policies for the origin servers. For more information, see [Configure protection for your origin server](/intl.en-US/Website Access/Website access with CNAME/Configure protection for your origin server.md).
+We recommend that you configure protection policies for the origin servers. For more information, see [Configure protection for an origin server](/intl.en-US/Website Access/Website access with CNAME/Configure protection for an origin server.md).
 
 ## Do I need to allow accesses from all client IP addresses?
 
@@ -186,5 +186,5 @@ No, WAF cannot protect websites that use NTLM authentication. If your website us
 
 To prevent traffic forwarding errors caused by misoperations during website configuration migration, a 30-minute protection period is configured for your website. To migrate the website configurations to another account, you must delete the website configurations from the current account. Thirty minutes later, you can add the website configurations to the WAF instance of another account.
 
-If you want to immediately migrate the website configurations, submit a [ticket](https://workorder-intl.console.aliyun.com/?#/ticket/add/?productId=80) or apply for a protection period cancellation for this domain name in the DingTalk customer support group. After the protection period is canceled, you can add the website configurations to the WAF instance of another account.
+If you want to immediately migrate the website configurations, [ticket](https://workorder-intl.console.aliyun.com/?#/ticket/add/?productId=80) or apply for a protection period cancellation for this domain name in the DingTalk customer support group. After the protection period is canceled, you can add the website configurations to the WAF instance of another account.
 
