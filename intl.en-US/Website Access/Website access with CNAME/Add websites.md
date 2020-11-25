@@ -4,7 +4,7 @@ This topic describes how to add your website to Web Application Firewall \(WAF\)
 
 -   WAF is activated, and the number of second-level domain names and subdomains that you add to a WAF instance does not reach the upper limit.
 
-    **Note:** The total number of domain names that you can add to a WAF instance depends on the specifications of the instance and the number of extra domain packages that you purchase. For more information, see [Extra domain quota](/intl.en-US/Pricing/Subscription/Extra domain quota.md).
+    **Note:** The total number of domain names that you can add to a WAF instance depends on the specifications of the instance and the number of extra domain packages that you purchase. For more information, see [Extra domain quota](/intl.en-US/Billing and Service Activation/Subscription/Extra domain quota.md).
 
 -   If your domain name is protected by a WAF instance in mainland China, you must complete ICP filing for your domain name. If you do not complete ICP filing but still add your domain name to WAF, an error may occur and the system prompts you to complete ICP filing.
 
@@ -18,7 +18,7 @@ You can use one of the following methods to add your website:
 
 ## Configure WAF to automatically add website configurations
 
-The **Add Domain Name** page appears only when an eligible domain name exists. If the page appears, you can select the website that you want to add to WAF. The website is automatically added to WAF.
+The **Add Domain Name** page appears only when an eligible domain name exists. If the page appears, you can select the domain name that you want to add to WAF. The website is automatically added to WAF.
 
 Eligible domain names contain only valid domain names that are configured in Alibaba Cloud DNS.
 
@@ -34,9 +34,9 @@ Eligible domain names contain only valid domain names that are configured in Ali
 
 5.  On the **Add Domain Name** page, select the domain name that you want to add and a protocol type in the domain name list, and click **Add domain protection now**.
 
-    **Note:** The **Add Domain Name** page appears only when an eligible domain name exists. If the **Add Domain Name** page does not appear, we recommend that you manually add the website configurations. For more information, see [Step 6](#step_81i_fn8_dsd).
+    **Note:** The **Add Domain Name** page appears only when an eligible domain name exists. If the **Add Domain Name** page is not displayed, we recommend that you manually add the website configurations. For more information, see [Step 6](#step_81i_fn8_dsd).
 
-    ![Add Domain Name](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/1145248951/p96929.png)
+    ![Add Domain Name](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1145248951/p96929.png)
 
     If you select **https**, you must complete certificate verification before you add the website configurations.
 
@@ -46,7 +46,7 @@ Eligible domain names contain only valid domain names that are configured in Ali
 
     2.  In the **Verify Certificate** dialog box, specify **Upload Type** and upload the HTTPS certificate.
 
-        For more information, see [Update HTTPS certificates](#step5).
+        For more information, see [Upload HTTPS certificates](#step5).
 
     3.  Click **Confirm** after the HTTPS certificate is uploaded.
 
@@ -62,9 +62,9 @@ Eligible domain names contain only valid domain names that are configured in Ali
 
         Possible causes: The account that you use to add the domain name does not have management permissions on Alibaba Cloud DNS resources, or the uploaded HTTPS certificate does not match your domain name.
 
-        **Note:** Assume that your website uses **HTTPS** and the certificate verification succeeds. If the uploaded certificate and the website do not match, the certificate detection still fails, and the DNS record is not automatically changed. In this case, you must upload a valid and correct certificate and then manually change the DNS record. For more information, see [Upload HTTPS certificates](#section_jo2_hwu_mbj).
+        **Note:** Assume that your website uses **HTTPS** and the certificate verification succeeds. If the uploaded certificate and the website do not match, the certificate detection still fails, and WAF does not automatically change the DNS record. In this case, you must upload a valid and correct certificate and then manually change the DNS record. For more information, see [Upload HTTPS certificates](#section_jo2_hwu_mbj).
 
-        Click **manually access the DNS**. In the **Manual Configuration** dialog box, change the DNS record. For more information, see [Change the DNS settings](/intl.en-US/Website Access/Website access with CNAME/Change the DNS settings.md).
+        Click **manually access the DNS**. In the **Manual Configuration** dialog box, change the DNS record. For more information, see [Change a DNS record](/intl.en-US/Website Access/Website access with CNAME/Change a DNS record.md).
 
     -   **The maximum number of domain names has been reached.**
 
@@ -89,7 +89,7 @@ The following steps describe how to manually add a website in CNAME mode.
 
 5.  On the **Add Domain Name** page, click **Manually Add Other Websites**.
 
-    **Note:** The **Add Domain Name** page appears only when an eligible domain name exists. For more information, see [Configure WAF to automatically add website configurations](#section_06w_k6n_iiw). If the **Add Domain Name** page does not appear, skip this step.
+    **Note:** The **Add Domain Name** page appears only when an eligible domain name exists. If the **Add Domain Name** page is not displayed, skip this step. For more information, see [Configure WAF to automatically add website configurations](#section_06w_k6n_iiw).
 
 6.  On the **Add Domain Name** page, specify **Domain Name**, select **CNAME Record** for **Access Mode**, and complete the wizard.
 
@@ -101,11 +101,11 @@ The following steps describe how to manually add a website in CNAME mode.
     -   The domain name cannot be `.edu` domain names. To add `.edu` domain names, submit a [ticket](https://workorder-intl.console.aliyun.com/?#/ticket/add/?productId=80) to request technical support.
     **CNAME** wizard:
 
-    1.  **Enter your website information.**
+    1.  **Enter your website information**.
 
         Configure the website parameters that are described in the following table and click **Next**.
 
-        ![Enter your website information](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/7601543061/p66025.png)
+        ![Enter your website information](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7601543061/p66025.png)
 
         |Parameter|Description|
         |---------|-----------|
@@ -121,7 +121,7 @@ Valid values:
 
 After you select **HTTPS**, click **Advanced Settings** to show more options.
 
-![HTTPS ](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/2145248951/p7688.png)
+![HTTPS ](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2145248951/p7688.png)
 
 **Advanced Settings** supports the following features:
 
@@ -163,7 +163,7 @@ Default ports:
 
 Customize ports: Click **Customize** and specify custom ports based on **HTTP** or **HTTPS** that you select.
 
-![Customize ports](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/2145248951/p97012.png)
+![Customize ports](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2145248951/p97012.png)
 
 Click **View Allowed Port Range** to query all supported ports. Separate multiple ports with commas \(,\).
 
@@ -179,7 +179,7 @@ Click **View Allowed Port Range** to query all supported ports. Separate multipl
         -   **Round Robin**: All requests are distributed to origin servers in turn.
         -   **Least time**: You can use the intelligent DNS resolution feature and the upgraded Least-time back-to-origin algorithm to minimize the latency when requests are forwarded to origin servers.
 
-**Note:** You can select **Least time** only when intelligent load balancing is enabled. For more information, see [Intelligent load balancing](/intl.en-US/Pricing/Subscription/Intelligent load balancing.md).
+**Note:** You can select **Least time** only when intelligent load balancing is enabled. For more information, see [Intelligent load balancing](/intl.en-US/Billing and Service Activation/Subscription/Intelligent load balancing.md).
 
 After the settings take effect, WAF distributes back-to-origin requests to the IP addresses of multiple origin servers to achieve load balancing. |
         |**Does a layer 7 proxy \(DDoS Protection/CDN, etc.\) exist in front of WAF**|If you need to configure a Layer 7 proxy in front of WAF, select **Yes**. Otherwise, WAF cannot obtain the actual IP addresses of clients. For more information, see the following topics:         -   [Deploy WAF and Anti-DDoS Pro together](/intl.en-US/Website Access/Connect cloud services to WAF/Deploy WAF and Anti-DDoS Pro together.md)
@@ -190,9 +190,9 @@ If you do not need to configure a Layer 7 proxy in front of WAF, select **No**. 
 **Note:** If a request already contains the specified header field, WAF overwrites the original field value with the specified value. |
         |**Resource Group**|Select the resource group to which the domain name belongs from the resource group list. **Note:** You can use Resource Management to create resource groups and manage resources under your Alibaba Cloud account by department or project. For more information, see [Create a resource group](). |
 
-    2.  **Change the DNS record.**
+    2.  **Change the DNS record**.
 
-        Change the DNS record as prompted and click **Next**. After you change the DNS record, the domain name is mapped to WAF. For more information, see [Change the DNS settings](/intl.en-US/Website Access/Website access with CNAME/Change the DNS settings.md).
+        Change the DNS record as prompted and click **Next**. After you change the DNS record, the domain name is mapped to WAF. For more information, see [Change a DNS record](/intl.en-US/Website Access/Website access with CNAME/Change a DNS record.md).
 
     3.  **Complete the settings**.
 
@@ -227,11 +227,11 @@ You can upload an HTTPS certificate by using the following methods:
 
 3.  In the left-side navigation pane, choose **Asset Center** \> **Website Access**.
 
-4.  On the **Domain Names** tab, find the domain name that you want to manage, and click the ![Upload](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/3145248951/p31794.png) icon in the **Origin Server** column.
+4.  On the **Domain Names** tab, find the domain name that you want to manage, and click the ![Upload](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3145248951/p31794.png) icon in the **Origin Server** column.
 
-    **Note:** The ![Upload](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/3145248951/p31794.png) icon appears only when you select HTTPS for your domain name that you add to WAF.
+    **Note:** The ![Upload](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3145248951/p31794.png) icon is displayed only when you select HTTPS for your domain name that you add to WAF.
 
-    ![HTTPS status](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/3145248951/p31793.png)
+    ![HTTPS status](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3145248951/p31793.png)
 
 5.  In the **Upload Certificate** or **Update Certificate** dialog box, specify **Upload Type** to upload an HTTPS certificate.
 
@@ -239,22 +239,22 @@ You can upload an HTTPS certificate by using the following methods:
 
     -   **Manual Upload**: Specify **Certificate Name**, and copy the content in the certificate file to the **Certificate File** field and the content in the private key file to the **Private Key File** field.
 
-        ![Select Manual Upload](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/3145248951/p31796.png)
+        ![Select Manual Upload](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3145248951/p31796.png)
 
-        For more information about **Certificate File**, see the following descriptions:
+        For more information about the certificate file, see the following descriptions:
 
         -   If the certificate file is in the PEM, CER, or CRT format, you can use a text editor to open the certificate file and copy its text content.
         -   If the certificate file is in another format, such as PFX or P7B, you must covert the certificate file format to PEM. Then, you can use a text editor to open the certificate file and copy its text content. For information about how to convert the format of a certificate file, see [How do I convert an HTTPS certificate to the PEM format?]().
         -   If the domain name is associated with multiple certificate files, for example, a certificate chain, you must merge the text content in the certificate files and then copy the merged content to the **Certificate File** field.
     -   **Select Existing Certificate**: Select the certificate to be uploaded from the **Certificate** drop-down list.
 
-        ![Select Existing Certificate](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/3145248951/p31795.png)
+        ![Select Existing Certificate](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3145248951/p31795.png)
 
         The **Certificate** drop-down list is a collection of certificates that are issued in the SSL Certificates Service console. You can select the certificate associated with the domain name in this list. You can click **Cloud Security - Certificates Service** to go to the SSL Certificates Service console to manage certificates.
 
     -   **Purchase Certificate**: Click **Buy Now** to go to the configuration page of SSL Certificates Service to purchase a certificate for the domain name.
 
-        ![Select Purchase Certificate](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/3145248951/p99119.png)
+        ![Select Purchase Certificate](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3145248951/p99119.png)
 
         The certificate that you purchase is automatically uploaded to WAF.
 
@@ -267,7 +267,7 @@ You can upload an HTTPS certificate by using the following methods:
 
 You can go to the **Website Access** page to view the added domain name on the **Domain Names** tab and perform the following operations as required:
 
--   Upload HTTPS certificates: If your website uses HTTPS, make sure that the correct certificate and private key file are uploaded to WAF. This ensures that WAF protects HTTPS requests. To upload the HTTPS certificate and private key for the domain name, you can click the![Upload](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/3145248951/p97136.png) icon in the **Origin Server** column.
+-   Upload HTTPS certificates: If your website uses HTTPS, make sure that the correct certificate and private key file are uploaded to WAF. This ensures that WAF protects HTTPS requests. To upload the HTTPS certificate and private key for the domain name, you can click the ![Upload](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3145248951/p97136.png) icon in the **Origin Server** column.
 
     For more information, see [Upload HTTPS certificates](#section_jo2_hwu_mbj).
 
@@ -277,7 +277,7 @@ You can go to the **Website Access** page to view the added domain name on the *
 
     **Note:** Log Service for WAF is a value-added service provided by WAF. You can use this feature only after you enable it. For more information, see [Enable Log Service for WAF](/intl.en-US/Log Management/Log service/Enable Log Service for WAF.md).
 
--   Configure protection resources: Click the ![Configure protection resources](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/3145248951/p97139.png) icon next to **Protection Resource** in the **Quick Access** column. Then, configure protection resources for the domain name.
+-   Configure protection resources: Click the ![Configure protection resources](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3145248951/p97139.png) icon next to **Protection Resource** in the **Quick Access** column. Then, configure protection resources for the domain name.
 
     The following protection resource types are supported:
 
@@ -285,11 +285,11 @@ You can go to the **Website Access** page to view the added domain name on the *
 
         **Note:** By default, websites that are automatically added to WAF use protection resources of the **Shared Cluster and Shared IP** type.
 
-    -   **Shared Cluster and Exclusive IP**: For more information, see [Exclusive IP addresses](/intl.en-US/Pricing/Subscription/Exclusive IP addresses.md).
-    -   **Shared Cluster and Load Balancing Among Multiple WAF Nodes**: For more information, see [Intelligent load balancing](/intl.en-US/Pricing/Subscription/Intelligent load balancing.md).
+    -   **Shared Cluster and Exclusive IP**: For more information, see [Exclusive IP addresses](/intl.en-US/Billing and Service Activation/Subscription/Exclusive IP addresses.md).
+    -   **Shared Cluster and Load Balancing Among Multiple WAF Nodes**: For more information, see [Intelligent load balancing](/intl.en-US/Billing and Service Activation/Subscription/Intelligent load balancing.md).
     -   **Exclusive Cluster**: For more information, see [Create an exclusive cluster](/intl.en-US/System Management/Create an exclusive cluster.md).
 -   View attack monitoring reports: Click **View Report** in the **Attack Monitoring** column to navigate to the **Security report** page. On this page, you can view the protection report of the domain name. For more information, see [View security reports](/intl.en-US/.md).
--   Configure protection policies: Click **Config** in the **Actions** column to navigate to the **Website Protection** page. On the page that appears, you can configure **Web Security**, **Bot Management**, and **Access Control/Throttling** modules. For more information, see [Configure the RegEx Protection Engine](/intl.en-US/Website Protection Settings/Web security/Configure the RegEx Protection Engine.md).
+-   Configure protection policies: Click **Config** in the **Actions** column to navigate to the **Website Protection** page. On the page that appears, you can configure the **Web Security**, **Bot Management**, and **Access Control/Throttling** modules. For more information, see [Configure the RegEx Protection Engine](/intl.en-US/Website Protection Settings/Web security/Configure the RegEx Protection Engine.md).
 -   Edit a domain name: Click **Edit** in the **Actions** column to modify the website configurations, such as the protocol type, server address, and server port. You cannot change the domain name.
 -   Delete a domain name: Click **Delete** in the **Actions** column to delete a domain name.
 
@@ -302,5 +302,5 @@ What do I need to know about migrating website configurations across accounts?
 
 To prevent traffic forwarding errors caused by misoperations during website configuration migration, a 30-minute protection period is configured for your website. To migrate the website configurations to another account, you must delete the website configurations from the current account. Then, wait for 30 minutes until you can add the website configurations to the WAF instance of another account.
 
-If you want to immediately migrate the website configurations, submit a [ticket](https://workorder-intl.console.aliyun.com/?#/ticket/add/?productId=80) or apply for a protection period cancellation for this domain name in the DingTalk customer support group. After the protection period is canceled, you can add the website configurations to the WAF instance of another account.
+If you want to immediately migrate the website configurations, submit a [ticket](https://workorder-intl.console.aliyun.com/?#/ticket/add/?productId=80). Alternatively, apply for a protection period cancellation for this domain name in the DingTalk group. After the protection period is canceled, you can add the website configurations to the WAF instance of another account.
 
