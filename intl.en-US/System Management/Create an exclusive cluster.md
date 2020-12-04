@@ -36,7 +36,7 @@ After you buy a WAF instance of the Exclusive edition or upgrade your WAF instan
     -   Set **URL of Blocking Response Page**. Enter the static URL that is uploaded to Alibaba Cloud CDN. If a request is blocked, the page that is specified by this URL is returned.
     -   Enter the content of **Certificate file** and **Private key file** to allow clients that do not support the SNI protocol to access your website.
     -   Configure HTTPS settings.
-        -   **TLS Versions**: The default value is **Support TLS 1.0 and Later \(High Compatibility and Low Security\)**. You can select TLS 1.1 or TLS 1.2 and their later versions based on your needs.
+        -   **TLS Versions**: The default value is **Support TLS 1.0 and Later \(High Compatibility and Low Security\)**. You can select **Support TLS 1.1 and Later \(Moderate Compatibility and Moderate Security\)** or **Support TLS 1.2 and Later \(Moderate Compatibility and High Security\)** based on your needs.
         -   **Cipher Suites**:
             -   If you select **Strong Cipher Suites \(Low Compatibility and High Security\)**, the following strong cipher suites are supported:
                 -   TLS\_ECDHE\_ECDSA\_WITH\_AES\_128\_GCM\_SHA256
