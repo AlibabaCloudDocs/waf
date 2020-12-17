@@ -17,9 +17,9 @@ keyword: [Web应用防火墙, WAF, 网站防护, IP黑名单, 访问控制/限�
         更多信息，请参见[套餐规格与功能说明](/cn.zh-CN/产品简介/套餐规格与功能说明.md)。
 
     -   使用按量计费方式开通：已在**功能与规格设置**中开启**IP黑名单**。更多信息，请参见[功能与规格设置（按量付费模式）](/cn.zh-CN/系统管理/功能与规格设置（按量付费模式）.md)。
-    更多信息，请参见[开通Web应用防火墙](/cn.zh-CN/产品定价/开通WAF/开通Web应用防火墙.md)。
+    更多信息，请参见[开通Web应用防火墙](/cn.zh-CN/计费与开通服务/开通WAF/开通Web应用防火墙.md)。
 
--   已完成网站接入。更多信息，请参见[添加域名](/cn.zh-CN/接入WAF/CNAME接入/添加域名.md)。
+-   已完成网站接入。更多信息，请参见[网站接入](/cn.zh-CN/接入WAF/CNAME接入/网站接入.md)。
 
 ## 背景信息
 
@@ -41,23 +41,23 @@ IP黑名单分为普通IP黑名单和地域级IP黑名单。
 
 4.  在**网站防护**页面上方，切换到要设置的域名。
 
-    ![切换域名](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/1924559951/p77231.png)
+    ![切换域名](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1924559951/p77231.png)
 
 5.  单击**访问控制/限流**页签，定位到**IP黑名单**区域，开启**状态**开关并单击**前去配置**。
 
     **说明：** IP黑名单开启后，所有网站请求默认都会经过IP黑名单的检测。您可以通过设置**访问控制/限流**白名单，让满足条件的请求忽略IP黑名单的检测。更多信息，请参见[设置访问控制/限流白名单](/cn.zh-CN/网站防护配置/防护白名单/设置访问控制/限流白名单.md)。
 
-    ![IP黑名单](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/6795359951/p73946.png)
+    ![IP黑名单](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6795359951/p73946.png)
 
 6.  在**IP黑名单**页面，分别配置**IP黑名单**和**地域级IP 黑名单**。
 
     -   **IP黑名单**：输入要封禁的IP地址，并单击页面下方的**保存**。多个IP间以英文逗号（,）分隔，最多支持添加200个IP地址。
 
-        ![IP黑名单](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/3595359951/p73978.png)
+        ![IP黑名单](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3595359951/p73978.png)
 
     -   **地域级IP 黑名单**：分别从**中国境内**、**中国境外**页签下选中要封禁的中国或国际地区，并单击页面下方的**保存**。
 
-        ![地域级IP黑名单](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/3595359951/p73979.png)
+        ![地域级IP黑名单](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7013718061/p73979.png)
 
     IP黑名单开启后自动生效，黑名单中IP对网站发起的所有访问请求都将被阻断。
 
