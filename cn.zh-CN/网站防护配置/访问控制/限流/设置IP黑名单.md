@@ -52,13 +52,7 @@ IP黑名单分为普通IP黑名单和地域级IP黑名单。
 6.  在**IP黑名单**页面，分别配置**IP黑名单**和**地域级IP 黑名单**。
 
     -   **IP黑名单**：输入要封禁的IP地址，并单击页面下方的**保存**。多个IP间以英文逗号（,）分隔，最多支持添加200个IP地址。
-
-        ![IP黑名单](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3595359951/p73978.png)
-
     -   **地域级IP 黑名单**：分别从**中国境内**、**中国境外**页签下选中要封禁的中国或国际地区，并单击页面下方的**保存**。
-
-        ![地域级IP黑名单](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7013718061/p73979.png)
-
     IP黑名单开启后自动生效，黑名单中IP对网站发起的所有访问请求都将被阻断。
 
 
