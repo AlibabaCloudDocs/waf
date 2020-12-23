@@ -16,9 +16,9 @@ After you add a website to Web Application Firewall \(WAF\), you can enable the 
 
         For more information, see [Editions and features](/intl.en-US/Product Introduction/Editions and features.md).
 
-    For more information, see [Purchase a WAF instance](/intl.en-US/Pricing/Subscription/Purchase a WAF instance.md).
+    For more information, see [Purchase a WAF instance](/intl.en-US/Billing and Service Activation/Subscription/Purchase a WAF instance.md).
 
--   Your website is added to the WAF console. For more information, see [Add domain names](/intl.en-US/Website Access/Website access with CNAME/Add domain names.md).
+-   Your website is added to the WAF console. For more information, see [Add websites](/intl.en-US/Website Access/Website access with CNAME/Add websites.md).
 
 ## Background information
 
@@ -40,29 +40,23 @@ WAF supports both IP address and region blacklists.
 
 4.  In the upper part of the **Website Protection** page, select the domain name for which you want to configure the whitelist.
 
-    ![Switch Domain Name](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/8038549951/p77231.png)
+    ![Switch Domain Name](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8038549951/p77231.png)
 
-5.  On the **Access Control/Throttling** tab, find the **IP Blacklist** section. Turn on **Status** and click **Settings**.
+5.  On the **Access Control/Throttling** tab, find the **IP Blacklist** section. Then, turn on **Status** and click **Settings**.
 
-    **Note:** If you specify an IP address blacklist, all requests destined for your website are checked by this blacklist. You can also configure a whitelist for **Access Control/Throttling** to allow qualified requests to bypass the check. For more information, see [Configure a whitelist for Access Control/Throttling](/intl.en-US/Website Protection Settings/Whitelist/Configure a whitelist for Access Control/Throttling.md).
+    **Note:** If you specify an IP address blacklist, all requests destined for your website are checked by this blacklist. You can also configure a whitelist for **Access Control/Throttling** to allow requests that meet rules to bypass the check. For more information, see [Configure a whitelist for Access Control/Throttling](/intl.en-US/Website Protection Settings/Whitelist/Configure a whitelist for Access Control/Throttling.md).
 
-    ![IP address blacklist](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/5528549951/p73946.png)
+    ![IP blacklist](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5528549951/p73946.png)
 
 6.  On the **IP Blacklist** page, configure **IP Blacklist** and **Area-based IP Blacklist**.
 
     -   **IP Blacklist**: Enter IP addresses that you want to block and click **Save** in the lower part of the page. Separate multiple IP addresses with commas \(,\). You can add a maximum of 200 IP addresses.
-
-        ![IP address blacklist](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/5528549951/p73978.png)
-
     -   **Area-based IP Blacklist**: Select regions that you want to block from the **Inside China** and **Outside China** tabs. Then, click **Save** in the lower part of the page.
-
-        ![Region blacklist](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/5528549951/p73979.png)
-
     After the blacklists feature is enabled, all the access requests from IP addresses and regions in the blacklists are blocked.
 
 
 ## References
 
 -   If you need more precise access control based on blacklists, we recommend that you use a custom protection policy. For more information, see [Create a custom protection policy](/intl.en-US/Website Protection Settings/Access control and throttling/Create a custom protection policy.md).
--   If you want to allow access requests only from specified IP addresses, we recommend that you configure a whitelist for **Access Control/Throttling**. For more information, see [Configure a whitelist for Access Control/Throttling](/intl.en-US/Website Protection Settings/Whitelist/Configure a whitelist for Access Control/Throttling.md).
+-   If you want to allow access requests from specified IP addresses, we recommend that you configure a whitelist for **Access Control/Throttling**. For more information, see [Configure a whitelist for Access Control/Throttling](/intl.en-US/Website Protection Settings/Whitelist/Configure a whitelist for Access Control/Throttling.md).
 
