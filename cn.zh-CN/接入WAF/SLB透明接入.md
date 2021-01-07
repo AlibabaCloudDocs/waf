@@ -7,20 +7,18 @@ Web应用防火墙（WAF）提供CNAME接入和透明接入两种方式，使您
 |WAF实例版本|已开通WAF包年包月服务的高级版、企业版、旗舰版。|详细版本介绍，请参见[套餐规格与功能说明](/cn.zh-CN/产品简介/套餐规格与功能说明.md)。|
 |云服务实例的类型|已创建IPv4公网SLB实例。|透明接入不支持私网SLB、ECS实例和IPv6版本的公网SLB实例。|
 |SLB配置|公网SLB实例监听端口已配置HTTP/HTTPS协议，且端口未开启双向认证。|透明接入模式不支持监听协议类型为TCP的SLB实例。**说明：** 如果SLB中未配置HTTP/HTTPS监听协议，您将无法使用透明接入模式。 |
-|SLB地域|您的公网SLB实例地域必须位于西南1（成都）。**说明：** 目前，仅支持西南1（成都）地域。华北2（北京）、华东1（杭州）、华东2（上海）、华南1（深圳）后续将陆续开放支持。
-
-|由于历史网络架构的原因，部分公网SLB不支持透明接入。具体开通咨询，请通过下面钉钉服务群二维码联系我们。
+|SLB地域|您的公网SLB实例地域必须位于西南1（成都）、华北2（北京）、华东1（杭州）、华东2（上海）、华南1（深圳）。|由于历史网络架构的原因，部分公网SLB不支持透明接入。具体开通咨询，请通过下面钉钉服务群二维码联系我们。
 
 ![二维码](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0597520061/p167095.png) |
 |域名备案|需要防护的网站域名如果托管在中国内地（大陆）的服务器上，该域名需要完成ICP备案。|无|
 |证书状态|由于透明接入WAF的证书同步机制的限制，要求您在SLB实例端口中配置的证书必须从**阿里云签发证书**列表中选择。因此，执行透明接入前，您必须对透明接入配置端口上使用的证书，完成以下操作：
 
-1.  必须先将该证书上传到阿里云SSL证书控制台进行统一管理，或直接从阿里云SSL证书控制台购买和申请证书。
-2.  证书上传[SSL证书控制台](https://yundunnext.console.aliyun.com/?p=cas)或在SSL证书控制台完成证书申请后，您需要在[负载均衡SLB控制台](https://slb.console.aliyun.com/slb/overview)为该透明接入配置的端口配置监听时，选择该证书并完成配置。
+1.  必须先将该证书上传到[SSL证书控制台](https://yundunnext.console.aliyun.com/?p=cas)进行统一管理，或直接从SSL证书控制台购买和申请证书。
+2.  证书上传到[SSL证书控制台](https://yundunnext.console.aliyun.com/?p=cas)或在SSL证书控制台完成证书申请后，您需要在[负载均衡SLB控制台](https://slb.console.aliyun.com/slb/overview)为该透明接入配置的端口配置监听时，选择该证书并完成配置。
 
-**说明：** 以上操作顺序不可颠倒，否则会导致您无法在WAF控制台透明接入模块的**SLB/ALB**列表中看到该端口。
+**说明：** 以上操作顺序不可颠倒，否则会导致您无法在WAF控制台透明接入模块的SLB类型列表中看到该端口。
 
-|如果您先在SLB中完成证书配置，而没有先在SSL证书控制台上传证书或申请证书，SLB无法将该证书自动同步到WAF中，您将无法在WAF控制台透明接入模块的**SLB/ALB**列表中看到该端口，最终导致您无法完成网站接入。相关内容，请参见[上传证书](/cn.zh-CN/证书管理/上传证书.md)。下图展示了如何在[负载均衡SLB控制台](https://slb.console.aliyun.com/slb/overview)为该的端口配置监听时，正确选择该证书：
+|如果您先在SLB中完成证书配置，而没有先在SSL证书控制台上传证书或申请证书，SLB无法将该证书自动同步到WAF中，您将无法在WAF控制台透明接入模块的SLB类型列表中看到该端口，最终导致您无法完成网站接入。相关内容，请参见[上传证书](/cn.zh-CN/证书管理/上传证书.md)。下图展示了如何在[负载均衡SLB控制台](https://slb.console.aliyun.com/slb/overview)为该的端口配置监听时，正确选择该证书：
 
 ![SLB端口证书](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6303278061/p205168.png) |
 
@@ -70,7 +68,7 @@ Web应用防火墙（WAF）提供CNAME接入和透明接入两种方式，使您
 
 **说明：** 暂不支持添加`.edu`域名。如果您需要添加`.edu`域名，请提交[工单](https://selfservice.console.aliyun.com/ticket/category/waf/today)联系售后技术支持。 |
     |**接入模式**|选择**透明接入**。**说明：** 目前，仅支持公网SLB，且监听协议类型为HTTP/HTTPS。 |
-    |**端口号**|选择需要透明接入的域名网站已开启的HTTP/HTTPS Web服务端口。最少选择一个端口。![配置端口](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9863464061/p179839.png)
+    |**端口号**|选择需要透明接入的域名网站已开启的HTTP/HTTPS Web服务端口。最少选择一个端口。![配置端口](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9030200161/p211120.png)
 
 选择端口后，通过该端口访问网站的流量会经过WAF，并受到WAF的检测和防护。
 
@@ -85,11 +83,11 @@ Web应用防火墙（WAF）提供CNAME接入和透明接入两种方式，使您
 
 **说明：**
 
-    -   **SLB/ALB**列表仅展示协议类型为HTTP/HTTPS的公网SLB实例，或者SLB中未配置任何监听协议的实例。
+    -   SLB类型列表仅展示协议类型为HTTP/HTTPS的公网SLB实例，或者SLB中未配置任何监听协议的实例。
 
 公网SLB实例端口监听协议类型如果配置的是TCP协议、SLB是私网类型或者该端口证书未上传到阿里云SSL证书服务中进行统一管理，将不会展示在此处。
 
-    -   **SLB/ALB**列表中，协议类型为**--**，表示SLB中未配置任何监听协议。您需要先前往[负载均衡SLB控制台](https://slb.console.aliyun.com/slb/overview)配置HTTP/HTTPS监听端口，然后返回WAF控制台透明接入模块，单击**SLB/ALB**列表右上角![刷新](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/5356623061/p175300.png)图标，同步SLB配置。
+    -   SLB类型列表中，协议类型为**--**，表示SLB中未配置任何监听协议。您需要先前往[负载均衡SLB控制台](https://slb.console.aliyun.com/slb/overview)配置HTTP/HTTPS监听端口，然后返回WAF控制台透明接入模块，单击SLB类型列表右上角![刷新](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/5356623061/p175300.png)图标，同步SLB配置。
     -   此处选择的端口，必须与源站服务器提供网站服务的端口保持一致。否则，该端口转发的流量将被WAF丢弃、无法到达源站服务器。 |
     |**WAF前是否有七层代理（高防/CDN等）**|如果在Web应用防火墙前有配置其他七层代理服务（例如：DDoS高防、CDN）进行业务转发，请务必选择**是**，否则Web应用防火墙将无法获取访问网站的客户端真实IP。更多信息，请参见以下文档：     -   [同时部署WAF和DDoS高防](/cn.zh-CN/接入WAF/云产品接入WAF/同时部署WAF和DDoS高防.md)
     -   [同时部署WAF和CDN](/cn.zh-CN/接入WAF/云产品接入WAF/同时部署WAF和CDN.md)
