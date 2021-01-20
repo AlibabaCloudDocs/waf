@@ -24,13 +24,13 @@ You can view the supported ports in the WAF console.
 2.  Find the domain name for which you want to configure ports and click **Edit** in the Actions column.
 3.  On the **Edit** page, find the **Destination Server Port** section, click **Customize**, and then enter port numbers based on your business requirements.
 
-For more information, see [Configure ports]().
+For more information, see [Configure ports](/intl.en-US/Website Access/Configure ports.md).
 
 ## Ports that each WAF edition supports
 
 Subscription WAF instances of the Business edition or higher allow you to configure non-standard ports.
 
-The following table lists the ports that each WAF edition supports. The supported ports in the console shall prevail. For more information about how to view the supported ports in the console, see [Configure ports]()
+The following table lists the ports that each WAF edition supports. The supported ports in the console shall prevail. For more information about how to view the supported ports in the console, see [Configure ports](/intl.en-US/Website Access/Configure ports.md).
 
 |WAF edition|Maximum number of ports supported by each WAF instance|Supported standard port \(default\)|Supported non-standard port \(custom\)|
 |-----------|------------------------------------------------------|-----------------------------------|--------------------------------------|
