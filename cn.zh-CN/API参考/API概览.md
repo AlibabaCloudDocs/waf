@@ -43,6 +43,7 @@
 |[SetDomainRuleGroup](/cn.zh-CN/API参考/防护配置/SetDomainRuleGroup.md)|为域名配置选择正则防护引擎使用的防护规则组（除系统默认的三种防护规则组外，也可以选择自定义规则组）。|
 |[ModifyProtectionRuleCacheStatus](/cn.zh-CN/API参考/防护配置/ModifyProtectionRuleCacheStatus.md)|更新指定的网站防篡改规则所防护页面的缓存。|
 |[DeleteProtectionModuleRule](/cn.zh-CN/API参考/防护配置/DeleteProtectionModuleRule.md)|删除指定的防护模块下已创建的规则配置。|
+|[DescribeProtectionModuleCodeConfig](/cn.zh-CN/API参考/防护配置/DescribeProtectionModuleCodeConfig.md)|查询WAF地域级IP黑名单中支持配置的地域代码。|
 
 ## 日志管理
 
@@ -55,5 +56,5 @@
 
 |API|描述|
 |---|--|
-|[DescribeWafSourceIpSegment]()|查询WAF防护集群使用的回源IP网段。|
+|[DescribeWafSourceIpSegment](/cn.zh-CN/API参考/系统管理/DescribeWafSourceIpSegment.md)|查询WAF防护集群使用的回源IP网段。|
 
