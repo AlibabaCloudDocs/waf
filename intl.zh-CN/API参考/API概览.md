@@ -51,6 +51,7 @@
 |---|--|
 |[ModifyLogServiceStatus](/intl.zh-CN/API参考/日志管理/ModifyLogServiceStatus.md)|为域名配置开启或关闭日志采集功能。|
 |[ModifyLogRetrievalStatus](/intl.zh-CN/API参考/日志管理/ModifyLogRetrievalStatus.md)|为域名配置开启或关闭日志检索功能。|
+|[DescribeLogServiceStatus](/intl.zh-CN/API参考/日志管理/DescribeLogServiceStatus.md)|查询已接入WAF进行防护的域名的日志采集状态（是否开启了日志采集）。|
 
 ## 系统管理
 
