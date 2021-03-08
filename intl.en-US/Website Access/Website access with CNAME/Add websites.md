@@ -182,7 +182,7 @@ Click **View Allowed Port Range** to query all supported ports. Separate multipl
 
 After the settings take effect, WAF distributes back-to-origin requests to the IP addresses of multiple origin servers to achieve load balancing. |
         |**Does a layer 7 proxy \(DDoS Protection/CDN, etc.\) exist in front of WAF**|If you need to configure a Layer 7 proxy in front of WAF, select **Yes**. If you do not select Yes, WAF cannot obtain the actual IP addresses of clients in this situation. For more information, see the following topics:         -   [Deploy WAF and Anti-DDoS Pro together](/intl.en-US/Website Access/Connect cloud services to WAF/Deploy WAF and Anti-DDoS Pro together.md)
-        -   [t15558.md\#](/intl.en-US/Website Access/Connect cloud services to WAF/Deploy WAF and CDN together.md)
+        -   [Deploy WAF and CDN together](/intl.en-US/Website Access/Connect cloud services to WAF/Deploy WAF and CDN together.md)
 If you do not need to configure a Layer 7 proxy in front of WAF, select **No**. |
         |**Request Tag**|Enter a **Header Field Name** that is not occupied and a custom **Header Field Value** to mark website requests that are forwarded by WAF. WAF adds the specified header field and value to the filtered requests. This allows your origin server to identify and collect the requests that are redirected by WAF, which in turn implements precise protection and effect analysis.
 
