@@ -1,42 +1,51 @@
-# Features {#concept_fyq_f1n_42b .concept}
+# Features
 
-Alibaba Cloud WAF \(Web Application Firewall\) helps to protect your website against various web attacks and to guarantee website security and availability. It leverages both core defense capabilities and big data capabilities to achieve reliable web security. Alibaba Cloud WAF offers the following features:
+Web Application Firewall \(WAF\) leverages core protection and big data capabilities to ensure web security and availability. You can use WAF to handle various web application attacks. This topic describes the features that WAF provides.
 
-## Request monitoring {#section_h5z_f1n_42b .section}
+## Business configuration
 
-Monitors the HTTP and HTTPS \(only for WAF Business and Enterprise editions\) requests that are forwarded to your website.
+You can configure protection policies to protect the HTTP and HTTPS traffic of your website. HTTPS protection is available in WAF Pro or higher editions.
 
-## Web application protection {#section_i5z_f1n_42b .section}
+## Web application protection
 
-**Protects your website against common web application attacks**
+Protection against common web application attacks
 
--   **Defense against common OWASP threats**, such as SQL injection, XSS attacks, Webshell uploading, command injection, illegal HTTP protocol requests, common Web server vulnerability attacks, unauthorized access to core files, and path traversing. Also provides backdoor isolation and scanning protection services.
--   **Websites stealth**: Keeps the website address invisible to attackers to avoid direct attacks that bypass WAF.
--   **Regular and timely patches against 0day vulnerabilities**: The protection rules used by Alibaba WAF are tried and tested and cover the latest vulnerability patches, which are updated in a timely manner and synchronized globally immediately after release.
--   **User-friendly observation mode**: Provides observation mode for newly launched businesses on the website. In this mode, a suspected attack only triggers a warning, instead of a blocking action, in a bid to facilitate the statistics of business false alarms.
+-   WAF protects your services against common Open Web Application Security Project \(OWASP\) attacks. These attacks include SQL injections, XSS attacks, webshell uploads, backdoors, command injections, invalid HTTP requests, common web server vulnerabilities, unauthorized access to core files, path traversals, and scan attacks.
+-   WAF supports website stealth to prevent server IP addresses from being exposed. Attack traffic cannot bypass WAF to reach your servers.
+-   WAF implements regular and timely updates of patches for zero-day vulnerabilities. WAF synchronizes its protection rules with Taobao. Alibaba Cloud updates the latest patches and distributes the patches to WAF at the earliest opportunity to protect websites.
+-   WAF supports user-friendly monitoring mode. You can enable the monitoring mode to monitor new website services. WAF alerts rather than intercepts suspicious attacks that match the protection rules to help measure false positives.
 
-**Protection against HTTP flood attacks**
+Precise protection
 
--   Manages the access frequency from a single source IP address by using re-direction verification and human/machine identification.
--   Prevents massive and slow request attacks based on precise access control policies and recognition of exceptional response code, URL request distribution, Referer, and User-Agent requests.
--   Establishes threat intelligence and trustful access analysis models to quickly identify malicious requests by making full use of Alibaba Group's big data security advantages.
+-   WAF parses HTTP data in common formats. The HTTP data includes header, form, multipart, JSON, and XML data.
+-   WAF decodes data that is encoded by using the following methods: URL encoding, JavaScript Unicode encoding, HEX encoding, HTML entity encoding, Java serialization, PHP serialization, Base64 encoding, UTF-7 encoding, UTF-8 encoding, and nested encoding.
+-   WAF preprocesses data to provide more fine-grained and accurate data sources for detection engines at the upper layer. The preprocessing mechanisms include space compression, comment pruning, and special character processing.
+-   WAF detects data in complicated formats. WAF supports specific complexity in detection logic to avoid false positives caused by excessive detection operations. This reduces the false positive rate. WAF also supports adaptive decoding of data encoded in different formats. This avoids bypassing.
 
-**HTTP ACL Policy**
+Protection against HTTP flood attacks
 
--   Provides a user-friendly configuration console that supports condition combinations of common HTTP fields such as IP, URL, Referer, and User-Agent to form precise access control policies. Also supports anti-leech protection, website backend protection, and so on.
--   Combined with common web attack protection and HTTP flood protection, access control helps to create multiple layers of protection to suit a variety of needs to identify legitimate and malicious requests.
+-   WAF restricts the frequency of access requests from a specific IP address based on different methods, such as CAPTCHA verification and redirection for authentication.
+-   To protect against a large number of low-speed request attacks, WAF executes precise protection rules based on statistical data, such as distribution of status code, distribution of requested URLs, abnormal HTTP Referer headers, and User-Agent characteristics.
+-   WAF takes full advantage of Alibaba Cloud big data to build analysis models for threat intelligence and trusted access. These models help identify malicious requests.
 
-**Virtual patches**
+Precise access control
 
-Adjusts web protection policies to enable swift protection before patches are released for rectification of web application vulnerabilities.
+-   In the WAF console, you can combine different HTTP fields, such as IP, URL, Referer, and User-Agent fields, to configure policies and implement precise access control. You can configure specific policies to provide protection in different scenarios, such as hotlinking protection and website background protection.
+-   The combination of different security modules, such as web security and HTTP flood protection, helps build a multi-layer protection architecture. This way, WAF can identify trusted and malicious traffic.
 
-## Attack event management {#section_m5z_f1n_42b .section}
+Virtual patches
 
-Supports centralized management and analysis of attack events, attack traffic, and attack scales.
+Before the patches for web application vulnerabilities are released or installed, you can adjust web protection policies to protect your services.
 
-## Reliability {#section_n5z_f1n_42b .section}
+## Attack event management
 
--   **Load balancing**: Provides services in cluster mode, with load balancing among multiple devices. Supports multiple load balancing policies.
--   **Smooth capacity expansion**: Reduces or increases the number of cluster devices based on actual traffic and performs flexible capacity expansion of service.
--   **No single-point issues**: Even if a single device breaks down or is offline for repair, services are not affected at all.
+WAF allows you to manage attack events based on statistical data, such as attack events, attack traffic, and attack scales.
+
+## Reliability
+
+-   Load balancing: WAF can provide services in cluster mode. It uses multiple servers to balance loads and supports different scheduling algorithms.
+-   Smooth and elastic scaling: You can add servers to or remove servers from a cluster to adjust the WAF service capability based on your business requirements.
+-   Preclusion of single point of failures \(SPOFs\): If a WAF node fails unexpectedly or is taken offline for repair, the WAF service is not affected.
+
+For more information, see the [product page of Web Application Firewall](https://www.alibabacloud.com/zh/product/waf).
 
