@@ -1,65 +1,65 @@
-# 开启API安全
+# Enable API request security
 
-您可以通过API安全功能上传自定义的API规则文件，确保只有符合规则的API请求才会被执行，避免您的网站资产受到数据篡改、重放攻击等安全威胁。
+You can use the API security function to upload a custom API rule file to ensure only requests that comply with the rules are executed. This protects your website assets from threats such as tampering and replay attacks.
 
--   已开通Web应用防火墙实例，且实例满足以下要求：
+-   A WAF instance is purchased. The instance must meet the following requirements:
 
-    -   使用包年包月方式开通。
-    -   如果实例地域是**中国内地**，则套餐必须是**企业版**及以上规格。
-    -   如果实例地域是**海外地区**，则套餐必须是**旗舰版**及以上规格。
-    更多信息，请参见[开通Web应用防火墙](/intl.zh-CN/计费与开通服务/开通WAF/开通Web应用防火墙.md)。
+    -   The instance is billed on a subscription basis.
+    -   If the instance is deployed in **mainland China**, the instance must be of the **Business** or higher edition.
+    -   If the instance is deployed **outside mainland China**, the instance must be of the **Enterprise** or higher edition.
+    For more information, see [Purchase a WAF instance](/intl.en-US/Billing and Service Activation/Subscription/Purchase a WAF instance.md).
 
--   已完成网站接入。更多信息，请参见[网站接入](/intl.zh-CN/接入WAF/CNAME接入/网站接入.md)。
+-   Your website is added to WAF. For more information, see [Add websites](/intl.en-US/Website Access/Website access with CNAME/Add websites.md).
 
-您上传了API接口规则文件后，API安全功能会自动解析该规则文件的内容，并基于该规则对API访问请求进行合法校验，对非法的API请求生成告警日志或进行拦截。
+After you upload the API rule file, the API security function automatically parses the content of the file, and verifies access requests based on the rules. WAF either blocks API requests that do not comply with the rules or generates alerts for the requests.
 
-非法的API访问请求通常有请求路径不一致、参数值超出范围等。
+Typically, API access requests that have inconsistent request paths or contain parameter values out of the valid range are identified as invalid.
 
-**说明：** 目前，API安全功能正在公测中，您可以免费使用。
+**Note:** The API security function is now under public preview and is provided free of charge.
 
-## 操作步骤
+## Procedure
 
-1.  登录[Web应用防火墙控制台](https://yundun.console.aliyun.com/?p=waf)。
+1.  Log on to the [Web Application Firewall console](https://yundun.console.aliyun.com/?p=waf).
 
-2.  在顶部菜单栏，选择Web应用防火墙实例的资源组和地域（**中国内地**、**海外地区**）。
+2.  In the top navigation bar, select the resource group to which the instance belongs and the region, **Mainland China** or **International**, in which the instance is deployed.
 
-3.  在左侧导航栏，选择**防护实验室** \> **API安全**。
+3.  In the left-side navigation pane, choose **Protection Lab** \> **API Request Security**.
 
-4.  在**API安全**页面，单击**切换域名**，切换到要设置的域名。
+4.  On the **API Request Security** page, click **Switch Domain Name** and switch to the domain name that you want to protect.
 
-5.  单击**导入API接口**。
+5.  Click **Import**.
 
-6.  在文件选择框中选择需要上传的API文件，并单击右下角的**打开**。
+6.  In the dialog box that appears, select the API rule file to be uploaded and click **Open**.
 
-    **说明：** 导入的文件限制如下：
+    **Note:** The file has the following restrictions:
 
-    -   文件大小不超过128 KB。
-    -   文件类型仅支持Swagger 2.0格式（XML或JSON）。
+    -   The file size does not exceed 128 KB.
+    -   The file must be in the Swagger 2.0-compliant XML or JSON format.
 
-        [Swagger](https://swagger.io/docs/specification/about/?spm=a2c4g.11186623.2.15.f37011db3xVmge)是一种用于描述API定义的规范，被广泛应用于定义和描述后端应用服务的API。关于阿里云Swagger扩展的更多信息，请参见[通过导入Swagger创建API]()。
+        [Swagger](https://swagger.io/docs/specification/about/?spm=a2c4g.11186623.2.15.f37011db3xVmge) is a specification used to describe API definitions. It is widely used to define and describe APIs for backend services. For more information about Swagger extensions, see [Import Swagger files to create APIs]().
 
-    导入API文件后，文件中的内容会被自动解析并展示在**API安全**页面的接口规则列表中。
+    After the API rule file is imported, the file content is automatically parsed and displayed in the rule list on the **API Request Security** page.
 
-    ![API安全规则列表](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9031268951/p120945.png)
+    ![API security rules](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/4352563951/p120945.png)
 
-    您可以在**API安全**页面进行以下操作：
+    On the **API Request Security** page, you can:
 
-    -   查看API安全规则的状态
+    -   View the status of API security rules.
 
-        文件导入后，该API规则的状态默认为**已启用**、防护状态默认为**告警**，表示如果有API访问请求不符合已上传的API规则要求（即非法请求），Web应用防火墙会生成告警信息。您可以在**安全报表**页面**API安全**页签中查看相关告警信息。
+        After the file is imported, the status of the API security rule is **Enabled** and the protection status is **Warn**. In this case, WAF generates an alert if an invalid request is detected. You can view the alert information on the **API Request Security** tab on the **Security report** page.
 
-        ![安全报表-API安全](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9031268951/p120947.png)
+        ![Security reports-API security](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5352563951/p120947.png)
 
-    -   修改API规则的状态
+    -   Modify the status.
 
-        在接口规则列表中，单击**状态**栏的开关，开启或关闭API规则的状态。关闭API接口规则（状态为**已禁用**）后，Web应用防火墙将不再对该接口的请求进行检测或告警。
+        In the rule list, you can turn on or off the switch in the **Status** column to enable or disable the API rule. If you disable the API security rule \(**Disabled**\), WAF no longer detects requests of this API or generates alerts.
 
-    -   修改API规则的防护状态
+    -   Modify the protection status.
 
-        在**防护状态**栏单击**告警**或**拦截**。防护状态设置为**拦截**，Web应用防火墙将阻断该接口的访问请求。
+        In the **Protection Status** column, you can click either **Warn** or **Block**. If you click **Block**, WAF blocks all invalid access requests to this API.
 
-    -   查看API接口信息
+    -   View API information.
 
-        在**操作**栏单击**查看接口**，您可以查看Web应用防火墙解析的接口信息，包括接口URL、接口请求方法、接口参数、参数值、是否必选、接口描述信息。
+        In the **Operation** column, click **Details** to view the API information. The information includes the URL, request method, parameters, parameter values, description, and whether the parameters are required.
 
 
