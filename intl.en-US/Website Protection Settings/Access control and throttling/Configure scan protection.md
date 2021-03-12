@@ -72,7 +72,7 @@ The scan protection function provides the following policies:
 
             ![Rule settings](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0628549951/p74004.png)
 
-            If the total number of requests initiated from a client IP address in the specified inspection time range exceeds a specific number and the proportion of the requests for which the HTTP status code 404 is returned to the total requests exceeds a specific proportion, or the number of directories to which requests are sent within the specified inspection time range exceeds a specific number, the access requests from this IP address are blocked for the specified time range.**Inspection Time Range****The total requests exceed****Inspection Time Range****Blocked IP Addresses**
+            If the total number of requests initiated from a client IP address in the specified inspection time range exceeds a specific number and the proportion of the requests for which the HTTP status code 404 is returned to the total requests exceeds a specific proportion, or the number of directories to which requests are sent within the specified inspection time range exceeds a specific number, the access requests from this IP address are blocked for the specified time range.
 
             **Note:** We recommend that you select a built-in configuration mode from **Flexible Mode**, **Strict Mode**, and **Normal Mode** in the **Mode** section. You can modify the parameters based on your requirements.
 
