@@ -41,7 +41,7 @@ You must obtain the WAF CNAME or WAF IP address of your domain name before you c
 
 4.  On the **Domain Names** tab of the Website Access page, move the pointer over the domain name and copy the WAF CNAME.
 
-    ![CNAME record](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/7801549951/p97144.png)
+    ![CNAME record](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7801549951/p97144.png)
 
 5.  Obtain the WAF IP address of the domain name.
 
@@ -62,7 +62,7 @@ You must obtain the WAF CNAME or WAF IP address of your domain name before you c
 
 The following example demonstrates how to change the DNS record in Alibaba Cloud DNS. If your domain name is hosted on Alibaba Cloud DNS, perform the following steps to change the DNS record. If your domain name is not hosted on Alibaba Cloud DNS, refer to the following steps to change the DNS record at your DNS service provider.
 
-1.  Log on to the[Alibaba Cloud DNS console](https://partners-dns.console.aliyun.com/#/dns/domainList).
+1.  Log on to the [Alibaba Cloud DNS console](https://dns.console.aliyun.com/#/dns/domainList).
 
 2.  On the **Manage DNS** page, find the domain name and click **Configure** in the Actions column.
 
@@ -79,7 +79,7 @@ The following example demonstrates how to change the DNS record in Alibaba Cloud
 
         **Note:** We recommend that you set the TTL to 10 minutes. The greater the TTL is, the longer it takes to synchronize and change the DNS record.
 
-        ![Change a DNS record ](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/7801549951/p7590.png)
+        ![Change a DNS record ](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7801549951/p7590.png)
 
         Note the following descriptions about conflicts:
 
@@ -93,7 +93,7 @@ The following example demonstrates how to change the DNS record in Alibaba Cloud
 
         **Note:** We recommend that you set the TTL to 10 minutes. The greater the TTL is, the longer it takes to synchronize and change the DNS record.
 
-        ![A record](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/7801549951/p97160.png)
+        ![A record](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7801549951/p97160.png)
 
 5.  Click **OK** and wait for the new DNS record to take effect
 
