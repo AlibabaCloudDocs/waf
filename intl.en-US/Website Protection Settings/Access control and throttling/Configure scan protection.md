@@ -14,9 +14,9 @@ After you add a website to Web Application Firewall \(WAF\), you can enable the 
 
         If you need to customize policies of **Blocking IPs Initiating High-frequency Web Attacks** and **Directory Traversal Prevention**, the instance must be of the **Business** edition or higher. The WAF instance of the **Pro** edition or lower can use only the default scan protection policies. For more information, see [Editions and features](/intl.en-US/Product Introduction/Editions and features.md).
 
-    For more information, see [Purchase a WAF instance](/intl.en-US/Pricing/Subscription/Purchase a WAF instance.md).
+    For more information, see [Purchase a WAF instance](/intl.en-US/Billing and Service Activation/Subscription/Purchase a WAF instance.md).
 
--   Your website is added to the WAF console. For more information, see [Add domain names](/intl.en-US/Website Access/Website access with CNAME/Add domain names.md).
+-   Your website is added to WAF. For more information, see [Add websites](/intl.en-US/Website Access/Website access with CNAME/Add websites.md).
 
 ## Background information
 
@@ -37,11 +37,11 @@ The scan protection function provides the following policies:
 
 4.  In the upper part of the **Website Protection** page, select the domain name for which you want to configure the whitelist.
 
-    ![Switch Domain Name](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/8038549951/p77231.png)
+    ![Switch Domain Name](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8038549951/p77231.png)
 
 5.  On the **Access Control/Throttling** tab, find the **Scan Protection** section and configure the following settings:
 
-    ![Scan protection](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/9628549951/p74001.png)
+    ![Scan protection](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9628549951/p74001.png)
 
     **Note:** By default, all requests destined for your website are checked by scan protection when any policy in this section is enabled. You can configure a **Access Control/Throttling** rule so that requests that match the rule bypass the check. For more information, see [Configure a whitelist for Access Control/Throttling](/intl.en-US/Website Protection Settings/Whitelist/Configure a whitelist for Access Control/Throttling.md).
 
@@ -53,9 +53,9 @@ The scan protection function provides the following policies:
         2.  Click **Settings**.
         3.  In the **Rule Setting** dialog box, specify the following parameters: **Inspection Time Range**, **The number of attacks exceeds**, and **Blocked IP Addresses**.
 
-            ![Rule settings](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/0628549951/p73999.png)
+            ![Rule settings](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0628549951/p73999.png)
 
-            If the number of web attacks initiated from a client IP address in the specified inspection time range exceeds a specific number, the access requests from this IP address are blocked for the specified time range.**Inspection Time Range****The number of attacks exceeds****Blocked IP Addresses**
+            If the number of web attacks initiated from a client IP address in the specified inspection time range exceeds a specific number, the access requests from this IP address are blocked for the specified time range.
 
             **Note:** We recommend that you select a built-in configuration mode from **Flexible Mode**, **Strict Mode**, and **Normal Mode** in the **Mode** section. You can modify the parameters based on your requirements.
 
@@ -70,7 +70,7 @@ The scan protection function provides the following policies:
         2.  Click **Settings**.
         3.  In the **Rule Setting**dialog box, specify the following parameters: **Inspection Time Range**, **The total requests exceed**, **And the percentage of responses with 404 exceeds**, **Blocked IP Addresses**, and **Directory number**.
 
-            ![Rule settings](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/0628549951/p74004.png)
+            ![Rule settings](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0628549951/p74004.png)
 
             If the total number of requests initiated from a client IP address in the specified inspection time range exceeds a specific number and the proportion of the requests for which the HTTP status code 404 is returned to the total requests exceeds a specific proportion, or the number of directories to which requests are sent within the specified inspection time range exceeds a specific number, the access requests from this IP address are blocked for the specified time range.**Inspection Time Range****The total requests exceed****Inspection Time Range****Blocked IP Addresses**
 
