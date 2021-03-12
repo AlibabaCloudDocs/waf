@@ -12,9 +12,9 @@ Bot threat intelligence provides information about suspicious IP addresses used 
 
     -   The instance is billed on a subscription basis.
     -   **Bot Management** is enabled. This feature is a value-added service.
-    For more information, see [Purchase a WAF instance](/intl.en-US/Pricing/Subscription/Purchase a WAF instance.md).
+    For more information, see [Purchase a WAF instance](/intl.en-US/Billing and Service Activation/Subscription/Purchase a WAF instance.md).
 
--   Your website is added to the WAF console. For more information, see [Add domain names](/intl.en-US/Website Access/Website access with CNAME/Add domain names.md).
+-   Your website is added to WAF. For more information, see [Add websites](/intl.en-US/Website Access/Website access with CNAME/Add websites.md).
 
 ## Background information
 
@@ -34,17 +34,17 @@ You can set a bot threat intelligence rule that chooses different actions to man
 
 4.  In the upper part of the **Website Protection** page, select the domain name for which you want to configure the whitelist.
 
-    ![Switch Domain Name](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/8038549951/p77231.png)
+    ![Switch Domain Name](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8038549951/p77231.png)
 
-5.  Click the **Bot Management** tab, find the **Bot Threat Intelligence** section. Then, turn on**Status** and click **Settings**.
+5.  Click the **Bot Management** tab, find the **Bot Threat Intelligence** section. Then, turn on **Status** and click **Settings**.
 
     **Note:** After the bot threat Intelligence function is enabled, all requests destined for your website are checked by the function. You can configure a Bot Management rule so that the requests that match the rule bypass the check. For more information, see [Configure a whitelist for Bot Management](/intl.en-US/Website Protection Settings/Whitelist/Configure a whitelist for Bot Management.md).
 
-    ![Bot Threat Intelligence](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/0428549951/p96048.png)
+    ![Bot Threat Intelligence](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0428549951/p96048.png)
 
 6.  In the **Bot Threat Intelligence** rule list, find the threat intelligence library you want to use by **Intelligence Name**, and turn on **Status**.
 
-    ![Bot threat intelligence rules](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/0428549951/p96052.png)
+    ![Bot threat intelligence rules](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0428549951/p96052.png)
 
     The following table lists the bot threat intelligence libraries that WAF supports.
 
@@ -53,7 +53,7 @@ You can set a bot threat intelligence rule that chooses different actions to man
     |**Malicious Scanner Fingerprint Blacklist**|This library contains characteristics of common scanners.|
     |**Malicious Scanner IP Blacklist**|This library contains malicious IP addresses that are dynamically updated based on the source IP addresses of scan attacks detected on Alibaba Cloud.|
     |**Credential Stuffing IP Blacklist**|This library contains malicious IP addresses that are dynamically updated based on the source IP addresses of credential stuffing and brute-force attacks detected on Alibaba Cloud.|
-    |**Fake Crawler Blacklist**|This library identifies crawlers that use the User-Agent of authorized search engines, such as BaiduSpider, to disguise as authorized programs. **Note:** Before you enable this library, make sure that you have configured a whitelist of crawlers. Otherwise, false positives may occur. For more information, see [Configure the allowed crawlers function](/intl.en-US/Website Protection Settings/Bot management/Set a threat intelligence rule to allow requests from specific crawlers.md). |
+    |**Fake Crawler Blacklist**|This library identifies crawlers that use the User-Agent of authorized search engines, such as BaiduSpider, to disguise as authorized programs. **Note:** Before you enable this library, make sure that you have configured a whitelist of crawlers. Otherwise, false positives may occur. For more information, see [Configure the allowed crawlers function](/intl.en-US/Website Protection Settings/Bot management/Configure the allowed crawlers function.md). |
     |**Malicious Crawler Blacklist**|This library contains malicious IP addresses that are dynamically updated based on the source IP addresses of crawlers detected on Alibaba Cloud. This library is categorized into three severity levels: low, medium, and high. A higher severity indicates more IP addresses in the library and a higher false positive rate. **Note:** We recommend that you set up two-factor authentication, such as CAPTCHA and JavaScript verification, for the high-severity library.
 
 In scenarios where two-factor authentication cannot be implemented, we recommend that you set threat intelligence rules based on the low-severity library. |
@@ -69,7 +69,7 @@ In scenarios where two-factor authentication cannot be implemented, we recommend
 
     2.  In the **Edit Intelligence** dialog box that appears, set the following parameters.
 
-        ![Edit a bot threat intelligence rule](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/0428549951/p96054.png)
+        ![Edit a bot threat intelligence rule](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0428549951/p96054.png)
 
         |Parameter|Description|
         |---------|-----------|
