@@ -12,9 +12,9 @@ The allowed crawlers function maintains a whitelist of authorized search engines
 
     -   The instance is billed on a subscription basis.
     -   **Bot Management** is enabled. This feature is a value-added service.
-    For more information, see [Purchase a WAF instance](/intl.en-US/Pricing/Subscription/Purchase a WAF instance.md).
+    For more information, see [Purchase a WAF instance](/intl.en-US/Billing and Service Activation/Subscription/Purchase a WAF instance.md).
 
--   Your website is added to the WAF console. For more information, see [Add domain names](/intl.en-US/Website Access/Website access with CNAME/Add domain names.md).
+-   Your website is added to WAF. For more information, see [Add websites](/intl.en-US/Website Access/Website access with CNAME/Add websites.md).
 
 ## Background information
 
@@ -34,15 +34,15 @@ After you enable the allowed crawlers function, requests initiated from the craw
 
 4.  In the upper part of the **Website Protection** page, select the domain name for which you want to configure the whitelist.
 
-    ![Switch Domain Name](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/8038549951/p77231.png)
+    ![Switch Domain Name](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8038549951/p77231.png)
 
-5.  Click the **Bot Management** tab, find the **Allowed Crawlers** section. Then, turn on**Status** and click **Settings**.
+5.  Click the **Bot Management** tab, find the **Allowed Crawlers** section. Then, turn on **Status** and click **Settings**.
 
-    ![Allowed Crawlers](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/8328549951/p96043.png)
+    ![Allowed Crawlers](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8328549951/p96043.png)
 
 6.  In the **Allowed Crawlers** list, find the target rule by **Intelligence Name**, and turn on **Status**.
 
-    ![Set a rule to allow requests from specific crawlers](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/8328549951/p96049.png)
+    ![Set a rule to allow requests from specific crawlers](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8328549951/p96049.png)
 
     The default rules only allow crawler requests from the following search engines: Google, Bing, Baidu, Sogou, 360, and Yandex. You can enable the **Legit Crawling Bots** rule to allow requests from all search engine crawlers.
 
