@@ -122,7 +122,7 @@ You can install the F5XForwardedFor module to retrieve the actual IP addresses o
 
     -   Register the x\_forwarded\_for\_x86 module in a 32-bit system.
         -   **Name**: Enter `x_forwarded_for_x86`.
-        -   **Path**: Enter the full path of the `F5XFFHttpModule.dll`module, for example `C:\x_forwarded_for\x86\F5XFFHttpModule.dll`.
+        -   **Path**: Enter the full path of the `F5XFFHttpModule.dll` module, for example `C:\x_forwarded_for\x86\F5XFFHttpModule.dll`.
     -   Register the x\_forwarded\_for\_x64 module in a 64-bit system.
         -   **Name**: Enter `x_forwarded_for_x64`.
         -   **Path**: Enter the full patch of the `F5XFFHttpModule.dll` module, for example C:\\x\_forwarded\_for\\x64\\F5XFFHttpModule.dll.
