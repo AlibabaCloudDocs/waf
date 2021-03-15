@@ -68,7 +68,7 @@ The scan protection function provides the following policies:
 
         1.  Turn on Directory Traversal Prevention.
         2.  Click **Settings**.
-        3.  In the **Rule Setting**dialog box, specify the following parameters: **Inspection Time Range**, **The total requests exceed**, **And the percentage of responses with 404 exceeds**, **Blocked IP Addresses**, and **Directory number**.
+        3.  In the **Rule Setting** dialog box, specify the following parameters: **Inspection Time Range**, **The total requests exceed**, **And the percentage of responses with 404 exceeds**, **Blocked IP Addresses**, and **Directory number**.
 
             ![Rule settings](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0628549951/p74004.png)
 
