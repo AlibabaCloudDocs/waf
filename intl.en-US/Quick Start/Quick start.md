@@ -55,7 +55,7 @@ To add a website to WAF, you must add the domain name of the website to the WAF 
 
     -   If you configure a proxy, such as Anti-DDoS Pro, Anti-DDoS Premium, or CDN, before WAF, go to the console of the proxy service and change the back-to-origin address of the proxy to the CNAME address assigned by WAF. This way, WAF receives the requests destined for your website.
 
-        For more information, see [Deploy WAF and Anti-DDoS Pro together](/intl.en-US/Website Access/Connect cloud services to WAF/Deploy WAF and Anti-DDoS Pro together.md) and [t15558.md\#](/intl.en-US/Website Access/Connect cloud services to WAF/Deploy WAF and CDN together.md).
+        For more information, see [Deploy WAF and Anti-DDoS Pro together](/intl.en-US/Website Access/Connect cloud services to WAF/Deploy WAF and Anti-DDoS Pro together.md) and [Deploy WAF and CDN together](/intl.en-US/Website Access/Connect cloud services to WAF/Deploy WAF and CDN together.md).
 
 
 ## Step 3: Configure website protection policies
