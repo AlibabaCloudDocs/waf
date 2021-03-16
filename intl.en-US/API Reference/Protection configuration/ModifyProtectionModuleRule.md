@@ -1,8 +1,8 @@
 # ModifyProtectionModuleRule
 
-You can call this operation to modify the rules of a Web Application Firewall \(WAF\) protection module, such as web intrusion prevention, data security, advanced protection, anti-Bot, access control and throttling, and whitelist.
+Modifies a rule of a specific WAF protection module, such as the web intrusion prevention, data security, advanced protection, bot management, access control and throttling, or website whitelist module.
 
-You can set the **DefenseType** parameter to specify the protection module. For more information about the values of this parameter, see the description of **DefenseType** in the following section.
+You can set the **DefenseType** parameter to specify the protection module. For more information about the values of this parameter, see the description of **DefenseType**.
 
 ## Debugging
 
@@ -12,99 +12,107 @@ You can set the **DefenseType** parameter to specify the protection module. For 
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|Action|Boolean|No|ModifyProtectionModuleRule|The operation that you want to perform. Set the value to **ModifyProtectionModuleRule**. |
-|DefenseType|String|No|ac\_custom|Specify the protection module. Valid values:
+|Action|String|Yes|ModifyProtectionModuleRule|The operation that you want to perform. Set the value to **ModifyProtectionModuleRule**. |
+|DefenseType|String|Yes|ac\_custom|The protection module whose rules you want to modify. Valid values:
 
--   **tamperproof**: tamper protection.
--   **dlp**: data leakage prevention.
--   **ng\_account**: account security rule configuration
--   **bot\_intelligence**: Bot Threat Intelligence configuration
--   **antifraud**: data risk control
--   **antifraud\_js**: data risk control JavaScript
--   **bot\_algorithm**: intelligent algorithm rules for Bot management
--   **bot\_wxbb\_pkg**: version protection rules for App protection
--   **bot\_wxbb**: path protection rules for App protection
--   **ac\_blacklist**: IP blacklist
--   **ac\_highfreq**: IP blocking based on the request rate
--   **block\_dirscan**: directory traversal
--   **ac\_custom**: custom protection policies
--   **whitelist**: whitelist |
-|Domain|String|No|www.example.com|The domain name that has been added to WAF. |
-|InstanceId|String|No|waf\_elasticity-cn-0xldbqtm005|The ID of the WAF instance.
+ -   **tamperproof**: modifies a rule of the website tamper-proofing module.
+-   **dlp**: modifies a rule of the data leakage prevention module.
+-   **ng\_account**: modifies a rule of the account security module.
+-   **bot\_intelligence**: modifies a rule of the bot threat intelligence module.
+-   **antifraud**: modifies a rule of the data risk control module.
+-   **antifraud\_js**: modifies the web page into which the JavaScript plug-in is inserted.
+-   **bot\_algorithm**: modifies a rule of the intelligent algorithm module.
+-   **bot\_wxbb\_pkg**: modifies a version protection rule of the app protection module.
+-   **bot\_wxbb**: modifies a path protection rule of the app protection module.
+-   **ac\_blacklist**: modifies a rule of the IP address blacklist module.
+-   **ac\_highfreq**: modifies a rule that blocks IP addresses initiating high-frequency web attacks.
+-   **ac\_dirscan**: modifies a rule of the scan protection module.
+-   **ac\_custom**: modifies a rule of the custom protection policy module.
+-   **whitelist**: modifies a rule of the website whitelist module. |
+|Domain|String|Yes|www.example.com|The domain name for which you want to apply the rule after modification.
 
-**Note:** You can call the [DescribeInstanceInfo](~~140857~~) operation to query the ID of the WAF instance. |
-|LockVersion|Long|Yes|env|The version of the configuration to be modified. |
-|Rule|String|No|\{"action":"monitor","name":"test","scene":"custom\_acl","conditions":\[\{"opCode":1,"key":"URL","values":"/example"\}\]\}|The content of the rule. It is a JSON string that contains multiple parameters.
+ **Note:** You can call the [DescribeDomainNames](~~86373~~) operation to query the domain names that are protected by WAF. |
+|InstanceId|String|Yes|waf\_elasticity-cn-0xldbqt\*\*\*\*|The ID of the WAF instance.
 
-**Note:** According to the specified protection function module configuration \(**DefenseType**\), the specific parameters involved vary. For more information, see Rule parameters. |
-|RuleId|Long|Yes|369998|The ID of the rule. |
+ **Note:** You can call the [DescribeInstanceInfo](~~140857~~) operation to query the ID of the WAF instance. |
+|LockVersion|Long|Yes|2|The version of the rule that you want to modify. |
+|Rule|String|Yes|\{"action":"monitor","name":"test","scene":"custom\_acl","conditions":\[\{"opCode":1,"key":"URL","values":"/example"\}\]\}|The configurations of the rule. This parameter is a string consisting of JSON structs.
+
+ **Note:** The parameters that are contained in the string vary based on the protection module, which is specified by the **DefenseType** parameter. For more information, see the "Rule parameters" section. |
+|RuleId|Long|Yes|369998|The ID of the rule that you want to modify.
+
+ **Note:** You can call the [DescribeProtectionModuleRules](~~100398~~) operation to query the IDs of created rules. |
+
+All Alibaba Cloud API operations must include common request parameters. For more information about common request parameters, see [Common parameters](~~162719~~).
+
+For more information about sample requests, see the **"Examples"** section of this topic.
 
 **Rule parameters**
 
--   To modify a tamper protection rule, set DefenseType to **tamperproof** and construct a JSON string that includes the following parameters:
-    -   **uri**: Required. The URL that needs protection. Data type: string.
-    -   **name**: Required. The name of the rule. Data type: string.
-    -   **status**: Optional. The protection status of the rule. Data type: integer.
-        -   **0**: disabled \(default\).
-        -   **1**: enabled.
-    -   **Sample request**
+-   If the DefenseType parameter is set to **tamperproof**, the value of the Rule parameter contains the following parameters:
+    -   **uri**: the URL that requires protection. This parameter is required. Data type: string.
+    -   **name**: the name of the rule. This parameter is required. Data type: string.
+    -   **status**: the status of the rule. This parameter is optional. Data type: integer. Valid values:
+        -   **0**: disables the rule. This is the default value.
+        -   **1**: enables the rule.
+    -   **Example**
 
         ```
         
             {
                 "name":"example",
                 "uri":"http://www.example.com/example",
-                "Status":1 
+                "status":1 
             }
-                                    
+            
         ```
 
 
--   To modify a data leakage prevention rule, set DefenseType to **dlp** and construct a JSON string that includes the following parameters:
-    -   **name**: Required. The name of the rule. Data type: string.
-    -   **conditions**: Required. The matching condition, which is described in a JSON string. You can specify up to two conditions that have the AND logical relation to apply the conditions at the same time. Data type: array. The array must include the following parameters:
-        -   **key**: The matching items.
-            -   **0**: Sets the matching item to URLs.
-            -   **10**: indicates sensitive information.
-            -   **11**: indicates the response code.
+-   If the DefenseType parameter is set to **dlp**, the value of the Rule parameter contains the following parameters:
+    -   **name**: the name of the rule. This parameter is required. Data type: string.
+    -   **conditions**: the matching conditions, which are formulated in a JSON string. You can specify a maximum of two conditions. The two conditions must have the AND logical relation. This parameter is required. Data type: array. The JSON string contains the following parameters:
+        -   **key**: the matching item. Valid values:
+            -   **0**: URL
+            -   **10**: sensitive information
+            -   **11**: HTTP status code
 
-**Note:** You cannot set HTTP status codes \(**11**\) and sensitive information \(**10**\) as the matching conditions in the **conditions** parameter at the same time.
+**Note:** You cannot set HTTP status codes \(**11**\) and sensitive information \(**10**\) as the matching items in the **conditions** parameter at the same time.
 
-        -   **operation**: The matching logic. This value is set to **1** by default, which specifies the INCLUDES logical operator.
-        -   **value**: The matching condition values, which are formulated in a JSON string. You can specify multiple values. The JSON string must include the following parameters:
-            -   **v**: only applies to scenarios where the matching condition \(**key**\) is set to URLs \(**0**\) or HTTP status codes \(**11**\).
-                -   URL: when`"key":0` the parameter value is the URL address.
-                -   Response Code: when`"key":11` valid values for the parameter include**400**,**401**,**402**,**403**,**404**,**405-499**,**500**,**501**,**502**,**503**,**504**,**505-599**.
-            -   **k**: only applies to scenarios where the matching item \(**key**\) is set to sensitive information \(**10**\). Valid values:
-                -   **100**: masks resident ID card numbers.
-                -   **101**: masks credit card numbers.
-                -   **102**: masks phone numbers.
-                -   **103**: masks the default sensitive words.
-    -   **action**: The matching action.
-        -   **3**: sets the matching action to warn.
-        -   **10**: filters sensitive information. This action only applies to scenarios where sensitive information is contained \(`"key":10`\) to find matching conditions.
-        -   **11**: indicates that the system returns to the built-in intercept page, this action only applies to response codes \(`"key":11`\) to find matching conditions.
-    -   **Sample request**
+        -   **operation**: the matching logic. Set the value to **1**, which indicates the INCLUDES logical operator.
+        -   **value**: the matching value, which is formulated in a JSON string. You can specify multiple values. The JSON string contains the following parameters:
+            -   **v**: This parameter is valid only when **key** is set to **0** or **11**.
+                -   URL: If `key` is set to 0, the value of the v parameter is a URL.
+                -   HTTP status code: If `key` is set to 11, the valid values of the v parameter are **400**, **401**, **402**, **403**, **404**, **405 to 499**, **500**, **501**, **502**, **503**, **504**, and **505 to 599**.
+            -   **k**: This parameter is valid only when **key** is set to **10**. Valid values:
+                -   **100**: ID card numbers
+                -   **101**: credit card numbers
+                -   **102**: phone numbers
+                -   **103**: default sensitive words
+    -   **action**: the action performed after the rule is matched. Valid values:
+        -   **3**: generates alerts.
+        -   **10**: filters sensitive information. This action is valid only when `key` is set to 10.
+        -   **11**: returns the built-in interception page of the system. This action is valid only when `key` is set to 11.
+    -   **Example**
 
         ```
         
           {
-            "name":"example",
-            "conditions":[{"key":11,"operation":1,"value":[{"v":401}]},{"key":"0","operation":1,"value":[{"v":"www.example.com"}]}],
-            "action":3
+        	"name":"example",
+        	"conditions":[{"key":11,"operation":1,"value":[{"v":401}]},{"key":"0","operation":1,"value":[{"v":"www.example.com"}]}],
+        	"action":3
           }
-                                    
+          
         ```
 
--   Configure account security rules \(**ng\_account**\) corresponding to the JSON string contains the following parameters:
-    -   **url\_path**: Required. The URL to the operation that runs detection tasks. The URL must start with a slash \(/\). Data type: string.
-    -   **Method**: The request method to be moderated. Valid values: POST, GET, PUT, and DELETE. Data Type: String. You can set multiple request methods. Separate multiple request methods with commas \(,\).
-    -   **account\_left**: Required. The parameter that specifies the account. Data type: string.
-    -   **password\_left**: Optional. The password of the account. Data type: string.
-    -   **Action**: \(required\) The protection action. Valid values:
-        -   **Monitor**: indicates an alert.
-        -   **Block**: indicates interception.
-    -   **Sample request**
+-   If the DefenseType parameter is set to **ng\_account**, the value of the Rule parameter contains the following parameters:
+    -   **url\_path**: the URL path in the requests that are detected. The path must start with a forward slash \(/\). This parameter is required. Data type: string.
+    -   **method**: the method of the requests that are detected. This parameter is required. Data type: string. Valid values: POST, GET, PUT, and DELETE. You can specify multiple request methods. Separate the request methods with commas \(,\).
+    -   **account\_left**: the account. This parameter is required. Data type: string.
+    -   **password\_left**: the password. This parameter is optional. Data type: string.
+    -   **action**: the action performed after the rule is matched. This parameter is required. Data type: string. Valid values:
+        -   **monitor**: generates alerts.
+        -   **block**: blocks requests.
+    -   **Example**
 
         ```
         
@@ -112,27 +120,27 @@ You can set the **DefenseType** parameter to specify the protection module. For 
                 "url_path":"/example",
                 "method":"POST,GET,PUT,DELETE",
                 "account_left":"aaa",
-                "password_left:" 123 ",
+                "password_left:"123",
                 "action":"monitor"
             }
-                                    
+            
         ```
 
--   Bot Threat Intelligence configurations \(**bot\_intelligence**\) corresponding to the JSON string contains the following parameters:
-    -   **Name**: Required. The rule name. It must be consistent with the rule ID \(**RuleId**\) parameter. Data type: string.
-    -   **urlList**: Required. The protected paths. You can specify a maximum of ten protected paths. Data type: array. The code is represented as a JSON string, which includes the following parameters:
-        -   **Mode**: Required. The matching method. This parameter must be the same as the path keyword \(**URL**\) parameter in combination with the specified protected path. Optional values: **EQ**\(Precise matching\),**prefix-match**\(Prefix matching\),**regex**\(Regular expression matching\).
-        -   **URL**: Required. The path keyword, which must start with a forward slash \(/\). Data Type: string.
-    -   **action**: Required. The action performed after the rule is matched. Data type: string. Valid values:
-        -   **monitor**: monitors requests
-        -   **captcha**: requires CAPTCHA verification
-        -   **captcha\_strict**: indicates the strict slider.
-        -   **JS**: indicates JavaScript validation.
-        -   **block**: blocks requests
-    -   **Status**: Required. The status of the instance. Valid values: integer.
+-   If the DefenseType parameter is set to **bot\_intelligence**, the value of the Rule parameter contains the following parameters:
+    -   **name**: the name of the rule, which must match the ID of the rule \(**RuleId**\). This parameter is required. Data type: string.
+    -   **urlList**: the URL paths that require protection. You can specify a maximum of 10 protection URL paths. Data type: array. Each URL path is formulated in a JSON string that contains the following parameters:
+        -   **mode**: the matching method. This parameter specifies a URL path in combination with the **url** parameter. This parameter is required. Data type: string. Valid values: **eq** \(exact match\), **prefix-match** \(prefix match\), and **regex** \(regular expression match\).
+        -   **url**: the keyword of the URL path. The path must start with a forward slash \(/\). This parameter is required. Data type: string.
+    -   **action**: the action performed after the rule is matched. This parameter is required. Data type: string. Valid values:
+        -   **monitor**: monitors requests.
+        -   **captcha**: performs CAPTCHA verification.
+        -   **captcha\_strict**: performs strict CAPTCHA verification.
+        -   **js**: performs JavaScript verification.
+        -   **block**: blocks requests.
+    -   **status**: the status of the rule. This parameter is required. Data type: integer. Valid values:
         -   **0**: disables the rule.
         -   **1**: enables the rule.
-    -   **Sample request**
+    -   **Example**
 
         ```
         
@@ -143,68 +151,68 @@ You can set the **DefenseType** parameter to specify the protection module. For 
                     {"mode":"eq","url":"/"}],
                 "name":"IDC IP Address Library-Tencent Cloud",
                 "action":"captcha_strict",
-                "Status":1
+                "status":1
             }
-                                    
+            
         ```
 
--   Bot management intelligent algorithm rule configuration \(**bot\_algorithm**\) corresponding to the JSON string contains the following parameters:
-    -   **name**: Required. The name of the rule. Data type: string.
-    -   **algorithmName**: Required. The name of the algorithm. Valid values:
-        -   **RR**: indicates the crawler identification algorithm for special resources.
-        -   **PR**: indicates the targeted path Crawler identification algorithm.
-        -   **DPR**: indicates the round-robin Crawler identification algorithm.
-        -   **SR**: indicates the dynamic IP Crawler identification algorithm.
-        -   **IND**: indicates the proxy Crawler identification algorithm.
-        -   **Periodicity**: indicates the periodic crawler recognition algorithm.
-    -   **timeInterval**: Required. The detection period. Valid values: 30, 60, 120, 300, and 600. Unit: Seconds. Data type: integer.
-    -   **action**: Required. The action performed after the rule is matched. Data type: string. Valid values:
-        -   **Monitor**: indicates observation.
-        -   **CAPTCHA**: indicates the slider.
-        -   **JS**: indicates JavaScript validation.
-        -   **Block**: indicates the block. When blocking is selected as the disposal action, the blocking duration \( **blocktime**\) parameter.
-    -   **blocktime**: Optional. The blocking duration. Unit: Minutes. Value range: 1 to 600.
-    -   **config**: Required. The algorithm configuration, in JSON format. Data type: string. The specific sub-parameters in the algorithm configuration and the selected algorithm name \( **algorithmName**\) related.
-        -   Crawler identification algorithm for special resources \(**RR**\) the corresponding configuration information shall contain the following sub-parameters:
-            -   **resourceType**: The type of the requested resource. Data type: integer. Valid values:
-                -   **1**: represents a dynamic resource type.
-                -   **2**: represents a static resource type.
-                -   **-1**: indicates custom resource types. If you select a custom Resource Group, **extensions** the parameter that specifies the resource suffix in string format. Separate multiple file extensions with commas \(,\), for example,`css,jpg,xls`.
-            -   **minRequestCountPerIp**: Required. The IP address range in the detection period. Only IP addresses that have a specified number of access requests are detected. Data type: integer. This parameter specifies the minimum number of requests. Valid values: 5 to 10000.
-            -   **minRatio**: Required. The risk determination condition. A risk is determined when the proportion of requests sent by an IP address exceeds the threshold. Valid values: 0.01 to 1.
-        -   Directed path Crawler identification algorithm \(**PR**\) the corresponding configuration information shall contain the following sub-parameters:
-            -   **keyPathConfiguration**: The request path. You can specify a maximum of 10 Paths. This parameter is required only when a Crawler identification algorithm is used. Data type: array. The parameters must be in a JSON string. The following parameters must be included:
-                -   **Method**: Required. The request method. Valid values:**POST**,**GET**,**PUT**,**DELETE**,**HEAD**,**OPTIONS**.
-                -   **URL**: Required. The request path keyword, which must start with a forward slash \(/\). Data type: string.
-                -   **matchType**: Required. The matching method. This parameter must be the same as the request path keyword \(**URL** parameter in combination with the specified request path. Valid values: **all**\(Precise matching\),**prefix**\(Prefix matching\),**regex**\(Regular expression matching\).
-            -   **minRequestCountPerIp**: Required. The IP address range in the detection period. Only IP addresses that have a specified number of access requests are detected. Data type: integer. This parameter specifies the minimum number of requests. Valid values: 5 to 10000.
-            -   **minRatio**: Required. The risk determination condition. A risk is determined when the proportion of requests sent from an IP address to the specified path exceeds the threshold. Valid values: 0.01 to 1.
-        -   Parameter polling Crawler identification algorithm \(**DPR**\) the corresponding configuration information shall contain the following sub-parameters:
-            -   **Method**: Required. The request method. Valid values:**POST**,**GET**,**PUT**,**DELETE**,**HEAD**,**OPTIONS**.
-            -   **urlPattern**: Required. The path of the key parameter, which must start with a forward slash \(/\). Data type: string. Key parameters are indicated by braces \(\{\}\). When multiple braces \(\{\}\) are set, these parameters are joined as key parameters. For example, `/company/{}/{}/{}/user.php? uid={}`.
-            -   **minRequestCountPerIp**: Required. The IP address range in the detection period. Only IP addresses that have a specified number of access requests are detected. Data type: integer. This parameter specifies the minimum number of requests. Valid values: 5 to 10000.
-            -   **minRatio**: Required. The risk determination condition. If the value of a key parameter exceeds the threshold, the request is considered as a risk. A value of 0.01 to 1 indicates a risk. \(required\)
-        -   Dynamic IP Crawler identification algorithm \(**SR**\) the corresponding configuration information shall contain the following sub-parameters:
-            -   **maxRequestCountPerSrSession**: Required. It specifies the minimum number of requests in each session. If the number of requests in each session is smaller than the value of this parameter, a session is abnormal. Valid values: 1 to 8.
-            -   **minSrSessionCountPerIp**: Required. The risky condition. The value is the threshold for the number of abnormal sessions in an IP access request. If the number of abnormal sessions exceeds this threshold, a risk is detected. Valid values: 5 to 300.
-        -   Proxy Crawler identification algorithm \(**IND**\) the corresponding configuration information shall contain the following sub-parameters:
-            -   **minIpCount**: Required. The condition for determining the number of IP addresses associated with the Wi-Fi connection of a malicious device. If the threshold is exceeded, a risk is detected. Valid values: 5 to 500.
-            -   **keyPathConfiguration**: The detection path information. You can specify up to 10 paths. Data type: array. The parameters must be in a JSON string. The following parameters must be included:
-                -   **Method**: Required. The request method. Valid values:**POST**,**GET**,**PUT**,**DELETE**,**HEAD**,**OPTIONS**.
-                -   **URL**: Required. The keyword of the detection path, which must start with a forward slash \(/\). Data type: string.
-                -   **matchType**: Required. The matching method. This parameter must be the same as the keyword of the detection path \(**URL** parameter in combination with the specified request path. Valid values: **all**\(Precise matching\),**prefix**\(Prefix matching\),**regex**\(Regular expression matching\).
-        -   Periodic Crawler identification algorithm \(**Periodicity**\) the corresponding configuration information shall contain the following sub-parameters:
-            -   **minRequestCountPerIp**: Required. The IP address range in the detection period. Only IP addresses that have a specified number of access requests are detected. Data type: integer. This parameter specifies the minimum number of requests. Valid values: 5 to 10000.
-            -   **level**: Required. The risk level of the Accessed IP address. It indicates the visibility of the periodic features of the IP address. Data type: Integer. Valid values:
-                -   **0**: indicates obvious
-                -   **1**: Medium
-                -   **2**: indicates weak.
-    -   **Sample request**
+-   If the DefenseType parameter is set to **bot\_algorithm**, the value of the Rule parameter contains the following parameters:
+    -   **name**: the name of the rule. This parameter is required. Data type: string.
+    -   **algorithmName**: the name of the algorithm. This parameter is required. Data type: string. Valid values:
+        -   **RR**: the identification algorithm for special resource crawlers
+        -   **PR**: the identification algorithm for specific path crawlers
+        -   **DPR**: the identification algorithm for parameter round-robin crawlers
+        -   **SR**: the identification algorithm for dynamic IP address crawlers
+        -   **IND**: the identification algorithm for proxy device crawlers
+        -   **Periodicity**: the identification algorithm for periodical crawlers
+    -   **timeInterval**: the interval of detection. This parameter is required. Data type: integer. Valid values: 30, 60, 120, 300, and 600. Unit: seconds.
+    -   **action**: the action performed after the rule is matched. This parameter is required. Data type: string. Valid values:
+        -   **monitor**: monitors requests.
+        -   **captcha**: performs CAPTCHA verification.
+        -   **js**: performs JavaScript verification.
+        -   **block**: blocks requests. If you set the parameter to block, you must also specify the **blocktime** parameter.
+    -   **blocktime**: the period during which requests are blocked. This parameter is optional. Data type: integer. Valid values: 1 to 600. Unit: minutes.
+    -   **config**: the configurations of the algorithm, which are formulated in a JSON string. This parameter is required. Data type: string. The parameters that are contained in the JSON string vary based on the value of the **algorithmName** parameter.
+        -   If you set algorithmName to **RR**, the value of the config parameter contains the following parameters:
+            -   **resourceType**: the type of the requested resources. This parameter is optional. Data type: integer. Valid values:
+                -   **1**: dynamic resources.
+                -   **2**: static resources.
+                -   **-1**: custom resources. In this case, you must also use the **extensions** parameter to specify resource suffixes in a string. Separate suffixes with commas \(,\). Example: `css,jpg,xls`.
+            -   **minRequestCountPerIp**: the minimum number of requests from an IP address. The system detects an IP address only when the number of requests from this IP address is greater than or equal to the value of this parameter. This parameter is required. Data type: integer. Valid values: 5 to 10000.
+            -   **minRatio**: the threshold for the proportion of requests that access specified types of resources to requests that are initiated from an IP address. This threshold is used to determine whether risks exist. If an actual proportion is greater than the threshold, risks exist. This parameter is required. Data type: float. Valid values: 0.01 to 1.
+        -   If you set algorithmName to **PR**, the value of the config parameter contains the following parameters:
+            -   **keyPathConfiguration**: the requested URL paths. You can specify a maximum of 10 URL paths. This parameter is required only when the algorithmName parameter is set to PR. This parameter is optional. Data type: array. This parameter is a JSON string that contains the following parameters:
+                -   **method**: the request method. This parameter is required. Data type: string. Valid values: **POST**, **GET**, **PUT**, **DELETE**, **HEAD**, and **OPTIONS**.
+                -   **url**: the keyword of the URL path. The path must start with a forward slash \(/\). This parameter is required. Data type: string.
+                -   **matchType**: the matching method. This parameter specifies a requested URL path in combination with the **url** parameter. This parameter is required. Data type: string. Valid values: **all** \(exact match\), **prefix** \(prefix match\), and **regex** \(regular expression match\).
+            -   **minRequestCountPerIp**: the minimum number of requests from an IP address. The system detects an IP address only when the number of requests from this IP address is greater than or equal to the value of this parameter. This parameter is required. Data type: integer. Valid values: 5 to 10000.
+            -   **minRatio**: the threshold for the proportion of requests that access specified URL paths to requests that are initiated from an IP address. This threshold is used to determine whether risks exist. If an actual proportion is greater than the threshold, risks exist. This parameter is required. Data type: float. Valid values: 0.01 to 1.
+        -   If you set algorithmName to **DPR**, the value of the config parameter contains the following parameters:
+            -   **method**: the request method. This parameter is required. Data type: string. Valid values: **POST**, **GET**, **PUT**, **DELETE**, **HEAD**, and **OPTIONS**.
+            -   **urlPattern**: the path of key parameters. The path must start with a forward slash \(/\). This parameter is required. Data type: string. You can specify multiple key parameters and include each parameter with braces \{\}. Example: `/company/{}/{}/{}/user.php?uid={}`.
+            -   **minRequestCountPerIp**: the minimum number of requests from an IP address. The system detects an IP address only when the number of requests from this IP address is greater than or equal to the value of this parameter. This parameter is required. Data type: integer. Valid values: 5 to 10000.
+            -   **minRatio**: the threshold for the proportion of requests that use specified key parameters to requests that are initiated from an IP address. This threshold is used to determine whether risks exist. If an actual proportion is greater than the threshold, risks exist. This parameter is required. Data type: float. Valid values: 0.01 to 1.
+        -   If you set algorithmName to **SR**, the value of the config parameter contains the following parameters:
+            -   **maxRequestCountPerSrSession**: the minimum number of requests in each session. If the number of requests in a single session is smaller than the value of this parameter, the session is considered abnormal. This parameter is required. Data type: integer. Valid values: 1 to 8.
+            -   **minSrSessionCountPerIp**: the threshold for the number of abnormal sessions in the requests that are initiated from an IP address. The threshold is used to determine whether risks exist. If an actual number is greater than the threshold, risks exist. This parameter is required. Data type: integer. Valid values: 5 to 300.
+        -   If you set algorithmName to **IND**, the value of the config parameter contains the following parameters:
+            -   **minIpCount**: the threshold for the number of IP addresses that the Wi-Fi connected device accesses. This parameter specifies the condition that is used to determine malicious devices. If an actual number is greater than the threshold, risks exist. This parameter is required. Data type: integer. Valid values: 5 to 500.
+            -   **keyPathConfiguration**: the requested URL paths. You can specify a maximum of 10 URL paths. This parameter is optional. Data type: array. This parameter is a JSON string that contains the following parameters:
+                -   **method**: the request method. This parameter is required. Data type: string. Valid values: **POST**, **GET**, **PUT**, **DELETE**, **HEAD**, and **OPTIONS**.
+                -   **url**: the keyword of the URL path. The path must start with a forward slash \(/\). This parameter is required. Data type: string.
+                -   **matchType**: the matching method. This parameter specifies a requested URL path in combination with the **url** parameter. This parameter is required. Data type: string. Valid values: **all** \(exact match\), **prefix** \(prefix match\), and **regex** \(regular expression match\).
+        -   If you set algorithmName to **Periodicity**, the value of the config parameter contains the following parameters:
+            -   **minRequestCountPerIp**: the minimum number of requests from an IP address. The system detects an IP address only when the number of requests from this IP address is greater than or equal to the value of this parameter. This parameter is required. Data type: integer. Valid values: 5 to 10000.
+            -   **level**: the risk level, which is the extent of obviousness of periodic access from IP addresses. This parameter is required. Data type: integer. Valid values:
+                -   **0**: obvious
+                -   **1**: moderate
+                -   **2**: weak
+    -   **Example**
 
         ```
         
             {
-                "name":"proxy Crawler identification",
+                "name": "Crawler identification for proxy devices",
                 "algorithmName":"IND",
                 "timeInterval":"60",
                 "action":"warn",
@@ -213,18 +221,18 @@ You can set the **DefenseType** parameter to specify the protection module. For 
                     "keyPathConfiguration":[{"url":"/index","method":"GET","matchType":"prefix"}]
                 }
             }
-                                    
+            
         ```
 
--   Version protection rule configuration for App protection \(**bot\_wxbb\_pkg**\) corresponding to the JSON string contains the following parameters:
-    -   **name**: Required. The name of the rule. Data type: string.
-    -   **action**: Required. The action performed after the rule is matched. Data type: string. Valid values:
-        -   **Test**: indicates observation.
-        -   **Close**: indicates the block.
-    -   **nameList**: Required. The version information. You can specify up to five rules. Data type: array. The parameter is represented as a JSON string, which includes the following parameters:
-        -   **Name**: Required. The name of the valid package. Data type: string.
-        -   **signList**: Required. The maximum number of package signatures. You can specify up to 15. Separate multiple signatures with commas \(,\). Data type: array.
-    -   **Sample request**
+-   If the DefenseType parameter is set to **bot\_wxbb\_pkg**, the value of the Rule parameter contains the following parameters:
+    -   **name**: the name of the rule. This parameter is required. Data type: string.
+    -   **action**: the action performed after the rule is matched. This parameter is required. Data type: string. Valid values:
+        -   **test**: monitors requests.
+        -   **close**: blocks requests.
+    -   **nameList**: the version information of valid packages. You can specify the version information for a maximum of five valid packages. This parameter is required. Data type: array. This parameter is a JSON string that contains the following parameters:
+        -   **name**: the name of the valid package. This parameter is required. Data type: string.
+        -   **signList**: the signature for the package. You can specify a maximum of 15 signatures. Separate them with commas \(,\). This parameter is required. Data type: array.
+    -   **Example**
 
         ```
         
@@ -236,29 +244,29 @@ You can set the **DefenseType** parameter to specify the protection module. For 
                     "signList":["xxxxxx","xxxxx","xxxx","xx"]
                 }]
             }
-                                    
+            
         ```
 
--   Configure the path protection rule for App protection**bot\_wxbb**\) corresponding to the JSON string contains the following parameters:
-    -   **name**: Required. The name of the rule. Data type: string.
-    -   **uri**: Required. The path, which must start with a forward slash \(/\). Data type: string.
-    -   **matchType**: Required. The matching method. Data type: string. Valid values: **all**\(Precise matching\),**prefix**\(Prefix matching\),**regex**\(Regular expression matching\).
-    -   **Arg**: Required. The parameter value defines the specified protected path configuration with the **matchType** parameter. Data type: string.
-    -   **action**: Required. The action performed after the rule is matched. Data type: string. Valid values:
-        -   **Test**: Indicates the observation.
-        -   **Close**: Indicates the block.
-    -   **hasTag**: Required. Data type: boolean. You must specify whether to sign the fields.
-        -   **true**: indicates yes. When you select fields that require custom signing, you must pass in **wxbbVmpFieldType** and**wxbbVmpFieldValue** the parameters specify the type and value of the field that you want to sign.
-        -   **false**: indicates no.
-    -   **wxbbVmpFieldType**: Optional. The type of the user-defined field. Data type: Integer. When the **hasTag** parameter value is**true** you must specify the parameter. Valid values:
-        -   **0**: indicates the header.
-        -   **1**: represents the parameter.
-        -   **2**: indicates a cookie.
-    -   **wxbbVmpFieldValue**: Optional. The value of the user-defined field. Data type: string. When the **hasTag** parameter value is**true**, you must specify the parameter.
-    -   **blockInvalidSign**: Required. The action to be taken against the invalid signature. Data type: integer. Static value: **1**. The default protection policies of the path protection rule.
-    -   **blockProxy**: Required. The processing method of the proxy. Data type: integer. Static value: **1**. This parameter is not required if you do not need to perform the action on the proxy behavior.
-    -   **blockSimulator**: Required. Indicates whether to perform the action on the simulator. Data type: integer. Static value: **1**. This parameter is not required if you do not need to perform the action on the simulator behavior.
-    -   **Sample request**
+-   If the DefenseType parameter is set to **bot\_wxbb**, the value of the Rule parameter contains the following parameters:
+    -   **name**: the name of the rule. This parameter is required. Data type: string.
+    -   **uri**: the keyword of the URL path that requires protection. The path must start with a forward slash \(/\). This parameter is required. Data type: string.
+    -   **matchType**: the matching method. This parameter is required. Data type: string. Valid values: **all** \(exact match\), **prefix** \(prefix match\), and **regex** \(regular expression match\).
+    -   **arg**: the included parameters. This parameter specifies a URL path in combination with the **matchType** parameter. This parameter is required. Data type: string.
+    -   **action**: the action performed after the rule is matched. This parameter is required. Data type: string. Valid values:
+        -   **test**: monitors requests.
+        -   **close**: blocks requests.
+    -   **hasTag**: specifies whether to add a custom signature field. This parameter s required. Data type: Boolean.
+        -   **true**: In this case, you must set **wxbbVmpFieldType** and **wxbbVmpFieldValue** to specify the type and value of the field.
+        -   **false**
+    -   **wxbbVmpFieldType**: the type of the signature field. This parameter is optional. Data type: integer. If you set **hasTag** to **true**, you must also specify this parameter. Valid values:
+        -   **0**: header
+        -   **1**: parameter
+        -   **2**: cookie
+    -   **wxbbVmpFieldValue**: the value of the signature field. This parameter is optional. Data type: string. If you set **hasTag** to **true**, you must also specify this parameter.
+    -   **blockInvalidSign**: specifies whether to take actions on an invalid signature. This parameter is required. Data type: integer. Set the value to **1**. The value 1 indicates that the default protection policy for path protection rules is enabled.
+    -   **blockProxy**: specifies whether to take actions on a proxy. This parameter is optional. Data type: integer. Set the value to **1**. If you do not need to perform actions on the proxy, you can leave this parameter unspecified.
+    -   **blockSimulator**: specifies whether to take actions on a simulator. This parameter is optional. Data type: integer. Set the value to **1**. If you do not need to perform actions on the simulator, you can leave this parameter unspecified.
+    -   **Example**
 
         ```
         
@@ -274,115 +282,133 @@ You can set the **DefenseType** parameter to specify the protection module. For 
                 "blockInvalidSign":1,
                 "blockProxy":1
             }
-                                    
+            
         ```
 
--   To modify a data risk control request, set DefenseType to **antifraud** and construct a JSON string that includes the following parameters:
-    -   **uri**: Required. The request URL. Data type: string.
-    -   **Sample request**
+-   If the DefenseType parameter is set to **antifraud**, the value of the Rule parameter contains the following parameters:
+    -   **uri**: the requested URL. This parameter is required. Data type: string.
+    -   **Example**
 
         ```
         
             {
                 "uri": "http://1.example.com/example"
             }
-                                    
+            
         ```
 
--   To modify the data risk control JavaScript that is inserted into a web page, set DefenseType to **antifraud\_js** and construct a JSON string that includes the following parameters:
-    -   **uri**: Required. The URL of the web page into which you want to insert the data risk control JavaScript. The system inserts data risk control JavaScript into all the pages under the specified URL directory. Data type: string.
-    -   **Sample request**
+-   If the DefenseType parameter is set to **antifraud\_js**, the value of the Rule parameter contains the following parameters:
+    -   **uri**: the URL path of the web page into which you want to insert the JavaScript plug-in for data risk control. The path must start with a forward slash \(/\). The system inserts the JavaScript plug-in into all the pages in the specified URL path. This parameter is required. Data type: string.
+    -   **Example**
 
         ```
         
             {
                 "uri": "/example/example"
             }
-                                    
+            
         ```
 
--   To modify an IP blacklist rule, set DefenseType to **ac\_blacklist**, and construct a JSON string that contains the following parameters:
+-   If the DefenseType parameter is set to **ac\_blacklist**, the value of the Rule parameter contains the following parameters:
+    -   **remoteAddr**: the IP addresses in the blacklist. This parameter is optional. Data type: array. You can enter both IP addresses and CIDR blocks. Separate multiple IP addresses with commas \(,\). You can enter a maximum of 200 IP addresses. If you leave this parameter unspecified, the system clears the blacklist.
+    -   **area**: the regions in the region-level IP address blacklist. This parameter is optional. Data type: array. This parameter is a string consisting JSON arrays. Each element in a JSON array is a JSON struct that includes the following parameters:
+        -   **countryCodes**: the code of the country. This parameter is required. Data type: array. If you set this parameter to `["CN"]`, the system blocks requests from regions inside China, and you must also specify the **regionCodes** parameter. If you set this parameter to a non-`["CN"]` value, the system blocks requests from other countries and regions, and you do not need to specify the **regionCodes** parameter. You can call the [DescribeProtectionModuleCodeConfig](~~201108~~) operation to query the codes of regions inside China and the codes of other countries and regions.
+        -   **regionCodes**: the code of the region inside China. This parameter is optional. Data type: array.
+    -   **Example**
 
-**Note:** You cannot call API operations to block regions. Use this feature in the console.
+        ```
+        
+        {
+            "remoteAddr": [
+                "1.XX.XX.1",
+                "2.XX.XX.2"
+            ],
+            "area": [
+                {
+                    "countryCodes": [
+                        "CN"
+                    ],
+                    "regionCodes": [
+                        "310000",
+                        "530000"
+                    ]
+                },
+                {
+                    "countryCodes": [
+                        "AD",
+                        "AL"
+                    ]
+                }
+            ]
+        }
+            
+        ```
 
-    -   **remoteAddr**: Required. The IP addresses in the blacklist. You can specify IP addresses and CIDR blocks. Separate IP addresses with commas \(,\). You can add up to 200 IP addresses to the blacklist. Data type: array. If no value is specified, it indicates that the blacklist is empty.
-    -   **Sample request**
+-   If the DefenseType parameter is set to **ac\_highfreq**, the value of the Rule parameter contains the following parameters:
+    -   **interval**: the interval of detection. This parameter is required. Data type: integer. Valid values: 5 to 1800. Unit: seconds.
+    -   **ttl**: the period during which an IP address is blocked. This parameter is required. Data type: integer. Valid values: 60 to 86400. Unit: seconds.
+    -   **count**: the threshold for the number of web attacks initiated from an IP address. If the number of attacks initiated from an IP address during the specified period is greater than the threshold, the IP address is blocked. This parameter is required. Data type: integer. Valid values: 2 to 50000.
+    -   **Example**
 
         ```
         
             {
-                "remoteAddr":["1.1.1.1","12.11.1.2"]
-            }
-                                    
-        ```
-
--   To modify the rule that automatically blocks IP addresses initiating attacks, set DefenseType to **ac\_highfreq**, and construct a JSON string that contains the following parameters:
-    -   **Interval**: Required. The time range to be detected, in seconds. Data type: integer. Valid values:`[5,1800]`.
-    -   **TTL**: Required. The duration of blocked IP addresses. Unit: Seconds. Data type: integer. Valid values:`[60,86400]`.
-    -   **count**: Required. The maximum number of requests allowed from an IP address. If the number of requests initiated from an IP address during the specified time period exceeds this limit, the IP address is blocked. Data type: integer. Valid values: `[2,50000]`.
-    -   **Sample request**
-
-        ```
-        
-            {
-                "interval":60,
-                "ttl":300,
-                "count":60
+            	"interval":60,
+            	"ttl":300,
+            	"count":60
              }
-                                    
+            
         ```
 
--   To modify a directory traversal protection rule, set DefenseType to **block\_dirscan** and construct a JSON string that includes the following parameters:
-    -   **Interval**: Required. The time range to be detected, in seconds. Valid values:`[5,1800]`.
-    -   **TTL**: Required. The duration of blocked IP addresses. Unit: Seconds. Valid values:`[60,86400]`.
-    -   **Count**: Required. The number of visits. Valid values:`[2,50000]`.
-    -   **Weight**: Required. The threshold of HTTP status codes 404 \(as a percentage\). Valid values:`(0,1]`.
-    -   **uriNum**: Required. The threshold of the number of directories to be scanned. Valid values:`[2,50000]`.
-    -   **Sample request**
+-   If the DefenseType parameter is set to **ac\_dirscan**, the value of the Rule parameter contains the following parameters:
+    -   **interval**: the interval of detection. This parameter is required. Data type: integer. Valid values: 5 to 1800. Unit: seconds.
+    -   **ttl**: the period during which an IP address is blocked. This parameter is required. Data type: integer. Valid values: 60 to 86400. Unit: seconds.
+    -   **count**: the maximum number of requests allowed from an IP address. This parameter is required. Data type: integer. Valid values: 2 to 50000.
+    -   **weight**: the proportion of requests with 404 HTTP status codes to all requests. This parameter is required. Data type: float. Valid values: 0 to 1.
+    -   **uriNum**: the maximum number of paths that can be scanned. This parameter is required. Data type: integer. Valid values: 2 to 50000.
+    -   **Example**
 
         ```
         
             {
-                "interval":10,
-                "ttl":1800,
-                "count":50,
-                "weight":0.7,
+            	"interval":10,
+            	"ttl":1800,
+            	"count":50,
+            	"weight":0.7,
                 "uriNum":20 
             }
-                                    
+            
         ```
 
--   To modify a custom protection policy, set DefenseType to **ac\_custom**, and set the **scene** parameter in the JSON string to modify an ACL or HTTP flood protection rule.
-    -   To modify an ACL rule, set **scene** to **custom\_acl**, and construct a JSON string that includes the following parameters.
-        -   **name**: Required. The name of the rule. Data type: string.
-        -   **scene**: Required. The type of the protection policy. Data type: string. If you need to modify an ACL rule, set the value to **custom\_acl**.
-        -   **action**: Required. The action performed after the rule is matched. Data type: string. Valid values:
-            -   **monitor**: monitors requests
-            -   **captcha**: requires CAPTCHA verification
-            -   **captcha\_strict**: requires more strict CAPTCHA verification
-            -   **js**: requires JavaScript verification
-            -   **block**: blocks requests
-        -   **Conditions**: Required. The matching conditions. You can specify up to five matching conditions. Data type: array. Describe the rate in a JSON string that includes the following parameters:
-            -   **Key**: the matching field. Valid values:**URL**,**IP**,**Referer**,**user-Agent**,**Params**,**Cookie**,**content-Type**,**content-Length**,**x-Forwarded-For**,**post-Body**,**http-Method**,**Header**,**URLPath**.
-            -   **opCode**: The logical operator. Valid values:
-                -   **0**: does not include
-                -   **1**: includes
-                -   **2**: does not exist
-                -   **10**: does not equal
-                -   **11**: equals
-                -   **20**: length smaller than
-                -   **21**: length equals
-                -   **22**: length greater than
-                -   **30**: value smaller than
-                -   **31**: value equals
-                -   **32**: value greater than
-                -   **40**: does not belong to
-                -   **41**: belongs to
-            -   **values**: The matching content. Set the content as required, in String format.
+-   If the DefenseType parameter is set to **ac\_custom**, the value of the Rule parameter varies based on the **scene** parameter.
+    -   To modify an ACL rule, set **scene** to **custom\_acl**. The value of the Rule parameter contains the following parameters:
+        -   **name**: the name of the rule. This parameter is required. Data type: string.
+        -   **scene**: the type of the protection policy. This parameter is required. Data type: string. If you want to modify an ACL rule, set the value to **custom\_acl**.
+        -   **action**: the action performed after the rule is matched. This parameter is required. Data type: string. Valid values:
+            -   **monitor**: monitors requests.
+            -   **captcha**: performs CAPTCHA verification.
+            -   **captcha\_strict**: performs strict CAPTCHA verification.
+            -   **js**: performs JavaScript verification.
+            -   **block**: blocks requests.
+        -   **conditions**: the matching conditions. You can specify a maximum of five matching conditions. This parameter is required. Data type: array. This parameter is a JSON string that contains the following parameters:
+            -   **key**: the matching item. Valid values: **URL**, **IP**, **Referer**, **User-Agent**, **Params**, **Cookie**, **Content-Type**, **Content-Length**, **X-Forwarded-For**, **Post-Body**, **Http-Method**, **Header**, and **URLPath**.
+            -   **opCode**: the logical operator. Valid values:
+                -   **0**: DOES NOT INCLUDE or DOES NOT BELONG TO
+                -   **1**: INCLUDES or BELONGS TO
+                -   **2**: DOES NOT EXIST
+                -   **10**: DOES NOT EQUAL
+                -   **11**: EQUALS
+                -   **20**: LENGTH LESS THAN
+                -   **21**: LENGTH EQUAL TO
+                -   **22**: LENGTH GREATER THAN
+                -   **30**: VALUE SMALLER THAN
+                -   **31**: VALUE EQUAL TO
+                -   **32**: VALUE GREATER THAN
+            -   **values**: the matching value. You can specify this parameter based on your business requirements. Data type: string.
 
-**Note:** The logical operator in the matching condition \(**opCode**\) and the values of the matching content \(**values**\) must be set based on the specified matching field \(**key**\). For more information about matching condition configurations, see [matching Condition fields](~~147945~~).
+**Note:** The valid values of **opCode** and **values** in the matching conditions vary based on the **key** parameter. For more information about matching conditions, see [Fields in match conditions](~~147945~~).
 
-        -   **Sample request**
+        -   **Example**
 
             ```
             
@@ -390,64 +416,62 @@ You can set the **DefenseType** parameter to specify the protection module. For 
                         "action":"monitor",
                         "name":"test",
                         "scene":"custom_acl",
-                        "conditions":[{"opCode":1,"key":"URL","values":"/example"}]
+                    	"conditions":[{"opCode":1,"key":"URL","values":"/example"}]
                     }
-                                                
+                    
             ```
 
-    -   Set HTTP flood protection rules \(**scene** the parameter value is**custom\_cc**\), the corresponding JSON string contains the following parameters:
-        -   **name**: Required. The name of the rule. Data type: string.
-        -   **scene**: Required. The type of the protection policy. Data type: string. If you need to modify a protection rule against HTTP flood attacks, set the value to **custom\_cc**.
-        -   **Conditions**: Required. The matching conditions. You can specify up to five matching conditions. Data type: array. Describe the rate in a JSON string that includes the following parameters:
-            -   **Key**: the matching field. Valid values:**URL**,**IP**,**Referer**,**user-Agent**,**Params**,**Cookie**,**content-Type**,**content-Length**,**x-Forwarded-For**,**post-Body**,**http-Method**,**Header**,**URLPath**.
-            -   **opCode**: The logical operator. Valid values:
-                -   **0**: does not include
-                -   **1**: includes
-                -   **2**: does not exist
-                -   **10**: does not equal
-                -   **11**: equals
-                -   **20**: length smaller than
-                -   **21**: length equals
-                -   **22**: length greater than
-                -   **30**: value smaller than
-                -   **31**: value equals
-                -   **32**: value greater than
-                -   **40**: does not belong to
-                -   **41**: belongs to
-            -   **values**: The matching content. Set the content as required, in String format.
+    -   To modify an HTTP flood protection rule, set **scene** to **custom\_cc**. The value of the Rule parameter contains the following parameters:
+        -   **name**: the name of the rule. This parameter is required. Data type: string.
+        -   **scene**: the type of the protection policy. This parameter is required. Data type: string. If you want to modify an HTTP flood protection rule, set the value to **custom\_cc**.
+        -   **conditions**: the matching conditions. You can specify a maximum of five matching conditions. This parameter is required. Data type: array. This parameter is a JSON string that contains the following parameters:
+            -   **key**: the matching item. Valid values: **URL**, **IP**, **Referer**, **User-Agent**, **Params**, **Cookie**, **Content-Type**, **Content-Length**, **X-Forwarded-For**, **Post-Body**, **Http-Method**, **Header**, and **URLPath**.
+            -   **opCode**: the logical operator. Valid values:
+                -   **0**: DOES NOT INCLUDE or DOES NOT BELONG TO
+                -   **1**: INCLUDES or BELONGS TO
+                -   **2**: DOES NOT EXIST
+                -   **10**: DOES NOT EQUAL
+                -   **11**: EQUALS
+                -   **20**: LENGTH LESS THAN
+                -   **21**: LENGTH EQUAL TO
+                -   **22**: LENGTH GREATER THAN
+                -   **30**: VALUE SMALLER THAN
+                -   **31**: VALUE EQUAL TO
+                -   **32**: VALUE GREATER THAN
+            -   **values**: the matching value. You can specify this parameter based on your business requirements. Data type: string.
 
-**Note:** The logical operator in the matching condition \(**opCode**\) and the values of the matching content \(**values**\) must be set based on the specified matching field \(**key**\).
+**Note:** The valid values of **opCode** and **values** in the matching conditions vary based on the **key** parameter.
 
-        -   **action**: Required. The action performed after the rule is matched. Data type: string. Valid values:
-            -   **monitor**: monitors requests
-            -   **captcha**: requires CAPTCHA verification
-            -   **captcha\_strict**: requires more strict CAPTCHA verification
-            -   **js**: requires JavaScript verification
-            -   **block**: block requests
-        -   **ratelimit**: Required. The maximum request rate from an object. Data type: JSON. Describe the rate in a JSON string that includes the following parameters:
-            -   **target**: Required. The type of the object whose request rate is calculated. Data type: string. Valid values:
+        -   **action**: the action performed after the rule is matched. This parameter is required. Data type: string. Valid values:
+            -   **monitor**: monitors requests.
+            -   **captcha**: performs CAPTCHA verification.
+            -   **captcha\_strict**: performs strict CAPTCHA verification.
+            -   **js**: performs JavaScript verification.
+            -   **block**: blocks requests.
+        -   **ratelimit**: the maximum rate of requests from an object. This parameter is required. Data type: JSON string. This parameter is a JSON string that contains the following parameters:
+            -   **target**: the type of the object from which the request rate is measured. This parameter is required. Data type: string. Valid values:
                 -   **remote\_addr**: IP addresses.
                 -   **cookie.acw\_tc**: sessions.
-                -   **queryarg**: custom parameters. If you choose to use custom parameters, specify the name of the object in the **subkey** parameter.
-                -   **cookie**: custom cookies. If you choose to use custom cookies, specify the cookie content in the **subkey** parameter.
-                -   **header**: custom headers. If you choose to use custom headers, specify the header content in the **subkey** parameter.
-            -   **subkey**: Optional. When **target** is set to **cookie**, **header**, or **queryarg**, you must specify the required information in the **subkey** parameter. Data type: string.
-            -   **interval**: Required. The time period \(in seconds\) during which the number of requests from the specified object is calculated. This parameter must be used together with the **threshold** parameter. Data type: integer.
-            -   **threshold**: Required. During the specified time period, the maximum number of requests that are allowed from an individual object. Data type: integer.
-            -   **status**: Optional. The maximum number of an HTTP status code. Data type: string. It is described in a JSON string that contains the following parameters:
-                -   **code**: Required. The specified HTTP status code. Data type: integer.
-                -   **Count**: Optional. It indicates the occurrence threshold. If the number of occurrences exceeds the threshold, a protection rule is hit. Valid values:`[1,999999999]`.**Count** parameters and**ratio** you can select either parameter.
-                -   **Ratio**: Optional. The threshold \(in percentage\) of the response code. If the occurrence ratio of a specified response code exceeds this threshold, the rule is hit. Valid values:`[1,100]`. You can select either **Count** and**ratio** parameters.
-            -   **scope**: Required. This parameter specifies where the settings take effect. Data type: string. Valid values:
-                -   **rule**: objects that match the specified conditions.
-                -   **domain**: domains where the rule is applied.
-            -   **ttl**: Required. The effective time period \(in seconds\) of the action. Data type: integer. Valid values: 60, 86400.
-            -   **Sample request**
+                -   **queryarg**: custom parameters. If you choose to use custom parameters, you must specify the names of the custom parameters in the **subkey** parameter.
+                -   **cookie**: custom cookies. If you choose to use custom cookies, you must specify the cookie content in the **subkey** parameter.
+                -   **header**: custom headers. If you choose to use custom headers, you must specify the header content in the **subkey** parameter.
+            -   **subkey**: This parameter is required only when the **target** parameter is set to **cookie**, **header**, or **queryarg**. The **subkey** parameter is optional. Data type: string.
+            -   **interval**: the period for measuring the number of requests from the specified object. This parameter must be used together with the **threshold** parameter. This parameter is required. Data type: integer. Unit: seconds.
+            -   **threshold**: the maximum number of requests that are allowed from an individual object during the specified period. This parameter is required. Data type: integer.
+            -   **status**: the frequency of an HTTP status code. This parameter is optional. Data type: JSON string. This parameter is a JSON string that contains the following parameters:
+                -   **code**: the HTTP status code. This parameter is required. Data type: integer.
+                -   **count**: the threshold for the number of times that the specified HTTP status code is returned. The threshold is used to determine whether a rule is matched. If an actual number is greater than the threshold, the rule specified by the name parameter is matched. This parameter is optional. Data type: integer. Valid values: 1 to 999999999. You can set the **count** or **ratio** parameter. You cannot set both parameters at the same time.
+                -   **ratio**: the threshold for the percentage of times that the specified HTTP status code is returned. The threshold is used to determine whether a rule is matched. If an actual percentage is greater than the threshold, the rule specified by the name parameter is matched. This parameter is optional. Data type: integer. Valid values: 1 to 100. You can set the **count** or **ratio** parameter. You cannot set both parameters at the same time.
+            -   **scope**: the scope in which the settings take effect. This parameter is required. Data type: string. Valid values:
+                -   **rule**: the objects that match the specified conditions
+                -   **domain**: the domain names to which the rule is applied
+            -   **ttl**: the period during which the specified action is performed. This parameter is required. Data type: integer. Valid values: 60 to 86400. Unit: seconds.
+            -   **Example**
 
                 ```
                 
                         {
-                            "name":"HTTP flood protection",
+                            "name":"HTTP flood protection rule",
                             "conditions":[{"opCode":1,"key":"URL","values":"/example"}],
                             "action":"block", 
                             "scene":"custom_cc",  
@@ -463,46 +487,44 @@ You can set the **DefenseType** parameter to specify the protection module. For 
                                 "ttl": 1800
                             }
                     }
-                                                            
+                    
                 ```
 
--   Website whitelist rule configuration \(**whitelist**\) corresponding to the JSON string contains the following parameters:
-    -   **name**: Required. The name of the rule. Data type: string.
-    -   **tags**: Required. The protection modules that can be skipped. You can specify multiple modules. Valid values:
-        -   **waf**: the website whitelist
-        -   **cc**: system HTTP flood protection
-        -   **customrule**: custom rules
-        -   **blacklist**: the IP blacklist
-        -   **antiscan**: anti-scan protection
+-   If the DefenseType parameter is set to **whitelist**, the value of the Rule parameter contains the following parameters:
+    -   **name**: the name of the rule. This parameter is required. Data type: string.
+    -   **tags**: the protection modules that skip detection. You can specify multiple modules. This parameter is required. Data type: array. Valid values:
+        -   **waf**: website whitelist
+        -   **cc**: HTTP flood protection
+        -   **customrule**: custom protection policy
+        -   **blacklist**: IP address blacklist
+        -   **antiscan**: scan protection
         -   **regular**: web application protection
         -   **deeplearning**: deep learning
         -   **antifraud**: data risk control
-        -   **dlp**: data leakage prevention
-        -   **tamperproof**: tamper protection
-        -   **bot\_intelligence**: indicates bot threat intelligence.
-        -   **bot\_algorithm**: indicates an intelligent algorithm.
-        -   **bot\_wxbb**: indicates App protection.
-    -   **Conditions**: Required. The matching conditions. You can specify up to five matching conditions. Data type: array. Describe the rate in a JSON string that includes the following parameters:
-        -   **Key**: the matching field. Valid values:**URL**,**IP**,**Referer**,**user-Agent**,**Params**,**Cookie**,**content-Type**,**content-Length**,**x-Forwarded-For**,**post-Body**,**http-Method**,**Header**,**URLPath**.
-        -   **opCode**: The logical operator. Valid values:
-            -   **0**: does not include
-            -   **1**: includes
-            -   **2**: does not exist
-            -   **10**: does not equal
-            -   **11**: equals
-            -   **20**: length smaller than
-            -   **21**: length equals
-            -   **22**: length greater than
-            -   **30**: value smaller than
-            -   **31**: value equals
-            -   **32**: value greater than
-            -   **40**: does not belong to
-            -   **41**: belongs to
-        -   **values**: The matching content. Set the content as required, in String format.
+        -   **dlp**: data leak prevention
+        -   **tamperproof**: website tamper-proofing
+        -   **bot\_intelligence**: bot threat intelligence
+        -   **bot\_algorithm**: intelligent algorithm
+        -   **bot\_wxbb**: app protection
+    -   **conditions**: the matching conditions. You can specify a maximum of five matching conditions. This parameter is required. Data type: array. This parameter is a JSON string that contains the following parameters:
+        -   **key**: the matching item. Valid values: **URL**, **IP**, **Referer**, **User-Agent**, **Params**, **Cookie**, **Content-Type**, **Content-Length**, **X-Forwarded-For**, **Post-Body**, **Http-Method**, **Header**, and **URLPath**.
+        -   **opCode**: the logical operator. Valid values:
+            -   **0**: DOES NOT INCLUDE or DOES NOT BELONG TO
+            -   **1**: INCLUDES or BELONGS TO
+            -   **2**: DOES NOT EXIST
+            -   **10**: DOES NOT EQUAL
+            -   **11**: EQUALS
+            -   **20**: LENGTH LESS THAN
+            -   **21**: LENGTH EQUAL TO
+            -   **22**: LENGTH GREATER THAN
+            -   **30**: VALUE SMALLER THAN
+            -   **31**: VALUE EQUAL TO
+            -   **32**: VALUE GREATER THAN
+        -   **values**: the matching value. You can specify this parameter based on your business requirements. Data type: string.
 
-**Note:** The logical operator in the matching condition \(**opCode**\) and the values of the matching content \(**values**\) must be set based on the specified matching field \(**key**\).
+**Note:** The valid values of **opCode** and **values** in the matching conditions vary based on the **key** parameter.
 
-    -   **Sample request**
+    -   **Example**
 
         ```
         
@@ -511,7 +533,7 @@ You can set the **DefenseType** parameter to specify the protection module. For 
                 "tags": ["cc","customrule"],
                 "conditions":[{"opCode":1,"key":"URL","values":"/example"}],
            }
-                                    
+           
         ```
 
 
@@ -521,19 +543,19 @@ You can set the **DefenseType** parameter to specify the protection module. For 
 |---------|----|-------|-----------|
 |RequestId|String|D7861F61-5B61-46CE-A47C-6B19160D5EB0|The ID of the request. |
 
-## Samples
+## Examples
 
-Sample request
+Sample requests
 
 ```
 http(s)://[Endpoint]/? Action=ModifyProtectionModuleRule
 &DefenseType=ac_custom
 &Domain=www.example.com
-&InstanceId=waf_elasticity-cn-0xldbqtm005
+&InstanceId=waf_elasticity-cn-0xldbqt****
 &LockVersion=2
 &Rule={"action":"monitor","name":"test","scene":"custom_acl","conditions":[{"opCode":1,"key":"URL","values":"/example"}]}
 &RuleId=369998
-&<Common request parameters>
+&<common request parameters>
 ```
 
 Sample success responses
@@ -541,18 +563,20 @@ Sample success responses
 `XML` format
 
 ```
-<RequestId>D7861F61-5B61-46CE-A47C-6B19160D5EB0</RequestId>
+<ModifyProtectionModuleRuleResponse>
+	  <RequestId>D7861F61-5B61-46CE-A47C-6B19160D5EB0</RequestId>
+</ModifyProtectionModuleRuleResponse>
 ```
 
 `JSON` format
 
 ```
 {
-    "RequestId":"D7861F61-5B61-46CE-A47C-6B19160D5EB0"
+    "RequestId": "D7861F61-5B61-46CE-A47C-6B19160D5EB0"
 }
 ```
 
-## Error codes.
+## Error codes
 
 For a list of error codes, visit the [API Error Center](https://error-center.alibabacloud.com/status/product/waf-openapi).
 
