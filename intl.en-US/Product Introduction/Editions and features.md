@@ -39,10 +39,10 @@ For more information about how to activate WAF, see [Purchase a WAF instance](/i
 -   ○：表示需要额外付费开启的增值服务。您可以在购买WAF实例时开启增值服务，或者在购买WAF实例后使用升级功能开启增值服务。
 -   △：表示需要在开通按量计费WAF后，通过**功能与规格设置**单独开启的特性。
 
-|功能模块|描述|高级版|企业版|旗舰版|独享版 （仅支持工单开通）
+|功能模块|描述|高级版|企业版|旗舰版|独享版（仅支持工单开通）
 
 |按量计费|
-|----|--|---|---|---|---------------|----|
+|----|--|---|---|---|--------------|----|
 |**业务接入**|
 |[HTTPS安全防护](/intl.en-US/Website Access/Website access with CNAME/Add websites.md)|全站一键实现HTTPS防护。|√|√|√|√|△|
 |[非标准端口防护](/intl.en-US/Website Access/View the ports supported by WAF.md)|支持防护80、8080、443、8443以外的特定非标准端口上的业务。|×|√|√|√|△|
@@ -91,8 +91,8 @@ Symbol descriptions:
 -   ○: indicates that the feature is a value-added service. If you want to enable it, you must pay additional fees. You can enable the feature when you purchase or upgrade a WAF instance.
 -   △: indicates that the feature must be separately enabled on the **Feature Settings** page for a pay-as-you-go WAF instance.
 
-|Feature|Description|Pro edition|Business edition|Enterprise edition|Exclusive edition \(submit tickets to purchase\) |
-|-------|-----------|-----------|----------------|------------------|--------------------------------------------------|
+|Feature|Description|Pro edition|Business edition|Enterprise edition|Exclusive edition\(submit tickets to purchase\) |
+|-------|-----------|-----------|----------------|------------------|-------------------------------------------------|
 |**Website access**|
 |[HTTPS protection](/intl.en-US/Website Access/Website access with CNAME/Add websites.md)|Allows you to implement HTTPS protection for websites with a few clicks.|√|√|√|√|
 |[Non-standard port protection](/intl.en-US/Website Access/View the ports supported by WAF.md)|Protects traffic over the ports other than standard ports 80, 8080, 443, and 8443.|×|√|√|√|
@@ -141,8 +141,8 @@ Symbol descriptions:
 
 **Note:** 海外地区WAF实例不支持按量计费。
 
-|功能模块|描述|高级版|企业版|旗舰版|独享版 （仅支持工单开通） |
-|----|--|---|---|---|---------------|
+|功能模块|描述|高级版|企业版|旗舰版|独享版（仅支持工单开通） |
+|----|--|---|---|---|--------------|
 |**业务接入**|
 |[HTTPS安全防护](/intl.en-US/Website Access/Website access with CNAME/Add websites.md)|全站一键实现HTTPS防护。|√|√|√|√|
 |[非标准端口防护](/intl.en-US/Website Access/View the ports supported by WAF.md)|支持防护80、8080、443、8443以外的特定非标准端口上的业务。|×|√|√|√|
@@ -184,15 +184,15 @@ Symbol descriptions:
 
 The following table describes the features that each edition of WAF supports **outside mainland China**. A WAF instance is billed on a subscription basis.
 
-标识说明：
+Symbol descriptions:
 
--   √：表示在当前套餐中支持。
--   ×：表示在当前套餐中不支持。
--   ○：表示需要额外付费开启的增值服务。您可以在购买WAF实例时开启增值服务，或者在购买WAF实例后使用升级功能开启增值服务。
--   △：表示需要在开通按量计费WAF后，通过**功能与规格设置**单独开启的特性。
+-   √: indicates that the feature is supported.
+-   ×: indicates that the feature is not supported.
+-   ○: indicates that the feature is a value-added service. If you want to enable it, you must pay additional fees. You can enable the feature when you purchase or upgrade a WAF instance.
+-   △: indicates that the feature must be separately enabled on the **Feature Settings** page for a pay-as-you-go WAF instance.
 
-|Feature|Description|Pro edition|Business edition|Enterprise edition|Exclusive edition \(submit tickets to purchase\) |
-|-------|-----------|-----------|----------------|------------------|--------------------------------------------------|
+|Feature|Description|Pro edition|Business edition|Enterprise edition|Exclusive edition\(submit tickets to purchase\) |
+|-------|-----------|-----------|----------------|------------------|-------------------------------------------------|
 |**Website access**|
 |[HTTPS protection](/intl.en-US/Website Access/Website access with CNAME/Add websites.md)|Allows you to implement HTTPS protection for websites with a few clicks.|√|√|√|√|
 |[Non-standard port protection](/intl.en-US/Website Access/View the ports supported by WAF.md)|Protects traffic over the ports other than standard ports 80, 8080, 443, and 8443.|×|√|√|√|
